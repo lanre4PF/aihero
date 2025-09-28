@@ -5,8 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "google>=3.0.0",
+    "google-generativeai>=0.8.5",
+    "minsearch>=0.0.5",
+    "numpy>=2.2.6",
+    "openai>=1.109.1",
+    "pydantic-ai>=1.0.10",
+    "python-dotenv>=1.1.1",
     "python-frontmatter>=1.1.0",
     "requests>=2.32.5",
+    "sentence-transformers>=5.1.1",
     "tqdm>=4.67.1",
 ]
 
