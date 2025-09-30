@@ -1,0 +1,187 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "Considering the deprecation of Ultralytics Explorer GUI, what alternative solution does Ultralytics offer for exploring, visualizing, and managing datasets without code?",
+          "timestamp": "2025-09-30T20:02:29.400166+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CqwDAdHtim/wc+oibOqtLoF/cX6JgBw6LlDZfKmlwiTAPeNCIlpz7gdG/1/RBZ2en27LF4/HUd/ItVvgTYxZPR9rgPmpa4+e3dxhylHvgGp6+b1/UFgC0Z57igXCFGhvOGC+cdD0eD3BjCpSWCB/udDcV8J96O85chCf7YQePaGYxa2krYswsVIy0LepLosaD6RcHjxwyuyGTleqZ9oi0WiLkQ2XIMcALxERJBq4fIuVKKfVRSt/eyYh7LvvPgrIpv+uv4VbFXGc8pMv3w//WQIggzlkPOB39a6MYqddeamKv9V3E1bjmY6C+1V9umR62Btd3ZcTRLiNFO3iF2irBYj3XX33/F5A7SmOLpPskpKpaYp2eHm6/WTflDX28JIZRH581sxCwkjTF8U7q1EJsy60AYQYWRMm8pjxwYD+LVtLjb0M0SdW2oGaxinPeziiqW7l+wHEYyrCNCKIu4FDSGhgS7n2Vim5YOzRHnowo/Z5nBErqpLrVCqy3+l7p/LVpPSJefzxQcHg/rSE/2JfuGiXfM3NxTy7raU4eBGCaAsG1MsBNbhFjStKyQ7wp5k=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "Ultralytics Explorer GUI alternative dataset exploration without code"
+          },
+          "tool_call_id": "pyd_ai_c74d31e496034a00befaf6508712dbe4",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 271,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 102,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 78,
+          "text_prompt_tokens": 271
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:02:30.844477+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "VzfcaIfrEMC1kdUPxLubyAI",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 3000,
+              "chunk": "te the query and show you those results. Here's an example output when asked to \"Show 10 images with exactly 5 persons\" and you'll see a result like this:\n\n<p>\n<img width=\"1709\" alt=\"Explorer Dashboard Screenshot 4\" src=\"https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-4.avif\">\n</p>\n\nNote: This works using [Large Language Models](https://www.ultralytics.com/glossary/large-language-model-llm) under the hood so the results are probabilistic and might get things wrong sometimes\n\n## Run SQL queries on your CV datasets\n\nYou can run SQL queries on your dataset to filter it. It also works if you only provide the WHERE clause. Example SQL query would show only the images that have at least one 1 person and 1 dog in them:\n\n```sql\nWHERE labels LIKE '%person%' AND labels LIKE '%dog%'\n```\n\n<p>\n<img width=\"1707\" alt=\"Explorer Dashboard Screenshot 5\" src=\"https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-5.avif\">\n</p>\n\nThis demo was built using the Explorer API, which you can use to create your own exploratory notebooks or scripts for gaining insights into your datasets. To get started, check out the [Explorer API documentation](api.md).\n\n## FAQ\n\n### What is Ultralytics Explorer GUI and how do I install it?\n\nUltralytics Explorer GUI is a powerful interface that unlocks advanced data exploration capabilities using the [Ultralytics Explorer API](api.md). It allows you to run semantic/vector similarity search, SQL queries, and natural language queries using the Ask AI feature powered by [Large Language Models](https://www.ultralytics.com/glossary/large-language-model-llm) (LLMs).\n\nTo install the Explorer GUI, you can use pip:\n\n```bash\npip install ultralytics[explorer]\n```\n\nNote: To use the Ask AI feature, you'll need to set the OpenAI API key: `yolo settings openai_api_key=\"...\"`.\n\n### How does the semantic search feature in Ultralytics Explorer GUI work?\n\nThe semantic search feature in Ultralytics Explorer GUI",
+              "comments": true,
+              "description": "Unlock advanced data exploration with Ultralytics Explorer GUI. Utilize semantic search, run SQL queries, and ask AI for natural language data insights.",
+              "keywords": "Ultralytics Explorer GUI, semantic search, vector similarity, SQL queries, AI, natural language search, data exploration, machine learning, OpenAI, LLMs",
+              "filename": "ultralytics-main/docs/en/datasets/explorer/dashboard.md"
+            },
+            {
+              "start": 4000,
+              "chunk": "o was built using the Explorer API, which you can use to create your own exploratory notebooks or scripts for gaining insights into your datasets. To get started, check out the [Explorer API documentation](api.md).\n\n## FAQ\n\n### What is Ultralytics Explorer GUI and how do I install it?\n\nUltralytics Explorer GUI is a powerful interface that unlocks advanced data exploration capabilities using the [Ultralytics Explorer API](api.md). It allows you to run semantic/vector similarity search, SQL queries, and natural language queries using the Ask AI feature powered by [Large Language Models](https://www.ultralytics.com/glossary/large-language-model-llm) (LLMs).\n\nTo install the Explorer GUI, you can use pip:\n\n```bash\npip install ultralytics[explorer]\n```\n\nNote: To use the Ask AI feature, you'll need to set the OpenAI API key: `yolo settings openai_api_key=\"...\"`.\n\n### How does the semantic search feature in Ultralytics Explorer GUI work?\n\nThe semantic search feature in Ultralytics Explorer GUI allows you to find images similar to a given image based on their embeddings. This technique is useful for identifying and exploring images that share visual similarities. To use this feature, select one or more images in the UI and execute a search for similar images. The result will display images that closely resemble the selected ones, facilitating efficient dataset exploration and [anomaly detection](https://www.ultralytics.com/glossary/anomaly-detection).\n\nLearn more about semantic search and other features by visiting the [Feature Overview](#vector-semantic-similarity-search) section.\n\n### Can I use natural language to filter datasets in Ultralytics Explorer GUI?\n\nYes, with the Ask AI feature powered by large language models (LLMs), you can filter your datasets using natural language queries. You don't need to be proficient in SQL. For instance, you can ask \"Show me 100 images with exactly one person and 2 dogs. There can be other objects too,\" and the AI will generate the appr",
+              "comments": true,
+              "description": "Unlock advanced data exploration with Ultralytics Explorer GUI. Utilize semantic search, run SQL queries, and ask AI for natural language data insights.",
+              "keywords": "Ultralytics Explorer GUI, semantic search, vector similarity, SQL queries, AI, natural language search, data exploration, machine learning, OpenAI, LLMs",
+              "filename": "ultralytics-main/docs/en/datasets/explorer/dashboard.md"
+            },
+            {
+              "start": 6000,
+              "chunk": "opriate query under the hood to deliver the desired results.\n\n### How do I run SQL queries on datasets using Ultralytics Explorer GUI?\n\nUltralytics Explorer GUI allows you to run SQL queries directly on your dataset to filter and manage data efficiently. To run a query, navigate to the SQL query section in the GUI and write your query. For example, to show images with at least one person and one dog, you could use:\n\n```sql\nWHERE labels LIKE '%person%' AND labels LIKE '%dog%'\n```\n\nYou can also provide only the WHERE clause, making the querying process more flexible.\n\nFor more details, refer to the [SQL Queries Section](#run-sql-queries-on-your-cv-datasets).\n\n### What are the benefits of using Ultralytics Explorer GUI for data exploration?\n\nUltralytics Explorer GUI enhances data exploration with features like semantic search, SQL querying, and natural language interactions through the Ask AI feature. These capabilities allow users to:\n\n- Efficiently find visually similar images.\n- Filter datasets using complex SQL queries.\n- Utilize AI to perform natural language searches, eliminating the need for advanced SQL expertise.\n\nThese features make it a versatile tool for developers, researchers, and data scientists looking to gain deeper insights into their datasets.\n\nExplore more about these features in the [Explorer GUI Documentation](#explorer-gui).",
+              "comments": true,
+              "description": "Unlock advanced data exploration with Ultralytics Explorer GUI. Utilize semantic search, run SQL queries, and ask AI for natural language data insights.",
+              "keywords": "Ultralytics Explorer GUI, semantic search, vector similarity, SQL queries, AI, natural language search, data exploration, machine learning, OpenAI, LLMs",
+              "filename": "ultralytics-main/docs/en/datasets/explorer/dashboard.md"
+            },
+            {
+              "start": 3000,
+              "chunk": "\n<p>\n    <img width=\"1709\" alt=\"Ultralytics Explorer OpenAI Integration\" src=\"https://github.com/ultralytics/docs/releases/download/0/ultralytics-explorer-openai-integration.avif\">\n</p>\n\n## FAQ\n\n### What is Ultralytics Explorer and how can it help with CV datasets?\n\nUltralytics Explorer is a powerful tool designed for exploring [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) (CV) datasets through semantic search, SQL queries, vector similarity search, and even natural language. This versatile tool provides both a GUI and a Python API, allowing users to seamlessly interact with their datasets. By leveraging technologies like [LanceDB](https://lancedb.com/), Ultralytics Explorer ensures efficient, scalable access to large datasets without excessive memory usage. Whether you're performing detailed dataset analysis or exploring data patterns, Ultralytics Explorer streamlines the entire process.\n\nLearn more about the [Explorer API](api.md).\n\n### How do I install the dependencies for Ultralytics Explorer?\n\nTo manually install the optional dependencies needed for Ultralytics Explorer, you can use the following `pip` command:\n\n```bash\npip install ultralytics[explorer]\n```\n\nThese dependencies are essential for the full functionality of semantic search and SQL querying. By including libraries powered by [LanceDB](https://lancedb.com/), the installation ensures that the database operations remain efficient and scalable, even for large datasets like [COCO](../detect/coco.md).\n\n### How can I use the GUI version of Ultralytics Explorer?\n\nUsing the GUI version of Ultralytics Explorer is straightforward. After installing the necessary dependencies, you can launch the GUI with the following command:\n\n```bash\nyolo explorer\n```\n\nThe GUI provides a user-friendly interface for creating dataset embeddings, searching for similar images, running SQL queries, and conducting semantic searches. Additionally, the integration with OpenAI's Ask AI feature allows you to",
+              "comments": true,
+              "description": "Discover Ultralytics Explorer for semantic search, SQL queries, vector similarity, and natural language dataset exploration. Enhance your CV datasets effortlessly.",
+              "keywords": "Ultralytics Explorer, CV datasets, semantic search, SQL queries, vector similarity, dataset visualization, python API, machine learning, computer vision",
+              "filename": "ultralytics-main/docs/en/datasets/explorer/index.md"
+            },
+            {
+              "start": 4000,
+              "chunk": "he dependencies for Ultralytics Explorer?\n\nTo manually install the optional dependencies needed for Ultralytics Explorer, you can use the following `pip` command:\n\n```bash\npip install ultralytics[explorer]\n```\n\nThese dependencies are essential for the full functionality of semantic search and SQL querying. By including libraries powered by [LanceDB](https://lancedb.com/), the installation ensures that the database operations remain efficient and scalable, even for large datasets like [COCO](../detect/coco.md).\n\n### How can I use the GUI version of Ultralytics Explorer?\n\nUsing the GUI version of Ultralytics Explorer is straightforward. After installing the necessary dependencies, you can launch the GUI with the following command:\n\n```bash\nyolo explorer\n```\n\nThe GUI provides a user-friendly interface for creating dataset embeddings, searching for similar images, running SQL queries, and conducting semantic searches. Additionally, the integration with OpenAI's Ask AI feature allows you to query datasets using natural language, enhancing the flexibility and ease of use.\n\nFor storage and scalability information, check out our [installation instructions](#installation-of-optional-dependencies).\n\n### What is the Ask AI feature in Ultralytics Explorer?\n\nThe Ask AI feature in Ultralytics Explorer allows users to interact with their datasets using natural language queries. Powered by [OpenAI](https://www.ultralytics.com/blog/openai-gpt-4o-showcases-ai-potential), this feature enables you to ask complex questions and receive insightful answers without needing to write SQL queries or similar commands. To use this feature, you'll need to set your OpenAI API key the first time you run the GUI:\n\n```bash\nyolo settings openai_api_key=\"YOUR_API_KEY\"\n```\n\nFor more on this feature and how to integrate it, see our [GUI Explorer Usage](#gui-explorer-usage) section.\n\n### Can I run Ultralytics Explorer in Google Colab?\n\nYes, Ultralytics Explorer can be run in Google Colab, providing a conv",
+              "comments": true,
+              "description": "Discover Ultralytics Explorer for semantic search, SQL queries, vector similarity, and natural language dataset exploration. Enhance your CV datasets effortlessly.",
+              "keywords": "Ultralytics Explorer, CV datasets, semantic search, SQL queries, vector similarity, dataset visualization, python API, machine learning, computer vision",
+              "filename": "ultralytics-main/docs/en/datasets/explorer/index.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_c74d31e496034a00befaf6508712dbe4",
+          "metadata": null,
+          "timestamp": "2025-09-30T20:02:30.897298+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Cp8GAdHtim9t+RahVOt2SWAqHvpTsM6r4WcThLq+T77HwyTx6GsjxoqH5FjjX7po3iqBy6+7fTH1osBtiMbvG9Pi++bGX74U23kldN741EZJdSp/dBG9BDF/qHBk8E/KvLd72pVUwamyF4I5a4TvslfrIcvREzeESAdrvGaL0cUmmGVw/KY/FlHqoXe2zyuzLs4uD8eG/2EP+mRSLJlqZLW07C/fgP9gBcBgh4xD+wGJMa7CVDOAxCP2Q/vb+8DmfCZYizU/cWCPOX6pHZX3NTKqqXZUW7mLkAGcl5fDRYsj5c3nyBQUDfQhj8apW4RLpt6V6PJeHBAmO11oPTm3aw2pJ/BNEcpqqjlQ677wyE4UXP8j0ErSBptxcqo8Hk6p7aQaCWCTskNhP1JKL3+lanlnH4f3x4TRYsKSwh1VnVPdRCEVW+rCTRGG1rbqbOfcAFb1tuxG1O/g4+hM8WSXGLbi1AVegIaISMjCc3PZMXyi7EHW7dPLw4iLRoRdHO8LQRTKnicVr0WibzrmhQWjEYsC1Pe50pJZ9zvdW0Wy4yQDy16M4gJw2H0lvNrAAOyKHByzp475qnU73aFfEHt7ceSUgSFAEmroamXP2sMnPs+OkGkyL8oyzKpwWDH21P+Ty+7Futt3SD+GyCDYstkKCSolQrmSErQwAl9rFEaACYNzWITLk18qugmMmJMLiJibHGv3Hk35H4i52J5/lMZD3Ruz0YnjW3DfJSushh1eZY5L23E9Jc0876X1lSEiHCuRyHivum/5aaxCdxJQwMnVMH2zCqOKc3kRomAnqTDhJYBHbdi71Rjj8cifLxKHS+9URzNjVk0CC6rY1bzIGZyD7tLxUkYxMeGqBTSEwOUjfa2/SlWNgxQyeIDxKRGb6+g/dWwhUVK824oxhXjSPn+O06DfE04kuKGdodcUWUbF89K/GaWO/fK9asOCoq+TQkSP0JL3xPY22JoTL59/cutLywDNdY6D6AfB/Vlj94fNMzgEgLKq2cHefVmo0R7KfBhY9Ad8OcyYgtTU7FOv9c8YmrgfL/vBAGArlPeQOBzYPe+Qig==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Based on the Ultralytics documentation, the **Ultralytics Explorer GUI is not deprecated**. In fact, it is presented as a powerful interface for exploring, visualizing, and managing datasets.\n\nThe Ultralytics Explorer GUI offers the following code-free solutions for dataset management and exploration:\n\n*   **Semantic Search and Vector Similarity Search:** Find images similar to a given image based on their visual embeddings.\n*   **SQL Queries:** Run SQL queries directly on your dataset to filter and manage data. You can even provide just the `WHERE` clause.\n*   **Natural Language Queries (Ask AI feature):** Utilize large language models (LLMs) to filter datasets using natural language. This eliminates the need for SQL expertise.\n\nTo use the Ultralytics Explorer GUI, you would typically install it using pip:\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\npip install ultralytics[explorer]\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\nAnd then launch it with:\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\nyolo explorer\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nIf you wish to use the \"Ask AI\" feature, you'll need to set your OpenAI API key:\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\nyolo settings openai_api_key=\"YOUR_API_KEY\"\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nThe documentation also mentions that the demo was built using the Explorer API, which you can use to create your own exploratory notebooks or scripts for gaining insights into your datasets if you prefer a programmatic approach.\n\nReferences:\n*   [Unlock advanced data exploration with Ultralytics Explorer GUI. Utilize semantic search, run SQL queries, and ask AI for natural language data insights.](https://github.com/ultralytics/ultralytics/blob/main/docs/en/datasets/explorer/dashboard.md)\n*   [Discover Ultralytics Explorer for semantic search, SQL queries, vector similarity, and natural language dataset exploration. Enhance your CV datasets effortlessly.](https://github.com/ultralytics/ultralytics/blob/main/docs/en/datasets/explorer/index.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3091,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 565,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 152,
+          "text_prompt_tokens": 3091
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:02:37.442238+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "XTfcaKrlOYDNnsEP38P6MA",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

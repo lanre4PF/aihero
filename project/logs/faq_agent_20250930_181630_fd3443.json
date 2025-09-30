@@ -1,0 +1,156 @@
+{
+  "agent_name": "faq_agent",
+  "system_prompt": "You are a helpful AI assistant for a course on computer vision, specializing in YOLO models and the Ultralytics ecosystem (e.g., YOLOv8). Use the search tool to find relevant information from the course materials or the latest Ultralytics documentation before answering questions. Provide accurate, concise, and clear responses, including code examples, step-by-step instructions, or explanations as appropriate. Assume the user has a basic understanding of Python and machine learning concepts unless otherwise specified. If the search returns specific, relevant information, use it to inform your answer. If the search does not yield relevant results, inform the user and provide general guidance based on best practices for YOLO model training and usage. If a question is ambiguous, ask for clarification to ensure the response aligns with the course context.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "what is the best version of YOLO ",
+          "timestamp": "2025-09-30T18:16:22.661711+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant for a course on computer vision, specializing in YOLO models and the Ultralytics ecosystem (e.g., YOLOv8). Use the search tool to find relevant information from the course materials or the latest Ultralytics documentation before answering questions. Provide accurate, concise, and clear responses, including code examples, step-by-step instructions, or explanations as appropriate. Assume the user has a basic understanding of Python and machine learning concepts unless otherwise specified. If the search returns specific, relevant information, use it to inform your answer. If the search does not yield relevant results, inform the user and provide general guidance based on best practices for YOLO model training and usage. If a question is ambiguous, ask for clarification to ensure the response aligns with the course context.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CsADAdHtim8jwhMM5RGWoWL6VGLRrip1tP5yPaX5mFg5Zglu9X2j5u2ZQ1sFS8hSSZjzvjBqA2c+xemcMEaYSXyx5meEYVliVa+diIaENSVq6+6YZW5GGkIqfjQN/vqb6hZ3OaP2mpCMJh65UVV/0hf1tENHMcmsjN4LfxZGKB5gfub24XWSb1VUI/TzOElpiYbgZosCWCGJMlvghRzavQ+uJAiHPxR/DW9R9Wmk7sFxWJQF4gxWtD9gsvUQ5ib2ma5ZqIQYAbDm4j4h93OhTssR6arTUqx2zD+ZJkaPYnduNkqHex9BZvXrdIyLVWEe+Cq3/NMgT51N1yiL67ZAfzhkO1LllaCGvHR4gk6ELfsZutSm4cfrh7GlXtbRSBDVnIC17Zo6OQ+J/ow1kL6C8UdtNNbNoHI+IxUBtxtrDBrHttlYLjGZ3CblIn8c8e33WyGBeqtBhHqsU33IMpjFICMXqS6+3E5IZzU47tdx+9EimoA3Jr8tIE/4AMDmPPLkdBAouUK4P+hPLpO3zgnpwD+ECt8MHC96fwb1l5Es2EK6FePW9NKZrm0plsq3KoinWL1RVduvefwOFqo2wHtuHBXEOg==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "best YOLO version comparison ultralytics"
+          },
+          "tool_call_id": "pyd_ai_218b138caa7e4248b992244883dee8ed",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 264,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 106,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 85,
+          "text_prompt_tokens": 264
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T18:16:25.640530+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "eR7caInnOvaakdUP4vdz",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "ultralytics-main/docs/en/reference/models/yolo/model.md"
+            },
+            {
+              "start": 10000,
+              "chunk": "e\n        yolo track model=yolov8s-world.pt imgsz=640 source=\"path/to/video.mp4\"\n        ```\n\n!!! note\n\n    The YOLO-World models provided by Ultralytics come pre-configured with [COCO dataset](../datasets/detect/coco.md) categories as part of their offline vocabulary, enhancing efficiency for immediate application. This integration allows the YOLOv8-World models to directly recognize and predict the 80 standard categories defined in the COCO dataset without requiring additional setup or customization.\n\n### Set prompts\n\n![YOLO-World prompt class names overview](https://github.com/ultralytics/docs/releases/download/0/yolo-world-prompt-class-names-overview.avif)\n\nThe YOLO-World framework allows for the dynamic specification of classes through custom prompts, empowering users to tailor the model to their specific needs **without retraining**. This feature is particularly useful for adapting the model to new domains or specific tasks that were not originally part of the [training data](https://www.ultralytics.com/glossary/training-data). By setting custom prompts, users can essentially guide the model's focus towards objects of interest, enhancing the relevance and [accuracy](https://www.ultralytics.com/glossary/accuracy) of the detection results.\n\nFor instance, if your application only requires detecting 'person' and 'bus' objects, you can specify these classes directly:\n\n!!! example\n\n    === \"Custom Inference Prompts\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Initialize a YOLO-World model\n        model = YOLO(\"yolov8s-world.pt\")  # or choose yolov8m/l-world.pt\n\n        # Define custom classes\n        model.set_classes([\"person\", \"bus\"])\n\n        # Execute prediction for specified categories on an image\n        results = model.predict(\"path/to/image.jpg\")\n\n        # Show results\n        results[0].show()\n        ```\n\nYou can also save a model after setting custom classes. By doing this you create a version of the YOLO-World model that is specia",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-main/docs/en/models/yolo-world.md"
+            },
+            {
+              "start": 11000,
+              "chunk": "ps://www.ultralytics.com/glossary/training-data). By setting custom prompts, users can essentially guide the model's focus towards objects of interest, enhancing the relevance and [accuracy](https://www.ultralytics.com/glossary/accuracy) of the detection results.\n\nFor instance, if your application only requires detecting 'person' and 'bus' objects, you can specify these classes directly:\n\n!!! example\n\n    === \"Custom Inference Prompts\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Initialize a YOLO-World model\n        model = YOLO(\"yolov8s-world.pt\")  # or choose yolov8m/l-world.pt\n\n        # Define custom classes\n        model.set_classes([\"person\", \"bus\"])\n\n        # Execute prediction for specified categories on an image\n        results = model.predict(\"path/to/image.jpg\")\n\n        # Show results\n        results[0].show()\n        ```\n\nYou can also save a model after setting custom classes. By doing this you create a version of the YOLO-World model that is specialized for your specific use case. This process embeds your custom class definitions directly into the model file, making the model ready to use with your specified classes without further adjustments. Follow these steps to save and load your custom YOLOv8 model:\n\n!!! example\n\n    === \"Persisting Models with Custom Vocabulary\"\n\n        First load a YOLO-World model, set custom classes for it and save it:\n\n        ```python\n        from ultralytics import YOLO\n\n        # Initialize a YOLO-World model\n        model = YOLO(\"yolov8s-world.pt\")  # or select yolov8m/l-world.pt\n\n        # Define custom classes\n        model.set_classes([\"person\", \"bus\"])\n\n        # Save the model with the defined offline vocabulary\n        model.save(\"custom_yolov8s.pt\")\n        ```\n\n        After saving, the custom_yolov8s.pt model behaves like any other pre-trained YOLOv8 model but with a key difference: it is now optimized to detect only the classes you have defined. This customization can significantly imp",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-main/docs/en/models/yolo-world.md"
+            },
+            {
+              "start": 9000,
+              "chunk": "\"yolov8s-world.pt\")  # or select yolov8m/l-world.pt for different sizes\n\n        # Conduct model validation on the COCO8 example dataset\n        metrics = model.val(data=\"coco8.yaml\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Validate a YOLO-World model on the COCO8 dataset with a specified image size\n        yolo val model=yolov8s-world.pt data=coco8.yaml imgsz=640\n        ```\n\n### Track Usage\n\n[Object tracking](https://www.ultralytics.com/glossary/object-tracking) with YOLO-World model on a video/images is streamlined as follows:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Create a YOLO-World model\n        model = YOLO(\"yolov8s-world.pt\")  # or select yolov8m/l-world.pt for different sizes\n\n        # Track with a YOLO-World model on a video\n        results = model.track(source=\"path/to/video.mp4\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Track with a YOLO-World model on the video with a specified image size\n        yolo track model=yolov8s-world.pt imgsz=640 source=\"path/to/video.mp4\"\n        ```\n\n!!! note\n\n    The YOLO-World models provided by Ultralytics come pre-configured with [COCO dataset](../datasets/detect/coco.md) categories as part of their offline vocabulary, enhancing efficiency for immediate application. This integration allows the YOLOv8-World models to directly recognize and predict the 80 standard categories defined in the COCO dataset without requiring additional setup or customization.\n\n### Set prompts\n\n![YOLO-World prompt class names overview](https://github.com/ultralytics/docs/releases/download/0/yolo-world-prompt-class-names-overview.avif)\n\nThe YOLO-World framework allows for the dynamic specification of classes through custom prompts, empowering users to tailor the model to their specific needs **without retraining**. This feature is particularly useful for adapting the model to new domains or specific tasks that were not originally part of the [training data](htt",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-main/docs/en/models/yolo-world.md"
+            },
+            {
+              "start": 8000,
+              "chunk": "ightforward with the `predict` method, as illustrated below:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLOWorld\n\n        # Initialize a YOLO-World model\n        model = YOLOWorld(\"yolov8s-world.pt\")  # or select yolov8m/l-world.pt for different sizes\n\n        # Execute inference with the YOLOv8s-world model on the specified image\n        results = model.predict(\"path/to/image.jpg\")\n\n        # Show results\n        results[0].show()\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Perform object detection using a YOLO-World model\n        yolo predict model=yolov8s-world.pt source=path/to/image.jpg imgsz=640\n        ```\n\nThis snippet demonstrates the simplicity of loading a pre-trained model and running a prediction on an image.\n\n### Val Usage\n\nModel validation on a dataset is streamlined as follows:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Create a YOLO-World model\n        model = YOLO(\"yolov8s-world.pt\")  # or select yolov8m/l-world.pt for different sizes\n\n        # Conduct model validation on the COCO8 example dataset\n        metrics = model.val(data=\"coco8.yaml\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Validate a YOLO-World model on the COCO8 dataset with a specified image size\n        yolo val model=yolov8s-world.pt data=coco8.yaml imgsz=640\n        ```\n\n### Track Usage\n\n[Object tracking](https://www.ultralytics.com/glossary/object-tracking) with YOLO-World model on a video/images is streamlined as follows:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Create a YOLO-World model\n        model = YOLO(\"yolov8s-world.pt\")  # or select yolov8m/l-world.pt for different sizes\n\n        # Track with a YOLO-World model on a video\n        results = model.track(source=\"path/to/video.mp4\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Track with a YOLO-World model on the video with a specified image siz",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-main/docs/en/models/yolo-world.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_218b138caa7e4248b992244883dee8ed",
+          "metadata": null,
+          "timestamp": "2025-09-30T18:16:25.700330+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant for a course on computer vision, specializing in YOLO models and the Ultralytics ecosystem (e.g., YOLOv8). Use the search tool to find relevant information from the course materials or the latest Ultralytics documentation before answering questions. Provide accurate, concise, and clear responses, including code examples, step-by-step instructions, or explanations as appropriate. Assume the user has a basic understanding of Python and machine learning concepts unless otherwise specified. If the search returns specific, relevant information, use it to inform your answer. If the search does not yield relevant results, inform the user and provide general guidance based on best practices for YOLO model training and usage. If a question is ambiguous, ask for clarification to ensure the response aligns with the course context.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CtEHAdHtim+i9O/uzgCgXnXt7eN8+uKwQKWWQjpQYTJ7mi4bCmfp2VjKuN//LjVWaNlBCYLpxBQE6OZn/d3tZZUUdxOypp3wr4jQjv8BiukOUGKpyZcfyAKs/DnyB1SrDMe/40kOeFnKwnCvbX6Q4oJ4h+th4onMJaodsB7b6dIPaQ8MiZb86foiUk3yKlSTWVAWYDExi8KDREX29dOCSQnZB1mPwDrFAb5jMr/fBnG76PUIy8Pku30WwT63a8XHvQKialP+lP9RixflgKfJIwM3b7IyxXwFWZ/fWPNem1UqP0wC2C6Nql8zDq4uGmEWjgp9cbKQMo92bVNRqBV5Zoryz42I2oV11UmgSyyRnKdaWSunboiDvKJIeOLXPyhOXKFQ8AcAWoVFcjdI5gVh65IyYKQzQoRrQ0VHyPs1rjHHprPIaf+aGejSc5k4pMuIZU22s7YRQXsDyndYN5H1GmwmAp6I9Fsbw53O4w3NxIqyZX3YpEyqEIqDgnxa9zByXpyGniPKfPHLC45Upk5ub7wklzsHvfyq0srYHql4/hKdW0Tcj/ZDpLDrWrxO/rfZupW72KJBuspSrzBttaucVSjV7YiipVGcnCXw4OGiX+Ek/+MfcuD+81xm53XNOR/+LISBhoOPXCizVefVgA68BEX0a0XBlUYs7/IA9fmdhVQq32ig47oy9q8E69XEqOevojOHLUaXKK/et8a+4poxf+5Ok9F+SGpOo8W9KKfJ6KUA0dTz2FcxFqDxrvMizh0LWiwArJFSFvuhlDHCxqPrsuod8x/1jrm2fCsBt0DZTI6dlssgkwuvWUxiwyHT/qzfA8APY2KeDh/p2IR922emutUxJrpNZ9xFioZRTHhp+7hp2gv1BDz7IEFMKP8eEGgPRkkq6Jwa45QPCQdNboQeT+80eW3sTgALBmm9+fnm4qgZJAeV8yzaK41uvGgTO5TLYAvNPIlMRbuTHySC7lNEhgUfgJxpG5vKdIWkHmNTVbA/p2V3/LgiYx+z5RuAfe6IZ4uHsG+D5vCDiL3UgvvmiKnUrTBMCfRqRJ5369eliKqlXL0WBlPr0rDv/lNy9FmjWjTDzwjabADuF9K+4yk22gfbab2zCL/mjboZQXfGAkWffJ7Xjbh4g7MLXZZStMj+/L7o8h3JvamQyrxneVugK0x06Ok+R0rfs6B1zD1ctsdhvKwzwVqVf4j1TYnpDNfcj25GmMiiPSPJ0UCgSmfg8FZnJPIuCJOV6LFFeS8jC7MxIo0AxD/wnmmhEVBWinxZf8WJGt/+PgorX4wCQ/TzU5bSYP0=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "The \"best\" version of YOLO depends on your specific needs, such as the required accuracy, inference speed, and whether you need open-vocabulary capabilities.\n\nWithin the Ultralytics ecosystem, **YOLOv8** is a highly capable and widely used model for general object detection, segmentation, and classification tasks. It offers a good balance of speed and accuracy across different model sizes (nano, small, medium, large, xlarge).\n\nFor advanced scenarios, particularly those requiring flexible, real-time open-vocabulary object detection without retraining, **YOLO-World** (built upon YOLOv8 advancements) is an excellent choice. It allows you to dynamically define custom classes using text prompts, making it highly adaptable to new domains or specific tasks not covered in the original training data.\n\nIn summary:\n*   **YOLOv8**: A strong general-purpose model for various computer vision tasks, offering a good trade-off between performance and speed.\n*   **YOLO-World**: Ideal for open-vocabulary detection, allowing you to specify custom classes on the fly without the need for model retraining.\n\nIf you can provide more details about your specific application, I can offer a more tailored recommendation.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3378,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 446,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 199,
+          "text_prompt_tokens": 3378
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T18:16:30.521738+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "fh7caNSqN76C-8YPltDc4QY",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

@@ -1,0 +1,154 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "How does the Segment Anything Model (SAM) compare to YOLO models for image segmentation, especially regarding speed and model size, and when would I choose one over the other?",
+          "timestamp": "2025-09-30T19:46:53.623514+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CtECAdHtim9lULhMHnpLmz5iYkgdIGvEX8DzvCTg4lb/Cp8uZZKfEahfFsD+YnhWeKaB3vWKLr87Yk7ik9jbw2uxwUm0AQUhXQINvFz7yETAeRMS+Ilm705IapGsmz7I4ehLBNb721EXQLxCPAKl3eha/OCn1PHVkneZSK0y4NIw3E5JJbp0CtUR2ZXMZNlBf/bVRa2xaBmSm0PpMu4bBPmksq67g5CyO/57T18jSXFR3N3DMm8Ox8Ou1IpuD4fzV12yPLZ3uC698wnhx7Wc7BAUVJyNil3kpD1UL1hfM8MGY00xKuXN0JxgFfqjqYNrQ2cHhVZJamzM2o1NFWnnzUiBkrUJe9UANDoxmwunnmKoH9h2AB/8xtNoRM/4jzu+az1iHZ8XToZPVmuY7m55fRGeiBrbedFWDO2q9APMM0g2dR/+PHRuAPM3TQRSZoTNzrfHtQ==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "SAM vs YOLO segmentation speed model size"
+          },
+          "tool_call_id": "pyd_ai_cf496f7259c344839e288e03bf7257f7",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 275,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 85,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 64,
+          "text_prompt_tokens": 275
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:46:55.860977+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "sDPcaJ2EC53pnsEP97DIcQ",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/sam/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.sam.model.SAM\n\n<br><br>",
+              "description": "Explore the SAM (Segment Anything Model) and SAM 2 (Segment Anything Model 2) interface for real-time image segmentation. Learn about promptable segmentation and zero-shot capabilities.",
+              "keywords": "Ultralytics, SAM, Segment Anything Model, SAM 2, Segment Anything Model 2, image segmentation, real-time segmentation, zero-shot performance, promptable segmentation, SA-1B dataset",
+              "filename": "ultralytics-main/docs/en/reference/models/sam/model.md"
+            },
+            {
+              "start": 15000,
+              "chunk": "ash\nyolo predict model=sam_b.pt source=path/to/image.jpg\n```\n\nFor more detailed usage instructions, visit the [Segmentation section](#sam-prediction-example).\n\n### How do SAM and YOLO models compare in terms of performance?\n\nCompared to YOLO models, SAM variants like SAM-b, SAM2-t, MobileSAM, and FastSAM-s are typically larger and slower but offer unique zero-shot segmentation capabilities. For example, Ultralytics [YOLOv8n-seg](../tasks/segment.md) is **11.7x smaller** and **1069x faster** than Meta's original SAM-b model, highlighting YOLO's significant advantage in speed and efficiency. Similarly, the newer [YOLO11n-seg](../tasks/segment.md) provides even smaller size and maintains impressive inference speed. This makes YOLO models ideal for applications requiring rapid, lightweight, and computationally efficient segmentation, while SAM models excel in flexible, promptable, and zero-shot segmentation tasks.\n\n### How can I auto-annotate my dataset using SAM?\n\nUltralytics' SAM offers an auto-annotation feature that allows generating segmentation datasets using a pre-trained detection model. Here's an example in Python:\n\n```python\nfrom ultralytics.data.annotator import auto_annotate\n\nauto_annotate(data=\"path/to/images\", det_model=\"yolov8x.pt\", sam_model=\"sam_b.pt\")\n```\n\nThis function takes the path to your images and optional arguments for pre-trained detection and SAM segmentation models, along with device and output directory specifications. For a complete guide, see [Auto-Annotation](#auto-annotation-a-quick-path-to-segmentation-datasets).\n\n### What datasets are used to train the Segment Anything Model (SAM)?\n\nSAM is trained on the extensive [SA-1B dataset](https://ai.meta.com/datasets/segment-anything/) which comprises over 1 billion masks across 11 million images. SA-1B is the largest segmentation dataset to date, providing high-quality and diverse [training data](https://www.ultralytics.com/glossary/training-data), ensuring impressive zero-shot performance in ",
+              "comments": true,
+              "description": "Explore the revolutionary Segment Anything Model (SAM) for promptable image segmentation with zero-shot performance. Discover key features, datasets, and usage tips.",
+              "keywords": "Segment Anything, SAM, image segmentation, promptable segmentation, zero-shot performance, SA-1B dataset, advanced architecture, auto-annotation, Ultralytics, pre-trained models, instance segmentation, computer vision, AI, machine learning",
+              "filename": "ultralytics-main/docs/en/models/sam.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/sam/modules/sam.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/sam.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/sam.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/modules/sam.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.sam.modules.sam.SAMModel\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.sam.SAM2Model\n\n<br><br>",
+              "description": "Discover the Ultralytics SAM and SAM 2 module for object segmentation. Learn about its components, such as image encoders and mask decoders, in this comprehensive guide.",
+              "keywords": "Ultralytics, SAM Module, SAM 2 Module, object segmentation, image encoder, mask decoder, prompt encoder, AI, machine learning",
+              "filename": "ultralytics-main/docs/en/reference/models/sam/modules/sam.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/sam/predict.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/predict.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/predict.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/predict.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.sam.predict.Predictor\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.predict.SAM2Predictor\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.predict.SAM2VideoPredictor\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.predict.SAM2DynamicInteractivePredictor\n\n<br><br>",
+              "description": "Explore Ultralytics SAM and SAM 2 Predictor for advanced, real-time image segmentation using the Segment Anything Model (SAM and SAM 2). Complete implementation details and auxiliary utilities.",
+              "keywords": "Ultralytics, SAM, Segment Anything Model, SAM 2, Segment Anything Model 2, image segmentation, real-time, prediction, AI, machine learning, Python, torch, inference",
+              "filename": "ultralytics-main/docs/en/reference/models/sam/predict.md"
+            },
+            {
+              "start": 14000,
+              "chunk": "t Anything Model (SAM) for image segmentation?\n\nYou can use the Segment Anything Model (SAM) for image segmentation by running inference with various prompts such as bounding boxes or points. Here's an example using Python:\n\n```python\nfrom ultralytics import SAM\n\n# Load a model\nmodel = SAM(\"sam_b.pt\")\n\n# Segment with bounding box prompt\nmodel(\"ultralytics/assets/zidane.jpg\", bboxes=[439, 437, 524, 709])\n\n# Segment with points prompt\nmodel(\"ultralytics/assets/zidane.jpg\", points=[900, 370], labels=[1])\n\n# Segment with multiple points prompt\nmodel(\"ultralytics/assets/zidane.jpg\", points=[[400, 370], [900, 370]], labels=[[1, 1]])\n\n# Segment with multiple points prompt per object\nmodel(\"ultralytics/assets/zidane.jpg\", points=[[[400, 370], [900, 370]]], labels=[[1, 1]])\n\n# Segment with negative points prompt.\nmodel(\"ultralytics/assets/zidane.jpg\", points=[[[400, 370], [900, 370]]], labels=[[1, 0]])\n```\n\nAlternatively, you can run inference with SAM in the command line interface (CLI):\n\n```bash\nyolo predict model=sam_b.pt source=path/to/image.jpg\n```\n\nFor more detailed usage instructions, visit the [Segmentation section](#sam-prediction-example).\n\n### How do SAM and YOLO models compare in terms of performance?\n\nCompared to YOLO models, SAM variants like SAM-b, SAM2-t, MobileSAM, and FastSAM-s are typically larger and slower but offer unique zero-shot segmentation capabilities. For example, Ultralytics [YOLOv8n-seg](../tasks/segment.md) is **11.7x smaller** and **1069x faster** than Meta's original SAM-b model, highlighting YOLO's significant advantage in speed and efficiency. Similarly, the newer [YOLO11n-seg](../tasks/segment.md) provides even smaller size and maintains impressive inference speed. This makes YOLO models ideal for applications requiring rapid, lightweight, and computationally efficient segmentation, while SAM models excel in flexible, promptable, and zero-shot segmentation tasks.\n\n### How can I auto-annotate my dataset using SAM?\n\nUltralytics' SAM offers ",
+              "comments": true,
+              "description": "Explore the revolutionary Segment Anything Model (SAM) for promptable image segmentation with zero-shot performance. Discover key features, datasets, and usage tips.",
+              "keywords": "Segment Anything, SAM, image segmentation, promptable segmentation, zero-shot performance, SA-1B dataset, advanced architecture, auto-annotation, Ultralytics, pre-trained models, instance segmentation, computer vision, AI, machine learning",
+              "filename": "ultralytics-main/docs/en/models/sam.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_cf496f7259c344839e288e03bf7257f7",
+          "metadata": null,
+          "timestamp": "2025-09-30T19:46:55.920687+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CvAIAdHtim9OPzB57DtZbUiUbZbOCW+3uIh2/1RXghJ6JOI6aas8A+KkqmBnnfwUcHUIHI88LpL8xxK45edaaDW+DjTqdMtE3NjJeB+Dyx1Tm3oNiTDd5lYucxsj5jKGS/SRiNLO/WM0cR+J3iG1QgwnIZnayL6xclrQQrzLgV6YsEwmaJML7P0uQbohOfylgpOLmQpKXB9PgzIMrueXycG+Qz+pGn5Tap+tWCYCkqMO6aZ81PfnyZob4+N3oepoVkrHwy/4BNxE/cUfp9/LSh2Ejq/AX0Kqav0YyocITu4qWE9nUERirnYs+efXaZE3voNSnhpqNbRYKBNy8+S7M+YlJzd6WKwSt6b9/G2I2iYIdMrIETQUqfrD/WDYNOyW59FDjrIfoDrEX9vUk4s4lJd19+ZRinfLvdXK7V5+IzE+5suKw8d8v+PIzm7CPwvXCqsstsXdBvNEjL5SlSkMbPrugrWUQpEzWe0YgI3AwJ4QYTHDBLiPfYqqQ+eTfn7CLSp2e5MXdOFB9dnQNMIBO+Kux3YNWNZ6aodbRFcvaOUmph9r5xciHUUwaFn1y3G9vlr7xvWmb/SKWL2qQAJeqHK0ZZ6U+KN2u9qOmmTaorjUX6WIy/BeBio6T58pkTX653mn0JhHwZBHpaN99GNj5M0/miq/u20b//XAbFZoMCvi9IIgUD0mp3dukv9/GlP9XCFU+EK2OL2CItdXayGRXRPr8xuydIwj8QHZPqMU6EwnbFRRj1i9dgJ6uYOZvFs1FQXgvYrEaAEZekwlL3/+vtP8DWzNlxVIPwbxMpX8tYVU769TNFHFneuorI7+mkfJapYvM1IICkktAzPlRckh2CG/ADhrpHnBN6WBsS2Udbxtqyz/5Lc76ceuLnoWZHxK1Br2KQg2bT//+wFdJlRSJg5jBGSrXpppYxmFjhb6SYulmjQBIRXK3NjPQVDUp2reH/NOCiuY8J71GFYnigjLPF65c7AAIAt+FRo9rGjJiU3FUTJJk2x/CJ5qhYjoG1Me+umlD2OAkxVtUhINFjXbhJmKlRsGmzYZNRxcYk5fSoziTxYiNBmCOD8dwZy5PCm1G1Y9ZEnpyzh8MzhC2qSwp6qzerebuaHlDZtvvPz9Odsbew08H8S4wvMn4E/Wf5h+hVnFOQJ2aV3v1p1G0LKRPsoPbFNpIu7/vw9ocOqhdBNRn1be0NUkelyiS7XKuKm9Bo0668jxD1bv0YKVwO0H847i6BLlIFJ9l5DDfTY5lYhDiyr/GfGHpX/cWrjXlgywOT2eo0x1vUk8ut7YazzvFrijYDFCR3L9yh1KngchZ+KF14/9Jo1ziFPCx5iq0kfArMS0zWoqCYn9MYcz9J+KdPBsPuPty1qW0DP7pD2AXgX4A3qT9aaBxRolKHEkFSfPENCMar0LqpqsuS4fLl1p9zlLo+wjp+Tyap1KPMJOOcBEx0059ieWsST5GYREGe6MH5TVKjMUAxiE4oyzmyeNcW87XKA45jumb4xj3+IThymvDBo=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Compared to YOLO models, Segment Anything Model (SAM) variants (like SAM-b, SAM2-t, MobileSAM, and FastSAM-s) are generally larger and slower, but they offer distinct advantages in zero-shot segmentation capabilities.\n\nFor instance, Ultralytics YOLOv8n-seg is **11.7 times smaller** and **1069 times faster** than Meta's original SAM-b model. Newer models like YOLO11n-seg also maintain a smaller size and impressive inference speed.\n\nHere's a breakdown of when to choose one over the other:\n\n*   **Choose YOLO models** when your application requires rapid, lightweight, and computationally efficient segmentation.\n*   **Choose SAM models** when you need flexible, promptable, and zero-shot segmentation capabilities.\n\n[SAM Models](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2770,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 439,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 237,
+          "text_prompt_tokens": 2770
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:47:00.355196+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "tDPcaNWJML65kdUP25jUqAI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

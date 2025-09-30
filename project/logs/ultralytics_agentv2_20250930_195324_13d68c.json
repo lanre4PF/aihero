@@ -1,0 +1,157 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What are the main differences between YOLOv8 and previous YOLO versions, and which computer vision tasks does YOLOv8 support?",
+          "timestamp": "2025-09-30T19:53:19.515913+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CpsDAdHtim9eSoasvJ9PISI1TrUR1ZDiCzfd6MJesJlMQDW4wsBYr9ItdgU84Wa3QFr3rzrXgPLTx+bsljq4x2Yg9vB8uveNuzw1cxfGc30p6ABozgAZU4H/KkLUwVWSihkHmnW0KvCFJV8RsArIIW9kkQaxJ0ulpkgjehbXnKKCQlR/T4fWTB8KhtHGEx4CNlHD1G8JpylqdzZyQE2xKKbW/5zax95cRF6/DRtMwCA3YDWfOsnk+HEjKZD6yDwSf49OINU4KtVNxfikRS26mLImSG+AxwrCBf2QV3d7pMo8aAQLFVwjlaSSYpkYXTV9PR4FKw33UGoT5XlRt/JTYTHnAxRSZr/aBdTe0sBFavIn0QSzioZWpuxGDur6RAoYPWePF7mTO8mNQQgythGeAiABfX3KWz/TS+Y8ZgYWtluInD1zyb97185iiY/oBzmsY8WrXKGyngkpZPsY1sOTh9jNxqkSYlX+QBXP7iTYeUNk/0eqoJOiElyZxckIDNxv1/3tHYH0s8WMMRzcDKxrKp2e9rdljN9lAqFwBhR8",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "YOLOv8 differences from previous versions and supported tasks"
+          },
+          "tool_call_id": "pyd_ai_ed31f139fb4c4fbfbde15b9169b14894",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 266,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 115,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 90,
+          "text_prompt_tokens": 266
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:53:20.914087+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "MTXcaKvtGs3NvdIP0MGMwAs",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 21000,
+              "chunk": "ble. YOLOv8 models are provided under [AGPL-3.0](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) and [Enterprise](https://www.ultralytics.com/license) licenses.\n\n## FAQ\n\n### What is YOLOv8 and how does it differ from previous YOLO versions?\n\nYOLOv8 is designed to improve real-time object detection performance with advanced features. Unlike earlier versions, YOLOv8 incorporates an **anchor-free split Ultralytics head**, state-of-the-art [backbone](https://www.ultralytics.com/glossary/backbone) and neck architectures, and offers optimized [accuracy](https://www.ultralytics.com/glossary/accuracy)-speed tradeoff, making it ideal for diverse applications. For more details, check the [Overview](#overview) and [Key Features](#key-features-of-yolov8) sections.\n\n### How can I use YOLOv8 for different computer vision tasks?\n\nYOLOv8 supports a wide range of computer vision tasks, including object detection, instance segmentation, pose/keypoints detection, oriented object detection, and classification. Each model variant is optimized for its specific task and compatible with various operational modes like [Inference](../modes/predict.md), [Validation](../modes/val.md), [Training](../modes/train.md), and [Export](../modes/export.md). Refer to the [Supported Tasks and Modes](#supported-tasks-and-modes) section for more information.\n\n### What are the performance metrics for YOLOv8 models?\n\nYOLOv8 models achieve state-of-the-art performance across various benchmarking datasets. For instance, the YOLOv8n model achieves a mAP (mean Average Precision) of 37.3 on the COCO dataset and a speed of 0.99 ms on A100 TensorRT. Detailed performance metrics for each model variant across different tasks and datasets can be found in the [Performance Metrics](#performance-metrics) section.\n\n### How do I train a YOLOv8 model?\n\nTraining a YOLOv8 model can be done using either Python or CLI. Below are examples for training a model using a COCO-pretrained YOLOv8 model on the COCO8 datase",
+              "comments": true,
+              "description": "Discover Ultralytics YOLOv8, an advancement in real-time object detection, optimizing performance with an array of pre-trained models for diverse tasks.",
+              "keywords": "YOLOv8, real-time object detection, YOLO series, Ultralytics, computer vision, advanced object detection, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolov8.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Explore Ultralytics YOLOv8\n\n## Overview\n\nYOLOv8 was released by Ultralytics on January 10th, 2023, offering cutting-edge performance in terms of accuracy and speed. Building upon the advancements of previous YOLO versions, YOLOv8 introduced new features and optimizations that make it an ideal choice for various [object detection](https://www.ultralytics.com/blog/a-guide-to-deep-dive-into-object-detection-in-2025) tasks in a wide range of applications.\n\n![Ultralytics YOLOv8](https://github.com/ultralytics/docs/releases/download/0/yolov8-comparison-plots.avif)\n\n<p align=\"center\">\n  <br>\n  <iframe loading=\"lazy\" width=\"720\" height=\"405\" src=\"https://www.youtube.com/embed/Na0HvJ4hkk0\"\n    title=\"YouTube video player\" frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong> Ultralytics YOLOv8 Model Overview\n</p>\n\n## Key Features of YOLOv8\n\n- **Advanced Backbone and Neck Architectures:** YOLOv8 employs state-of-the-art backbone and neck architectures, resulting in improved [feature extraction](https://www.ultralytics.com/glossary/feature-extraction) and [object detection](https://www.ultralytics.com/glossary/object-detection) performance.\n- **Anchor-free Split Ultralytics Head:** YOLOv8 adopts an anchor-free split Ultralytics head, which contributes to better accuracy and a more efficient detection process compared to anchor-based approaches.\n- **Optimized Accuracy-Speed Tradeoff:** With a focus on maintaining an optimal balance between accuracy and speed, YOLOv8 is suitable for real-time object detection tasks in diverse application areas.\n- **Variety of Pre-trained Models:** YOLOv8 offers a range of pre-trained models to cater to various tasks and performance requirements, making it easier to find the right model for your specific use case.\n\n## Supported Tasks and Modes\n\nThe YOLOv8 series offers a diverse range of models, each specia",
+              "comments": true,
+              "description": "Discover Ultralytics YOLOv8, an advancement in real-time object detection, optimizing performance with an array of pre-trained models for diverse tasks.",
+              "keywords": "YOLOv8, real-time object detection, YOLO series, Ultralytics, computer vision, advanced object detection, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolov8.md"
+            },
+            {
+              "start": 20000,
+              "chunk": " models. We focus on advancing the technology and making it easier to use, rather than producing static documentation. For the most up-to-date information on YOLO architecture, features, and usage, please refer to our [GitHub repository](https://github.com/ultralytics/ultralytics) and [documentation](https://docs.ultralytics.com/).\n\nIf you use the YOLOv8 model or any other software from this repository in your work, please cite it using the following format:\n\n!!! quote \"\"\n\n    === \"BibTeX\"\n\n        ```bibtex\n        @software{yolov8_ultralytics,\n          author = {Glenn Jocher and Ayush Chaurasia and Jing Qiu},\n          title = {Ultralytics YOLOv8},\n          version = {8.0.0},\n          year = {2023},\n          url = {https://github.com/ultralytics/ultralytics},\n          orcid = {0000-0001-5950-6979, 0000-0002-7603-6750, 0000-0003-3783-7069},\n          license = {AGPL-3.0}\n        }\n        ```\n\nPlease note that the DOI is pending and will be added to the citation once it is available. YOLOv8 models are provided under [AGPL-3.0](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) and [Enterprise](https://www.ultralytics.com/license) licenses.\n\n## FAQ\n\n### What is YOLOv8 and how does it differ from previous YOLO versions?\n\nYOLOv8 is designed to improve real-time object detection performance with advanced features. Unlike earlier versions, YOLOv8 incorporates an **anchor-free split Ultralytics head**, state-of-the-art [backbone](https://www.ultralytics.com/glossary/backbone) and neck architectures, and offers optimized [accuracy](https://www.ultralytics.com/glossary/accuracy)-speed tradeoff, making it ideal for diverse applications. For more details, check the [Overview](#overview) and [Key Features](#key-features-of-yolov8) sections.\n\n### How can I use YOLOv8 for different computer vision tasks?\n\nYOLOv8 supports a wide range of computer vision tasks, including object detection, instance segmentation, pose/keypoints detection, oriented object detection, ",
+              "comments": true,
+              "description": "Discover Ultralytics YOLOv8, an advancement in real-time object detection, optimizing performance with an array of pre-trained models for diverse tasks.",
+              "keywords": "YOLOv8, real-time object detection, YOLO series, Ultralytics, computer vision, advanced object detection, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolov8.md"
+            },
+            {
+              "start": 22000,
+              "chunk": "and classification. Each model variant is optimized for its specific task and compatible with various operational modes like [Inference](../modes/predict.md), [Validation](../modes/val.md), [Training](../modes/train.md), and [Export](../modes/export.md). Refer to the [Supported Tasks and Modes](#supported-tasks-and-modes) section for more information.\n\n### What are the performance metrics for YOLOv8 models?\n\nYOLOv8 models achieve state-of-the-art performance across various benchmarking datasets. For instance, the YOLOv8n model achieves a mAP (mean Average Precision) of 37.3 on the COCO dataset and a speed of 0.99 ms on A100 TensorRT. Detailed performance metrics for each model variant across different tasks and datasets can be found in the [Performance Metrics](#performance-metrics) section.\n\n### How do I train a YOLOv8 model?\n\nTraining a YOLOv8 model can be done using either Python or CLI. Below are examples for training a model using a COCO-pretrained YOLOv8 model on the COCO8 dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch):\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a COCO-pretrained YOLOv8n model\n        model = YOLO(\"yolov8n.pt\")\n\n        # Train the model on the COCO8 example dataset for 100 epochs\n        results = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        yolo train model=yolov8n.pt data=coco8.yaml epochs=100 imgsz=640\n        ```\n\nFor further details, visit the [Training](../modes/train.md) documentation.\n\n### Can I benchmark YOLOv8 models for performance?\n\nYes, YOLOv8 models can be benchmarked for performance in terms of speed and accuracy across various export formats. You can use PyTorch, ONNX, TensorRT, and more for benchmarking. Below are example commands for benchmarking using Python and CLI:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics.utils.benchmarks import benchmark\n\n        ",
+              "comments": true,
+              "description": "Discover Ultralytics YOLOv8, an advancement in real-time object detection, optimizing performance with an array of pre-trained models for diverse tasks.",
+              "keywords": "YOLOv8, real-time object detection, YOLO series, Ultralytics, computer vision, advanced object detection, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolov8.md"
+            },
+            {
+              "start": 1000,
+              "chunk": "ackbone and Neck Architectures:** YOLOv8 employs state-of-the-art backbone and neck architectures, resulting in improved [feature extraction](https://www.ultralytics.com/glossary/feature-extraction) and [object detection](https://www.ultralytics.com/glossary/object-detection) performance.\n- **Anchor-free Split Ultralytics Head:** YOLOv8 adopts an anchor-free split Ultralytics head, which contributes to better accuracy and a more efficient detection process compared to anchor-based approaches.\n- **Optimized Accuracy-Speed Tradeoff:** With a focus on maintaining an optimal balance between accuracy and speed, YOLOv8 is suitable for real-time object detection tasks in diverse application areas.\n- **Variety of Pre-trained Models:** YOLOv8 offers a range of pre-trained models to cater to various tasks and performance requirements, making it easier to find the right model for your specific use case.\n\n## Supported Tasks and Modes\n\nThe YOLOv8 series offers a diverse range of models, each specialized for specific tasks in computer vision. These models are designed to cater to various requirements, from object detection to more complex tasks like [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation), pose/keypoints detection, oriented object detection, and classification.\n\nEach variant of the YOLOv8 series is optimized for its respective task, ensuring high performance and accuracy. Additionally, these models are compatible with various operational modes including [Inference](../modes/predict.md), [Validation](../modes/val.md), [Training](../modes/train.md), and [Export](../modes/export.md), facilitating their use in different stages of deployment and development.\n\n| Model       | Filenames                                                                                                      | Task                                         | Inference | Validation | Training | Export |\n| ----------- | --------------------------------------------------",
+              "comments": true,
+              "description": "Discover Ultralytics YOLOv8, an advancement in real-time object detection, optimizing performance with an array of pre-trained models for diverse tasks.",
+              "keywords": "YOLOv8, real-time object detection, YOLO series, Ultralytics, computer vision, advanced object detection, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolov8.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_ed31f139fb4c4fbfbde15b9169b14894",
+          "metadata": null,
+          "timestamp": "2025-09-30T19:53:20.960956+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CvEEAdHtim9vMDbwzamkITk/XluTt3auXaN2j4W4zMckpEsfjtaN6/brkGZk94IpNkJesR9cGPGxexPM+4wdNbPYoWSNNycygYJINl3tAmXMvDnYWsHvguJBd8SFOwUyhrXkshQWQ6cpRLftTpoy1EjLzbOhQ61gWQWRgNWK1Ub3W04otCX+kBSNrhSKVl0dF+xuZFWTjJ6Uyr1VMRaaPeq9TDt48W4mgmO+R27gsWSljxWCyvqKxmhsqlqBzG5tk+U0rM7pMnACUzpq8hU2T3C9Inuf76IKG5iCg4feN1Yb43+6RV74pPTr7nu6PlYX+0s58kutvkccM4WQ9Fdb1zNlNZ0Cq8dkXisLpgPAVyGVjvEJBD0YhxHJccrnm26PASYWSr6RQToo32IAlit4YZYFLb9DoqVTLbE2n5YMNt7gG2ksPUqGI/J4iNZfRiIZhTAMi+nx6jmlT7gxj+WTXl+K0P/qa7hxk2d864laCuqio33hess72a0QC5sA6mggeRldnGA8eBmjOGvcYQMFm1LPC19Vk4ZLIbQzbQEO9h8F9BWTWOQjxg+lVXE4fdOo+kSnMt0Zjeh9+AK2KSOAIH3LRPuS0RZVm3RLqr+WO4ebweoYeAlLeDmYy95nzs2+ANOSgAUZCTJrgL+7ergbveaqcwoESL+7rEQ5Cp61Pe1BS6eS3//EoScrVZ74DUjeN4sSks+aAF95js2h6f/dF0NbSv88yNgrFhcRf5JSvO0SBcjtlC/jvAcKnMRi1s63gCFNJXkDAg3CkjZWpMGchJ+dZ1igPjLKVIz27ZtgXR6kR+/c3p0eTGy1mYOCLFNbPcG93A==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "YOLOv8 introduces several key differences from previous YOLO versions, including an **anchor-free split Ultralytics head**, state-of-the-art **backbone and neck architectures**, and an **optimized accuracy-speed tradeoff** for real-time object detection performance.\n\nYOLOv8 supports a wide range of computer vision tasks:\n*   Object detection\n*   Instance segmentation\n*   Pose/keypoints detection\n*   Oriented object detection\n*   Classification\n\nEach model variant is optimized for its specific task and is compatible with various operational modes such as Inference, Validation, Training, and Export.\n\nReference: [Explore Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics/blob/main/docs/en/models/yolov8.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3449,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 298,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 129,
+          "text_prompt_tokens": 3449
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:53:24.283426+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "NDXcaNa8L96MvdIP0pGLkAQ",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

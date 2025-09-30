@@ -1,0 +1,237 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "How can I effectively visualize and analyze the results of my YOLO11 training sessions using DVCLive's integration with DVC plots?",
+          "timestamp": "2025-09-30T20:00:31.554782+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CokCAdHtim/BYgtNi4+jR3nLPnCcz8SBVLmg9d4M0/Z8DumO3L7mKmFjF8rVB7eeyMSzBc5s28xlgY9blrRUYiur7fhGLCTrBEhMdIBifZLlzXALYI27cRV4PT+48Hg7BX6Ax+jIMgE6QVQkofI4+x3guG1TLV8jAH5b5gKvLT6Nkd490GgMat4z3EiQNx0o8Sda0AezLLiUS1gWUzLC47MCSb+/yU9vMn/LCsBPz3UlS8l3NhhKQieyiXuCon0/52lTNGsnQ53I8lPoRLKg3pjNcW0Xvwnw5znoJv/qV67sdwX9i7za+QtnP5w/GQs0rVuceZ4a1y7zIgdhwkiwhV4t5OwnpQSyM3In4A==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "DVCLive DVC plots YOLOv8 visualize analyze training results"
+          },
+          "tool_call_id": "pyd_ai_0a4b714c235e4b6daa91ef178735a254",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 269,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 76,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 49,
+          "text_prompt_tokens": 269
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:00:32.886504+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "4TbcaN-BE43unsEPoKqZQQ",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 12000,
+              "chunk": "ges**: Use `pip install ultralytics dvclive`.\n2. **Initialize Git Repository**: Run `git init -q`.\n3. **Setup DVCLive**: Execute `dvc init -q`.\n4. **Commit to Git**: Use `git commit -m \"DVC init\"`.\n\nThese steps ensure proper version control and setup for experiment tracking. For in-depth configuration details, visit our [Configuration guide](../quickstart.md).\n\n### How do I visualize YOLO11 experiment results using DVCLive?\n\nDVCLive offers powerful tools to visualize the results of YOLO11 experiments. Here's how you can generate comparative plots:\n\n!!! example \"Generate Comparative Plots\"\n\n    === \"CLI\"\n\n        ```bash\n        dvc plots diff $(dvc exp list --names-only)\n        ```\n\nTo display these plots in a Jupyter Notebook, use:\n\n```python\nfrom IPython.display import HTML\n\n# Display plots as HTML\nHTML(filename=\"./dvc_plots/index.html\")\n```\n\nThese visualizations help identify trends and optimize model performance. Check our detailed guides on [YOLO11 Experiment Analysis](#analyzing-results) for comprehensive steps and examples.",
+              "comments": true,
+              "description": "Unlock seamless YOLO11 tracking with DVCLive. Discover how to log, visualize, and analyze experiments for optimized ML model performance.",
+              "keywords": "YOLO11, DVCLive, experiment tracking, machine learning, model training, data visualization, Git integration",
+              "filename": "ultralytics-main/docs/en/integrations/dvc.md"
+            },
+            {
+              "start": 7000,
+              "chunk": "especially helpful to compare the performance of different models over various training runs.\n\n```bash\n# Generate DVC comparative plots\ndvc plots diff $(dvc exp list --names-only)\n```\n\nAfter executing this command, DVC generates plots comparing the metrics across different experiments, which are saved as HTML files. Below is an example image illustrating typical plots generated by this process. The image showcases various graphs, including those representing mAP, [recall](https://www.ultralytics.com/glossary/recall), [precision](https://www.ultralytics.com/glossary/precision), loss values, and more, providing a visual overview of key performance metrics:\n\n<p align=\"center\">\n  <img width=\"640\" src=\"https://github.com/ultralytics/docs/releases/download/0/dvclive-comparative-plots.avif\" alt=\"DVCLive Plots\">\n</p>\n\n### Displaying DVC Plots\n\nIf you are using a Jupyter Notebook and you want to display the generated DVC plots, you can use the IPython display functionality.\n\n```python\nfrom IPython.display import HTML\n\n# Display the DVC plots as HTML\nHTML(filename=\"./dvc_plots/index.html\")\n```\n\nThis code will render the HTML file containing the DVC plots directly in your Jupyter Notebook, providing an easy and convenient way to analyze the visualized experiment data.\n\n### Making Data-Driven Decisions\n\nUse the insights gained from these visualizations to make informed decisions about model optimizations, [hyperparameter tuning](https://www.ultralytics.com/glossary/hyperparameter-tuning), and other modifications to enhance your model's performance.\n\n### Iterating on Experiments\n\nBased on your analysis, iterate on your experiments. Adjust model configurations, training parameters, or even the data inputs, and repeat the training and analysis process. This iterative approach is key to refining your model for the best possible performance.\n\n## Summary\n\nThis guide has led you through the process of integrating DVCLive with Ultralytics' YOLO11. You have learned how to harness the po",
+              "comments": true,
+              "description": "Unlock seamless YOLO11 tracking with DVCLive. Discover how to log, visualize, and analyze experiments for optimized ML model performance.",
+              "keywords": "YOLO11, DVCLive, experiment tracking, machine learning, model training, data visualization, Git integration",
+              "filename": "ultralytics-main/docs/en/integrations/dvc.md"
+            },
+            {
+              "start": 11000,
+              "chunk": " analyzing the results effectively. Example code for loading and displaying experiment data:\n\n```python\nimport dvc.api\nimport pandas as pd\n\n# Define columns of interest\ncolumns = [\"Experiment\", \"epochs\", \"imgsz\", \"model\", \"metrics.mAP50-95(B)\"]\n\n# Retrieve experiment data\ndf = pd.DataFrame(dvc.api.exp_show(), columns=columns)\n\n# Clean data\ndf.dropna(inplace=True)\ndf.reset_index(drop=True, inplace=True)\n\n# Display DataFrame\nprint(df)\n```\n\nTo visualize results interactively, use Plotly's parallel coordinates plot:\n\n```python\nfrom plotly.express import parallel_coordinates\n\nfig = parallel_coordinates(df, columns, color=\"metrics.mAP50-95(B)\")\nfig.show()\n```\n\nRefer to our guide on [YOLO11 Training with DVCLive](#yolo11-training-with-dvclive) for more examples and best practices.\n\n### What are the steps to configure my environment for DVCLive and YOLO11 integration?\n\nTo configure your environment for a smooth integration of DVCLive and YOLO11, follow these steps:\n\n1. **Install Required Packages**: Use `pip install ultralytics dvclive`.\n2. **Initialize Git Repository**: Run `git init -q`.\n3. **Setup DVCLive**: Execute `dvc init -q`.\n4. **Commit to Git**: Use `git commit -m \"DVC init\"`.\n\nThese steps ensure proper version control and setup for experiment tracking. For in-depth configuration details, visit our [Configuration guide](../quickstart.md).\n\n### How do I visualize YOLO11 experiment results using DVCLive?\n\nDVCLive offers powerful tools to visualize the results of YOLO11 experiments. Here's how you can generate comparative plots:\n\n!!! example \"Generate Comparative Plots\"\n\n    === \"CLI\"\n\n        ```bash\n        dvc plots diff $(dvc exp list --names-only)\n        ```\n\nTo display these plots in a Jupyter Notebook, use:\n\n```python\nfrom IPython.display import HTML\n\n# Display plots as HTML\nHTML(filename=\"./dvc_plots/index.html\")\n```\n\nThese visualizations help identify trends and optimize model performance. Check our detailed guides on [YOLO11 Experiment Analysis](#analyzing",
+              "comments": true,
+              "description": "Unlock seamless YOLO11 tracking with DVCLive. Discover how to log, visualize, and analyze experiments for optimized ML model performance.",
+              "keywords": "YOLO11, DVCLive, experiment tracking, machine learning, model training, data visualization, Git integration",
+              "filename": "ultralytics-main/docs/en/integrations/dvc.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Advanced YOLO11 Experiment Tracking with DVCLive\n\nExperiment tracking in [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) is critical to model development and evaluation. It involves recording and analyzing various parameters, metrics, and outcomes from numerous training runs. This process is essential for understanding model performance and making data-driven decisions to refine and optimize models.\n\nIntegrating DVCLive with [Ultralytics YOLO11](https://www.ultralytics.com/) transforms the way experiments are tracked and managed. This integration offers a seamless solution for automatically logging key experiment details, comparing results across different runs, and visualizing data for in-depth analysis. In this guide, we'll understand how DVCLive can be used to streamline the process.\n\n## DVCLive\n\n<p align=\"center\">\n  <img width=\"640\" src=\"https://github.com/ultralytics/docs/releases/download/0/dvclive-overview.avif\" alt=\"DVCLive Overview\">\n</p>\n\n[DVCLive](https://dvc.org/doc/dvclive), developed by DVC, is an innovative open-source tool for experiment tracking in machine learning. Integrating seamlessly with Git and DVC, it automates the logging of crucial experiment data like model parameters and training metrics. Designed for simplicity, DVCLive enables effortless comparison and analysis of multiple runs, enhancing the efficiency of machine learning projects with intuitive [data visualization](https://www.ultralytics.com/glossary/data-visualization) and analysis tools.\n\n## YOLO11 Training with DVCLive\n\nYOLO11 training sessions can be effectively monitored with DVCLive. Additionally, DVC provides integral features for visualizing these experiments, including the generation of a report that enables the comparison of metric plots across all tracked experiments, offering a comprehensive view of the training process.\n\n## Installation\n\nTo install the required packages, run:\n\n!!! tip \"Installation\"\n\n    === \"CLI\"\n\n        ```bash\n        ",
+              "comments": true,
+              "description": "Unlock seamless YOLO11 tracking with DVCLive. Discover how to log, visualize, and analyze experiments for optimized ML model performance.",
+              "keywords": "YOLO11, DVCLive, experiment tracking, machine learning, model training, data visualization, Git integration",
+              "filename": "ultralytics-main/docs/en/integrations/dvc.md"
+            },
+            {
+              "start": 9000,
+              "chunk": "wer of DVCLive for detailed experiment monitoring, effective visualization, and insightful analysis in your machine learning endeavors.\n\nFor further details on usage, visit [DVCLive's official documentation](https://dvc.org/doc/dvclive/ml-frameworks/yolo).\n\nAdditionally, explore more integrations and capabilities of Ultralytics by visiting the [Ultralytics integration guide page](../integrations/index.md), which is a collection of great resources and insights.\n\n## FAQ\n\n### How do I integrate DVCLive with Ultralytics YOLO11 for experiment tracking?\n\nIntegrating DVCLive with Ultralytics YOLO11 is straightforward. Start by installing the necessary packages:\n\n!!! example \"Installation\"\n\n    === \"CLI\"\n\n        ```bash\n        pip install ultralytics dvclive\n        ```\n\nNext, initialize a Git repository and configure DVCLive in your project:\n\n!!! example \"Initial Environment Setup\"\n\n    === \"CLI\"\n\n        ```bash\n        git init -q\n        git config --local user.email \"you@example.com\"\n        git config --local user.name \"Your Name\"\n        dvc init -q\n        git commit -m \"DVC init\"\n        ```\n\nFollow our [YOLO11 Installation guide](../quickstart.md) for detailed setup instructions.\n\n### Why should I use DVCLive for tracking YOLO11 experiments?\n\nUsing DVCLive with YOLO11 provides several advantages, such as:\n\n- **Automated Logging**: DVCLive automatically records key experiment details like model parameters and metrics.\n- **Easy Comparison**: Facilitates comparison of results across different runs.\n- **Visualization Tools**: Leverages DVCLive's robust data visualization capabilities for in-depth analysis.\n\nFor further details, refer to our guide on [YOLO11 Model Training](../modes/train.md) and [YOLO Performance Metrics](../guides/yolo-performance-metrics.md) to maximize your experiment tracking efficiency.\n\n### How can DVCLive improve my results analysis for YOLO11 training sessions?\n\nAfter completing your YOLO11 training sessions, DVCLive helps in visualizing and",
+              "comments": true,
+              "description": "Unlock seamless YOLO11 tracking with DVCLive. Discover how to log, visualize, and analyze experiments for optimized ML model performance.",
+              "keywords": "YOLO11, DVCLive, experiment tracking, machine learning, model training, data visualization, Git integration",
+              "filename": "ultralytics-main/docs/en/integrations/dvc.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_0a4b714c235e4b6daa91ef178735a254",
+          "metadata": null,
+          "timestamp": "2025-09-30T20:00:32.954527+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CtIFAdHtim9yNZJAdSi9MXuTrsc3K4F2wEVWDWvM5RczRJUXC2RaPhHlsWKR/2765/FEoRd+fqDGjMFHFl5iKiwGo8ScA+mEHrUWkU4h8syhqWboFjskYozDb6rGa4r5/UOu7548NZiC2bpMUJBi2rwxm7K1lqHTCuVEFXmYqCnd7D+V3PIvXJkgYPs0JzR8IYZZn8rt+UWqvtN3N5EZJ4Ty1JXe7tuTvSj4PdblGZyE3V4svrWsPoSnaKx7Pd3ADJAiFrSzOLxxO9wCxubX+ItC7PW1wEp05fCk97b78EQ3SdlU8+w5FAum998O75R4wlYAp48lbKMCaQtA10G0pdYly0SLTdrzt9c33CA9YWg/WMSW1sr67UqAJ+cVlWO4kTCHwDBnduKJ0Pp8Lr04lt/sKJFb3TqCL9UglW2BmYMbZmJI/Q5ixJ3gvqlQNwvtncoXIKXH8SY+lBPfW/x2Qn3tsx8+eiJsLJ7mrMbP7xu6cSk7qhvSL5uwij8chGgxFKGSJXQ4zL8HuCs+ebzDPzhtkWAAHExqEmoMS1WWZdJeWbqywhq/tdHCCiYmCmvS0WzhC1+FcpGOKkb2Rfkun5Msn/jYfHkdskawVflyd7gNPsaUmSdPoU99wlF1dKvlvQrgX2CXL3bxxXBTUcOM7g3Fj26LtvVoQrk+BLOPXmbOKqDkr4nWgNTjnenbAbDu6p7JoXj9P44oERNfOT6qQ8NXFN2rBl+QfZ2dVcZWsOfgqHkGu7nxMNZNEz7oiXo9aB+NuXZEeqBmsULPlADO41En6ncKR4mo6wLNt/7rgbpT7by94DvLM5wJS3a41eIdvPWsVCgoL5XnTDruUO2EU6w5lgQR3j1mrkWHOUNHQGjnmf+eT0v2FuUW2CjUOVqQaGJgLtdFXnh7wy2xQ0bfZRDtjwI1ZZj+pDYn3sJNmagwdjnwvU5K7PoW+4PK+lFS1BCuJRs=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "To effectively visualize and analyze the results of your YOLOv8 (referred to as YOLO11 in the documentation) training sessions using DVCLive's integration with DVC plots, follow these steps:\n\n### 1. Setup Your Environment\n\nBefore you start, ensure you have the necessary packages installed and your environment is configured:\n\n1.  **Install Required Packages**:\n    ",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\n    pip install ultralytics dvclive\n    ```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n2.  **Initialize Git Repository**:\n    ",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\n    git init -q\n    ```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n3.  **Setup DVCLive**:\n    ",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\n    dvc init -q\n    ```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n4.  **Commit to Git**:\n    ",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\n    git commit -m \"DVC init\"\n    ```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n    These steps ensure proper version control and setup for experiment tracking.\n\n### 2. Generate Comparative Plots\n\nAfter your training runs, you can generate comparative plots to visualize the metrics across different experiments. This is particularly helpful for comparing the performance of various models over different training runs.\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\ndvc plots diff $(dvc exp list --names-only)\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nThis command generates plots comparing metrics such as mAP, recall, precision, and loss values across your tracked experiments, saving them as HTML files.\n\n### 3. Display DVC Plots in Jupyter Notebook\n\nIf you are working in a Jupyter Notebook, you can display the generated DVC plots directly:\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```python\nfrom IPython.display import HTML\n\n# Display the DVC plots as HTML\nHTML(filename=\"./dvc_plots/index.html\")\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nThis will render the HTML file containing the DVC plots within your notebook, offering a convenient way to analyze your visualized experiment data.\n\n### 4. Programmatic Analysis and Interactive Visualization\n\nFor more in-depth programmatic analysis, you can retrieve experiment data and visualize it interactively.\n\nTo load and display experiment data using `dvc.api` and `pandas`:\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```python\nimport dvc.api\nimport pandas as pd\n\n# Define columns of interest\ncolumns = [\"Experiment\", \"epochs\", \"imgsz\", \"model\", \"metrics.mAP50-95(B)\"]\n\n# Retrieve experiment data\ndf = pd.DataFrame(dvc.api.exp_show(), columns=columns)\n\n# Clean data\ndf.dropna(inplace=True)\ndf.reset_index(drop=True, inplace=True)\n\n# Display DataFrame\nprint(df)\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nTo visualize results interactively using Plotly's parallel coordinates plot:\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```python\nfrom plotly.express import parallel_coordinates\n\nfig = parallel_coordinates(df, columns, color=\"metrics.mAP50-95(B)\")\nfig.show()\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nThese visualizations help you identify trends and optimize model performance, allowing you to make data-driven decisions about model optimizations, hyperparameter tuning, and other modifications.\n\nFor more detailed information, refer to the [Advanced YOLOv8 Experiment Tracking with DVCLive](https://github.com/ultralytics/ultralytics/blob/main/docs/en/integrations/dvc.md) guide.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3138,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 826,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 144,
+          "text_prompt_tokens": 3138
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:00:40.905855+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "6TbcaJXPFpHmnsEPl8an4AI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

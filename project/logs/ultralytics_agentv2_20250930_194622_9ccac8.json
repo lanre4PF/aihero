@@ -1,0 +1,275 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "How can I train a YOLO11 model to detect animals using the African Wildlife Dataset, and where can I find its YAML configuration?",
+          "timestamp": "2025-09-30T19:45:18.584490+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Co0IAdHtim8zDarj1zHV5cDYtaufOgXc3UsyHqPIbvNKJxmzHRJ4ucTSlsIj4mIeX5RNMMAFG3KdmpajJ4O/lGMxLRX1FjDpEfeZro4U5R2P9ZykBIpFZzm/1MTPsyKqSNGe0EDsxOb4eA8VH1S0JC5dnxoYHO6kGh9Dlcg1RxA+UzFx+0L54mRdur/ZE/E+REUWin80cfJQ38KxiYWyyLuzqLaItOcf3mKRTSH4u/axqVW9Xf274Uvqo0iGdy/+xFCPwrXn8na32veA8e8mnvynEZUKmvVbwEeIcPpm2itF1Ep7YJWM1e617z6IpFVWaKnJgvSSki6JG2qCZ6ORQpRqMlLr77zvk8Czwhm7ee7F2vjHK/rC78x8sYvuu/zFFTibBnMRllxwOg79QOIh/UOCJntrOeALj+iKIfne+J4pLWmVcfLAkikzLV2aWN5b52U/WAnBX9oDv/4RsuojZgEGp3reQxgXuY4LNHgTCRJtMbDhVKujoFUoom0EKw6c/T64UAZ7X4hht0muOz6Qo8hOxMB4EbglZtbeVgaRYkuXKM3VOHSbosFO2ukHMXyuoFoMSYhL2mBO3g2RN7hdO6CrSc57Ox8soNA/OTT1DwEHhoPBP6CRlQ3Dqiw02QHMPU/SSkfIjIck1S2tdVhcb9bz2CXFkvz8yWqxDxVPE8YbH2ePA/PJ0dPCKPLqdLBi+f30uq43ffnShmMXl/BLry2Z30YP6TGzKdBBXZe13fyI7ERmnGIZNn66yQqI24a4Wk3g281zebd+5VV42Q8jI9SfGIlwAUVcviTK+mE/ynbGhkPQGPZJw5nR67gljlX6rj7XeleLjeev+9rfztq2kwrcb2flk3RtLROlIBV6sQRErny0teFNaOslvNqimNFleM66ODBLO8KtG9YoPTBlJoq8wTUditik0nzsN1K6hptE/XVB28HpjV1zk40ur1QZ5VwYD84fIr2hvJVSVgs/Jk7W6JQrUlRdfX7L54PGJN9hXHJiKyDUlhiAPNdSnwnOIdCdQWqHMNB7fQt5bxifzV14rfNPkNpQANVWDnTw7lk8XZLvzmRh74/Z/DdMl1UQhdFBxCsMg3++W7ljf+QoQtkkXlru4wFs/9N4MGHv8kITFNTT7mc89yQWTOO1GwnfZrsx82omrTSBpjlSHmeGwMJG7KZLQ2fHbsH2hRIkrTt/5W2gu3ImSZwM8Z4vDmYJ1GCybnW9rReJOLUhUhQxkWwSjlKjKPxDHBiPvcQi0eRx92Xy9dprgLHRmbi/n7Z55yJJ9Agcgz2BU9QSb404umJR3/7a9aeM3ClFo6Ahe8gCgXcH5G1aV7IOSOzMZNIJ0wcpbensgRdbNSgCEDv0cWGJ7uAAWJs30UDe4/IrXCE=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "YOLO11 model"
+          },
+          "tool_call_id": "pyd_ai_5ce70de8f04f4a0faaca2a09ade02bc5",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 268,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 240,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 221,
+          "text_prompt_tokens": 268
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:45:23.193803+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "UzPcaMXXG7zi7M8P9P3DMA",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 10000,
+              "chunk": "proved backbone and neck architecture, enhancing [feature extraction](https://www.ultralytics.com/glossary/feature-extraction) capabilities for more precise object detection.\n- **Optimized Efficiency and Speed:** Refined architectural designs and optimized training pipelines deliver faster processing speeds while maintaining a balance between accuracy and performance.\n- **Greater Accuracy with Fewer Parameters:** YOLO11m achieves higher mean Average [Precision](https://www.ultralytics.com/glossary/precision) (mAP) on the COCO dataset with 22% fewer parameters than YOLOv8m, making it computationally efficient without compromising accuracy.\n- **Adaptability Across Environments:** YOLO11 can be deployed across various environments, including edge devices, cloud platforms, and systems supporting NVIDIA GPUs.\n- **Broad Range of Supported Tasks:** YOLO11 supports diverse computer vision tasks such as object detection, [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation), image classification, pose estimation, and oriented object detection (OBB).\n\n### How do I train a YOLO11 model for object detection?\n\nTraining a YOLO11 model for object detection can be done using Python or CLI commands. Below are examples for both methods:\n\n!!! Example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a COCO-pretrained YOLO11n model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Train the model on the COCO8 example dataset for 100 epochs\n        results = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Load a COCO-pretrained YOLO11n model and train it on the COCO8 example dataset for 100 epochs\n        yolo train model=yolo11n.pt data=coco8.yaml epochs=100 imgsz=640\n        ```\n\nFor more detailed instructions, refer to the [Train](../modes/train.md) documentation.\n\n### What tasks can YOLO11 models perform?\n\nYOLO11 models are versatile and support a wide range ",
+              "comments": true,
+              "description": "Discover YOLO11, the latest advancement in state-of-the-art object detection, offering unmatched accuracy and efficiency for diverse computer vision tasks.",
+              "keywords": "YOLO11, state-of-the-art object detection, YOLO series, Ultralytics, computer vision, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolo11.md"
+            },
+            {
+              "start": 8000,
+              "chunk": "\"\n\n        CLI commands are available to directly run the models:\n\n        ```bash\n        # Load a COCO-pretrained YOLO11n model and train it on the COCO8 example dataset for 100 epochs\n        yolo train model=yolo11n.pt data=coco8.yaml epochs=100 imgsz=640\n\n        # Load a COCO-pretrained YOLO11n model and run inference on the 'bus.jpg' image\n        yolo predict model=yolo11n.pt source=path/to/bus.jpg\n        ```\n\n## Citations and Acknowledgements\n\n!!! tip \"Ultralytics YOLO11 Publication\"\n\n    Ultralytics has not published a formal research paper for YOLO11 due to the rapidly evolving nature of the models. We focus on advancing the technology and making it easier to use, rather than producing static documentation. For the most up-to-date information on YOLO architecture, features, and usage, please refer to our [GitHub repository](https://github.com/ultralytics/ultralytics) and [documentation](https://docs.ultralytics.com/).\n\nIf you use YOLO11 or any other software from this repository in your work, please cite it using the following format:\n\n!!! quote \"\"\n\n    === \"BibTeX\"\n\n        ```bibtex\n        @software{yolo11_ultralytics,\n          author = {Glenn Jocher and Jing Qiu},\n          title = {Ultralytics YOLO11},\n          version = {11.0.0},\n          year = {2024},\n          url = {https://github.com/ultralytics/ultralytics},\n          orcid = {0000-0001-5950-6979, 0000-0003-3783-7069},\n          license = {AGPL-3.0}\n        }\n        ```\n\nPlease note that the DOI is pending and will be added to the citation once it is available. YOLO11 models are provided under [AGPL-3.0](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) and [Enterprise](https://www.ultralytics.com/license) licenses.\n\n## FAQ\n\n### What are the key improvements in Ultralytics YOLO11 compared to previous versions?\n\nUltralytics YOLO11 introduces several significant advancements over its predecessors. Key improvements include:\n\n- **Enhanced Feature Extraction:** YOLO11 employs an im",
+              "comments": true,
+              "description": "Discover YOLO11, the latest advancement in state-of-the-art object detection, offering unmatched accuracy and efficiency for diverse computer vision tasks.",
+              "keywords": "YOLO11, state-of-the-art object detection, YOLO series, Ultralytics, computer vision, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolo11.md"
+            },
+            {
+              "start": 11000,
+              "chunk": "entation), image classification, pose estimation, and oriented object detection (OBB).\n\n### How do I train a YOLO11 model for object detection?\n\nTraining a YOLO11 model for object detection can be done using Python or CLI commands. Below are examples for both methods:\n\n!!! Example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a COCO-pretrained YOLO11n model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Train the model on the COCO8 example dataset for 100 epochs\n        results = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Load a COCO-pretrained YOLO11n model and train it on the COCO8 example dataset for 100 epochs\n        yolo train model=yolo11n.pt data=coco8.yaml epochs=100 imgsz=640\n        ```\n\nFor more detailed instructions, refer to the [Train](../modes/train.md) documentation.\n\n### What tasks can YOLO11 models perform?\n\nYOLO11 models are versatile and support a wide range of computer vision tasks, including:\n\n- **Object Detection:** Identifying and locating objects within an image.\n- **Instance Segmentation:** Detecting objects and delineating their boundaries.\n- **[Image Classification](https://www.ultralytics.com/glossary/image-classification):** Categorizing images into predefined classes.\n- **Pose Estimation:** Detecting and tracking keypoints on human bodies.\n- **Oriented Object Detection (OBB):** Detecting objects with rotation for higher precision.\n\nFor more information on each task, see the [Detection](../tasks/detect.md), [Instance Segmentation](../tasks/segment.md), [Classification](../tasks/classify.md), [Pose Estimation](../tasks/pose.md), and [Oriented Detection](../tasks/obb.md) documentation.\n\n### How does YOLO11 achieve greater accuracy with fewer parameters?\n\nYOLO11 achieves greater accuracy with fewer parameters through advancements in model design and optimization techniques. The improved architecture allows for efficient feature extr",
+              "comments": true,
+              "description": "Discover YOLO11, the latest advancement in state-of-the-art object detection, offering unmatched accuracy and efficiency for diverse computer vision tasks.",
+              "keywords": "YOLO11, state-of-the-art object detection, YOLO series, Ultralytics, computer vision, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolo11.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Ultralytics YOLO11\n\n## Overview\n\nYOLO11 is the latest iteration in the [Ultralytics](https://www.ultralytics.com/) YOLO series of real-time object detectors, redefining what's possible with cutting-edge [accuracy](https://www.ultralytics.com/glossary/accuracy), speed, and efficiency. Building upon the impressive advancements of previous YOLO versions, YOLO11 introduces significant improvements in architecture and training methods, making it a versatile choice for a wide range of [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) tasks.\n\n![Ultralytics YOLO11 Comparison Plots](https://raw.githubusercontent.com/ultralytics/assets/refs/heads/main/yolo/performance-comparison.png)\n\n<div style=\"text-align: center\">\n    <audio controls preload=\"none\" style=\"width:100%; max-width:1920px;\">\n      <source src=\"https://github.com/ultralytics/docs/releases/download/0/Ultralytics-YOLO11-podcast-notebook.LM.mp3\" type=\"audio/mpeg\">\n      Your browser does not support the audio element.\n    </audio>\n    <p>Ultralytics YOLO11 \ud83d\ude80 Podcast generated by <a href=\"https://notebooklm.google/\">NotebookLM</a></p>\n</div>\n\n<p align=\"center\">\n  <br>\n  <iframe loading=\"lazy\" width=\"720\" height=\"405\" src=\"https://www.youtube.com/embed/-JXwa-WlkU8\"\n    title=\"YouTube video player\" frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong> How to Use Ultralytics YOLO11 for Object Detection and Tracking | How to Benchmark | YOLO11 RELEASED\ud83d\ude80\n</p>\n\n## Key Features\n\n- **Enhanced Feature Extraction:** YOLO11 employs an improved [backbone](https://www.ultralytics.com/glossary/backbone) and neck architecture, which enhances [feature extraction](https://www.ultralytics.com/glossary/feature-extraction) capabilities for more precise object detection and complex task performance.\n- **Optimized for Efficiency and Speed:** YOLO11 introduces refined archit",
+              "comments": true,
+              "description": "Discover YOLO11, the latest advancement in state-of-the-art object detection, offering unmatched accuracy and efficiency for diverse computer vision tasks.",
+              "keywords": "YOLO11, state-of-the-art object detection, YOLO series, Ultralytics, computer vision, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolo11.md"
+            },
+            {
+              "start": 7000,
+              "chunk": "port.md) docs pages.\n\nNote that the example below is for YOLO11 [Detect](../tasks/detect.md) models for [object detection](https://www.ultralytics.com/glossary/object-detection). For additional supported tasks, see the [Segment](../tasks/segment.md), [Classify](../tasks/classify.md), [OBB](../tasks/obb.md), and [Pose](../tasks/pose.md) docs.\n\n!!! example\n\n    === \"Python\"\n\n        [PyTorch](https://www.ultralytics.com/glossary/pytorch) pretrained `*.pt` models as well as configuration `*.yaml` files can be passed to the `YOLO()` class to create a model instance in Python:\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a COCO-pretrained YOLO11n model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Train the model on the COCO8 example dataset for 100 epochs\n        results = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n\n        # Run inference with the YOLO11n model on the 'bus.jpg' image\n        results = model(\"path/to/bus.jpg\")\n        ```\n\n    === \"CLI\"\n\n        CLI commands are available to directly run the models:\n\n        ```bash\n        # Load a COCO-pretrained YOLO11n model and train it on the COCO8 example dataset for 100 epochs\n        yolo train model=yolo11n.pt data=coco8.yaml epochs=100 imgsz=640\n\n        # Load a COCO-pretrained YOLO11n model and run inference on the 'bus.jpg' image\n        yolo predict model=yolo11n.pt source=path/to/bus.jpg\n        ```\n\n## Citations and Acknowledgements\n\n!!! tip \"Ultralytics YOLO11 Publication\"\n\n    Ultralytics has not published a formal research paper for YOLO11 due to the rapidly evolving nature of the models. We focus on advancing the technology and making it easier to use, rather than producing static documentation. For the most up-to-date information on YOLO architecture, features, and usage, please refer to our [GitHub repository](https://github.com/ultralytics/ultralytics) and [documentation](https://docs.ultralytics.com/).\n\nIf you use YOLO11 or any other software from this repos",
+              "comments": true,
+              "description": "Discover YOLO11, the latest advancement in state-of-the-art object detection, offering unmatched accuracy and efficiency for diverse computer vision tasks.",
+              "keywords": "YOLO11, state-of-the-art object detection, YOLO series, Ultralytics, computer vision, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolo11.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_5ce70de8f04f4a0faaca2a09ade02bc5",
+          "metadata": null,
+          "timestamp": "2025-09-30T19:45:23.280567+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CvIEAdHtim9WOTkaBk1F0V1IAEf5kJ0j3JpNXf/0wRchegeq04oDZGNaM/eEysWjua88Nfc6qaBWsWa595juXqDFyDuo2F/zYHDmSMLQuYO3JW7m+3C/hNPX77QxUJD1Aa6Lgx6N35Rdn1B9YQvcbnOwR3yieLSIVNkzVK00H+FJ99VoMkJy8P67cnTKNW6Ci4D92UTUCwm9fmzZNN3giU9bwlo5KrHbqY38mrdyq0fZWjf/n3xb8v867Dg4YRinlyXA9+8VdE3t3wrkKiaBb3ReDZ5/+yweus3kEJ74qcHkd1WiyeKhBkQFAmROMeqKDD2rxB3Goc+ukkL9b7x1MmUg6QU1lNv+biW6ggAl/J+vbK4EnTRah2/rUho0NY+bM6bUr4j99vffp0k/LZq9Pd/Dsv0hiVgVjTuMmLsKX1c7ajHXyB1+1xG3WETCcdnfmWW763hxDyVbkCOmPCLMI0R6Wb4mpcMM5F6rgIZrNf9w06LP0kj9oIJ5eDSQIAiXA+Lwm3TGKEMGVz2K4+C+mrhhUCRdLnxVRrAyHMD8YRIfdpcMriGSO9Lds4Lmc5fWKg/s6MgtY9fAuKsk0zkhnNJUDmsugSemieuhPHwkZOQi+VDfEwEBt6O+bp8WuJaXsDIZBL540nb889297WJMHL9pO2lcWO28+OZFco5kCOXC3ekkKh4Ut2kfk9F8yGLJsCawyCSsTXn0d+wL5ieb/ey+DxtsbWPdG4F8LcVwgWj8j9G7CzWFQbIDVnxnBaG6T3ZcWzhoi7bXilFdP1dX5rZ9xotFnUVJG1vvZDsx0VilAWxCKrxH5FL4cf0clHe9fF4AkHc=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "African Wildlife Dataset YOLO custom dataset YAML"
+          },
+          "tool_call_id": "pyd_ai_5940a9868c154f4cb8a7d192829a3386",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3668,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 152,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 131,
+          "text_prompt_tokens": 3668
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:45:28.828354+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "VzPcaLpXueGewQ_koIZR",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 5000,
+              "chunk": "ects?\n\nThe African Wildlife Dataset includes images of four common animal species found in South African nature reserves: buffalo, elephant, rhino, and zebra. It is a valuable resource for training computer vision algorithms in object detection and animal identification. The dataset supports various tasks like object tracking, research, and conservation efforts. For more information on its structure and applications, refer to the [Dataset Structure](#dataset-structure) section and [Applications](#applications) of the dataset.\n\n### How do I train a YOLO11 model using the African Wildlife Dataset?\n\nYou can train a YOLO11 model on the African Wildlife Dataset by using the `african-wildlife.yaml` configuration file. Below is an example of how to train the YOLO11n model for 100 epochs with an image size of 640:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"yolo11n.pt\")  # load a pretrained model (recommended for training)\n\n        # Train the model\n        results = model.train(data=\"african-wildlife.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Start training from a pretrained *.pt model\n        yolo detect train data=african-wildlife.yaml model=yolo11n.pt epochs=100 imgsz=640\n        ```\n\nFor additional training parameters and options, refer to the [Training](../../modes/train.md) documentation.\n\n### Where can I find the YAML configuration file for the African Wildlife Dataset?\n\nThe YAML configuration file for the African Wildlife Dataset, named `african-wildlife.yaml`, can be found at [this GitHub link](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/african-wildlife.yaml). This file defines the dataset configuration, including paths, classes, and other details crucial for training [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models. See the [Dataset YAML](#dataset-yaml) section for m",
+              "comments": true,
+              "description": "Explore our African Wildlife Dataset featuring images of buffalo, elephant, rhino, and zebra for training computer vision models. Ideal for research and conservation.",
+              "keywords": "African Wildlife Dataset, South African animals, object detection, computer vision, YOLO11, wildlife research, conservation, dataset",
+              "filename": "ultralytics-main/docs/en/datasets/detect/african-wildlife.md"
+            },
+            {
+              "start": 2000,
+              "chunk": "her pertinent details. For the African wildlife dataset, the `african-wildlife.yaml` file is located at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/african-wildlife.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/african-wildlife.yaml).\n\n!!! example \"ultralytics/cfg/datasets/african-wildlife.yaml\"\n\n    ```yaml\n    --8<-- \"ultralytics/cfg/datasets/african-wildlife.yaml\"\n    ```\n\n## Usage\n\nTo train a YOLO11n model on the African wildlife dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, use the provided code samples. For a comprehensive list of available parameters, refer to the model's [Training](../../modes/train.md) page.\n\n!!! example \"Train Example\"\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"yolo11n.pt\")  # load a pretrained model (recommended for training)\n\n        # Train the model\n        results = model.train(data=\"african-wildlife.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Start training from a pretrained *.pt model\n        yolo detect train data=african-wildlife.yaml model=yolo11n.pt epochs=100 imgsz=640\n        ```\n\n!!! example \"Inference Example\"\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"path/to/best.pt\")  # load a brain-tumor fine-tuned model\n\n        # Inference using the model\n        results = model.predict(\"https://ultralytics.com/assets/african-wildlife-sample.jpg\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Start prediction with a finetuned *.pt model\n        yolo detect predict model='path/to/best.pt' imgsz=640 source=\"https://ultralytics.com/assets/african-wildlife-sample.jpg\"\n        ```\n\n## Sample Images and Annotations\n\nThe African wildlife dataset comprises a wide variety of images showcasing diverse animal species and their ",
+              "comments": true,
+              "description": "Explore our African Wildlife Dataset featuring images of buffalo, elephant, rhino, and zebra for training computer vision models. Ideal for research and conservation.",
+              "keywords": "African Wildlife Dataset, South African animals, object detection, computer vision, YOLO11, wildlife research, conservation, dataset",
+              "filename": "ultralytics-main/docs/en/datasets/detect/african-wildlife.md"
+            },
+            {
+              "start": 6000,
+              "chunk": "ded for training)\n\n        # Train the model\n        results = model.train(data=\"african-wildlife.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Start training from a pretrained *.pt model\n        yolo detect train data=african-wildlife.yaml model=yolo11n.pt epochs=100 imgsz=640\n        ```\n\nFor additional training parameters and options, refer to the [Training](../../modes/train.md) documentation.\n\n### Where can I find the YAML configuration file for the African Wildlife Dataset?\n\nThe YAML configuration file for the African Wildlife Dataset, named `african-wildlife.yaml`, can be found at [this GitHub link](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/african-wildlife.yaml). This file defines the dataset configuration, including paths, classes, and other details crucial for training [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models. See the [Dataset YAML](#dataset-yaml) section for more details.\n\n### Can I see sample images and annotations from the African Wildlife Dataset?\n\nYes, the African Wildlife Dataset includes a wide variety of images showcasing diverse animal species in their natural habitats. You can view sample images and their corresponding annotations in the [Sample Images and Annotations](#sample-images-and-annotations) section. This section also illustrates the use of mosaicing technique to combine multiple images into one for enriched batch diversity, enhancing the model's generalization ability.\n\n### How can the African Wildlife Dataset be used to support wildlife conservation and research?\n\nThe African Wildlife Dataset is ideal for supporting wildlife conservation and research by enabling the training and evaluation of models to identify African wildlife in different habitats. These models can assist in [monitoring animal populations](https://docs.ultralytics.com/solutions/), studying their behavior, and recognizing conservation needs. Additionall",
+              "comments": true,
+              "description": "Explore our African Wildlife Dataset featuring images of buffalo, elephant, rhino, and zebra for training computer vision models. Ideal for research and conservation.",
+              "keywords": "African Wildlife Dataset, South African animals, object detection, computer vision, YOLO11, wildlife research, conservation, dataset",
+              "filename": "ultralytics-main/docs/en/datasets/detect/african-wildlife.md"
+            },
+            {
+              "start": 4000,
+              "chunk": "natural habitats. Below are examples of images from the dataset, each accompanied by its corresponding annotations.\n\n![African wildlife dataset sample image](https://github.com/ultralytics/docs/releases/download/0/african-wildlife-dataset-sample.avif)\n\n- **Mosaiced Image**: Here, we present a training batch consisting of mosaiced dataset images. Mosaicing, a training technique, combines multiple images into one, enriching batch diversity. This method helps enhance the model's ability to generalize across different object sizes, aspect ratios, and contexts.\n\nThis example illustrates the variety and complexity of images in the African wildlife dataset, emphasizing the benefits of including mosaicing during the training process.\n\n## Citations and Acknowledgments\n\nThe dataset has been released available under the [AGPL-3.0 License](https://github.com/ultralytics/ultralytics/blob/main/LICENSE).\n\n## FAQ\n\n### What is the African Wildlife Dataset, and how can it be used in computer vision projects?\n\nThe African Wildlife Dataset includes images of four common animal species found in South African nature reserves: buffalo, elephant, rhino, and zebra. It is a valuable resource for training computer vision algorithms in object detection and animal identification. The dataset supports various tasks like object tracking, research, and conservation efforts. For more information on its structure and applications, refer to the [Dataset Structure](#dataset-structure) section and [Applications](#applications) of the dataset.\n\n### How do I train a YOLO11 model using the African Wildlife Dataset?\n\nYou can train a YOLO11 model on the African Wildlife Dataset by using the `african-wildlife.yaml` configuration file. Below is an example of how to train the YOLO11n model for 100 epochs with an image size of 640:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"yolo11n.pt\")  # load a pretrained model (recommen",
+              "comments": true,
+              "description": "Explore our African Wildlife Dataset featuring images of buffalo, elephant, rhino, and zebra for training computer vision models. Ideal for research and conservation.",
+              "keywords": "African Wildlife Dataset, South African animals, object detection, computer vision, YOLO11, wildlife research, conservation, dataset",
+              "filename": "ultralytics-main/docs/en/datasets/detect/african-wildlife.md"
+            },
+            {
+              "start": 3000,
+              "chunk": "esults = model.train(data=\"african-wildlife.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Start training from a pretrained *.pt model\n        yolo detect train data=african-wildlife.yaml model=yolo11n.pt epochs=100 imgsz=640\n        ```\n\n!!! example \"Inference Example\"\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"path/to/best.pt\")  # load a brain-tumor fine-tuned model\n\n        # Inference using the model\n        results = model.predict(\"https://ultralytics.com/assets/african-wildlife-sample.jpg\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Start prediction with a finetuned *.pt model\n        yolo detect predict model='path/to/best.pt' imgsz=640 source=\"https://ultralytics.com/assets/african-wildlife-sample.jpg\"\n        ```\n\n## Sample Images and Annotations\n\nThe African wildlife dataset comprises a wide variety of images showcasing diverse animal species and their natural habitats. Below are examples of images from the dataset, each accompanied by its corresponding annotations.\n\n![African wildlife dataset sample image](https://github.com/ultralytics/docs/releases/download/0/african-wildlife-dataset-sample.avif)\n\n- **Mosaiced Image**: Here, we present a training batch consisting of mosaiced dataset images. Mosaicing, a training technique, combines multiple images into one, enriching batch diversity. This method helps enhance the model's ability to generalize across different object sizes, aspect ratios, and contexts.\n\nThis example illustrates the variety and complexity of images in the African wildlife dataset, emphasizing the benefits of including mosaicing during the training process.\n\n## Citations and Acknowledgments\n\nThe dataset has been released available under the [AGPL-3.0 License](https://github.com/ultralytics/ultralytics/blob/main/LICENSE).\n\n## FAQ\n\n### What is the African Wildlife Dataset, and how can it be used in computer vision proj",
+              "comments": true,
+              "description": "Explore our African Wildlife Dataset featuring images of buffalo, elephant, rhino, and zebra for training computer vision models. Ideal for research and conservation.",
+              "keywords": "African Wildlife Dataset, South African animals, object detection, computer vision, YOLO11, wildlife research, conservation, dataset",
+              "filename": "ultralytics-main/docs/en/datasets/detect/african-wildlife.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_5940a9868c154f4cb8a7d192829a3386",
+          "metadata": null,
+          "timestamp": "2025-09-30T19:45:28.893205+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CtcEAdHtim9Cw/h9ZSwRbbIrvBcXAxMaTgBixxDOCXmvSVdBrKelwDA09ZN/lHx5BF2MWmksjLKhNHYd7xcLZJR4TDxzhSLBNQASsBi3QGKWkWbQr6S/BAI+KZ+Jh1XgXR62paiC1o3xAjmM0ttPhg9owqyJdXjC1g4OJcpwKnyWJSrdO5ZjvXDhOwMnRwLe+pYJZutuFN1jmRT4T8SrUapq3AO29BcLLPCXGsypZetTfg1MuAW8ikccSaZeDPqCfd39J8O2/oICLq84HB5P5RAKhJRnZEfhUhDwHD4ZNrltKtO4tTqxfU/gWHCk42KvewHRG/1/miXvjuoAJ+3d1hkXFDpJ1CMxRbjoSnIHh/jA1Z1VUo3Rv1XhjbI72Sv4ItwoHRkNJ8jnAvmNYqCM5uG1sz5wlJkSAtkCNXperkbyswiELRKfA6zn2T0+i56u/OCi4Ld3HHUOlE1QYib12RDpzjCPjOqtgtDDv83U/AfCRbxZ6WSF2Oertoi8V1nMc2JwObgbwHl2PT8EpGMPAeFn9CX3618P+y4M/crXFcsRQXzFPnlGu8p9Zp0c5Np1Mmp0OtvmXG3LsgY3cyVj/xZehN5Lbmqqx1rVmyFDJWCn2ZVS/uPayHmeTYeOgiJvLFhs6eIucLtXDsYbbLRki6KTi0PaUNOsOQ0u7rbbd0/5386I3EZnWKx31Nkd3AWAT8TTuFAHIkuEaULbyeT2V4pPc4LWOJTu8TnTRhvQpt6XxY8DNIOy3kaka7gz95piXovhsIvW2MvDksWgCFLWKua2b61wyDqytNY=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "You can train a YOLO11 model to detect animals using the African Wildlife Dataset by utilizing the `african-wildlife.yaml` configuration file.\n\nThe African Wildlife Dataset includes images of four common animal species found in South African nature reserves: buffalo, elephant, rhino, and zebra. This dataset is valuable for training computer vision algorithms for object detection and animal identification.\n\nHere's how you can train a YOLO11 model using the African Wildlife Dataset:\n\n**Python:**\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```python\nfrom ultralytics import YOLO\n\n# Load a pretrained YOLO11n model (recommended for training)\nmodel = YOLO(\"yolo11n.pt\")\n\n# Train the model on the African Wildlife Dataset for 100 epochs with an image size of 640\nresults = model.train(data=\"african-wildlife.yaml\", epochs=100, imgsz=640)\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\n**CLI:**\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\n# Start training from a pretrained *.pt model\nyolo detect train data=african-wildlife.yaml model=yolo11n.pt epochs=100 imgsz=640\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nThe YAML configuration file for the African Wildlife Dataset, named `african-wildlife.yaml`, can be found at the following GitHub link: [african-wildlife.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/african-wildlife.yaml)\n\nFor more detailed instructions and additional training parameters, you can refer to the Ultralytics documentation on [YOLO11](https://github.com/ultralytics/ultralytics/blob/main/ultralytics-main/docs/en/models/yolo11.md) and the [African Wildlife Dataset](https://github.com/ultralytics/ultralytics/blob/main/ultralytics-main/docs/en/datasets/detect/african-wildlife.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 6827,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 3668,
+        "output_tokens": 550,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "cached_content_tokens": 3668,
+          "thoughts_tokens": 126,
+          "text_prompt_tokens": 6827,
+          "text_cache_tokens": 3668
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:46:22.218648+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "hzPcaObgF6Pl7M8PyIrPgQM",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

@@ -1,0 +1,148 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What are the essential dependencies required to perform YOLOv8 inference using LibTorch in a C++ environment, and where can I find them?",
+          "timestamp": "2025-09-30T20:02:15.737613+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CtUCAdHtim9hDSF3JSFE1MlFdAO4geaC4tJELIs+UFzzs7pcErAqEBqB3Fz2DnhOygr46t+/QBNT0Eom6ucXMjWHpUAGQFNVUYCHUryIA24TZCLWBPl0I+EdWGS6sUKhp+1auWXe55+Iajdf4sqpzhGEMbWAlgUKpzYXNritDUs/3fyQfK0T2g5pR0jWxO3CCdoIVaFbF1qBM5SHMulCW0MGc1YYMmnxL154xtkyyjWoieWj65LBtqtrXmR8kd6iU0IVIU0zICb4XfFiuPBXvS1E/LTnJOFe9HN+wiowkg6EZ4hXsR/7dqG1imG0hfM5mEZRY944ss7Bb3H4TktKp1qLlqpVBRScOOcrz4LUn6jvWE+8lmlxg//KsgnO6wYLoYwceAaGQiH0oHWLekxKHFLPvOvPNOTxN6+QiGiiJcxS7hzueOjQW2gNVSxkY9i8Y1dX867UTWw=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "YOLOv8 inference LibTorch C++ dependencies"
+          },
+          "tool_call_id": "pyd_ai_4b0cb76e9e494c4a90b2864957a14cd3",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 269,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 93,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 69,
+          "text_prompt_tokens": 269
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:02:18.160467+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "SjfcaJqJJNubkdUPo67JMQ",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "chunk": "# YOLOv8 LibTorch Inference C++\n\nThis example demonstrates how to perform inference using [Ultralytics YOLOv8](https://docs.ultralytics.com/models/yolov8/) models in C++ with the [LibTorch (PyTorch C++ API)](https://docs.pytorch.org/cppdocs/). This allows for deploying YOLOv8 models in C++ environments for efficient execution.\n\n## \u2699\ufe0f Dependencies\n\nEnsure you have the following dependencies installed before proceeding:\n\n| Dependency   | Version  | Resource                                     |\n| :----------- | :------- | :------------------------------------------- |\n| OpenCV       | >=4.0.0  | [https://opencv.org/](https://opencv.org/)   |\n| C++ Standard | >=17     | [https://isocpp.org/](https://isocpp.org/)   |\n| CMake        | >=3.18   | [https://cmake.org/](https://cmake.org/)     |\n| Libtorch     | >=1.12.1 | [https://pytorch.org/](https://pytorch.org/) |\n\nYou can download the required version of LibTorch from the official [PyTorch](https://pytorch.org/) website. Make sure to select the correct version corresponding to your system and CUDA version (if using GPU).\n\n## \ud83d\ude80 Usage\n\nFollow these steps to run the C++ inference example:\n\n1.  **Clone the Ultralytics Repository:**\n    Use [Git](https://git-scm.com/) to clone the repository containing the example code and necessary files.\n\n    ```bash\n    git clone https://github.com/ultralytics/ultralytics\n    ```\n\n2.  **Install Ultralytics:**\n    Navigate to the cloned directory and install the `ultralytics` package using [pip](https://pip.pypa.io/en/stable/). This step is necessary for exporting the model. Refer to the [Ultralytics Quickstart Guide](https://docs.ultralytics.com/quickstart/) for detailed installation instructions.\n\n    ```bash\n    cd ultralytics\n    pip install .\n    ```\n\n3.  **Navigate to the Example Directory:**\n    Change the directory to the C++ LibTorch inference example.\n\n    ```bash\n    cd examples/YOLOv8-LibTorch-CPP-Inference\n    ```\n\n4.  **Build the Project:**\n    Create a build directory, use ",
+              "filename": "ultralytics-main/examples/YOLOv8-LibTorch-CPP-Inference/README.md"
+            },
+            {
+              "start": 1000,
+              "chunk": "ct the correct version corresponding to your system and CUDA version (if using GPU).\n\n## \ud83d\ude80 Usage\n\nFollow these steps to run the C++ inference example:\n\n1.  **Clone the Ultralytics Repository:**\n    Use [Git](https://git-scm.com/) to clone the repository containing the example code and necessary files.\n\n    ```bash\n    git clone https://github.com/ultralytics/ultralytics\n    ```\n\n2.  **Install Ultralytics:**\n    Navigate to the cloned directory and install the `ultralytics` package using [pip](https://pip.pypa.io/en/stable/). This step is necessary for exporting the model. Refer to the [Ultralytics Quickstart Guide](https://docs.ultralytics.com/quickstart/) for detailed installation instructions.\n\n    ```bash\n    cd ultralytics\n    pip install .\n    ```\n\n3.  **Navigate to the Example Directory:**\n    Change the directory to the C++ LibTorch inference example.\n\n    ```bash\n    cd examples/YOLOv8-LibTorch-CPP-Inference\n    ```\n\n4.  **Build the Project:**\n    Create a build directory, use [CMake](https://cmake.org/) to configure the project, and then compile it using [Make](https://www.gnu.org/software/make/). You might need to specify the path to your LibTorch and OpenCV installations if they are not found automatically by CMake.\n\n    ```bash\n    mkdir build\n    cd build\n    cmake .. # Add -DCMAKE_PREFIX_PATH=/path/to/libtorch;/path/to/opencv if needed\n    make\n    ```\n\n5.  **Run the Inference:**\n    Execute the compiled binary. The application will load the exported YOLOv8 model and perform inference on a sample image (`zidane.jpg` included in the root `ultralytics` directory) or video.\n    ```bash\n    ./yolov8_libtorch_inference\n    ```\n\n## \u2728 Exporting Ultralytics YOLOv8\n\nTo use an Ultralytics YOLOv8 model with LibTorch, you first need to export it to the [TorchScript](https://docs.pytorch.org/docs/stable/jit.html) format. TorchScript is a way to create serializable and optimizable models from PyTorch code.\n\nUse the `yolo` [Command Line Interface (CLI)](https://docs.",
+              "filename": "ultralytics-main/examples/YOLOv8-LibTorch-CPP-Inference/README.md"
+            },
+            {
+              "start": 2000,
+              "chunk": "[CMake](https://cmake.org/) to configure the project, and then compile it using [Make](https://www.gnu.org/software/make/). You might need to specify the path to your LibTorch and OpenCV installations if they are not found automatically by CMake.\n\n    ```bash\n    mkdir build\n    cd build\n    cmake .. # Add -DCMAKE_PREFIX_PATH=/path/to/libtorch;/path/to/opencv if needed\n    make\n    ```\n\n5.  **Run the Inference:**\n    Execute the compiled binary. The application will load the exported YOLOv8 model and perform inference on a sample image (`zidane.jpg` included in the root `ultralytics` directory) or video.\n    ```bash\n    ./yolov8_libtorch_inference\n    ```\n\n## \u2728 Exporting Ultralytics YOLOv8\n\nTo use an Ultralytics YOLOv8 model with LibTorch, you first need to export it to the [TorchScript](https://docs.pytorch.org/docs/stable/jit.html) format. TorchScript is a way to create serializable and optimizable models from PyTorch code.\n\nUse the `yolo` [Command Line Interface (CLI)](https://docs.ultralytics.com/usage/cli/) provided by the `ultralytics` package to export the model. For example, to export the `yolov8s.pt` model with an input image size of 640x640:\n\n```bash\nyolo export model=yolov8s.pt imgsz=640 format=torchscript\n```\n\nThis command will generate a `yolov8s.torchscript` file in the model's directory. This file contains the serialized model that can be loaded and executed by the C++ application using LibTorch. For more details on exporting models to various formats, see the [Ultralytics Export documentation](https://docs.ultralytics.com/modes/export/).\n\n## \ud83e\udd1d Contributing\n\nContributions to enhance this example or add new features are welcome! Please see the [Ultralytics Contributing Guide](https://docs.ultralytics.com/help/contributing/) for guidelines on how to contribute to the project. Thank you for helping make Ultralytics YOLO the best Vision AI tool!",
+              "filename": "ultralytics-main/examples/YOLOv8-LibTorch-CPP-Inference/README.md"
+            },
+            {
+              "start": 21000,
+              "chunk": "ble. YOLOv8 models are provided under [AGPL-3.0](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) and [Enterprise](https://www.ultralytics.com/license) licenses.\n\n## FAQ\n\n### What is YOLOv8 and how does it differ from previous YOLO versions?\n\nYOLOv8 is designed to improve real-time object detection performance with advanced features. Unlike earlier versions, YOLOv8 incorporates an **anchor-free split Ultralytics head**, state-of-the-art [backbone](https://www.ultralytics.com/glossary/backbone) and neck architectures, and offers optimized [accuracy](https://www.ultralytics.com/glossary/accuracy)-speed tradeoff, making it ideal for diverse applications. For more details, check the [Overview](#overview) and [Key Features](#key-features-of-yolov8) sections.\n\n### How can I use YOLOv8 for different computer vision tasks?\n\nYOLOv8 supports a wide range of computer vision tasks, including object detection, instance segmentation, pose/keypoints detection, oriented object detection, and classification. Each model variant is optimized for its specific task and compatible with various operational modes like [Inference](../modes/predict.md), [Validation](../modes/val.md), [Training](../modes/train.md), and [Export](../modes/export.md). Refer to the [Supported Tasks and Modes](#supported-tasks-and-modes) section for more information.\n\n### What are the performance metrics for YOLOv8 models?\n\nYOLOv8 models achieve state-of-the-art performance across various benchmarking datasets. For instance, the YOLOv8n model achieves a mAP (mean Average Precision) of 37.3 on the COCO dataset and a speed of 0.99 ms on A100 TensorRT. Detailed performance metrics for each model variant across different tasks and datasets can be found in the [Performance Metrics](#performance-metrics) section.\n\n### How do I train a YOLOv8 model?\n\nTraining a YOLOv8 model can be done using either Python or CLI. Below are examples for training a model using a COCO-pretrained YOLOv8 model on the COCO8 datase",
+              "comments": true,
+              "description": "Discover Ultralytics YOLOv8, an advancement in real-time object detection, optimizing performance with an array of pre-trained models for diverse tasks.",
+              "keywords": "YOLOv8, real-time object detection, YOLO series, Ultralytics, computer vision, advanced object detection, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolov8.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Explore Ultralytics YOLOv8\n\n## Overview\n\nYOLOv8 was released by Ultralytics on January 10th, 2023, offering cutting-edge performance in terms of accuracy and speed. Building upon the advancements of previous YOLO versions, YOLOv8 introduced new features and optimizations that make it an ideal choice for various [object detection](https://www.ultralytics.com/blog/a-guide-to-deep-dive-into-object-detection-in-2025) tasks in a wide range of applications.\n\n![Ultralytics YOLOv8](https://github.com/ultralytics/docs/releases/download/0/yolov8-comparison-plots.avif)\n\n<p align=\"center\">\n  <br>\n  <iframe loading=\"lazy\" width=\"720\" height=\"405\" src=\"https://www.youtube.com/embed/Na0HvJ4hkk0\"\n    title=\"YouTube video player\" frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong> Ultralytics YOLOv8 Model Overview\n</p>\n\n## Key Features of YOLOv8\n\n- **Advanced Backbone and Neck Architectures:** YOLOv8 employs state-of-the-art backbone and neck architectures, resulting in improved [feature extraction](https://www.ultralytics.com/glossary/feature-extraction) and [object detection](https://www.ultralytics.com/glossary/object-detection) performance.\n- **Anchor-free Split Ultralytics Head:** YOLOv8 adopts an anchor-free split Ultralytics head, which contributes to better accuracy and a more efficient detection process compared to anchor-based approaches.\n- **Optimized Accuracy-Speed Tradeoff:** With a focus on maintaining an optimal balance between accuracy and speed, YOLOv8 is suitable for real-time object detection tasks in diverse application areas.\n- **Variety of Pre-trained Models:** YOLOv8 offers a range of pre-trained models to cater to various tasks and performance requirements, making it easier to find the right model for your specific use case.\n\n## Supported Tasks and Modes\n\nThe YOLOv8 series offers a diverse range of models, each specia",
+              "comments": true,
+              "description": "Discover Ultralytics YOLOv8, an advancement in real-time object detection, optimizing performance with an array of pre-trained models for diverse tasks.",
+              "keywords": "YOLOv8, real-time object detection, YOLO series, Ultralytics, computer vision, advanced object detection, AI, machine learning, deep learning",
+              "filename": "ultralytics-main/docs/en/models/yolov8.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_4b0cb76e9e494c4a90b2864957a14cd3",
+          "metadata": null,
+          "timestamp": "2025-09-30T20:02:18.219308+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CrwCAdHtim9RO7vHw/Fi5uSQEEdjjeCvG7o/PYs6Krx4lpWKiMZ/YRfgRcAmdLG2Jcjs/kc0bFdVbYjiqrItFz3rIx+pkBqkitzSBeL8cVzkLWKHBA6Q1HSFapgA+ZxpNDDs4+aaf5ByMyNXT6YQnYTt+fQhAjR6tfLTF67vRI1lvouSMKjau9T4l3beauBMHTh9Y7QHIsnSqR+3qwJWDemeCnTzbZ0Z/261W2M7nrsLYvkWtiFInDfSpV5zqRc61k2bTdWmkZguGHgblhdvg6yJqYBmaQj2SLVZyM1zlbsfY8qbgcmSi0+e0Kh6mYUI+mY4hoIoI/EOmLceZqyOi5wHd3YsAoMA3i+nzy199TVHekpL7Estya33kn9DVfBGuK1A/mloA3WFKb1F3gsGc+R1DDSLVMYl03tUcOUMOA==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "To perform YOLOv8 inference using LibTorch in a C++ environment, you will need the following essential dependencies:\n\n| Dependency   | Version  | Resource                                     |\n| :----------- | :------- | :------------------------------------------- |\n| OpenCV       | `>=4.0.0`  | [https://opencv.org/](https://opencv.org/)   |\n| C++ Standard | `>=17`     | [https://isocpp.org/](https://isocpp.org/)   |\n| CMake        | `>=3.18`   | [https://cmake.org/](https://cmake.org/)     |\n| Libtorch     | `>=1.12.1` | [https://pytorch.org/](https://pytorch.org/) |\n\nYou can download the required version of LibTorch from the official [PyTorch website](https://pytorch.org/). Make sure to select the correct version corresponding to your system and CUDA version (if using a GPU).\n\nReference: [YOLOv8 LibTorch Inference C++](https://github.com/ultralytics/ultralytics/blob/main/examples/YOLOv8-LibTorch-CPP-Inference/README.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3372,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 334,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 70,
+          "text_prompt_tokens": 3372
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:02:22.456779+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "TjfcaLDVO5ekkdUPgP7wwAI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

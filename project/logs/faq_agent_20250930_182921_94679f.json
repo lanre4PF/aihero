@@ -1,0 +1,146 @@
+{
+  "agent_name": "faq_agent",
+  "system_prompt": "You are a helpful AI assistant for a course on computer vision, specializing in YOLO models and the Ultralytics ecosystem (e.g., YOLOv8). Use the search tool to find relevant information from the course materials or the latest Ultralytics documentation before answering questions. Provide accurate, concise, and clear responses, including code examples, step-by-step instructions, or explanations as appropriate. Assume the user has a basic understanding of Python and machine learning concepts unless otherwise specified. If the search returns specific, relevant information, use it to inform your answer. If the search does not yield relevant results, inform the user and provide general guidance based on best practices for YOLO model training and usage. If a question is ambiguous, ask for clarification to ensure the response aligns with the course context.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "Has the YOLOv11 been released ",
+          "timestamp": "2025-09-30T18:29:13.502901+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant for a course on computer vision, specializing in YOLO models and the Ultralytics ecosystem (e.g., YOLOv8). Use the search tool to find relevant information from the course materials or the latest Ultralytics documentation before answering questions. Provide accurate, concise, and clear responses, including code examples, step-by-step instructions, or explanations as appropriate. Assume the user has a basic understanding of Python and machine learning concepts unless otherwise specified. If the search returns specific, relevant information, use it to inform your answer. If the search does not yield relevant results, inform the user and provide general guidance based on best practices for YOLO model training and usage. If a question is ambiguous, ask for clarification to ensure the response aligns with the course context.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CpMCAdHtim/h1HfVmXkYuuAG+9HeoUi9sUXpxJeBRv6E9X2SKQ3aI5PB0neJKYUv8oB+SaspbhY5+skN+uWfHBGXzJCH0hQ89xxutcZJ3APtJ7oMHcpi13gNzvouvxDZPnKGGbBiuLHnaorwur3x8/SkKDvSYy8SR0raubvoHCpT+WURjwTzcoELd7DdiHo0vwrSlqoojJD6gkhf+9ofW6q9/t4N/Oxsr8GZHlZk/HJuqECR28RenrhvF6YlnVJqc/erzQXiC5QO3H4aeZpXu769iYkT9LBGlD/PRLQJd0uXQ+Pwm1O37sLMySuDEWqFqAEQuDwDgl9DKFetI/ICR+nDWCy6/UW/LZwTPjY0RosnNndaeLo=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "YOLOv11 release date"
+          },
+          "tool_call_id": "pyd_ai_6af313e686634349b4043546eca8e5d1",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 265,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 77,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 56,
+          "text_prompt_tokens": 265
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T18:29:16.892791+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "fSHcaKaFEMPCvdIPuNKQqAc",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 9000,
+              "chunk": "m extent possible under law.\n\n### 5.6 No Obligation\n\nYou acknowledge that Ultralytics is under no obligation to use or incorporate your Contributions into any of the Work. The decision to use or incorporate your Contributions into any of the Work will be made at the sole discretion of Ultralytics or its authorized delegates.\n\n### 5.7 Effective Date\n\nThe Effective Date of this Agreement shall be the date You execute this Agreement or the date You first Submit a Contribution to Ultralytics, whichever is earlier.\n\n## FAQ\n\n### What is the purpose of the Ultralytics Contributor License Agreement (CLA)?\n\nThe Ultralytics CLA defines the terms under which you contribute to Ultralytics' software projects. It outlines the rights and obligations related to your contributions, including granting copyright and patent licenses, and addressing the handling of third-party content.\n\n### Why do I need to agree to the Copyright License in the CLA?\n\nAgreeing to the Copyright License allows Ultralytics and its users to use, modify, distribute, and create derivative works from your contributions. This ensures that your contributions can be integrated into [Ultralytics projects](https://github.com/ultralytics) and shared with the community, fostering collaboration and software development.\n\n### How does the Patent License benefit both contributors and Ultralytics?\n\nThe Patent License grants Ultralytics the rights to use, make, and sell contributions covered by your patents. This is essential for product development and commercialization. In return, your patented innovations gain wider use and recognition, promoting innovation within the community. The patent license is similar to provisions found in other [open-source licenses](https://www.ultralytics.com/legal/agpl-3-0-software-license) like AGPL-3.0.\n\n### What should I do if my contribution includes third-party content?\n\nIf your contribution includes third-party content, you must clearly mark it and provide comprehensive details about i",
+              "description": "Review the terms for contributing to Ultralytics projects. Learn about copyright, patent licenses, and moral rights for your contributions.",
+              "keywords": "Ultralytics, Contributor License Agreement, open source, contributions, copyright license, patent license, moral rights",
+              "filename": "ultralytics-main/docs/en/help/CLA.md"
+            },
+            {
+              "start": 3000,
+              "chunk": "# \ud83d\ude80 Usage\n\n1. **Deploy your FP16 (half-precision) YOLO11 model on a Triton Inference Server.**\n   Learn more about deploying models with [Ultralytics YOLO](https://docs.ultralytics.com/models/yolo11/).\n\n2. **Run the YOLO11-Triton-CPP application:**\n\n   ```bash\n   ./YOLO11TritonCPP\n   ```\n\nBy default, the application will:\n\n- Connect to the Triton server at `localhost:8001`\n- Use the model named `yolov11` with version `1`\n- Process the image file `test.jpg`\n- Save detection results to `output.jpg`\n\nFor more on object detection workflows, see [Ultralytics object detection tasks](https://docs.ultralytics.com/tasks/detect/).\n\n## \u2699\ufe0f Configuration\n\nYou can modify the following parameters in [main.cpp](main.cpp):\n\n```cpp\nstd::string triton_address = \"localhost:8001\";\nstd::string model_name = \"yolov11\";\nstd::string model_version = \"1\";\nstd::string image_path = \"test.jpg\";\nstd::string output_path = \"output.jpg\";\nstd::vector<std::string> object_class_list = {\"class1\", \"class2\"};\n```\n\nTo learn more about configuring and customizing YOLO models, visit the [Ultralytics configuration guide](https://docs.ultralytics.com/usage/cfg/).\n\n## \ud83c\udf1f Contributors\n\nContributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [main Ultralytics repository](https://github.com/ultralytics/ultralytics).\n\n- Ahmet Selim Demirel\n- Do\u011fan Mehmet Ba\u015fo\u011flu\n- Enes Uzun\n- Elif Cansu Ada\n- Mevl\u00fct Ard\u0131\u00e7\n- Serhat Karaca\n\n[![Ultralytics open-source contributors](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/ultralytics/graphs/contributors)\n\n---\n\nFor more resources, explore the [Ultralytics documentation](https://docs.ultralytics.com/), [Ultralytics blog](https://www.ultralytics.com/blog), and [Ultralytics HUB](https://docs.ultralytics.com/hub/).\n\n**We encourage your contributions to make this project even better! \ud83d\ude80**",
+              "filename": "ultralytics-main/examples/YOLO11-Triton-CPP/README.md"
+            },
+            {
+              "start": 2000,
+              "chunk": "inference-server/server) and explore [model deployment options with Ultralytics](https://docs.ultralytics.com/guides/model-deployment-options/).\n\n## \ud83c\udfd7\ufe0f Building the Project\n\n1. **Install the Triton Client libraries:**\n\n   ```bash\n   wget https://github.com/triton-inference-server/server/releases/download/v2.23.0/v2.23.0_ubuntu2004.clients.tar.gz\n   mkdir tritonclient\n   tar -xvf v2.23.0_ubuntu2004.clients.tar.gz -C tritonclient\n   rm -rf v2.23.0_ubuntu2004.clients.tar.gz\n   ```\n\n2. **Clone the Ultralytics repository:**\n\n   ```bash\n   git clone https://github.com/ultralytics/ultralytics.git\n   cd ultralytics/examples/YOLO11-Triton-CPP\n   ```\n\n3. **Configure and build the project using CMake:**\n\n   ```bash\n   mkdir build\n   cd build\n   cmake .. -DTRITON_CLIENT_DIR=/path/to/tritonclient\n   make\n   ```\n\nFor additional guidance on integrating Ultralytics YOLO models with various platforms, check out the [Ultralytics integrations documentation](https://docs.ultralytics.com/integrations/).\n\n## \ud83d\ude80 Usage\n\n1. **Deploy your FP16 (half-precision) YOLO11 model on a Triton Inference Server.**\n   Learn more about deploying models with [Ultralytics YOLO](https://docs.ultralytics.com/models/yolo11/).\n\n2. **Run the YOLO11-Triton-CPP application:**\n\n   ```bash\n   ./YOLO11TritonCPP\n   ```\n\nBy default, the application will:\n\n- Connect to the Triton server at `localhost:8001`\n- Use the model named `yolov11` with version `1`\n- Process the image file `test.jpg`\n- Save detection results to `output.jpg`\n\nFor more on object detection workflows, see [Ultralytics object detection tasks](https://docs.ultralytics.com/tasks/detect/).\n\n## \u2699\ufe0f Configuration\n\nYou can modify the following parameters in [main.cpp](main.cpp):\n\n```cpp\nstd::string triton_address = \"localhost:8001\";\nstd::string model_name = \"yolov11\";\nstd::string model_version = \"1\";\nstd::string image_path = \"test.jpg\";\nstd::string output_path = \"output.jpg\";\nstd::vector<std::string> object_class_list = {\"class1\", \"class2\"};\n```\n\nTo learn mo",
+              "filename": "ultralytics-main/examples/YOLO11-Triton-CPP/README.md"
+            },
+            {
+              "start": 8000,
+              "chunk": "\n\n### 5.3 Assignment\n\nUltralytics may assign this Agreement, and all of its rights, obligations, and licenses hereunder, without Your prior consent.\n\n### 5.4 Waiver of Performance\n\nThe failure of either party to require performance by the other party of any provision of this Agreement in one situation shall not affect the right of a party to require such performance at any time in the future. A waiver of performance under a provision in one situation shall not be considered a waiver of the performance of the provision in the future or a waiver of the provision in its entirety.\n\n### 5.5 Severability\n\nIf any provision of this Agreement is found void and unenforceable, such provision will be replaced to the extent possible with a provision that comes closest to the meaning of the original provision and which is enforceable. The terms and conditions set forth in this Agreement shall apply notwithstanding any failure of essential purpose of this Agreement or any limited remedy to the maximum extent possible under law.\n\n### 5.6 No Obligation\n\nYou acknowledge that Ultralytics is under no obligation to use or incorporate your Contributions into any of the Work. The decision to use or incorporate your Contributions into any of the Work will be made at the sole discretion of Ultralytics or its authorized delegates.\n\n### 5.7 Effective Date\n\nThe Effective Date of this Agreement shall be the date You execute this Agreement or the date You first Submit a Contribution to Ultralytics, whichever is earlier.\n\n## FAQ\n\n### What is the purpose of the Ultralytics Contributor License Agreement (CLA)?\n\nThe Ultralytics CLA defines the terms under which you contribute to Ultralytics' software projects. It outlines the rights and obligations related to your contributions, including granting copyright and patent licenses, and addressing the handling of third-party content.\n\n### Why do I need to agree to the Copyright License in the CLA?\n\nAgreeing to the Copyright License allows Ultralytics and",
+              "description": "Review the terms for contributing to Ultralytics projects. Learn about copyright, patent licenses, and moral rights for your contributions.",
+              "keywords": "Ultralytics, Contributor License Agreement, open source, contributions, copyright license, patent license, moral rights",
+              "filename": "ultralytics-main/docs/en/help/CLA.md"
+            },
+            {
+              "start": 8000,
+              "chunk": ", 0.019029364), (212, 0.016506357)]), # Class IDs and confidences\n        Bboxes: None,\n        Keypoints: None,\n        Masks: None,\n    },\n]\n```\n\n### Object Detection\n\nUsing the `CUDA` execution provider and a dynamic image size (`--height 640 --width 480`).\n\n```bash\ncargo run --release -- --cuda --model ../assets/weights/yolov8m-dynamic.onnx --source ../assets/images/bus.jpg --plot --height 640 --width 480\n```\n\n### Pose Detection\n\nUsing the `TensorRT` execution provider.\n\n```bash\ncargo run --release -- --trt --model ../assets/weights/yolov8m-pose.onnx --source ../assets/images/bus.jpg --plot\n```\n\n### Instance Segmentation\n\nUsing the `TensorRT` execution provider with an FP16 model (`--fp16`).\n\n```bash\ncargo run --release -- --trt --fp16 --model ../assets/weights/yolov8m-seg.onnx --source ../assets/images/0172.jpg --plot\n```\n\n## \ud83e\udd1d Contributing\n\nContributions are welcome! If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request to the main [Ultralytics repository](https://github.com/ultralytics/ultralytics).",
+              "filename": "ultralytics-main/examples/YOLOv8-ONNXRuntime-Rust/README.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_6af313e686634349b4043546eca8e5d1",
+          "metadata": null,
+          "timestamp": "2025-09-30T18:29:16.927698+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant for a course on computer vision, specializing in YOLO models and the Ultralytics ecosystem (e.g., YOLOv8). Use the search tool to find relevant information from the course materials or the latest Ultralytics documentation before answering questions. Provide accurate, concise, and clear responses, including code examples, step-by-step instructions, or explanations as appropriate. Assume the user has a basic understanding of Python and machine learning concepts unless otherwise specified. If the search returns specific, relevant information, use it to inform your answer. If the search does not yield relevant results, inform the user and provide general guidance based on best practices for YOLO model training and usage. If a question is ambiguous, ask for clarification to ensure the response aligns with the course context.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CuIHAdHtim9GqpVPss2eAoM39fKW4YJqxUZwmuEBCzAtj7pLYPCbwlJWXpADxS4TuK81QcURsqxvO9hI8//usgpew6dz/rt75FigR0bxi1p+Ykl2Xx4BZuYuagT8LrSyEAgpGeVdoGEcxjUtEO6P+7aRFFFQtHDZlT+pFI7Pv5hUt91sJ6zVfEjZKA4V5EPUy25lAhEayAt1y3nYbq7r3881ATBiqjXTlGX2i1SUmrbve4yYlrfgzrZV0xNtg78fqdqLVGP4/b55HzmM+vM2CjFYZUpM0obBo7PGJZD3iagrbuo+ohDdRuhYZjZH7eVvFxIq3sRsrcZqfGt98OeT8i2MZZiewQz0rq+/NfXPR9tx+TBex0CeI09z/ahRyAczIuw9LSV8tJlpHZmR5SFWDnrOYXOQQjn5pCrnHCcqNnIg2dukVwxydX1Lz1xZv+foTrmErEaBEAJt59Mrvm6es64AhkciMEjhHV8KMZXM263G9Oc17KbXFzgElDgkFS4OjYfpgALl6leZDLM3i+7JyK0Vas3q0lqpKFuwyqDypc8oLC/4nzq6tS5vcAfVgyIscsO5MQhupFrb2yM3FrX0iGxVJB0FZL4Hj4hQKqk75XQtdAsRmfaBonH85xbbMRiPRVKuF4YgwpVfe/gEUl+ECJH+kb1ZoTxtyheGQemF9CrsqlfKOfSaS3dDJtXVQI29dyGGtp/j6CzCH9nsFDlyq3T9wcE6j5z7xKmEgjmbVql6khXFg1ObvDtqrmGLT+nusguWBH4I0AEAztXSDC97AJ3/eCbt/gn8Xp/gZWTWgn+qJ3uBZsacoEoAtoyOBm2+C+bnCiJS/AP7Qum76saymFD62ZaHob6jK5hm9ErnutHQdEURZFpxry5/SweTAnGyWacaQ+w9jkWypKGLVbGB8GDwcVw02UK1ZxYVANI9Gzy8p4PigiQjONfdyjfoLJkQSYQWSx3ZYyfVY9LpC3mW2LmvIfJBWHuvZajJdqlRIdG0IqqwUxbNcZ9fQd/C4lMcm6lNxl/Ys+ppLzubpX9+NrlILILwT6ml5MHngLl6qC0D4IQ9bXV/QZG0wlCvzUn0N4gVjoWkcnls7gus2TxobfrK2uLO0JSL3pd8zhTn/KMuv6+srGJxJRz+vROZ17+3a6cAL7CNsxdu+T7CAO0b/MJ5hkzVMHgCOf1HZNgxsaQA2smYZpLJhWSOgBKl7/IqQ0aKD7YM9+iKRRPgqxxO2VRdyefbu4dkk0ZrlvPG0Umk38n9hIRR9dlW7HOgSZ8uTWWRMO3ca1y+fB5KfFZwJeJvSNHoIU0EfPEn5/QCG1y5vo970A==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "YOLOv11 models appear to be available for use, particularly for deployment with Triton Inference Server, as indicated by the Ultralytics documentation. For example, you can \"Deploy your FP16 (half-precision) YOLO11 model on a Triton Inference Server.\"\n\nHowever, the search results do not contain an explicit announcement or a formal release date for YOLOv11 from Ultralytics. While the model is referenced in usage examples, a specific \"release\" event or date is not provided.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3177,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 320,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 216,
+          "text_prompt_tokens": 3177
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T18:29:21.621178+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "giHcaOa1AYC1xN8PhbX1yAc",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

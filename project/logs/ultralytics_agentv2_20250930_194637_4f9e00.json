@@ -1,0 +1,166 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What is the purpose of the `train_world.py` file, and specifically, what does `WorldTrainerFromScratch` do in the context of YOLO World models?",
+          "timestamp": "2025-09-30T19:46:28.522127+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CokCAdHtim9RzXSZyVHEpw9j3N488h1Ce9msbOwBolDJ+w4k9gT9NfxTmy3ju4Y+3HpxUJow1OtgPd7pWbeUjCbJDMaNMPCjk9cSU2bo48abrb+tSVWBoZ23hx1rmRIfIvH7FSm0YOH1kPLzXPssWPw6SIHVoGnCmnFRJuOZwFx1vrrh20tYuPkVJbSpkFhj2NVjr9vaPqIC4E93Q1IK6XHXd2xWpg5mGP7S/ONnTLGQaUI/SjjXFe5NL2mCqkuhVSYTqHC6HeClFnw3w7+Wj+dsU+23+dxdQIgrR2rx7PJdCweA+3JoxpiJW6Y96p7fZ2sxNxBrVQoDwZbaq9KQNm44rQDC7chZbtCPXg==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "train_world.py WorldTrainerFromScratch YOLO World models"
+          },
+          "tool_call_id": "pyd_ai_0fc0f00ef5da444a9b6d928f1581b2a7",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 277,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 82,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 55,
+          "text_prompt_tokens": 277
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:46:30.617001+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "ljPcaM6tIZGykdUP4vm5aQ",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/yolo/world/train_world.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train_world.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train_world.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/world/train_world.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.world.train_world.WorldTrainerFromScratch\n\n<br><br>",
+              "description": "Explore the WorldTrainerFromScratch in YOLO for open-set datasets. Learn how to build, train, and evaluate models efficiently.",
+              "keywords": "YOLO, WorldTrainer, open-set datasets, training, evaluation, build dataset, YOLO World, machine learning",
+              "filename": "ultralytics-main/docs/en/reference/models/yolo/world/train_world.md"
+            },
+            {
+              "start": 16000,
+              "chunk": "                                                                                |\n| ------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------ |\n| [LVIS minival](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/lvis.yaml) | Detection | [minival.txt](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/lvis.yaml) |\n\n### Launch training from scratch\n\n!!! note\n\n    `WorldTrainerFromScratch` is highly customized to allow training yolo-world models on both detection datasets and grounding datasets simultaneously. More details please checkout [ultralytics.model.yolo.world.train_world.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train_world.py).\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLOWorld\n        from ultralytics.models.yolo.world.train_world import WorldTrainerFromScratch\n\n        data = dict(\n            train=dict(\n                yolo_data=[\"Objects365.yaml\"],\n                grounding_data=[\n                    dict(\n                        img_path=\"flickr30k/images\",\n                        json_file=\"flickr30k/final_flickr_separateGT_train.json\",\n                    ),\n                    dict(\n                        img_path=\"GQA/images\",\n                        json_file=\"GQA/final_mixed_train_no_coco.json\",\n                    ),\n                ],\n            ),\n            val=dict(yolo_data=[\"lvis.yaml\"]),\n        )\n        model = YOLOWorld(\"yolov8s-worldv2.yaml\")\n        model.train(data=data, batch=128, epochs=100, trainer=WorldTrainerFromScratch)\n        ```\n\n## Citations and Acknowledgements\n\nWe extend our gratitude to the [Tencent AILab Computer Vision Center](https://www.tencent.com/) for their pioneering work in real-time open-vocabulary object detec",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-main/docs/en/models/yolo-world.md"
+            },
+            {
+              "start": 17000,
+              "chunk": "     from ultralytics.models.yolo.world.train_world import WorldTrainerFromScratch\n\n        data = dict(\n            train=dict(\n                yolo_data=[\"Objects365.yaml\"],\n                grounding_data=[\n                    dict(\n                        img_path=\"flickr30k/images\",\n                        json_file=\"flickr30k/final_flickr_separateGT_train.json\",\n                    ),\n                    dict(\n                        img_path=\"GQA/images\",\n                        json_file=\"GQA/final_mixed_train_no_coco.json\",\n                    ),\n                ],\n            ),\n            val=dict(yolo_data=[\"lvis.yaml\"]),\n        )\n        model = YOLOWorld(\"yolov8s-worldv2.yaml\")\n        model.train(data=data, batch=128, epochs=100, trainer=WorldTrainerFromScratch)\n        ```\n\n## Citations and Acknowledgements\n\nWe extend our gratitude to the [Tencent AILab Computer Vision Center](https://www.tencent.com/) for their pioneering work in real-time open-vocabulary object detection with YOLO-World:\n\n!!! quote \"\"\n\n    === \"BibTeX\"\n\n        ```bibtex\n        @article{cheng2024yolow,\n        title={YOLO-World: Real-Time Open-Vocabulary Object Detection},\n        author={Cheng, Tianheng and Song, Lin and Ge, Yixiao and Liu, Wenyu and Wang, Xinggang and Shan, Ying},\n        journal={arXiv preprint arXiv:2401.17270},\n        year={2024}\n        }\n        ```\n\nFor further reading, the original YOLO-World paper is available on [arXiv](https://arxiv.org/pdf/2401.17270v2). The project's source code and additional resources can be accessed via their [GitHub repository](https://github.com/AILab-CVC/YOLO-World). We appreciate their commitment to advancing the field and sharing their valuable insights with the community.\n\n## FAQ\n\n### What is the YOLO-World model and how does it work?\n\nThe YOLO-World model is an advanced, real-time object detection approach based on the [Ultralytics YOLOv8](yolov8.md) framework. It excels in Open-Vocabulary Detection tasks by identifying o",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-main/docs/en/models/yolo-world.md"
+            },
+            {
+              "start": 15000,
+              "chunk": "datalab.com/OpenDataLab/Objects365_v1) | Detection                                                   | 609k    | 9621k | [objects365_train.json](https://opendatalab.com/OpenDataLab/Objects365_v1)                                                                 |\n| [GQA](https://cs.stanford.edu/people/dorarad/gqa/about.html)      | [Grounding](https://www.ultralytics.com/glossary/grounding) | 621k    | 3681k | [final_mixed_train_no_coco.json](https://huggingface.co/GLIPModel/GLIP/blob/main/mdetr_annotations/final_mixed_train_no_coco.json)         |\n| [Flickr30k](https://shannon.cs.illinois.edu/DenotationGraph/)     | Grounding                                                   | 149k    | 641k  | [final_flickr_separateGT_train.json](https://huggingface.co/GLIPModel/GLIP/blob/main/mdetr_annotations/final_flickr_separateGT_train.json) |\n\n- Val data\n\n| Dataset                                                                                                 | Type      | Annotation Files                                                                                       |\n| ------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------ |\n| [LVIS minival](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/lvis.yaml) | Detection | [minival.txt](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/lvis.yaml) |\n\n### Launch training from scratch\n\n!!! note\n\n    `WorldTrainerFromScratch` is highly customized to allow training yolo-world models on both detection datasets and grounding datasets simultaneously. More details please checkout [ultralytics.model.yolo.world.train_world.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train_world.py).\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLOWorld\n   ",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-main/docs/en/models/yolo-world.md"
+            },
+            {
+              "start": 23000,
+              "chunk": "t Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8l-worldv2 | [yolov8l-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8l-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLOv8x-world   | [yolov8x-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8x-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8x-worldv2 | [yolov8x-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8x-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n\n### How do I reproduce the official results of YOLO-World from scratch?\n\nTo reproduce the official results from scratch, you need to prepare the datasets and launch the training using the provided code. The training procedure involves creating a data dictionary and running the `train` method with a custom trainer:\n\n```python\nfrom ultralytics import YOLOWorld\nfrom ultralytics.models.yolo.world.train_world import WorldTrainerFromScratch\n\ndata = {\n    \"train\": {\n        \"yolo_data\": [\"Objects365.yaml\"],\n        \"grounding_data\": [\n            {\n                \"img_path\": \"flickr30k/images\",\n                \"json_file\": \"flickr30k/final_flickr_separateGT_train.json\",\n            },\n            {\n                \"img_path\": \"GQA/images\",\n                \"json_file\": \"GQA/final_mixed_train_no_coco.json\",\n            },\n        ],\n    },\n    \"val\": {\"yolo_data\": [\"lvis.yaml\"]},\n}\n\nmodel = YOLOWorld(\"yolov8s-worldv2.yaml\")\nmodel.train(data=data, batch=128, epochs=100, trainer=WorldTrainerFromScratch)\n```",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-main/docs/en/models/yolo-world.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_0fc0f00ef5da444a9b6d928f1581b2a7",
+          "metadata": null,
+          "timestamp": "2025-09-30T19:46:30.677800+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Cq0HAdHtim9fBNwHOMUaO1EYPoPKSp5yaugmR3yg1v/bpWaltNT2jnNiSfVZ1uVAww7pnEIn8MXboKHZ6L8+g/b9YKcjYRcp3uGCu/AM5JvVBLyonFzfS+7+dAiSYmDoAyxDWOSxPOPKq+pCj2M5a2ynUrz1V6Eb5wDTM9SX1KYMpnj8bATj2af0BlLCD4kmV+fcBP9cwt1xBxRTK07zDT8Yyyb5AxjzFrdckuPaQ2FJKEeS3mYaOoA/Kc+szbXiopeDJyuVpb24szwC8TJN1CmbdBS4Q+dGXu+0i/s85+WDk+NQZCg6MGZx83ett6eemdNSuz+OFLDchJFEFlIoD7gX88eK7Pz2LrvEHUOmdPn0zD3k4wlSLhvm/eqpjLXs+wta71bA+h14mD12NewpUxtFR4CI2XQaP4UFc9fcE/5nqPp/a2dqCpaCxwwBoRxrTaM9kNz0B9+ECr07YsshmCU++Vcwupcs4vtQhfOdtVwsxXWD0y9EGohPUadkVKnwNOjg4yNBJrIu/PuOB4BzvxIoHI/+d3qQzZYP4gCKENdXBCVF0l/3IYkhWRQ2Va6DznOLAq1b6JUsyXaKbNwgpru6BcbwoQOYi/USMcf0z2rwcq1bgi7wTJMPBRNmbfuYkQ8epGyGejMMjU6BvQLIcGzcrPuFUdcq4ZGqpP5NciWnKPjMwuUcK90UGrSdjZeY1wFBRUdV2mP31vb5asgvFW/00GJN9C5G3IDl0yqHvGvpwR+1DaY0tX19zNJQdny535NtdVNwcwiUUrcdF+ucvS8VogaTdvwW9VQt6ZINo60PD9slTz5vvjjfr2WjbQZ4xe2eAftTUFJvc9AhlZAF7Kd8DjvFWxjLz65pRJq24Lcyy/XbMZQoxPNcrLKPr6FnXtqzZm+LUOQRslbkC1p7NiUAKXaRmRxtLugxZH6TJeSWttpWF0rCXjw0Zsi06eW5TWwzShGPMZCwPU1JDNHk4B2H4qo1QmQR7RtKvMpxUNpx68C346uHlrVFxOOvDhuESg5tFI+a8paE6L9Afz2FtoFhabK9F8x/Mcmu96JxvA0tiH6vq9yORzfryaK2fXS74grbO1J4b5tZwbDfAgT9fLAQOeeZCdaw+rINC8pdRrYDdN09NXSn1pF8kyc4+1dfSbHvAehcx5zRW2wzZblO66rWd/yZTb+IL8W4qzLzfXs1R4RB+xqWnL44MlhYwTya1euBtToe/voGh25vAklGy68AEdQCFqyBw20Xc0VEZkI=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "The `train_world.py` file ([`ultralytics/models/yolo/world/train_world.py`](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train_world.py)) is a crucial component within the Ultralytics YOLO framework for training YOLO World models, particularly for open-set datasets.\n\nThe `WorldTrainerFromScratch` class, defined within `train_world.py`, is a specialized trainer designed to facilitate the training of YOLO-World models on **both detection datasets and grounding datasets simultaneously**. This dual-dataset training capability is essential for enabling the open-vocabulary object detection features of YOLO World models.\n\nAn example of its usage involves importing `WorldTrainerFromScratch` and then passing it as the `trainer` argument to the `model.train()` method:\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```python\nfrom ultralytics import YOLOWorld\nfrom ultralytics.models.yolo.world.train_world import WorldTrainerFromScratch\n\ndata = dict(\n    train=dict(\n        yolo_data=[\"Objects365.yaml\"],\n        grounding_data=[\n            dict(\n                img_path=\"flickr30k/images\",\n                json_file=\"flickr30k/final_flickr_separateGT_train.json\",\n            ),\n            dict(\n                img_path=\"GQA/images\",\n                json_file=\"GQA/final_mixed_train_no_coco.json\",\n            ),\n        ],\n    ),\n    val=dict(yolo_data=[\"lvis.yaml\"]),\n)\nmodel = YOLOWorld(\"yolov8s-worldv2.yaml\")\nmodel.train(data=data, batch=128, epochs=100, trainer=WorldTrainerFromScratch)\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nReferences:\n*   [Reference for `ultralytics/models/yolo/world/train_world.py`](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train_world.md)\n*   [YOLO-World Model](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/docs/en/models/yolo-world.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3351,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 729,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 212,
+          "text_prompt_tokens": 3351
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:46:37.674466+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "njPcaMCVBqnMkdUP9cfsqAI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

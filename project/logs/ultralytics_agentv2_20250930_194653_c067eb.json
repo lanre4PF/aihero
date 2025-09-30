@@ -1,0 +1,152 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What is the `HungarianMatcher` class in `ultralytics/models/utils/ops.py` used for?",
+          "timestamp": "2025-09-30T19:46:46.447438+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CtsBAdHtim/2HU6nomZIfnv0Hyuzq5xAISm2EKcLmcbeEdhXookakDLFy5kcOgYtwsKa8EZbGRCMwhnlTRsmrdafFcM7VCCl6F3CMz+q73/Fks7cTLvaQSojMBkGzjC4EmF8yRQ37LNHGSA+6Ow0H2QuJbYxFT2rr/K4XE2v9J2uAiMgWfLBD6D059g8pLSllOZcel4EHvaT5Y5G8qbIRs6ETSxFbgXooDWzQ2DjDpQfRMCec8WwPzO+EmF+XWVkzpcwj49SLwswlLl1Lpgk2jp0yFawHFrfrJx1c2DC",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "HungarianMatcher class ultralytics/models/utils/ops.py"
+          },
+          "tool_call_id": "pyd_ai_63391c757be245a0a75e10ea58f35f2b",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 266,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 75,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 47,
+          "text_prompt_tokens": 266
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:46:47.978080+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "qDPcaM_gFoDNnsEP38P6MA",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/utils/ops.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/utils/ops.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/utils/ops.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/utils/ops.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.utils.ops.HungarianMatcher\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.utils.ops.get_cdn_group\n\n<br><br>",
+              "description": "Explore the utilities and operations in Ultralytics models like HungarianMatcher and get_cdn_group. Learn how to optimize and manage model operations efficiently.",
+              "keywords": "Ultralytics, models, utils, operations, HungarianMatcher, get_cdn_group, model optimization, pytorch, machine learning",
+              "filename": "ultralytics-main/docs/en/reference/models/utils/ops.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/utils/ops.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/ops.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/ops.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/utils/ops.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.utils.ops.Profile\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.segment2box\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.scale_boxes\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.make_divisible\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.clip_boxes\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.clip_coords\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.scale_image\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xyxy2xywh\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xywh2xyxy\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xywhn2xyxy\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xyxy2xywhn\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xywh2ltwh\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xyxy2ltwh\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.ltwh2xywh\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xyxyxyxy2xywhr\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xywhr2xyxyxyxy\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.ltwh2xyxy\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.segments2boxes\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.resample_segments\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.crop_mask\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.process_mask\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.process_mask_native\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.scale_masks\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.scale_coords\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.regularize_rboxes\n\n<br><br><hr><br>\n\n## ::: ultralyt",
+              "description": "Explore detailed documentation on utility operations in Ultralytics including non-max suppression, bounding box transformations, and more.",
+              "keywords": "Ultralytics, utility operations, non-max suppression, bounding box transformations, YOLOv8, machine learning",
+              "filename": "ultralytics-main/docs/en/reference/utils/ops.md"
+            },
+            {
+              "start": 1000,
+              "chunk": "<br>\n\n## ::: ultralytics.utils.ops.xywhn2xyxy\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xyxy2xywhn\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xywh2ltwh\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xyxy2ltwh\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.ltwh2xywh\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xyxyxyxy2xywhr\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.xywhr2xyxyxyxy\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.ltwh2xyxy\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.segments2boxes\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.resample_segments\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.crop_mask\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.process_mask\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.process_mask_native\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.scale_masks\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.scale_coords\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.regularize_rboxes\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.masks2segments\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.convert_torch2numpy_batch\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.clean_str\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.ops.empty_like\n\n<br><br>",
+              "description": "Explore detailed documentation on utility operations in Ultralytics including non-max suppression, bounding box transformations, and more.",
+              "keywords": "Ultralytics, utility operations, non-max suppression, bounding box transformations, YOLOv8, machine learning",
+              "filename": "ultralytics-main/docs/en/reference/utils/ops.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/utils/tuner.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/tuner.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/tuner.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/utils/tuner.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.utils.tuner.run_ray_tune\n\n<br><br>",
+              "description": "Explore how to use ultralytics.utils.tuner.py for efficient hyperparameter tuning with Ray Tune. Learn implementation details and example usage.",
+              "keywords": "Ultralytics, tuner, hyperparameter tuning, Ray Tune, YOLO, machine learning, AI, optimization",
+              "filename": "ultralytics-main/docs/en/reference/utils/tuner.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/utils/patches.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/patches.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/utils/patches.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/utils/patches.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.utils.patches.imread\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.patches.imwrite\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.patches.imshow\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.patches.torch_load\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.patches.torch_save\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.patches.arange_patch\n\n<br><br><hr><br>\n\n## ::: ultralytics.utils.patches.override_configs\n\n<br><br>",
+              "description": "Explore and contribute to Ultralytics' utils/patches.py. Learn about the imread, imwrite, imshow, and torch_save functions.",
+              "keywords": "Ultralytics, utils, patches, imread, imwrite, imshow, torch_save, OpenCV, PyTorch, GitHub",
+              "filename": "ultralytics-main/docs/en/reference/utils/patches.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_63391c757be245a0a75e10ea58f35f2b",
+          "metadata": null,
+          "timestamp": "2025-09-30T19:46:48.040111+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Cq8FAdHtim/r7uFWcQUP8fhANg63UOdnneGEDl7WoOdRIwytgISoUSCT6TLpM4U+KIKPh6FDtJ0dEgDj5RKSHvpCAJ4uB0jqoEPqvcxJuIxEgssfSdwRaO2+VxxPDor+iasQJdnG3bfK+yKk4G/lPZrDtaUNBqlj/3n9gXheAPVN0L3L/phn4gTlh401MR3CAlZje6LhymllMWdhBr+bS8bE/WOiCBdhrjvtulwm5+lM8AXHk+LCwN0m5ClB47Xcp9fTsc8QfZbESuLKPhBchRLAosY0gF0b8Wl8OzJoIZGY7D3DaLmyYTp737LhgdibxPtxMn4w6pfXZ0kLkyqXqZesZoN1umYqUh8NwHPD6f1Wwf7yh+KWVGgRtRVrzJS2RctqJikRd5rfME5/3ZkqdvVf8uiXCaeNxKWpBkmP/rGnL/ma63tlG2C0ykuy4BQO0xVt86MFXRFWj3V90Rvcp5GDIBDg3F7hagx+T0DjoLS/PJz1kPGgZllbqwkWnwQrYWOjqfCL3I3OfbQXqvJWKR4Ob/kEy26GiYCr9FJihAoWeLQ8u2+vGq3kythQBc+SLjjirRGWddnBitjnK2FQNClwcobUZQao5tIjVjIu04HUB43V/GFPDGSmsSMKmrk/CGOM+wWvm/qnR93cMEQIByJ+XStjHXdjJNXYhqdk45gq4qvMN+HeJM6WX68MlPvEcyuNGXNxbRt3eMArVp7OdJ7wth0vrWAYXDAZBaEJG0HE2w3YGqguKOWEbpOjT+dmQ++Oaf2AzUeyW/Rb5zWqcHvUvUJGcBBT4Grcpq974rhVcN/ePlIITSXaVgo1gpXmDtrLcOrT9hi71gbgFYWUFtvFjPPjw6LxOAxyEepx2/ba141X/VOGtjJ9jmq7BirvZYx/kd0HKMoNyhx6OyDmej4l",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find specific details about the usage of the `HungarianMatcher` class within the provided documentation for `ultralytics/models/utils/ops.py`. The documentation confirms its existence in the file but does not elaborate on its function.\n\nYou can find the reference to the file here: [ultralytics/models/utils/ops.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/utils/ops.py).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3092,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 238,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 133,
+          "text_prompt_tokens": 3092
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:46:53.611586+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "rDPcaNPZNZLMkdUPtaHSMA",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

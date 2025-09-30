@@ -1,0 +1,157 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "How can Ultralytics HUB projects help me manage multiple YOLO models, and what features are available for comparing their performance?",
+          "timestamp": "2025-09-30T19:46:37.685436+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Cu8CAdHtim9MLZJD+5bCxMtUW+YC4CwnWMOiPwg6QzF7kGQD5O1yJXyCriCKtXbORrjlfSTaao7wA89hqK3aVb5hNSuAwX02dbxKcnc+p+tAHGImpZmfij44Gvi43NxoljWVzWfST/u7BUyHMNJGUF/fKTzG8ALENNFFBsELn2qqe+I3i8qKmPJF2bj3Z3qN/nCnJNS/kNCtsPuoRF31d9WnEWvkpRESht/UHwBGgUgwomVbqEypUPCxxm7dQaxOTsZzBcPmG2N0ZvEvPSISQdiFnbtH0JgXGnNjXviT5U3aejyCPo6aRZYIDuaJdyoeHs6NGHJV2c2JcDN81e7MdffzgDqeOT1rbDXiejRrgcIe3TZ7OfB7Br32IGvIWrkyIxXuV9IGg8ppDl6ILVPVmlJYje/WpJ71AAv8dHQcKE7cC3/rYgA83C6bR0teViNdUpZzd7cACUDrhDY67pUSWhM3fTJY0DeCKdVlqpNLNz4zhw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "Ultralytics HUB projects manage multiple YOLO models compare performance"
+          },
+          "tool_call_id": "pyd_ai_627a1b8635284b908bd3173f795eab1c",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 265,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 92,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 67,
+          "text_prompt_tokens": 265
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:46:39.371062+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "nzPcaKWKK_XlnsEPx--m8QI",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "chunk": "# Ultralytics HUB Projects\n\n[Ultralytics HUB](https://www.ultralytics.com/hub) projects provide an effective solution for consolidating and managing your models. If you are working with several models that perform similar tasks or have related purposes, [Ultralytics HUB](https://www.ultralytics.com/hub) projects allow you to group these models together.\n\nThis creates a unified and organized workspace that facilitates easier model management, comparison and development. Having similar models or various iterations together can facilitate rapid benchmarking, as you can compare their effectiveness. This can lead to faster, more insightful [iterative development](https://docs.ultralytics.com/guides/model-training-tips/) and refinement of your models.\n\n<p align=\"center\">\n  <iframe loading=\"lazy\" width=\"720\" height=\"405\" src=\"https://www.youtube.com/embed/Gc6K5eKrTNQ\"\n    title=\"YouTube video player\" frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong> Train YOLOv8 Pose Model on Tiger-Pose Dataset Using Ultralytics HUB\n</p>\n\n## Create Project\n\nNavigate to the [Projects](https://hub.ultralytics.com/projects) page by clicking on the **Projects** button in the sidebar and click on the **Create Project** button on the top right of the page.\n\n![Ultralytics HUB screenshot of the Projects page with an arrow pointing to the Projects button in the sidebar and one to the Create Project button](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-create-project-page.avif)\n\n??? tip\n\n    You can create a project directly from the [Home](https://hub.ultralytics.com/home) page.\n\n    ![Ultralytics HUB screenshot of the Home page with an arrow pointing to the Create Project card](https://github.com/ultralytics/docs/releases/download/0/hub-create-project-card.avif)\n\nThis action will trigger the **Create Project** dialog, opening up a",
+              "comments": true,
+              "description": "Optimize your model management with Ultralytics HUB Projects. Easily create, share, edit, and compare models for efficient development.",
+              "keywords": "Ultralytics HUB, model management, create project, share project, edit project, delete project, compare models, reorder models, transfer models",
+              "filename": "ultralytics-main/docs/en/hub/projects.md"
+            },
+            {
+              "start": 2000,
+              "chunk": " suite of options for tailoring your project to your needs.\n\nType the name of your project in the _Project name_ field or keep the default name and finalize the project creation with a single click.\n\nYou have the additional option to enrich your project with a description and a unique image, enhancing its recognizability on the [Projects](https://hub.ultralytics.com/projects) page.\n\nWhen you're happy with your project configuration, click **Create**.\n\n![Ultralytics HUB screenshot of the Create Project dialog with an arrow pointing to the Create button](https://github.com/ultralytics/docs/releases/download/0/hub-create-project-dialog.avif)\n\nAfter your project is created, you will be able to access it from the [Projects](https://hub.ultralytics.com/projects) page.\n\n![Ultralytics HUB screenshot of the Projects page with an arrow pointing to one of the projects](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-projects-page.avif)\n\nNext, [train a model](./models.md#train-model) inside your project.\n\n![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Train Model button](https://github.com/ultralytics/docs/releases/download/0/hub-train-model-button.avif)\n\n## Share Project\n\n!!! info\n\n    [Ultralytics HUB](https://www.ultralytics.com/hub)'s sharing functionality provides a convenient way to share projects with others. This feature is designed to accommodate both existing [Ultralytics HUB](https://www.ultralytics.com/hub) users and those who have yet to create an account.\n\n??? note\n\n    You have control over the general access of your projects.\n\n    You can choose to set the general access to \"Private\", in which case, only you will have access to it. Alternatively, you can set the general access to \"Unlisted\" which grants viewing access to anyone who has the direct link to the project, regardless of whether they have an [Ultralytics HUB](https://www.ultralytics.com/hub) account or not.\n\nNavigate to the Project page of the pro",
+              "comments": true,
+              "description": "Optimize your model management with Ultralytics HUB Projects. Easily create, share, edit, and compare models for efficient development.",
+              "keywords": "Ultralytics HUB, model management, create project, share project, edit project, delete project, compare models, reorder models, transfer models",
+              "filename": "ultralytics-main/docs/en/hub/projects.md"
+            },
+            {
+              "start": 7000,
+              "chunk": "nting to the Delete option of one of the projects](https://github.com/ultralytics/docs/releases/download/0/hub-delete-project-option-1.avif)\n\n!!! warning\n\n    When deleting a project, the models inside the project will be deleted as well.\n\n!!! note\n\n    If you change your mind, you can restore the project from the [Trash](https://hub.ultralytics.com/trash) page.\n\n    ![Ultralytics HUB screenshot of the Trash page with an arrow pointing to Trash button in the sidebar and one to the Restore option of one of the projects](https://github.com/ultralytics/docs/releases/download/0/hub-delete-project-restore-option.avif)\n\n## Compare Models\n\nNavigate to the Project page of the project where the models you want to compare are located. To use the model comparison feature, click on the **Charts** tab.\n\n![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Charts tab](https://github.com/ultralytics/docs/releases/download/0/hub-compare-models-1.avif)\n\nThis will display all the relevant charts. Each chart corresponds to a different metric and contains the performance of each model for that metric. The models are represented by different colors, and you can hover over each data point to get more information.\n\n![Ultralytics HUB screenshot of the Charts tab inside the Project page](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-charts-tab.avif)\n\n??? tip\n\n    Each chart can be enlarged for better visualization.\n\n    ![Ultralytics HUB screenshot of the Charts tab inside the Project page with an arrow pointing to the expand icon](https://github.com/ultralytics/docs/releases/download/0/hub-compare-models-expand-icon.avif)\n\n    ![Ultralytics HUB screenshot of the Charts tab inside the Project page with one of the charts expanded](https://github.com/ultralytics/docs/releases/download/0/hub-compare-models-expanded-chart.avif)\n\n    Furthermore, to properly analyze the data, you can utilize the zoom feature.\n\n    ![Ultralytics HUB screenshot o",
+              "comments": true,
+              "description": "Optimize your model management with Ultralytics HUB Projects. Easily create, share, edit, and compare models for efficient development.",
+              "keywords": "Ultralytics HUB, model management, create project, share project, edit project, delete project, compare models, reorder models, transfer models",
+              "filename": "ultralytics-main/docs/en/hub/projects.md"
+            },
+            {
+              "start": 1000,
+              "chunk": "pe; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong> Train YOLOv8 Pose Model on Tiger-Pose Dataset Using Ultralytics HUB\n</p>\n\n## Create Project\n\nNavigate to the [Projects](https://hub.ultralytics.com/projects) page by clicking on the **Projects** button in the sidebar and click on the **Create Project** button on the top right of the page.\n\n![Ultralytics HUB screenshot of the Projects page with an arrow pointing to the Projects button in the sidebar and one to the Create Project button](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-create-project-page.avif)\n\n??? tip\n\n    You can create a project directly from the [Home](https://hub.ultralytics.com/home) page.\n\n    ![Ultralytics HUB screenshot of the Home page with an arrow pointing to the Create Project card](https://github.com/ultralytics/docs/releases/download/0/hub-create-project-card.avif)\n\nThis action will trigger the **Create Project** dialog, opening up a suite of options for tailoring your project to your needs.\n\nType the name of your project in the _Project name_ field or keep the default name and finalize the project creation with a single click.\n\nYou have the additional option to enrich your project with a description and a unique image, enhancing its recognizability on the [Projects](https://hub.ultralytics.com/projects) page.\n\nWhen you're happy with your project configuration, click **Create**.\n\n![Ultralytics HUB screenshot of the Create Project dialog with an arrow pointing to the Create button](https://github.com/ultralytics/docs/releases/download/0/hub-create-project-dialog.avif)\n\nAfter your project is created, you will be able to access it from the [Projects](https://hub.ultralytics.com/projects) page.\n\n![Ultralytics HUB screenshot of the Projects page with an arrow pointing to one of the projects](https://github.com/ultralytics/docs/releases/download/0/ultralytics-hub-projects-page.avif)\n\nNext, [train a model](./models.md#tr",
+              "comments": true,
+              "description": "Optimize your model management with Ultralytics HUB Projects. Easily create, share, edit, and compare models for efficient development.",
+              "keywords": "Ultralytics HUB, model management, create project, share project, edit project, delete project, compare models, reorder models, transfer models",
+              "filename": "ultralytics-main/docs/en/hub/projects.md"
+            },
+            {
+              "start": 6000,
+              "chunk": "e with an arrow pointing to the Edit option of one of the projects](https://github.com/ultralytics/docs/releases/download/0/hub-edit-project-2.avif)\n\nApply the desired modifications to your project and then confirm the changes by clicking **Save**.\n\n![Ultralytics HUB screenshot of the Update Project dialog with an arrow pointing to the Save button](https://github.com/ultralytics/docs/releases/download/0/hub-edit-project-save-button.avif)\n\n## Delete Project\n\nNavigate to the Project page of the project you want to delete, open the project actions dropdown and click on the **Delete** option. This action will delete the project.\n\n![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Delete option](https://github.com/ultralytics/docs/releases/download/0/hub-delete-project-option.avif)\n\n??? tip\n\n    You can delete a project directly from the [Projects](https://hub.ultralytics.com/projects) page.\n\n    ![Ultralytics HUB screenshot of the Projects page with an arrow pointing to the Delete option of one of the projects](https://github.com/ultralytics/docs/releases/download/0/hub-delete-project-option-1.avif)\n\n!!! warning\n\n    When deleting a project, the models inside the project will be deleted as well.\n\n!!! note\n\n    If you change your mind, you can restore the project from the [Trash](https://hub.ultralytics.com/trash) page.\n\n    ![Ultralytics HUB screenshot of the Trash page with an arrow pointing to Trash button in the sidebar and one to the Restore option of one of the projects](https://github.com/ultralytics/docs/releases/download/0/hub-delete-project-restore-option.avif)\n\n## Compare Models\n\nNavigate to the Project page of the project where the models you want to compare are located. To use the model comparison feature, click on the **Charts** tab.\n\n![Ultralytics HUB screenshot of the Project page with an arrow pointing to the Charts tab](https://github.com/ultralytics/docs/releases/download/0/hub-compare-models-1.avif)\n\nThis will display all t",
+              "comments": true,
+              "description": "Optimize your model management with Ultralytics HUB Projects. Easily create, share, edit, and compare models for efficient development.",
+              "keywords": "Ultralytics HUB, model management, create project, share project, edit project, delete project, compare models, reorder models, transfer models",
+              "filename": "ultralytics-main/docs/en/hub/projects.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_627a1b8635284b908bd3173f795eab1c",
+          "metadata": null,
+          "timestamp": "2025-09-30T19:46:39.436886+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "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",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Ultralytics HUB projects offer an effective solution for consolidating and managing multiple YOLO models by allowing you to group models that perform similar tasks or have related purposes into a unified and organized workspace. This facilitates easier model management and enables rapid benchmarking, leading to faster and more insightful iterative development and refinement of your models.\n\nFor comparing the performance of your YOLO models within an Ultralytics HUB project, the following features are available:\n\n*   **Charts Tab:** You can navigate to the \"Charts\" tab within your project page.\n*   **Metric-Specific Charts:** This tab displays various charts, with each chart representing a different performance metric.\n*   **Visual Comparison:** Each chart illustrates the performance of individual models for that metric, with different colors representing different models.\n*   **Detailed Data on Hover:** You can hover over data points on the charts to access more detailed information.\n*   **Enlarged Visualization:** Charts can be enlarged for improved visualization.\n*   **Zoom Feature:** A zoom feature is available for in-depth data analysis.\n\nYou can find more information about Ultralytics HUB Projects and model comparison in the [Ultralytics HUB Projects documentation](https://github.com/ultralytics/ultralytics/blob/main/docs/en/hub/projects.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3461,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 567,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 299,
+          "text_prompt_tokens": 3461
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T19:46:46.435925+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "pjPcaPvDM9aqkdUPhJ6FSA",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

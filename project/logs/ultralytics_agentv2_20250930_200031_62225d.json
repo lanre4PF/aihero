@@ -1,0 +1,157 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "Why is the ImageWoof dataset considered challenging for image classification algorithms, and what makes it valuable for developing advanced models?",
+          "timestamp": "2025-09-30T20:00:23.668416+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CvIBAdHtim9Ys56U67HvnJOu6ogfBfn7uenuZl11IvWqQ69viICBCjdVwyL37MgJUdI8JxcYuquSC4cykOT7Yk/gFHEzBi4eItllyrh9y84LzOje1YQzM5v4SQD409XK4mkfSVdY3LiqExEoK28ije+NncgmaezGkf3cQjAHe+obTFhsjwV2ip6hT/h2S3oXmvbFFeyJOOPBTElakPVihXEGKJtFHB1iWrjcisCpHNPhFcOOiaJcJ7qUxSSF8w/rImC14ScM6QOYZvkbi1oI9nBg2sfMLCJhXIUYGXaUzSBtm7t/bnfu/3YfJzA8/AcQYHynKfM=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "ImageWoof dataset challenges and value"
+          },
+          "tool_call_id": "pyd_ai_4c10342fdb324ed9abe24bd63903790f",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 265,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 66,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 45,
+          "text_prompt_tokens": 265
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:00:26.634288+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "2TbcaPanItaqkdUPhJ6FSA",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 5000,
+              "chunk": "ledgments\n\nIf you use the ImageWoof dataset in your research or development work, please make sure to acknowledge the creators of the dataset by linking to the [official dataset repository](https://github.com/fastai/imagenette).\n\nWe would like to acknowledge the [FastAI](https://www.fast.ai/) team for creating and maintaining the ImageWoof dataset as a valuable resource for the [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) and [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) research community. For more information about the ImageWoof dataset, visit the [ImageWoof dataset repository](https://github.com/fastai/imagenette).\n\n## FAQ\n\n### What is the ImageWoof dataset in Ultralytics?\n\nThe [ImageWoof](https://github.com/fastai/imagenette) dataset is a challenging subset of ImageNet focusing on 10 specific dog breeds. Created to push the limits of image classification models, it features breeds like Beagle, Shih-Tzu, and Golden Retriever. The dataset includes images at various resolutions (full size, 320px, 160px) and even noisy labels for more realistic training scenarios. This complexity makes ImageWoof ideal for developing more advanced deep learning models.\n\n### How can I train a model using the ImageWoof dataset with Ultralytics YOLO?\n\nTo train a [Convolutional Neural Network](https://www.ultralytics.com/glossary/convolutional-neural-network-cnn) (CNN) model on the ImageWoof dataset using Ultralytics YOLO for 100 epochs at an image size of 224x224, you can use the following code:\n\n!!! example \"Train Example\"\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        model = YOLO(\"yolo11n-cls.pt\")  # Load a pretrained model\n        results = model.train(data=\"imagewoof\", epochs=100, imgsz=224)\n        ```\n\n\n    === \"CLI\"\n\n        ```bash\n        yolo classify train data=imagewoof model=yolo11n-cls.pt epochs=100 imgsz=224\n        ```\n\nFor more details on available training arguments, refer",
+              "comments": true,
+              "description": "Explore the ImageWoof dataset, a challenging subset of ImageNet focusing on 10 dog breeds, designed to enhance image classification models. Learn more on Ultralytics Docs.",
+              "keywords": "ImageWoof dataset, ImageNet subset, dog breeds, image classification, deep learning, machine learning, Ultralytics, training dataset, noisy labels",
+              "filename": "ultralytics-main/docs/en/datasets/classify/imagewoof.md"
+            },
+            {
+              "start": 6000,
+              "chunk": "er. The dataset includes images at various resolutions (full size, 320px, 160px) and even noisy labels for more realistic training scenarios. This complexity makes ImageWoof ideal for developing more advanced deep learning models.\n\n### How can I train a model using the ImageWoof dataset with Ultralytics YOLO?\n\nTo train a [Convolutional Neural Network](https://www.ultralytics.com/glossary/convolutional-neural-network-cnn) (CNN) model on the ImageWoof dataset using Ultralytics YOLO for 100 epochs at an image size of 224x224, you can use the following code:\n\n!!! example \"Train Example\"\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        model = YOLO(\"yolo11n-cls.pt\")  # Load a pretrained model\n        results = model.train(data=\"imagewoof\", epochs=100, imgsz=224)\n        ```\n\n\n    === \"CLI\"\n\n        ```bash\n        yolo classify train data=imagewoof model=yolo11n-cls.pt epochs=100 imgsz=224\n        ```\n\nFor more details on available training arguments, refer to the [Training](../../modes/train.md) page.\n\n### What versions of the ImageWoof dataset are available?\n\nThe ImageWoof dataset comes in three sizes:\n\n1. **Full Size (imagewoof)**: Ideal for final training and benchmarking, containing full-sized images.\n2. **Medium Size (imagewoof320)**: Resized images with a maximum edge length of 320 pixels, suited for faster training.\n3. **Small Size (imagewoof160)**: Resized images with a maximum edge length of 160 pixels, perfect for rapid prototyping.\n\nUse these versions by replacing 'imagewoof' in the dataset argument accordingly. Note, however, that smaller images may yield lower classification [accuracy](https://www.ultralytics.com/glossary/accuracy) but can be useful for quicker iterations.\n\n### How do noisy labels in the ImageWoof dataset benefit training?\n\nNoisy labels in the ImageWoof dataset simulate real-world conditions where labels might not always be accurate. Training models with this data helps develop robustness and generalization",
+              "comments": true,
+              "description": "Explore the ImageWoof dataset, a challenging subset of ImageNet focusing on 10 dog breeds, designed to enhance image classification models. Learn more on Ultralytics Docs.",
+              "keywords": "ImageWoof dataset, ImageNet subset, dog breeds, image classification, deep learning, machine learning, Ultralytics, training dataset, noisy labels",
+              "filename": "ultralytics-main/docs/en/datasets/classify/imagewoof.md"
+            },
+            {
+              "start": 7000,
+              "chunk": " to the [Training](../../modes/train.md) page.\n\n### What versions of the ImageWoof dataset are available?\n\nThe ImageWoof dataset comes in three sizes:\n\n1. **Full Size (imagewoof)**: Ideal for final training and benchmarking, containing full-sized images.\n2. **Medium Size (imagewoof320)**: Resized images with a maximum edge length of 320 pixels, suited for faster training.\n3. **Small Size (imagewoof160)**: Resized images with a maximum edge length of 160 pixels, perfect for rapid prototyping.\n\nUse these versions by replacing 'imagewoof' in the dataset argument accordingly. Note, however, that smaller images may yield lower classification [accuracy](https://www.ultralytics.com/glossary/accuracy) but can be useful for quicker iterations.\n\n### How do noisy labels in the ImageWoof dataset benefit training?\n\nNoisy labels in the ImageWoof dataset simulate real-world conditions where labels might not always be accurate. Training models with this data helps develop robustness and generalization in image classification tasks. This prepares the models to handle ambiguous or mislabeled data effectively, which is often encountered in practical applications.\n\n### What are the key challenges of using the ImageWoof dataset?\n\nThe primary challenge of the ImageWoof dataset lies in the subtle differences among the dog breeds it includes. Since it focuses on 10 closely related breeds, distinguishing between them requires more advanced and fine-tuned image classification models. This makes ImageWoof an excellent benchmark to test the capabilities and improvements of [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models.",
+              "comments": true,
+              "description": "Explore the ImageWoof dataset, a challenging subset of ImageNet focusing on 10 dog breeds, designed to enhance image classification models. Learn more on Ultralytics Docs.",
+              "keywords": "ImageWoof dataset, ImageNet subset, dog breeds, image classification, deep learning, machine learning, Ultralytics, training dataset, noisy labels",
+              "filename": "ultralytics-main/docs/en/datasets/classify/imagewoof.md"
+            },
+            {
+              "start": 4000,
+              "chunk": "=224)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Load a pretrained model and train on the medium-sized dataset\n        yolo classify train model=yolo11n-cls.pt data=imagewoof320 epochs=100 imgsz=224\n        ```\n\nIt's important to note that using smaller images will likely yield lower performance in terms of classification accuracy. However, it's an excellent way to iterate quickly in the early stages of model development and prototyping.\n\n## Sample Images and Annotations\n\nThe ImageWoof dataset contains colorful images of various dog breeds, providing a challenging dataset for image classification tasks. Here are some examples of images from the dataset:\n\n![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/imagewoof-dataset-sample.avif)\n\nThe example showcases the subtle differences and similarities among the different dog breeds in the ImageWoof dataset, highlighting the complexity and difficulty of the classification task.\n\n## Citations and Acknowledgments\n\nIf you use the ImageWoof dataset in your research or development work, please make sure to acknowledge the creators of the dataset by linking to the [official dataset repository](https://github.com/fastai/imagenette).\n\nWe would like to acknowledge the [FastAI](https://www.fast.ai/) team for creating and maintaining the ImageWoof dataset as a valuable resource for the [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) and [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) research community. For more information about the ImageWoof dataset, visit the [ImageWoof dataset repository](https://github.com/fastai/imagenette).\n\n## FAQ\n\n### What is the ImageWoof dataset in Ultralytics?\n\nThe [ImageWoof](https://github.com/fastai/imagenette) dataset is a challenging subset of ImageNet focusing on 10 specific dog breeds. Created to push the limits of image classification models, it features breeds like Beagle, Shih-Tzu, and Golden Retriev",
+              "comments": true,
+              "description": "Explore the ImageWoof dataset, a challenging subset of ImageNet focusing on 10 dog breeds, designed to enhance image classification models. Learn more on Ultralytics Docs.",
+              "keywords": "ImageWoof dataset, ImageNet subset, dog breeds, image classification, deep learning, machine learning, Ultralytics, training dataset, noisy labels",
+              "filename": "ultralytics-main/docs/en/datasets/classify/imagewoof.md"
+            },
+            {
+              "start": 1000,
+              "chunk": " dog breed classes, with each breed having its own directory of images. Similar to other classification datasets, it follows a split-directory format with separate folders for training and validation sets.\n\n## Applications\n\nThe ImageWoof dataset is widely used for training and evaluating [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models in image classification tasks, especially when it comes to more complex and similar classes. The dataset's challenge lies in the subtle differences between the dog breeds, pushing the limits of model's performance and generalization. It's particularly valuable for:\n\n- Benchmarking classification model performance on fine-grained categories\n- Testing model robustness against similar-looking classes\n- Developing algorithms that can distinguish subtle visual differences\n- Evaluating transfer learning capabilities from general to specific domains\n\n## Usage\n\nTo train a CNN model on the ImageWoof dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 224x224, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.\n\n!!! example \"Train Example\"\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"yolo11n-cls.pt\")  # load a pretrained model (recommended for training)\n\n        # Train the model\n        results = model.train(data=\"imagewoof\", epochs=100, imgsz=224)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Start training from a pretrained *.pt model\n        yolo classify train data=imagewoof model=yolo11n-cls.pt epochs=100 imgsz=224\n        ```\n\n## Dataset Variants\n\nImageWoof dataset comes in three different sizes to accommodate various research needs and computational capabilities:\n\n1. **Full Size (imagewoof)**: This is the original version of the ImageWoof dataset. It contains full-sized images and is ideal for ",
+              "comments": true,
+              "description": "Explore the ImageWoof dataset, a challenging subset of ImageNet focusing on 10 dog breeds, designed to enhance image classification models. Learn more on Ultralytics Docs.",
+              "keywords": "ImageWoof dataset, ImageNet subset, dog breeds, image classification, deep learning, machine learning, Ultralytics, training dataset, noisy labels",
+              "filename": "ultralytics-main/docs/en/datasets/classify/imagewoof.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_4c10342fdb324ed9abe24bd63903790f",
+          "metadata": null,
+          "timestamp": "2025-09-30T20:00:26.694125+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CskJAdHtim9M8JfE0aUK9C4ZddlnTFrdkTZy2bGWEdHjPGNLwsNmKA3hd6zdxUCyQ9InLYVS4yJnWuo23PUrzbrDXYsufhkLzInk82ldYQ9T248b4wp6IsSwZZxxTIncBKkRuyfBYmzRPgDNJPE0YyfBJuiib98TwTiIVmtaLcbKl3p3EpIjGvCtKPmAFvcO5HPhpfvBQhot+oWScsBHSXWnPHX7muS4ABap0Kbf5hub97NgM7iQqqMMlaAUKINX4TcXwmGCdl/BH71ggMkWYBWAwJWx3evEnQayAHik0czm6Zqt0cHAnKGmo+gZ2tBsqrv24WqhlOopdytez5U9bxzibmXKzMAVUldScEX/JDKHXi64GIGqBcoCKbiwhY5l6a6h9NEz3I//WFfG6i1ZexhKQYOBemiFaQDFp+c73BwT5fDFDEdTIwMk6Eylm0T2QVEgvd5XNwigFFQ63wVroD6pjlG7YnOFjLjOtwr2iXbU3nSUHTWMGWnQ4hiFw+qmX2G2y8ZEbw9Ph1eDjfMTENoXGh06Yby+wFvdccedqco+HiYxg5KQq3kP2EGAQWd01tZheNmm1A6Dejxds3hez4hjgmK/Gv9NXbrKMVkbrFKuGhY9BGGsgk8wYJxWQDjRuHrzXvUsUfeKgwGBx/PNPSq3pO25tFDFuAfkLbgcRkLpINT5CXAOOsOUjhs8hUUmEyycJAOp8Qj0lsyHwtmvl+RGt8rnJHErjYtBy6n822jc6vd9vmmvdSrNeKKgh/w/PI489xxJsr2VRWyPCkiUYJjLjaf3Qq3eJjLmwxvrddOrSd1sq1UZvTL8wualcDADTtoD4CZUCmLhQQ0OhAAPRWRcp6OaL82w2KzowuDr8ZKXMOj0lV6jDCI5+CPEwmPphVsHyCm3BxaF69uyUG1aoqEUHDAJcP5pHqzp/fha1jCOV98Y0WXTw/h03HyMALgJ6EG/f9BHFXhJ841OnmFQxyQTLquVCAeuBZnQ1hdXH+/yXD+y4qt1/jIw71gzLV5NwrWQywXPHboWtbKn/rD2oPXeJFnMT52sMeDUy2JbKxC0ASYGrgz8i4og1Jok0YgVpx0mkRhuyZkcC+52ssmO0+vr5JA0zaOstEKXhiyYVadqrbxenP5v8IUNf/sBPs6AkwfLDj4eeJRqQpFxRC/NSGqSbqe773LfUrfoDEobhoobxHfB00/0xJtenxvzf8eds8Cr1el9AFNly2Z4/K2Jy6VqRi5QF5+DKpLdgy5GYZrkYr+lrn/4CPn5u1vXKAiGKg1c7EYEKIebc/cnbPHnqShV/ySHnmFlaM2Cp98ew5Acaqzx/W2oeC/Ve2c2ablpRGaS54jtf5HYgjpfUmMjGogG7GjCWzySdwjc+iIEayBKX4nR9hv15tb4qzqjqqFJtYHPWYSzpHDjKY/Ie/eXKA9IFrxSoVg7+9hNUWeLYmT7JYedJZ2Wq4Gmphhpa6jtmT4OfD5vX6wIZVHKOO9Cfg0CgfIc80IJzmuYCMpqm7lFejMFLlX9g8hGA4VtT/VxJzsi5nugcc+ApJvkGGMQErj+RgO2W7PYYTx/LpFuwuv2RVDOFUCZhpp/raM26GzjP2FUWxTR1QigkGQWmXzkQXZaEUcRz8KnQ3vgFw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "The ImageWoof dataset is considered challenging for image classification algorithms due to its focus on **10 closely related dog breeds**. Distinguishing between these breeds requires advanced and finely tuned models because the differences are often subtle.\n\nThis complexity makes ImageWoof particularly valuable for developing advanced models because it:\n*   **Pushes the limits of image classification models** by acting as a challenging subset of ImageNet.\n*   **Simulates real-world conditions** through the inclusion of noisy labels, which helps in developing models that are robust and can generalize well when faced with ambiguous or mislabeled data.\n*   **Provides a benchmark** for testing the capabilities and improvements of deep learning models, especially for fine-grained classification tasks.\n*   **Supports the development of algorithms** capable of distinguishing subtle visual differences, evaluating transfer learning, and testing model robustness against similar-looking classes.\n*   **Offers images at various resolutions** (full size, 320px, 160px), allowing for flexibility in training and prototyping.\n\nFor more information, you can refer to the [ImageWoof dataset documentation](https://github.com/ultralytics/ultralytics/blob/main/docs/en/datasets/classify/imagewoof.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3377,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 497,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 235,
+          "text_prompt_tokens": 3377
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:00:31.542775+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "3zbcaNqDOoXjkdUP5-m-sQI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

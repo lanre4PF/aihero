@@ -1,0 +1,152 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What is the primary function of the `ultralytics/models/sam/modules/decoders.py` file in the Ultralytics repository?",
+          "timestamp": "2025-09-30T20:00:16.788715+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CqgCAdHtim88R9CbMhz4Dzax3lcMOnIRSOdSY9DUWLJOeUkUPq2U/t70jV/x2mqD40djkegvnIg5xJY8to32vH0Ns5ik1eKjwIgF7zrWaU/7ZqxhfwV7X4tq+jvIEQMZauX0zvdzYmerf21gSuj5Vgz2ZxGrgTwTH87ilWC0E4OviXYHnqARzdb17o0i8UzKFbLIKEnhVsWe+9cvdRQ+gVv3veR1lKG5WuivVfUN8WeiDBk6QkEtu2/j1gIRyze83dr7LC2L5WuIdSFYka6P5tFfLdE2cfD+e9ZkBiKwj0G07KCY+RA4G2ci/O/SPNRkpwj+WBkdHwaYU+0ilaUyPS8IsiZ6Jp8Eos+63m7N+Qh4W8PixuxW1qH9Bmee29Vz1SIgH7LG6K2MSUk=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "ultralytics/models/sam/modules/decoders.py primary function"
+          },
+          "tool_call_id": "pyd_ai_ba6bc97392814d5cb4b932f542b7aa3b",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 272,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 93,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 63,
+          "text_prompt_tokens": 272
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:00:19.879045+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "0zbcaLKnEKmznsEPlber2QI",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/sam/modules/decoders.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/decoders.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/decoders.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/modules/decoders.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.sam.modules.decoders.MaskDecoder\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.decoders.SAM2MaskDecoder\n\n<br><br>",
+              "description": "Explore the MaskDecoder and MLP modules in Ultralytics for efficient mask prediction using transformer architecture. Detailed attributes, functionalities, and implementation.",
+              "keywords": "Ultralytics, MaskDecoder, MLP, machine learning, transformer architecture, mask prediction, neural networks, PyTorch modules",
+              "filename": "ultralytics-main/docs/en/reference/models/sam/modules/decoders.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/sam/modules/sam.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/sam.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/sam.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/modules/sam.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.sam.modules.sam.SAMModel\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.sam.SAM2Model\n\n<br><br>",
+              "description": "Discover the Ultralytics SAM and SAM 2 module for object segmentation. Learn about its components, such as image encoders and mask decoders, in this comprehensive guide.",
+              "keywords": "Ultralytics, SAM Module, SAM 2 Module, object segmentation, image encoder, mask decoder, prompt encoder, AI, machine learning",
+              "filename": "ultralytics-main/docs/en/reference/models/sam/modules/sam.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/sam/modules/utils.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/utils.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/utils.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/modules/utils.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.sam.modules.utils.select_closest_cond_frames\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.utils.get_1d_sine_pe\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.utils.init_t_xy\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.utils.compute_axial_cis\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.utils.reshape_for_broadcast\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.utils.apply_rotary_enc\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.utils.window_partition\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.utils.window_unpartition\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.utils.get_rel_pos\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.utils.add_decomposed_rel_pos\n\n<br><br>",
+              "description": "Explore the detailed API reference for Ultralytics SAM and SAM 2 models.",
+              "keywords": "Ultralytics, SAM, SAM 2, API Reference, models, window partition, data processing, YOLO",
+              "filename": "ultralytics-main/docs/en/reference/models/sam/modules/utils.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/sam/modules/blocks.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/blocks.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/blocks.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/modules/blocks.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.sam.modules.blocks.DropPath\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.MaskDownSampler\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.CXBlock\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.Fuser\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.SAM2TwoWayAttentionBlock\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.SAM2TwoWayTransformer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.RoPEAttention\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.MultiScaleAttention\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.MultiScaleBlock\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.PositionEmbeddingSine\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.PositionEmbeddingRandom\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.Block\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.REAttention\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.PatchEmbed\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.blocks.do_pool\n\n<br><br>",
+              "description": "Explore detailed documentation of various SAM and SAM 2 modules such as MaskDownSampler, CXBlock, and more, available in Ultralytics' repository.",
+              "keywords": "Ultralytics, SAM encoder, SAM 2 encoder, DropPath, MaskDownSampler, CXBlock, Fuser, TwoWayTransformer, TwoWayAttentionBlock, RoPEAttention, MultiScaleAttention, MultiScaleBlock. PositionEmbeddingSine, do_pool",
+              "filename": "ultralytics-main/docs/en/reference/models/sam/modules/blocks.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/models/sam/modules/memory_attention.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/memory_attention.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/modules/memory_attention.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/modules/memory_attention.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.sam.modules.memory_attention.MemoryAttentionLayer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.sam.modules.memory_attention.MemoryAttention\n\n<br><br>",
+              "description": "Explore detailed documentation of various SAM 2 encoder modules such as MemoryAttentionLayer, MemoryAttention, available in Ultralytics' repository.",
+              "keywords": "Ultralytics, SAM 2 encoder, MemoryAttentionLayer, MemoryAttention",
+              "filename": "ultralytics-main/docs/en/reference/models/sam/modules/memory_attention.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_ba6bc97392814d5cb4b932f542b7aa3b",
+          "metadata": null,
+          "timestamp": "2025-09-30T20:00:19.934895+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CrIEAdHtim+N+xiyG46FFsTWtUP2Ist7SSRT2xpp/JLEqEFE5ln++qNHGdg2lRnTP5n+oxFNIVPBCFLNjsHObWSL5WoLGiN1cb5gYR7QghUCBigU8L+mG0k/MQyI8oIXWAQ+DiLMbbXf1HmwlmqvaTmQ3fwKQ8SNJXSdzG8jZjbtRuQeJG893AbUN7qwVQnbUow4htn/yrsFQPXrZ2W1/2Z7gEQrRuo0dbiRopjXPUx+ztv/Sj94+wKXf/kHp2uICQc6gJe9LP774b6QMrmoK/luCXE2jFyIMUAwUykiXKcg1tCMVa+9TD6G7vluY9tItBC2+Ycrdk2T/dD3DRJukziUd6qz8gN4jweuV33JzE6EpwmtwILKRcT4fA5utbSzSGXtjuaRPu5ugkn9ZvVMXX2mQeWvMe2mlMKhmC8coFGWPLFMbhcaj+fftlMNxsSigNz/SMxdHfkRqm0pZWD/uO+3SLLCAQo9CvraYh0TxBih1RwK1saM5SPRl65iM2GczWpTcL3uhU51isORnToBtXeBfgWjn8uoqgflJDFflaodStIGQUBWDw4Oce9fyhjBEgXUBjgkhDRzIssKZeeJNyuHnLfL6B+r3YNVWA/zWGY/+AyWh42iMoH6LpPmuzqojDtyujyjSnO9+4N1yTT6r6FylZT4q6Gtc3kWbttNTEGx4PoML9zqFYIW8ylqgY1xrmrNMcYw8DPVUIL1DAcFqvmZV6iHXZTDAJnaie/m7pWQzqWbaw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "The `ultralytics/models/sam/modules/decoders.py` file in the Ultralytics repository primarily defines and implements the `MaskDecoder` and `SAM2MaskDecoder` modules. These modules are crucial for efficient mask prediction within the SAM (Segment Anything Model) and SAM2 architectures, utilizing a transformer-based design.\n\nReference: [ultralytics-main/docs/en/reference/models/sam/modules/decoders.md](https://github.com/ultralytics/ultralytics/blob/main/ultralytics-main/docs/en/reference/models/sam/modules/decoders.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2755,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 252,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 114,
+          "text_prompt_tokens": 2755
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:00:23.656443+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "2DbcaKjLB_XlnsEPx--m8QI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}

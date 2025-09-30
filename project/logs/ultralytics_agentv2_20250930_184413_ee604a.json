@@ -1,0 +1,157 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "what is the best evaluation metric for yolo",
+          "timestamp": "2025-09-30T18:43:59.173866+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Cu8DAdHtim/bgFzMrC5dpCJpL36k4IDPl3xU/j3W+KSusE7dP4TxGV5PeLLzt77bl/TqzE0VVdgfLbcEJUacYLRU/XLyq/osFMfxogrhXLlh8rbpD281wcGfsQaIOy4q/4OlKoZ0kZL3xyrTSU3psWa4436oLRJbQOxh3Ht4mZdrWgPIP4MZQoJ594YyIgcyFBNwJfl+Y6s7pfIJaGgoHM+ph0MwFID7PUY1XHDFANbbP2oip1OX0yzvh1OdosAsji1WeTuyhEOPu/0qABTOsxnKqy/bA7T/Uetj0Ar4YOrGeVtH2M4HkrRaNsLJIro8tElUEC/KraacsaNh8bAPS/11heg0mbWC+/b7rMYBhDnQrN+OBjvLbZJT0iblDgrDS2TvW65JCZQDWppHKzwMKtMfVLifu7AqjVG+R3eUkttVa1vSirB0IqogJk9zQ5/7EFkQaVH9ugNtz0MWOT9YYHVb3T3hc+e4lKiA2zSg+tV5IsZ//uv0/sm1O3A0xRW/G/5NvPVYWNt/csa/LjOhTrBbiKOp47n4qABMhtu6Hxjzjf6IjcOTNxpqwHlEVhiGKAimS87eUTIZVCO7TnmBv9rLPxjvm6vvuf9s6DQ/8son1w6CANNb1PAiR6M6cM6BK7eHSGVoxwCcdzan50GNNR9x",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "YOLO evaluation metrics"
+          },
+          "tool_call_id": "pyd_ai_8122cb06d99f42de9e376825c8b113e0",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 250,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 104,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 86,
+          "text_prompt_tokens": 250
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T18:44:02.657116+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "8yTcaPDBA6nmnsEP9_ijSA",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 2000,
+              "chunk": " calculating the average AP values across multiple object classes. This is useful in multi-class object detection scenarios to provide a comprehensive evaluation of the model's performance.\n\n- **Precision and Recall:** Precision quantifies the proportion of true positives among all positive predictions, assessing the model's capability to avoid false positives. On the other hand, Recall calculates the proportion of true positives among all actual positives, measuring the model's ability to detect all instances of a class.\n\n- **F1 Score:** The F1 Score is the harmonic mean of precision and recall, providing a balanced assessment of a model's performance while considering both false positives and false negatives.\n\n## How to Calculate Metrics for YOLO11 Model\n\nNow, we can explore [YOLO11's Validation mode](../modes/val.md) that can be used to compute the above discussed evaluation metrics.\n\nUsing the validation mode is simple. Once you have a trained model, you can invoke the model.val() function. This function will then process the validation dataset and return a variety of performance metrics. But what do these metrics mean? And how should you interpret them?\n\n### Interpreting the Output\n\nLet's break down the output of the model.val() function and understand each segment of the output.\n\n#### Class-wise Metrics\n\nOne of the sections of the output is the class-wise breakdown of performance metrics. This granular information is useful when you are trying to understand how well the model is doing for each specific class, especially in datasets with a diverse range of object categories. For each class in the dataset the following is provided:\n\n- **Class**: This denotes the name of the object class, such as \"person\", \"car\", or \"dog\".\n\n- **Images**: This metric tells you the number of images in the validation set that contain the object class.\n\n- **Instances**: This provides the count of how many times the class appears across all images in the validation set.\n\n- **Box(P, R,",
+              "comments": true,
+              "description": "Explore essential YOLO11 performance metrics like mAP, IoU, F1 Score, Precision, and Recall. Learn how to calculate and interpret them for model evaluation.",
+              "keywords": "YOLO11 performance metrics, mAP, IoU, F1 Score, Precision, Recall, object detection, Ultralytics",
+              "filename": "ultralytics-main/docs/en/guides/yolo-performance-metrics.md"
+            },
+            {
+              "start": 4000,
+              "chunk": " mAP50, mAP50-95)**: This metric provides insights into the model's performance in detecting objects:\n    - **P (Precision)**: The accuracy of the detected objects, indicating how many detections were correct.\n\n    - **R (Recall)**: The ability of the model to identify all instances of objects in the images.\n\n    - **mAP50**: Mean average precision calculated at an intersection over union (IoU) threshold of 0.50. It's a measure of the model's accuracy considering only the \"easy\" detections.\n\n    - **mAP50-95**: The average of the mean average precision calculated at varying IoU thresholds, ranging from 0.50 to 0.95. It gives a comprehensive view of the model's performance across different levels of detection difficulty.\n\n#### Speed Metrics\n\nThe speed of inference can be as critical as accuracy, especially in real-time object detection scenarios. This section breaks down the time taken for various stages of the validation process, from preprocessing to post-processing.\n\n#### COCO Metrics Evaluation\n\nFor users validating on the COCO dataset, additional metrics are calculated using the COCO evaluation script. These metrics give insights into precision and recall at different IoU thresholds and for objects of different sizes.\n\n#### Visual Outputs\n\nThe model.val() function, apart from producing numeric metrics, also yields visual outputs that can provide a more intuitive understanding of the model's performance. Here's a breakdown of the visual outputs you can expect:\n\n- **F1 Score Curve (`F1_curve.png`)**: This curve represents the [F1 score](https://www.ultralytics.com/glossary/f1-score) across various thresholds. Interpreting this curve can offer insights into the model's balance between false positives and false negatives over different thresholds.\n\n- **Precision-Recall Curve (`PR_curve.png`)**: An integral visualization for any classification problem, this curve showcases the trade-offs between precision and [recall](https://www.ultralytics.com/glossary/recall) at v",
+              "comments": true,
+              "description": "Explore essential YOLO11 performance metrics like mAP, IoU, F1 Score, Precision, and Recall. Learn how to calculate and interpret them for model evaluation.",
+              "keywords": "YOLO11 performance metrics, mAP, IoU, F1 Score, Precision, Recall, object detection, Ultralytics",
+              "filename": "ultralytics-main/docs/en/guides/yolo-performance-metrics.md"
+            },
+            {
+              "start": 14000,
+              "chunk": "w.ultralytics.com/solutions/ai-in-healthcare).\n\n### What are the key advantages of using Ultralytics YOLO11 for real-time object detection?\n\nUltralytics YOLO11 offers multiple advantages for real-time object detection:\n\n- **Speed and Efficiency**: Optimized for high-speed inference, suitable for applications requiring low latency.\n- **High Accuracy**: Advanced algorithm ensures high mAP and IoU scores, balancing precision and recall.\n- **Flexibility**: Supports various tasks including object detection, segmentation, and classification.\n- **Ease of Use**: User-friendly interfaces, extensive documentation, and seamless integration with platforms like Ultralytics HUB ([HUB Quickstart](../hub/quickstart.md)).\n\nThis makes YOLO11 ideal for diverse applications from autonomous vehicles to [smart city solutions](https://docs.ultralytics.com/guides/queue-management/).\n\n### How can validation metrics from YOLO11 help improve model performance?\n\nValidation metrics from YOLO11 like precision, recall, mAP, and IoU help diagnose and improve model performance by providing insights into different aspects of detection:\n\n- **Precision**: Helps identify and minimize false positives.\n- **Recall**: Ensures all relevant objects are detected.\n- **mAP**: Offers an overall performance snapshot, guiding general improvements.\n- **IoU**: Helps fine-tune object localization accuracy.\n\nBy analyzing these metrics, specific weaknesses can be targeted, such as adjusting confidence thresholds to improve precision or gathering more diverse data to enhance recall. For detailed explanations of these metrics and how to interpret them, check [Object Detection Metrics](#object-detection-metrics) and consider implementing [hyperparameter tuning](https://docs.ultralytics.com/guides/hyperparameter-tuning/) to optimize your model.",
+              "comments": true,
+              "description": "Explore essential YOLO11 performance metrics like mAP, IoU, F1 Score, Precision, and Recall. Learn how to calculate and interpret them for model evaluation.",
+              "keywords": "YOLO11 performance metrics, mAP, IoU, F1 Score, Precision, Recall, object detection, Ultralytics",
+              "filename": "ultralytics-main/docs/en/guides/yolo-performance-metrics.md"
+            },
+            {
+              "start": 1000,
+              "chunk": "atch:</strong>  Ultralytics YOLO11 Performance Metrics | MAP, F1 Score, <a href=\"https://www.ultralytics.com/glossary/precision\">Precision</a>, IoU & Accuracy\n</p>\n\n## Object Detection Metrics\n\nLet's start by discussing some metrics that are not only important to YOLO11 but are broadly applicable across different object detection models.\n\n- **[Intersection over Union](https://www.ultralytics.com/glossary/intersection-over-union-iou) (IoU):** IoU is a measure that quantifies the overlap between a predicted [bounding box](https://www.ultralytics.com/glossary/bounding-box) and a ground truth bounding box. It plays a fundamental role in evaluating the accuracy of object localization.\n\n- **Average Precision (AP):** AP computes the area under the precision-recall curve, providing a single value that encapsulates the model's precision and recall performance.\n\n- **[Mean Average Precision](https://www.ultralytics.com/glossary/mean-average-precision-map) (mAP):** mAP extends the concept of AP by calculating the average AP values across multiple object classes. This is useful in multi-class object detection scenarios to provide a comprehensive evaluation of the model's performance.\n\n- **Precision and Recall:** Precision quantifies the proportion of true positives among all positive predictions, assessing the model's capability to avoid false positives. On the other hand, Recall calculates the proportion of true positives among all actual positives, measuring the model's ability to detect all instances of a class.\n\n- **F1 Score:** The F1 Score is the harmonic mean of precision and recall, providing a balanced assessment of a model's performance while considering both false positives and false negatives.\n\n## How to Calculate Metrics for YOLO11 Model\n\nNow, we can explore [YOLO11's Validation mode](../modes/val.md) that can be used to compute the above discussed evaluation metrics.\n\nUsing the validation mode is simple. Once you have a trained model, you can invoke the model.val() ",
+              "comments": true,
+              "description": "Explore essential YOLO11 performance metrics like mAP, IoU, F1 Score, Precision, and Recall. Learn how to calculate and interpret them for model evaluation.",
+              "keywords": "YOLO11 performance metrics, mAP, IoU, F1 Score, Precision, Recall, object detection, Ultralytics",
+              "filename": "ultralytics-main/docs/en/guides/yolo-performance-metrics.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Performance Metrics Deep Dive\n\n## Introduction\n\nPerformance metrics are key tools to evaluate the [accuracy](https://www.ultralytics.com/glossary/accuracy) and efficiency of [object detection](https://www.ultralytics.com/glossary/object-detection) models. They shed light on how effectively a model can identify and localize objects within images. Additionally, they help in understanding the model's handling of false positives and false negatives. These insights are crucial for evaluating and enhancing the model's performance. In this guide, we will explore various performance metrics associated with YOLO11, their significance, and how to interpret them.\n\n<p align=\"center\">\n  <br>\n  <iframe loading=\"lazy\" width=\"720\" height=\"405\" src=\"https://www.youtube.com/embed/q7LwPoM7tSQ\"\n    title=\"YouTube video player\" frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong>  Ultralytics YOLO11 Performance Metrics | MAP, F1 Score, <a href=\"https://www.ultralytics.com/glossary/precision\">Precision</a>, IoU & Accuracy\n</p>\n\n## Object Detection Metrics\n\nLet's start by discussing some metrics that are not only important to YOLO11 but are broadly applicable across different object detection models.\n\n- **[Intersection over Union](https://www.ultralytics.com/glossary/intersection-over-union-iou) (IoU):** IoU is a measure that quantifies the overlap between a predicted [bounding box](https://www.ultralytics.com/glossary/bounding-box) and a ground truth bounding box. It plays a fundamental role in evaluating the accuracy of object localization.\n\n- **Average Precision (AP):** AP computes the area under the precision-recall curve, providing a single value that encapsulates the model's precision and recall performance.\n\n- **[Mean Average Precision](https://www.ultralytics.com/glossary/mean-average-precision-map) (mAP):** mAP extends the concept of AP by",
+              "comments": true,
+              "description": "Explore essential YOLO11 performance metrics like mAP, IoU, F1 Score, Precision, and Recall. Learn how to calculate and interpret them for model evaluation.",
+              "keywords": "YOLO11 performance metrics, mAP, IoU, F1 Score, Precision, Recall, object detection, Ultralytics",
+              "filename": "ultralytics-main/docs/en/guides/yolo-performance-metrics.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_8122cb06d99f42de9e376825c8b113e0",
+          "metadata": null,
+          "timestamp": "2025-09-30T18:44:02.703646+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "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",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "For evaluating YOLO models, several key performance metrics are used, and the \"best\" one often depends on the specific application and priorities:\n\n*   **Mean Average Precision (mAP)**: This is a widely used and comprehensive metric for object detection.\n    *   **mAP50**: Calculated at an Intersection over Union (IoU) threshold of 0.50, it reflects the model's accuracy for \"easy\" detections.\n    *   **mAP50-95**: This is the average mAP across various IoU thresholds, ranging from 0.50 to 0.95. It provides a more thorough and comprehensive evaluation of the model's performance across different levels of detection difficulty.\n    *   mAP offers an overall performance snapshot and guides general improvements.\n\n*   **Precision**: Quantifies the proportion of true positives among all positive predictions, indicating the model's ability to avoid false positives. It helps identify and minimize false positives.\n\n*   **Recall**: Calculates the proportion of true positives among all actual positives, measuring the model's ability to detect all instances of a class. It ensures all relevant objects are detected.\n\n*   **F1 Score**: The harmonic mean of precision and recall, providing a balanced assessment of a model's performance by considering both false positives and false negatives.\n\n*   **Intersection over Union (IoU)**: This fundamental measure quantifies the overlap between a predicted bounding box and a ground truth bounding box, playing a crucial role in evaluating object localization accuracy. It helps fine-tune object localization accuracy.\n\nYOLO models' validation mode, accessible through `model.val()`, computes these metrics, providing insights into the model's performance, including class-wise breakdowns and speed metrics.\n\nWhile mAP50-95 offers a comprehensive view of the model's performance, the choice of the \"best\" metric can depend on whether minimizing false positives (precision) or false negatives (recall) is more critical for your particular use case.\n\nFor more detailed explanations, refer to the Ultralytics documentation on [YOLO Performance Metrics](https://github.com/ultralytics/ultralytics/blob/main/docs/en/guides/yolo-performance-metrics.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3136,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 843,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 370,
+          "text_prompt_tokens": 3136
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T18:44:13.585610+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "_CTcaL-dLrzi7M8P9P3DMA",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

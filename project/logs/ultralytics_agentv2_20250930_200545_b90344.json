@@ -1,0 +1,154 @@
+{
+  "agent_name": "ultralytics_agentv2",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What is the primary function of the `DistanceCalculation` class found in `ultralytics/solutions/distance_calculation.py`?",
+          "timestamp": "2025-09-30T20:05:40.587174+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CqMCAdHtim8g/B2PsT0kiUDxjpL8eSPoYH23yGPVbxMaFFOPjqUrS1DE+Ysl0E7a0VrEiwlUtxFFt3JdDC1pCOYT0rK5yBLCFM8dGB4J6mdfgIDQsIOzg7XW2BrrncSDDwJFhSaFq3B7CxOmotv4P+eDalxBgAnSAijhzVfXKbEA1chm56p59VN+39AJK9uvNV7EkJH/q9VSzRs9iuInH44JC3IvPp6wG4zkgDpEPh3gmhCP6LaicTD1Ja8OqCyKBmTSjyyXozN5DZbnJ3K4S48g7MAwjbEsGpxpWVICw5+rMOIYetnnBZ9hAbz4wGtfaGMK3csO6LyDqbw2Yc7Jbsof9u3qkMQpM1i0afAU43WRZDCJDH4+elbckBFZQuHld3l/+595",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "DistanceCalculation class ultralytics/solutions/distance_calculation.py"
+          },
+          "tool_call_id": "pyd_ai_a45728c565b8493a90e4d89b795c1d14",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 269,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 83,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 55,
+          "text_prompt_tokens": 269
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:05:42.950161+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "FzjcaOCgGMb7nsEP5N-1YA",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/solutions/distance_calculation.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/solutions/distance_calculation.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/solutions/distance_calculation.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/solutions/distance_calculation.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.solutions.distance_calculation.DistanceCalculation\n\n<br><br>",
+              "description": "Explore the Ultralytics distance calculation module. Learn to calculate distances between objects in real-time video streams with our comprehensive guide.",
+              "keywords": "Ultralytics, distance calculation, object tracking, real-time video, centroid, distance estimation, YOLO, ML, cv2",
+              "filename": "ultralytics-main/docs/en/reference/solutions/distance_calculation.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/solutions/solutions.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/solutions/solutions.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/solutions/solutions.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/solutions/solutions.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.solutions.solutions.BaseSolution\n\n<br><br><hr><br>\n\n## ::: ultralytics.solutions.solutions.SolutionAnnotator\n\n<br><br><hr><br>\n\n## ::: ultralytics.solutions.solutions.SolutionResults\n\n<br><br>",
+              "description": "Explore the Ultralytics Solution Base class for real-time object counting,virtual gym, heatmaps, speed estimation using Ultralytics YOLO. Learn to implement Ultralytics solutions effectively.",
+              "keywords": "Ultralytics, Solutions, Object counting, Speed Estimation, Heatmaps, Queue Management, AI Gym, YOLO, pose detection, gym step counting, real-time pose estimation, Python",
+              "filename": "ultralytics-main/docs/en/reference/solutions/solutions.md"
+            },
+            {
+              "start": 11000,
+              "chunk": " `Dict[str, int]`   | Object counts within user-defined regions or zones.                                                           |\n| `speed_dict`         | `Dict[str, float]` | Track-wise dictionary of calculated object speeds, useful for velocity analysis.                              |\n| `total_crop_objects` | `int`              | Total number of cropped object images generated by the ObjectCropper solution.                                |\n| `speed`              | `Dict[str, float]` | Dictionary containing performance metrics for tracking and solution processing.                               |\n\nFor more details, refer to the [`SolutionResults` class documentation](https://docs.ultralytics.com/reference/solutions/solutions/#ultralytics.solutions.solutions.SolutionAnnotator).\n\n### Solutions Usage via CLI\n\n!!! tip \"Command Info\"\n\n    Most of the Solutions can be used directly through the command-line interface, including:\n\n    `Count`, `Crop`, `Blur`, `Workout`, `Heatmap`, `Isegment`, `Visioneye`, `Speed`, `Queue`, `Analytics`, `Inference`\n\n    **Syntax**\n\n        yolo SOLUTIONS SOLUTION_NAME ARGS\n\n    - **SOLUTIONS** is a required keyword.\n    - **SOLUTION_NAME** is one of: `['count', 'crop', 'blur', 'workout', 'heatmap', 'isegment', 'queue', 'speed', 'analytics', 'trackzone', 'inference', 'visioneye']`.\n    - **ARGS** (optional) are custom `arg=value` pairs, such as `show_in=True`, to override default settings.\n\n```bash\nyolo solutions count show=True # for object counting\n\nyolo solutions source=\"path/to/video.mp4\" # specify video file path\n```\n\n### Contribute to Our Solutions\n\nWe welcome contributions from the community! If you've mastered a particular aspect of Ultralytics YOLO that's not yet covered in our solutions, we encourage you to share your expertise. Writing a guide is a great way to give back to the community and help us make our documentation more comprehensive and user-friendly.\n\nTo get started, please read our [Contributing Guide](../help/contrib",
+              "comments": true,
+              "description": "Explore Ultralytics Solutions using YOLO11 for object counting, blurring, security, and more. Enhance efficiency and solve real-world problems with cutting-edge AI.",
+              "keywords": "Ultralytics, YOLO11, object counting, object blurring, security systems, AI solutions, real-time analysis, computer vision applications",
+              "filename": "ultralytics-main/docs/en/solutions/index.md"
+            },
+            {
+              "start": 0,
+              "chunk": "# Reference for `ultralytics/solutions/config.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/solutions/config.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/solutions/config.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/solutions/config.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.solutions.config.SolutionConfig\n\n<br><br>",
+              "description": "Configure and customize Ultralytics Vision AI solutions using the SolutionConfig class. Define model paths, regions of interest, visualization options, tracking parameters, and keypoint analytics with a clean, type-safe dataclass structure for scalable development.",
+              "keywords": "Ultralytics, SolutionConfig, vision AI configuration, YOLO models, Python dataclass, object detection, region of interest, tracking, keypoint analytics, computer vision, model inference, object counting, heatmaps, parking management, research",
+              "filename": "ultralytics-main/docs/en/reference/solutions/config.md"
+            },
+            {
+              "start": 4000,
+              "chunk": "ack Objects in Zone](../guides/trackzone.md): Learn how to track objects within specific zones of video frames using YOLO11 for precise and efficient monitoring.\n- [Similarity search](../guides/similarity-search.md) \ud83d\ude80 NEW: Enable intelligent image retrieval by combining [OpenAI CLIP](https://cookbook.openai.com/examples/custom_image_embedding_search) embeddings with [Meta FAISS](https://ai.meta.com/tools/faiss/), allowing natural language queries like \"person holding a bag\" or \"vehicles in motion.\"\n\n### Solutions Arguments\n\n{% from \"macros/solutions-args.md\" import param_table %}\n{{ param_table() }}\n\n!!! note \"Track args\"\n\n     Solutions also support some of the arguments from `track`, including parameters such as `conf`, `line_width`, `tracker`, `model`, `show`, `verbose` and `classes`.\n\n{% from \"macros/track-args.md\" import param_table %}\n{{ param_table([\"tracker\", \"conf\", \"iou\", \"classes\", \"verbose\", \"device\"]) }}\n\n!!! note \"Visualization args\"\n\n    You can use `show_conf`, `show_labels`, and other mentioned arguments to customize the visualization.\n\n{% from \"macros/visualization-args.md\" import param_table %}\n{{ param_table([\"show\", \"line_width\", \"show_conf\", \"show_labels\"]) }}\n\n### Usage of SolutionAnnotator\n\nAll Ultralytics Solutions use the separate class [`SolutionAnnotator`](https://docs.ultralytics.com/reference/solutions/solutions/#ultralytics.solutions.solutions.SolutionAnnotator), that extends the main [`Annotator`](https://docs.ultralytics.com/reference/utils/plotting/#ultralytics.utils.plotting.Annotator) class, and have the following methods:\n\n| Method                             | Return Type | Description                                                                      |\n| ---------------------------------- | ----------- | -------------------------------------------------------------------------------- |\n| `draw_region()`                    | `None`      | Draws a region using specified points, colors, and thickness.                    |\n| `que",
+              "comments": true,
+              "description": "Explore Ultralytics Solutions using YOLO11 for object counting, blurring, security, and more. Enhance efficiency and solve real-world problems with cutting-edge AI.",
+              "keywords": "Ultralytics, YOLO11, object counting, object blurring, security systems, AI solutions, real-time analysis, computer vision applications",
+              "filename": "ultralytics-main/docs/en/solutions/index.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_a45728c565b8493a90e4d89b795c1d14",
+          "metadata": null,
+          "timestamp": "2025-09-30T20:05:43.027705+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CpoDAdHtim97g+KwLmnF1j/HZjiqRnvb8NTd2N7/UHuvqLU7WPpy9xbu8/gVRCDpbrvAKN1dH6SbGbDq3gCIX2hojiv5ZgvXgPd0da6YtrZLUV659/IX4pKzxKYCrBeosgBkMXS5VuV3+V2bQOd+2MUeebnsOAqyP8HYfLscCSftGtqh580YQBjCPoJr4DkPnxB+yBVA+apZAO5BSCpcxRp7gck9iBsroWNjLlmw9zPPawXcINl1O0kmHtnV64UsTUuXOTvAd/74zebRwfVWRFiGOsy8J7ZY+JPeSv4ptcNiEIr7OJKUvoMO6ozx8OGbyO5883Ns5WegmSPKOyYJsOtsWfk2qPqhRCM2INNqGm0B3dZ/hiN3mbI4RZgi1CwuDdpWxJeQaM3i/bRPivF9QKxsy8Cz2FsPuJHAuKW7HtoIikTSpjmcrTakF6ktBWJ2Ks4rtsLt/YzlI76RWYoEQe7LPBe5AZzNg6rnnxldIzF93c0SsxmNWkOFZ37MKGGGtFyHWaRjZ/5xnhq4Qq6QZ+//+YPlx2bTCO7ymgE=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "The `DistanceCalculation` class in `ultralytics/solutions/distance_calculation.py` is primarily used to calculate distances between objects in real-time video streams.\n\nReference: [ultralytics-main/docs/en/reference/solutions/distance_calculation.md](https://github.com/ultralytics/ultralytics/blob/main/ultralytics-main/docs/en/reference/solutions/distance_calculation.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2507,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 165,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 68,
+          "text_prompt_tokens": 2507
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-09-30T20:05:45.894957+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "GjjcaJu2FfnPnsEP_MXlIA",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "ai-generated"
+}
