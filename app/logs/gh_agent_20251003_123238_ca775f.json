@@ -1,0 +1,197 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i train a yolov11 model ",
+          "timestamp": "2025-10-03T12:32:28.888959+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CsYBAdHtim89H33EJlUTG3SJyUh9w0+s11uhrFdLxPta7JS398Zu06GADs23sxWV8j2GzGedPmF8cdcybaLoFESd+h8zMoDNuB1bQdrAEXBLzHtDccQH00g9T6VSf91DO32gi244rL/NoZiTNmppp959sOZoDKVnfugx3JvShIjXtH3+8mnE17IQTkbfKoiHlNcHsmK+zZmzaunwK9GfbCA6qubKVXQqPcc+EoHsClcib7PsZ4WPtwehuMqo9CGY9bzxtw4YynDU",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "train YOLOv11 model"
+          },
+          "tool_call_id": "pyd_ai_90e8a1dc28d24410a1dfe276a85aefff",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 249,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 62,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 44,
+          "text_prompt_tokens": 249
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T12:32:31.106137+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "X8LfaPDXAbPZ7M8PzbufiAU",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 9000,
+              "content": "or for more epochs.\n\nWhen training is resumed, Ultralytics YOLO loads the weights from the last saved model and also restores the optimizer state, [learning rate](https://www.ultralytics.com/glossary/learning-rate) scheduler, and the epoch number. This allows you to continue the training process seamlessly from where it was left off.\n\nYou can easily resume training in Ultralytics YOLO by setting the `resume` argument to `True` when calling the `train` method, and specifying the path to the `.pt` file containing the partially trained model weights.\n\nBelow is an example of how to resume an interrupted training using Python and via the command line:\n\n!!! example \"Resume Training Example\"\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"path/to/last.pt\")  # load a partially trained model\n\n        # Resume training\n        results = model.train(resume=True)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Resume an interrupted training\n        yolo train resume model=path/to/last.pt\n        ```\n\nBy setting `resume=True`, the `train` function will continue training from where it left off, using the state stored in the 'path/to/last.pt' file. If the `resume` argument is omitted or set to `False`, the `train` function will start a new training session.\n\nRemember that checkpoints are saved at the end of every epoch by default, or at fixed intervals using the `save_period` argument, so you must complete at least 1 epoch to resume a training run.\n\n## Train Settings\n\nThe training settings for YOLO models encompass various hyperparameters and configurations used during the training process. These settings influence the model's performance, speed, and [accuracy](https://www.ultralytics.com/glossary/accuracy). Key training settings include batch size, learning rate, momentum, and weight decay. Additionally, the choice of optimizer, [loss function](https://www.ultralytics.com/glossary/loss-function), and tr",
+              "comments": true,
+              "description": "Learn how to efficiently train object detection models using YOLO11 with comprehensive instructions on settings, augmentation, and hardware utilization.",
+              "keywords": "Ultralytics, YOLO11, model training, deep learning, object detection, GPU training, dataset augmentation, hyperparameter tuning, model performance, apple silicon training",
+              "filename": "docs/en/modes/train.md"
+            },
+            {
+              "start": 10000,
+              "content": "interrupted training\n        yolo train resume model=path/to/last.pt\n        ```\n\nBy setting `resume=True`, the `train` function will continue training from where it left off, using the state stored in the 'path/to/last.pt' file. If the `resume` argument is omitted or set to `False`, the `train` function will start a new training session.\n\nRemember that checkpoints are saved at the end of every epoch by default, or at fixed intervals using the `save_period` argument, so you must complete at least 1 epoch to resume a training run.\n\n## Train Settings\n\nThe training settings for YOLO models encompass various hyperparameters and configurations used during the training process. These settings influence the model's performance, speed, and [accuracy](https://www.ultralytics.com/glossary/accuracy). Key training settings include batch size, learning rate, momentum, and weight decay. Additionally, the choice of optimizer, [loss function](https://www.ultralytics.com/glossary/loss-function), and training dataset composition can impact the training process. Careful tuning and experimentation with these settings are crucial for optimizing performance.\n\n{% include \"macros/train-args.md\" %}\n\n!!! info \"Note on Batch-size Settings\"\n\n    The `batch` argument can be configured in three ways:\n\n    - **Fixed [Batch Size](https://www.ultralytics.com/glossary/batch-size)**: Set an integer value (e.g., `batch=16`), specifying the number of images per batch directly.\n    - **Auto Mode (60% GPU Memory)**: Use `batch=-1` to automatically adjust batch size for approximately 60% CUDA memory utilization.\n    - **Auto Mode with Utilization Fraction**: Set a fraction value (e.g., `batch=0.70`) to adjust batch size based on the specified fraction of GPU memory usage.\n\n## Augmentation Settings and Hyperparameters\n\nAugmentation techniques are essential for improving the robustness and performance of YOLO models by introducing variability into the [training data](https://www.ultralytics.com/glossary/tra",
+              "comments": true,
+              "description": "Learn how to efficiently train object detection models using YOLO11 with comprehensive instructions on settings, augmentation, and hardware utilization.",
+              "keywords": "Ultralytics, YOLO11, model training, deep learning, object detection, GPU training, dataset augmentation, hyperparameter tuning, model performance, apple silicon training",
+              "filename": "docs/en/modes/train.md"
+            },
+            {
+              "start": 11000,
+              "content": "aining dataset composition can impact the training process. Careful tuning and experimentation with these settings are crucial for optimizing performance.\n\n{% include \"macros/train-args.md\" %}\n\n!!! info \"Note on Batch-size Settings\"\n\n    The `batch` argument can be configured in three ways:\n\n    - **Fixed [Batch Size](https://www.ultralytics.com/glossary/batch-size)**: Set an integer value (e.g., `batch=16`), specifying the number of images per batch directly.\n    - **Auto Mode (60% GPU Memory)**: Use `batch=-1` to automatically adjust batch size for approximately 60% CUDA memory utilization.\n    - **Auto Mode with Utilization Fraction**: Set a fraction value (e.g., `batch=0.70`) to adjust batch size based on the specified fraction of GPU memory usage.\n\n## Augmentation Settings and Hyperparameters\n\nAugmentation techniques are essential for improving the robustness and performance of YOLO models by introducing variability into the [training data](https://www.ultralytics.com/glossary/training-data), helping the model generalize better to unseen data. The following table outlines the purpose and effect of each augmentation argument:\n\n{% include \"macros/augmentation-args.md\" %}\n\nThese settings can be adjusted to meet the specific requirements of the dataset and task at hand. Experimenting with different values can help find the optimal augmentation strategy that leads to the best model performance.\n\n!!! info\n\n    For more information about training augmentation operations, see the [reference section](../reference/data/augment.md).\n\n## Logging\n\nIn training a YOLO11 model, you might find it valuable to keep track of the model's performance over time. This is where logging comes into play. Ultralytics YOLO provides support for three types of loggers - [Comet](../integrations/comet.md), [ClearML](../integrations/clearml.md), and [TensorBoard](../integrations/tensorboard.md).\n\nTo use a logger, select it from the dropdown menu in the code snippet above and run it. The chosen ",
+              "comments": true,
+              "description": "Learn how to efficiently train object detection models using YOLO11 with comprehensive instructions on settings, augmentation, and hardware utilization.",
+              "keywords": "Ultralytics, YOLO11, model training, deep learning, object detection, GPU training, dataset augmentation, hyperparameter tuning, model performance, apple silicon training",
+              "filename": "docs/en/modes/train.md"
+            },
+            {
+              "start": 12000,
+              "content": "ining-data), helping the model generalize better to unseen data. The following table outlines the purpose and effect of each augmentation argument:\n\n{% include \"macros/augmentation-args.md\" %}\n\nThese settings can be adjusted to meet the specific requirements of the dataset and task at hand. Experimenting with different values can help find the optimal augmentation strategy that leads to the best model performance.\n\n!!! info\n\n    For more information about training augmentation operations, see the [reference section](../reference/data/augment.md).\n\n## Logging\n\nIn training a YOLO11 model, you might find it valuable to keep track of the model's performance over time. This is where logging comes into play. Ultralytics YOLO provides support for three types of loggers - [Comet](../integrations/comet.md), [ClearML](../integrations/clearml.md), and [TensorBoard](../integrations/tensorboard.md).\n\nTo use a logger, select it from the dropdown menu in the code snippet above and run it. The chosen logger will be installed and initialized.\n\n### Comet\n\n[Comet](../integrations/comet.md) is a platform that allows data scientists and developers to track, compare, explain and optimize experiments and models. It provides functionalities such as real-time metrics, code diffs, and hyperparameters tracking.\n\nTo use Comet:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        # pip install comet_ml\n        import comet_ml\n\n        comet_ml.init()\n        ```\n\nRemember to sign in to your Comet account on their website and get your API key. You will need to add this to your environment variables or your script to log your experiments.\n\n### ClearML\n\n[ClearML](https://clear.ml/) is an open-source platform that automates tracking of experiments and helps with efficient sharing of resources. It is designed to help teams manage, execute, and reproduce their ML work more efficiently.\n\nTo use ClearML:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        # pip install clearml\n        import",
+              "comments": true,
+              "description": "Learn how to efficiently train object detection models using YOLO11 with comprehensive instructions on settings, augmentation, and hardware utilization.",
+              "keywords": "Ultralytics, YOLO11, model training, deep learning, object detection, GPU training, dataset augmentation, hyperparameter tuning, model performance, apple silicon training",
+              "filename": "docs/en/modes/train.md"
+            },
+            {
+              "start": 13000,
+              "content": "logger will be installed and initialized.\n\n### Comet\n\n[Comet](../integrations/comet.md) is a platform that allows data scientists and developers to track, compare, explain and optimize experiments and models. It provides functionalities such as real-time metrics, code diffs, and hyperparameters tracking.\n\nTo use Comet:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        # pip install comet_ml\n        import comet_ml\n\n        comet_ml.init()\n        ```\n\nRemember to sign in to your Comet account on their website and get your API key. You will need to add this to your environment variables or your script to log your experiments.\n\n### ClearML\n\n[ClearML](https://clear.ml/) is an open-source platform that automates tracking of experiments and helps with efficient sharing of resources. It is designed to help teams manage, execute, and reproduce their ML work more efficiently.\n\nTo use ClearML:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        # pip install clearml\n        import clearml\n\n        clearml.browser_login()\n        ```\n\nAfter running this script, you will need to sign in to your ClearML account on the browser and authenticate your session.\n\n### TensorBoard\n\n[TensorBoard](https://www.tensorflow.org/tensorboard) is a visualization toolkit for [TensorFlow](https://www.ultralytics.com/glossary/tensorflow). It allows you to visualize your TensorFlow graph, plot quantitative metrics about the execution of your graph, and show additional data like images that pass through it.\n\nTo use TensorBoard in [Google Colab](https://colab.research.google.com/github/ultralytics/ultralytics/blob/main/examples/tutorial.ipynb):\n\n!!! example\n\n    === \"CLI\"\n\n        ```bash\n        load_ext tensorboard\n        tensorboard --logdir ultralytics/runs # replace with 'runs' directory\n        ```\n\nTo use TensorBoard locally run the below command and view results at `http://localhost:6006/`.\n\n!!! example\n\n    === \"CLI\"\n\n        ```bash\n        tensorboard --logdir ultralytics/ru",
+              "comments": true,
+              "description": "Learn how to efficiently train object detection models using YOLO11 with comprehensive instructions on settings, augmentation, and hardware utilization.",
+              "keywords": "Ultralytics, YOLO11, model training, deep learning, object detection, GPU training, dataset augmentation, hyperparameter tuning, model performance, apple silicon training",
+              "filename": "docs/en/modes/train.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_90e8a1dc28d24410a1dfe276a85aefff",
+          "metadata": null,
+          "timestamp": "2025-10-03T12:32:31.130102+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Ct4FAdHtim/VSl9fnqAeJFJEGaoAJe+fCuZIC9qkhbz2rzzClzFjzSlz/GhYHkFc3+FxL0Ua4XNYizv7iJqoCq1Oh+K9EkvE+sIFLCoifT2Yjk5O8KqN6Src6s/G2DKQlAGImgCP42krS0BeUJFtNaC5/W52J4a++c7/DmDith2gNa3WKqmi54UhoKsAl1IdURuGeha436/g8c3RKinrb9jETUDJGg8WoTfELULUZvYEXZRRYxEnbf3CKwvHec8row/y/2PFjxGeZLMgpktZlKhn7cWsGyYCW07LTxEFijLj7poSyFyNMClVSsL4yYh5qLK/CjSemcwx/CEz8y7U53I6p4Kj27/mckopLWmdlo2vACcTuPSLBaJK/iAN+Go/S/rOYI6nE06GIbswT62ct+Y/aCg17WXR3r595aoXQsklzKSq0gvGJXWFrcnQUbm7XIGbri6w8vncd4NAoOemEZ54nyoJ1Mpo53ZbNIX1gRHSXyfORklkCRCd8Jrz0LWXYoSgrWnK8w6UWiXZpflrWvbxHxetDfrNr2FPcTecpwnGnHUm7Swg2X73YRaRav22AwxyaGti+SWtOUQGlKMA0WJ0rs4ANMFFVkYaxpjlwVMtnjBxi3uDC1g+ovcTv2v6lDOyLoVYxqYKu7KLCI6eT+8wGOiKgS04szdhDOiOTLg3TQLpvXBPJuf7o2yZ90iYIfIuLQEM9lL+PvTHGVX9Z+eZzNw5+c3X0/g/FJQKIXUTw9jlsva/UlIcKW9N+fvuA+r7ccdRXdj93QPMIEzkAjsRiXBAb2eXUcW4etUwAcrVZlS/xU0GuDCgQxvOE9l6nYG30NvXh2FfPv61hnl9jDKyNBTcC+69cv5k8yWN56+FHd9ZYHC8BNlODHo+bRLhZqDChHsvl6BMAtT/l/et/5PsCeAPByi2jGwRl84P6SC4IxmLYXw3PeYBPgWYo8STw+m/HQhJdTdYn530QSF9Z5o=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "To train a YOLO11 model, you can use the `train` method in Ultralytics YOLO. The training process involves several settings and configurations, including hyperparameters, augmentation techniques, and logging.\n\nHere's a basic example of how to start training using Python:\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```python\nfrom ultralytics import YOLO\n\n# Build a new model from scratch\nmodel = YOLO('yolov11.yaml')\n\n# Train the model\nresults = model.train(data='coco128.yaml', epochs=100, imgsz=640)\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nAnd via the command line:\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\nyolo train model=yolov11.yaml data=coco128.yaml epochs=100 imgsz=640\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\n**Key Training Settings:**\nTraining settings encompass various hyperparameters like:\n*   **Batch size:** The number of images processed per batch. You can set a fixed integer value (e.g., `batch=16`), use `batch=-1` for auto-adjustment to 60% GPU memory, or specify a fraction (e.g., `batch=0.70`) for a custom GPU memory utilization.\n*   **Learning rate**\n*   **Momentum**\n*   **Weight decay**\n*   **Optimizer**\n*   **Loss function**\n\n**Augmentation Settings and Hyperparameters:**\nAugmentation techniques are crucial for improving model robustness and performance by increasing the variability of the training data. The documentation provides a table outlining various augmentation arguments and their effects.\n\n**Resuming Training:**\nIf your training is interrupted, you can resume it seamlessly. Ultralytics YOLO loads the weights from the last saved model, restores the optimizer state, learning rate scheduler, and epoch number. To resume, set the `resume` argument to `True` and specify the path to the `.pt` file containing the partially trained model weights.\n\n*   **Python:**\n    ",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```python\n    from ultralytics import YOLO\n    model = YOLO(\"path/to/last.pt\")  # load a partially trained model\n    results = model.train(resume=True)\n    ```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n*   **CLI:**\n    ",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\n    yolo train resume model=path/to/last.pt\n    ```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n    Checkpoints are saved at the end of every epoch by default, or at fixed intervals using the `save_period` argument. You must complete at least one epoch to resume training.\n\n**Logging:**\nUltralytics YOLO supports logging with Comet, ClearML, and TensorBoard to track model performance over time.\n\nFor more detailed information, refer to the documentation on [Train Mode](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/train.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3272,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 768,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 168,
+          "text_prompt_tokens": 3272
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T12:32:38.949161+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "ZsLfaOK4N8CJkdUP9ty2gA4",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

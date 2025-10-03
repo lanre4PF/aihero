@@ -1,0 +1,340 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i train a yolo model",
+          "timestamp": "2025-10-02T22:08:30.454919+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CpsDAdHtim8aV9b2ArE9b0mCRC+aOOaV2bYdGA1IrI/FzNkEx758bZrkD6SyFAyoIhtX/2bdPokXog2fnx9mwExJxdNxW1XRiwZMsPrrGf/jZ6t97GP9Ptg6bOP+UhDtodD4A01r1+FMTLPcMPniFK87KLiFmuTEQ3u3xCTv5BRPM86YgcAWrg/jGsdyDVJu+7fUNc/0o+mi8BevvP8/xE1hTZ8fK3Nqt5J7zQM3ZBWB9HIuROU09bYOOl6G49vKw/iClisG8BENWPYYmAkPVJOXgIxLBzsXa8gaKH+Sk4oFCXDcmW9+Gkmn2Ktp7L+iuhnv2N780ZWuagBvauf15vATLKSu8bESj9ao6WxUDcVIThpfDPcFRS0amGyVZDLMEmsQarc1qZ6gLZgEE0NqtBljgJclNQlCN0D3zH3Mm/jtf5bLCOHcYdfp7ntuMjrZQBKllq/EIfzJjI6SarRii5tgkRPCPllA/c9jSRjuN/jIB6zVgWckvnHVIU0T/FTxF5S17UkYfFVETO/Q5A6RkwTQcHF4HEbabKJ0RG1n",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "train YOLO model"
+          },
+          "tool_call_id": "pyd_ai_bfb2569e5ce442d5be561cb905f9ebea",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 246,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 88,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 73,
+          "text_prompt_tokens": 246
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T22:08:33.337733+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "4PfeaMa9CP2Dxs0PiMe16A8",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_bfb2569e5ce442d5be561cb905f9ebea",
+          "metadata": null,
+          "timestamp": "2025-10-02T22:08:33.344708+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CpYFAdHtim86zOJMNDDRsaMTd5Bc4RIGVjJC+57tk1Hfd6UDFqBoCD88WYedqmRxS32z+M7F+H4nROIFEXKGDNfgQx1f5HbmOLg+1hnXnZMlIWcIvRV7oLPUrG2Q6WeaTp1yFxH5VGXtFGRCmggzzu5osP+Oprq2Ko/DrVS4rTBhC4s9Nk4fc3lOqXDaV0yjiL+VOS+j7FV/5h6UPcAvjriFTaTr3MsyRsBYYlIShGGrT55i7pHbwqTQtGn51qU/GDQ3TGdhz3DEAByyOTPVGGFusHnhr3cwR0LyUYjti3TWtKFQh3h3fGMOQRStPKMTLqYtQsIHmBNSOnn2MAn2RvH4TVMuTWyXfaAeH3kvdWCCa1Y1ZPdFQ8I/9tHx/N8j92Sr/RlrbLovUu8OwaJadjd3RGwBMNWLd39j1xeALXpMw0JDi/E3WIu9iGrkadAzCGFAaHNAK5BYLjZnec1GlRzV9tS8uOVkfknjw+sc1xPzss5Qx3T1u2Bc294lmqLJcvkn4q4QvXrS/UagNUZWuSe+XEULsrGAed0no/iSBvOmQ0LWjGIq+HlL+tQkc8+TQ4k7J3P8KkQ15gF0NAuovxewWiGHwnODm2I/RAHeOBVNbe63VqOx7X6occSpm1FCIHTOsHbNpoIIZkZiry90SPafPg/6p2KKUy/7+6qJt+jKp2UfqyTIsPmnY0Q6UR55+smNxWwWpWbygv8X97KI+XKrlb+hpPjLHBCWqZ9Ely4Yo8vGorQVWPwI94o815EMDw3qC+b5AxHNIv8ucRXFKDIgPloTdXW7HZX0euZuMlMtNi6dYUPRpphQtprt08lyRhsD18edDsl/AfG8NCnBorxkZB+VI0KBpCrAY3OMgowGv0Lb9X4eIhE=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "training custom data"
+          },
+          "tool_call_id": "pyd_ai_be3bac6d81be49c9a4810a51758ff935",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 275,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 144,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 129,
+          "text_prompt_tokens": 275
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T22:08:35.064066+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "4ffeaMnkN5X5vdIP2J3IOQ",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_be3bac6d81be49c9a4810a51758ff935",
+          "metadata": null,
+          "timestamp": "2025-10-02T22:08:35.067067+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CrwFAdHtim8Fqgy8mFHyH9pHbVhCf5doX3/UuVGc5lcSL0BJF0Zp1YR39BhUMPmIZ8E4xHomdnK18yj0cVBSgqmZkc6ggUP+jGgACOjjoxeLjRq4WPvdwCEgyUnhrGeUv/VVDAfQUUiQU4qMm2A7KnoMZt4srVWSoN+BaO1OUIsIja+5FtU1ajb4CpmtTheN6SMagGE5p0qt1ii3/NokhvXxdm2NcpTYgdXUVkYKL88zzy6h8cqLoOIUM2aK+1aWIgJYj7J9jXEZ+IIThnLNKeiEQoIWJB+OdnEHVs2s8KH224ti8FMXE3zrnderxfs9UfbxvFTCFvcK/qxT4TldSt02EWQSqfelbVq/2FKhOvP1eOzC+d1UzUNsfX423+MVzQGKrhQYzztLOtiGSFKtY8u1uWdGr34lYoy4l10w/kJNI0WHq8Mj1+wNLYzUPXzNiMDlr3RuJwCC/yHYW5COjrFz46Km+B6r4lTYFomKvCdtaq/QbV2k9Y3dPeNowQTnEv+hco0sEMV+IOEEANoskHCftestUHTa99kPuf7TJyGlQFPDZ6qWCvaSxysRv+q/xpQZkFnpLTHrEOYV+Z23A6pnc8PT43Dd1LV3od6er+nET00Wts8fWk7jD+vvO8aFw5WM8wW6Sk7TgBOXnFxvK7p9YQH66eD2jxjmBItlusM6BpWhWL4d5mERGZ2F38dqbsVwmQWwlIPOOLkcvEJ1fN5GNmzYwqcwCz14LvHqXI0oi8ur9M+MMVmqz381msVIgytdvM3GNytYHDIKYln8+zaFmHa3Rms7/axtyscvdv34RLhsdE4VJDgTWIqAkzCN617+bTNFQpPWK2pd1/WO4xVViW1LVEOfp62yEFcfEN1BDelq+jSEw1HdP3vTu5fw+IT4NXjl9qqDsHPAGVurl54kMXo22MuHZ0bLZ/3Ilg==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "train command"
+          },
+          "tool_call_id": "pyd_ai_be85e6e02cd54a61b58547466e671c95",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 304,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 156,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 142,
+          "text_prompt_tokens": 304
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T22:08:43.553713+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "6vfeaM2WGOnDvdIP-IXxwQs",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_be85e6e02cd54a61b58547466e671c95",
+          "metadata": null,
+          "timestamp": "2025-10-02T22:08:43.556654+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CsEKAdHtim+ctg8KpeZS4SdGLYMvmgVbfN+S2q9Uz3yWaX8yExa7iVG0x9Ct6qdNNhXQGuOlCEbWDrPkm6BgHuvibH4pONJYmCghQIr/6DLNfN1KH4XGOUaUtEi6aP9m4/ltCQuxyMWTawtbRUT8YUb8uPv+7+fAQHBge8DxKV3ZjorLlh5iuXtioOVbxTYTTT5E06WmrdPgZHEVv1NRpflXhA8SG3YfKVvI0omc4gHaX0Mz++aEOIQp6BKxk8ou+LxjRaDVZnmobs7dYM2/8SpLYLcfFQmzKagYD9xhh36eZ0+FhB7DRP8epstKkql4MPvEPe68FWlHfpfQAJJsby88IlorFku/XivLE8AudXTFI2DyxtTWwmNl6REdm7MN0nO+BMH4rin1QfTObdQd6z4WK6Q6XIe+FWC6GDqAIY/F8k63ESQ+ezKZZ2we6ci4BtcaQWUYa1U3AuDuMVFfAHO39HGw4sTyJSiIh4S0/1EgUjy96btNkDEZmVRn6jYEhGQprL6az7pLvRqbIThhwQaQhXimqohMlMaiJJ36sS4v0zIi3KK7Wznlq2+93AngOBJULKpynoucwdrBXOQZTAMU+exBKJVFeRGrmPMoSZybBjQpuBO0smXRszCIkHNiCXvAst0ezTz1es77SpQPh1LBHJ3uJXRz+8z41hkfB4n5Itmgp/Udk7uxd6ZFGcagzTyV3cfRlOfISyDb/1ZVNBZbyCcAI03ORHt0SjgnM1uFxyjuauzKQjE1CQ6xMCdtLW5GVjnoy6GiWjFmzOnorrGE0d3yn9XTagkxJbzXxJDeRl1CdwSdIPcLMnxRk8bwJUGdtFyuviSdv6iWg0uMpASWd/AWDS8JpGWm8Ka8n7Q4iM6bPfdK/FHyDeJhC8zG6FptVZa6zJdaBf1W/1/emY5li+0WaHeNNYuXDMlH6Iuyd9Vw3+jgUBIkSQqWDhK6tCll2HhFcmkuyT0Hb7ODSQJkkCiukIl2KVFF0EeNxIAq0VlQriN0j8PMCcplTMmASRl/LrSWWAN5xxkpa7JhHHS9dgGCocbONChk4W3P3jVO+2Inl4Gq4DYZv/q/NRhehksu5id0fSlnyhAwYSScQpwzAIXhggq8sWdSFf4oK4otM3taNDsGaNvNi1B/xlThIovv43frX3IXPJHhOb4IfXopMMdbdoU4crt6PIif8bBXr9XL0U7iXfxcFj1Ob1HfXjwsAqoXBXgb+lh78pv14NsByOWe2ZQ5MvUc9skq9G3djB1rtiyNNjgD4qAP7kcgnDCSu2WJsDYI0LOrfkKd2dBnU4jEHINQHdLzgJZs1q54UJC9xCi0y6BZBI6S7Fxr5UHr5O+w11RGTzH3qefhzaUFbmoXXQKs8/klk2B4//6FaqvUlakHrTCcTFjmYesMQf6DgU7hI7hsWxqyOaPTeUXrxobXLRt7zYQsgTKxqb4quvmrGMo1khJFy8O5vs/kkUU4WfFhw+HvzFjCtPsIb2mm6RC80dj4i3MUkk7koHXBRxesVOgdK5Y9WtWtdJXqF2OcksyTmrLWhtZkqI6LZAfJWXJS7NBX4rgrkxJA9iBAxKwnFt4c0AUvFDogin6eiRGBoQPCWxIPvFG9DELDJ/csWQf5ae985qpeyUuws5H8uaAoRTlg08srnSlqkP/qo7H0HGh91QU/yteZd3tLWW0Ae0l+/B0iTTQF81mbDnwuudf7DyhORd9AjlhOA+oc0KTllEVMRhbOsnBxkk7DLpX2Fj/XrNk846/yLOQkt8mWKJkq7USOHbYo3yxiw9dwK1Bm6g==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "yolo train"
+          },
+          "tool_call_id": "pyd_ai_663398fa9ad3423d8e925144a9c1bc96",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 332,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 288,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 273,
+          "text_prompt_tokens": 332
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T22:08:46.521364+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "7ffeaIW1GvGExN8PiMuP6Q4",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_663398fa9ad3423d8e925144a9c1bc96",
+          "metadata": null,
+          "timestamp": "2025-10-02T22:08:46.525360+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CusHAdHtim+wJHQcB5Be266c1tjnedFFLIyO2QFPh86EEOjKkNRy8LZIUbeVMvLQQdLCjxc+JfTim5tx3EwdQsaRfpvvizapCDD985Rdom5naEeS8zpyB+fTkCEMlR5ROxxYW9l6+A+hp7efmH889O97wwTpAb4CxAZZGx+PnwkJvKjp9tizwmc3+5fnTTTyjV7Hy6AEMC34bpNiDeespW6DQRlrpo/isSFyc6fNefdsTMvXTAgr+LLE11rL/D6XHO1bPrphoMF8sMUovWTN2q90krG1lVF5fldgRttgJR/Qc8PdJI3CQA2OH0vuaeMUJ0X0Dx8inrhj9bWcSAmmZ5Tn2JQ/Uzq5WC3EF4TUV07EZXiy6Gl0+wsp5J8XAThFoKWQx8AvI6X/SFvHSTZpvnhubCXkICt+9C3FP1Od1VVA5uRN8U2e4VKKpoHo1Vvvtu7R/bDprTuWPDB7PJ2hMd86ITbc6TJc60xSgiJjn3dDLvHJf1QbVN609DIyk67RtQLY9qn4KpcVXyLThPVANWg5uQdWuwW13ZmEWvV+R4evw3QYl5brIVNS9/vKp+GOAJpoTLj2Wzd6PC4XHuuO4N93PLWRiXjGqH5Ah4sNtzpm5Q3gOtO2Cz0Mvdg4gtRWaz54fwBEKsmsStpmcv1uAD7/gvgCPdMND8+VRwV1iGytIXEAyDF/quFbGxyyy02SI4crseXKR2PnmilxldrufmI8Fk8NKSNpWqlDiRTwmbQFWk5AKYB71yX91l+TyzsjloBsAsWRhd36KjnKSFOecvh7CfVClEhmETyYfDXuZVUTmZ9WTzrEnI5NDHS2bKlNjBLRc1oVvKOarQTxrqcW2Gi5gnyjlUMR3+S2RBXsXJAcSiLcjCDBmev0QmGpe8TnWOxFNPz/SBVrZRtoVGcEsmhZRp9y0H4v1tXs18WqoiTyRNnIFIHzk1wn/zpJNaT257PsUmfy+SD1XGZUrsEJWfj6CaHzqZ0xB+OXlTNj+Nu2/ZXdBUPXsiucj5J04BD23u4xcNEaH8tjswzQ3+yXhbr/HO1UerMS1cR/wEmHY6jhlShGkd2q12BIS4yVZGeTxJW5GbmnLH8+SBWQh26YJfCL2F4SeLTk0MqoOYQvAncIFkCi+3qWffV/lpgtbni0i8p+05bNrbPVII9B+tRDefiOqNPeuwmr6D6eF6m3A9L0Ic5Y6PxC1u717/Z0XGL7kYXXgtJDnjdPaiI215zYsz93BeWMgrAL7J76FOX4f0dbhvIzwzdZ94GoeNkGUjfHmFf1+EEAWmFWdl9ZOl+R5EBPFem7OlJcE253ImzTi66A001gpOP0hKnutP8UBw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "Get Started"
+          },
+          "tool_call_id": "pyd_ai_7d2e6938acc34074bdeed83a113b8308",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 361,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 255,
+        "output_tokens": 210,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "cached_content_tokens": 255,
+          "thoughts_tokens": 196,
+          "text_prompt_tokens": 361,
+          "text_cache_tokens": 255
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T22:08:49.086336+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "7_feaNHQOIKexN8PnNKyoQc",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_7d2e6938acc34074bdeed83a113b8308",
+          "metadata": null,
+          "timestamp": "2025-10-02T22:08:49.089278+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CuwGAdHtim9BZkcpm5mAKtMGHOjWkFVbTRUoWNdGWqnbeIT1hOBlZ3h1WyYZ6j02XMB22WmjZxvFsm81MkopXJ+r5NcTQJDs2v0n2tcHmQM1dpC3cbKjO78eN0cb6sht2k0+nsUKiy+BBQq+T+SuCfjz1kvGYurL5S7EZBG2ZSsduw42+qzQtq51t6d30IqodVu3KwCy8ZPfBkMTvqpDjH9o9ZU0ny6uML03ZSqmX+w7stfabKv1GPVuqekaTKhk34w7dizxq4j9YKaOt4D7idKS9kMkxC/u5vBTR36zzhTZHUpzfEkIOgxhnuX7DWoyea4y4ermCfFcQaUeRkYXXOV93lE23a28PuO4Cs6rO8qIuH1SzPBo658jo6vHeBSxDqaQGcKS+a2E9gm5AyNpzDTkMnb/255/c6qFwwNLyIgpIVC2c492Ny53f0TQ5pqeZDqwvuaHkhe23QaOowu66ow/En50MgohJOqpD+wWHLfSG34FWWpcf9I2cT7fSHNGFwPDFxSQUvuRm6A7f0d3Oyecn3io9QMVpi96qfKGBFP/WKZNc9LLU5PS77UUXMr7sgm72llmhNBjgP3nVAS1Nue3eVtie1Qb0J4OC2zB/FcXsWfTQR0CgGQjM0o6zw35JbiJJ8RPRthNrlD0pWz1D07Gwp4ya/nGq+5dUlQxLmjfhSbFlz42SdcI8QZKmVwhQyavaD602/aU5jn7CBLpKnbb/0A28B77PAHbrX5LwwrDEBixOgvZhUdPlC6qyPEnMSJo5jYA6SakRVDsdnDFllyMOMFw9PuHGzJwAf7/2ICpgo2EV1C8kBk80XjmYreHhe3XVachf9U+uFEZeraagzwgvpP86ImOCerb7Bss27eu0awqgbhLInmd4CVJrCgqam4VurwQBlYt8FNXRPqZga4i53Zi1JAPHmNw0dc/8dYctIaAxCL3YsdFOnBj8UqLQAFMkCTv6RHbRLM13qIsjZw3gqGhg8o5+Tf/n4HgfQmK0DOIY5fDX8bMyYZWBDDonfTfTjfiwQJPTVCeSK6Jqv5RFajgh/t8VGQFKrrDp1F9GWVmttABNkA8TnFcEBTrz/Gd8rwqEGoC4i7nZYOKycKE325CXqEXFEre//msDjs+NYLT/m0pXlEFjiqSRjShH7mcrms7WhPcXmf9sjJF",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find specific instructions on how to train a YOLO model within the available documentation.\n\nHowever, based on general machine learning practices, training a YOLO model typically involves these steps:\n\n1.  **Prepare your dataset**: Collect and annotate your images with bounding boxes and class labels for the objects you want to detect.\n2.  **Choose a YOLO model**: Select a pre-trained YOLO model (e.g., YOLOv5, YOLOv8) that suits your needs in terms of speed and accuracy.\n3.  **Configure training parameters**: Define parameters such as batch size, learning rate, number of epochs, and optimizer.\n4.  **Train the model**: Use a command-line interface or a Python script provided by the YOLO framework to start the training process, pointing to your dataset and configuration.\n5.  **Evaluate the model**: After training, evaluate the model's performance on a separate validation set using metrics like mean Average Precision (mAP).\n\nI recommend checking the main documentation or official GitHub repository of the specific YOLO version you are interested in for detailed, up-to-date training instructions and examples.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 389,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 236,
+        "output_tokens": 395,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "cached_content_tokens": 236,
+          "thoughts_tokens": 159,
+          "text_prompt_tokens": 389,
+          "text_cache_tokens": 236
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T22:08:54.402926+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "9PfeaK3eLOjavdIP-62zuQc",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

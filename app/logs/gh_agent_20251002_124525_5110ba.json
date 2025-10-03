@@ -1,0 +1,338 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i evaluate a yolo model ",
+          "timestamp": "2025-10-02T12:45:08.982898+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Cr4BAdHtim8e7VYKUSCFwtIvl0sw3tmuSwHla7j/E9pmnHdDoNEfL2fsdm2+wx/Rn+ka+ojzIJsgwDKgl1TamBCUzymfKgxrzj9Yn8OYwqKbVB7LbYSZTtv7GhV9xeleXnlq0MRS1U4ilogamA7I0Nhb2/cRl2ltwXeKnzUpFJyQMmrWe72XdOHnZeFq95C2EC4xwdkZsfFhZ7yTbFN8OwsS6llUE6oQ00H2X4wHjmUa3y/Dys40WDZWatDzdZjWsA==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "evaluate YOLO model"
+          },
+          "tool_call_id": "pyd_ai_4b49fb5509704195bfb31554157b3a92",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 231,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 51,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 36,
+          "text_prompt_tokens": 231
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T12:45:11.128281+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "1nPeaP72CMe_vdIPptDUkAM",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_4b49fb5509704195bfb31554157b3a92",
+          "metadata": null,
+          "timestamp": "2025-10-02T12:45:11.138190+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Cr0DAdHtim/Sk1FHvFKyurIi7LwlCfAOe/5tBTD5WM9QUe6ZAJ1ix3yJ26Js2viYPVjBxqrKGPKtULVpifGvQxWcJAUTJ2eSdoAKqPbPRWjM210cDUcBFaiX0qcuC8sux9XMcA1f5ZRBqEQ4iC0xg8qJfFP89vYQkwc4Gov74NN/csHN8nfiHuceSrsToIFDd2bJLgRuvVOp/0iFPKRj7QHZnmGj5g8eLfGI28k44x71NR+nATAGIMQHumSo1QGcxuFiGDFUQgOEnr9Qmw2Z5yrOL5r6LgpKPuxH5mrVs9dUWRcjHJme5qlZnGbDz3u4f/SWijaTUgF58w01/LkCZBUX/KKFw0F9QYsre2kJOZV/4sUiBCT//dOyU7YIJrIFSMPlBNcmRQr8FQ4kFf0t4Xfy6W0ySoiB6+5oOVXwh/wjNZq5ZuK+hY18SY5UMQ8/JtCngZ69cVjAOlST8mwD3vA+tnEFbcZKWl3DXnOHyqssq9iKGM68viNj/3w1srcwx7Di6/Ijz/tcuWv1HFOXbxnsaIvj0p01RMORXtiAfIpRhINGwld66H6xtslJoqppyQThS2u2lWE4NlGs19ZPbw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "model validation"
+          },
+          "tool_call_id": "pyd_ai_6270d043cbb84f3389139a63931b4e21",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 260,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 94,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 80,
+          "text_prompt_tokens": 260
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T12:45:12.765394+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "13PeaO3nLfP6xs0Phrj_8AI",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_6270d043cbb84f3389139a63931b4e21",
+          "metadata": null,
+          "timestamp": "2025-10-02T12:45:12.767524+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CtcDAdHtim8FpPLqXngfwHLRqekCcsE9mgLjHp4+fpcfrlWPUcdqOQo8ltt/DElVsp5EDtKNjQCa5Ch3LvCt2d2BnmKJKEE8/DcV4J59IRxRux3ortgrOmMFmkkkXFu/EO8LQ6IDuQNsOF73w0OvJrXpIPTPV24iwhkLPOcKmm2bfWgfi9J2w8JixHZYzXNruEGWUB6c9KGjQBSI1SkuHFk1NAWN8DOY8jRsJ75HkidzhE3ciP7nj0JK5FAMxu1YlrAu0H8nVO9RK+hgCY8h/xhIscAPD0MMniqyn5rc2+8+0eq2DCc69IxDp3k1XG3viIXuZbTKTF6dQ6WClsWu0S5BTQDdLRmgk+bdmhC8NkZzciQL6929g7jZt4Bql+Na+C16daVQI0m3Bf2SWi0/R9s5J8UytIYY8fLwxntduv+M0XF+JCc3d1niPOdnEGySaxBKzxCWJgJCIL2WEQDZYMRxFSflNNg+2mXYkwKiDzM1tvP3SCkW3Y4LiR+gOYWPgR58tsZCqBnl56hDaslYwxmD9fSLIVG3XWgcvY/x0GdO5FTTpa8uFbu/MqAJdUtnHo1rpv5DSR5cwqCUiarHK0b8cHY+Fq14H6w3NQ3eswNu7flGjBYIIeBp",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "metrics"
+          },
+          "tool_call_id": "pyd_ai_eed854bb22014d31a6346bed38b20193",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 288,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 101,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 88,
+          "text_prompt_tokens": 288
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T12:45:14.284569+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "2XPeaNXnEZX5vdIP2J3IOQ",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_eed854bb22014d31a6346bed38b20193",
+          "metadata": null,
+          "timestamp": "2025-10-02T12:45:14.288519+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CvMEAdHtim8sjcP4zlJt8OcBnk4DhpSkszQUE/kIVa3ou8XdFIVEoD3yw2LidKI3Hm1mYuZOI2eqa6XhaxFQBTO+da6iRSjY1zyMyZ18tFJU4ry+fSMjDdlb1ulQLygrzlzX/DhGk16BTH4AzP+9c4gW5iVYbK9lIPsTGaLwvu31vyjOEBvUwY7MBQX+bd0VGacm9WXO9F2/5bx/3ysp9bOYSgOWPe2TSRkohA6KBcCfhUeXBfLYyjkJFDsIaXuHm6DYYU8Mbp7JIJYqolgMOirEYF4So56cHSH8cOhNiu3CwCBdTERxl7FFTii8fAyG9GlnNR2gPGgpeQs3Svx8uMjRDlR1+5YIW5j4ckN4RHffe9aJGL8GQv6MaHGnjgvijAHNt0NBVw3h12YLowrG0r0ZUXr14YVRyB74aJDoOwS4AbYOy2mV6grQ5/n3+wDlOCK4Rtyr6QKjnun1TefTgMSUSo1316A++fKhjjsEQrT+VaNYgmL9nSnrmU44iOo3IoWRePQznFO9P2BikJWK206KPAYT11pjRB7wAjkTQfJP9h/5+K3mf8HI6Gc8mT2oO5PuqM+4BrkIyqxD2ugreeuPkQWFvPoLU71kDJIuIACj90suB3rbLeMe33apLbJ8e5IFoTc9/uw6HNy5WRM6xDotXWOcczvqv4a33Za3q8yFYhsLgbQ07Zd1duo3zRADeq+/8G9tbjcdJZG09Ale9iU6Nk31peSzD3HUnpyepDUDmeJ1a5R+vUPOje/UCGxdf0i6paBLsrMfG3NE8aD03UeG7jNUEjibmvz494B8+4FDGjnc1to1VAOUChQCJnVFNWHothaF",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "YOLO training"
+          },
+          "tool_call_id": "pyd_ai_b7d965fc7cd84591b0b5119356f7264a",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 315,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 132,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 117,
+          "text_prompt_tokens": 315
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T12:45:17.048136+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "3HPeaLOEBt_1xN8P9K7h4As",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_b7d965fc7cd84591b0b5119356f7264a",
+          "metadata": null,
+          "timestamp": "2025-10-02T12:45:17.050346+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CssEAdHtim+QEDw1T8NX2vjEmsfe40FrSEUTaR7MTavXrkVGP2RgWNbKTfr7gBS0bEqGj97uEUeEjE8C7Lxroo9g5OzWLJvDPXLBGFdNgJJEuTJVEbM7MiwFEJN6nS5lYI8tZlKA1JYcicp9w3hyGD4FHONAaon/GSIpX5pMDdeybYcQLB9kpPir8qqnnIan7fZNnXJDZK7feOnuyGUh2SxDiIzWMhVvsTXNjavZq2kYEZ+fGIxyaDgSbtSSgSVHzZG2jgNF6pm/YgWGkIWb5gV3Is/zKmq+0lQOcd4nQBMBZWIOTv38WuwolXdW1TBEjHKKod8MVMiHkStSPeGgvjj7t5IYD9/ETZhUvo92cPbt/U7lw0vvW0kVNk+otrUQmMbq8GI1BbfRnHVOAMYCUyyCr/pXNdjtpioMR78u+zNwqGh29iTsPFzSTdUnesCzQ22a731lIdv+htfR4G+7/qW0N3Xd1p1rRozOf0HjQCE+Zb7YQStQQIqQGxMClzdEbNdo5hRU7/FkNrZ4vhq4WSPVSo775ElbJPO6ki1LNXGEGm9e9p9gSsJJKC0Kr8JqI6H+B1yWCbQp2uo7jUY0zvyTjfMrPK23CdizZ9JH4R/cxIrgvxUgpefc2phLg+bOjaIsaCRCSE12MxzIxI/NcwBtKgv4bcaxpgS1XGxFK54UGyqw1lZJ8W26pmDKKLOcH6DMkwjuWOPSNomXYjWtQ7nm5lmqNGO8hV4rbw9GtFC3yrEHDPy73wDAP8CwGZTUcY/pgqbke3ztNjHS/Aw=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "mAP"
+          },
+          "tool_call_id": "pyd_ai_28595ec6ee384de2a169b94793b37a01",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 344,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 129,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 115,
+          "text_prompt_tokens": 344
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T12:45:19.225237+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "3nPeaNiYEpLzxN8P7ZfsuA8",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_28595ec6ee384de2a169b94793b37a01",
+          "metadata": null,
+          "timestamp": "2025-10-02T12:45:19.226234+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CrsFAdHtim+xSMB6pdUX2OFW/4hYxJezMoR4EXZL3JLPTVQev62AOTfAJ1SVdU8WdubAwzZ8kNhA/pZduGlqiLbxmDdq7rkgFs1I8RcR70ufrXDJS0sb1pJOiLgSsZfiKvC7N/QskdVq17BtHgLyPzvDql8YNgNjkmBqysfkSCSJqaqVlR1OCFdoY5fSReRHAAxFtyKYhqh+I+nQPp3Ox+c445lPugDkhvBTcg1lrCEgqp0qqJYQlyW7Rsbtlog5w+GTakHKITbjZtSDhydkU2W/mdSdlm3SV5t+h1l/4D3u4MWM7m/g2tKIT5PriRFI8L5zYbYC7/D11uMVbkaLX3M+L+ui+T7PZb3e6tkIB6IVpqZqNjdmjRd137kr/OB07btFl63PyWStgPfEeBsqlIdRGPPbosft9L7JQ7OhmXsmfQ6+9wgdAoP3XkN0ccmyzm24dkkCS43yH03GARij3GL33f25avyoFS2THWFNTQpXZRKR19MtfDOnfiwIcV04YwF6EOqPrzs/IDZQYJ3naWsQwIPoZGGt0rzSjXHPCbbisyCfYYb/rrHZw8Y3/86qfZQq/BKzS9fEZDBZCXW1mltrskATkYr2tcd5Q5khr25hIYNAi3bwZImmqVfx0ZEdwP+CZlu+lxf+DWxFlGX7lptW8CeIT8/1xZIEzuCfNQ0f9AUj296LshQgeOFMuokv8wPWwKV64uZQE2mVK7ZK8kVtwj4SfnSpaN5lnIFae18ALzvrZj0G33czvmpI4ArUn5DpXLFOs5O+ZvB7g8YPZWP7RcJAdB1Gg7fri5PwjQhC9Yk1oE8Bl7rnxrgE4pPQPgIC8BzRd81Ne5LpC+OpfvSgneHkJH1tYKziNmH0U0tFXPoYxHbzKecNjXXJ3+tGiUB5yVBw2+5qXCXEJ/Q0JkSVtEEfCAT6AGzVYhhj",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find specific instructions on how to evaluate a YOLO model within the provided documentation.\n\nHowever, in general, evaluating a YOLO (You Only Look Once) model, like other object detection models, typically involves assessing its performance using various metrics. The most common metric for object detection is **mean Average Precision (mAP)**. This metric considers both the precision and recall of the detections across different Intersection Over Union (IOU) thresholds.\n\nOther important metrics and considerations include:\n\n*   **Precision**: The proportion of true positive detections among all positive detections.\n*   **Recall**: The proportion of true positive detections among all actual positive instances.\n*   **F1-score**: The harmonic mean of precision and recall.\n*   **IOU (Intersection Over Union)**: A measure of the overlap between the predicted bounding box and the ground truth bounding box.\n*   **FPS (Frames Per Second)**: To evaluate the model's inference speed, which is crucial for real-time applications.\n\nTo evaluate your model, you would typically:\n\n1.  **Prepare a test dataset**: This dataset should contain images with annotated ground truth bounding boxes for the objects you are detecting. It should be separate from your training and validation datasets.\n2.  **Run inference on the test dataset**: Use your trained YOLO model to predict bounding boxes and class labels for the images in your test set.\n3.  **Calculate evaluation metrics**: Compare the predicted bounding boxes with the ground truth bounding boxes using metrics like mAP, precision, recall, etc.\n\nYou might be able to find more information by looking for sections related to \"performance,\" \"benchmarking,\" or \"testing\" in the documentation if you explore it manually.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 372,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 294,
+        "output_tokens": 482,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "cached_content_tokens": 294,
+          "thoughts_tokens": 126,
+          "text_prompt_tokens": 372,
+          "text_cache_tokens": 294
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T12:45:25.878769+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "43PeaMi_LdaivdIPgvno6AI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

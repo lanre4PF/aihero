@@ -1,0 +1,191 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i train a yolov11 ultralytics model ",
+          "timestamp": "2025-10-02T12:37:59.808987+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CugBAdHtim8AJXPsCUOoeU9xDpXyLyNbvnS7I4bYRs0LYmg5Flq1kCEMttG41lUZWQ+Eg8GXcmwisFNAFWJExuxK+6rmlzIF6AWT/2Sp0DJllhAjS99fVKKY8Vwm6KoY0hCELK9PLBtPut4bRUtOitbG3RVRB6sT76hge+1b3pJZ9iySmOngIsy7Ue+L/KMYojU5eQKDCgHp5wWNKR2Urtw0J/LoXhCj4DmPwDgEcTD9Sa/lhlgbPaYNaqbxO95b/wr7RNh2zhCjXp2RXs8t9x7xDr3XbQ45sWqkgvImfLt8gqElJ0FcCSa6pA==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "train YOLOv11"
+          },
+          "tool_call_id": "pyd_ai_023e3c3ff0bb49918f697502b7bbb449",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 236,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 72,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 55,
+          "text_prompt_tokens": 236
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T12:38:01.905385+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "KHLeaK7zNrTWvdIPjvW4qAY",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_023e3c3ff0bb49918f697502b7bbb449",
+          "metadata": null,
+          "timestamp": "2025-10-02T12:38:01.911370+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CosDAdHtim9Ho3JTy92//0YmmamN+O2xH6K5WTv5k/Dhx4tCiH5uACQnyiyzCVwriB+QNW+52CO2P1l292oeWXwUIpzl6A8n8r5nJ5QvN5fe07006AsUG1I1SU1fNHwwLPLv9bdxMzGJiRfvY3lZcgLYGeuuo5lGcfrTrZal5UChLTOGFYN7r+weg0qP9xLz3wQ9/v3uZjh/kZuOl5yIJ/8Wg4rGAuEGbeFNcvT46c44hW56wm1zv2NdgUZpPiJ6MyfiKm8+LDKQO2TtRXn9MYgHQjiP4VIb/ZYiIASg/RID4BksuBu0OhbakW5JRjOGAao5ay/JEZO+Dx+31EzWYUom0YjQs5Va03sTl1SUmCnBEocSViS4SIYoAeAeMeXeY4E3mzbv/lmdwSIp2yW40YCY7PwyOSeBMil3q3MFleZrst97soYANPX7Q8s9S/l9uYYFB1a/OeezFqZUTDykiUm/+z2csj1f/7p+Up/dswV51LovjJ3w4gCABNqVllG0IXM800uknFVvuBz2O88=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "ultralytics YOLO train"
+          },
+          "tool_call_id": "pyd_ai_2ec508056ea349b490b57097989ee961",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 267,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 99,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 82,
+          "text_prompt_tokens": 267
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T12:38:03.682629+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "KnLeaOOKK46Dxs0Pu93ZyAM",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_2ec508056ea349b490b57097989ee961",
+          "metadata": null,
+          "timestamp": "2025-10-02T12:38:03.683626+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Cu4IAdHtim/VstwPRYIYUAPxZnLt13N4PPxSt8NYmCd7AAeki7LqdPoiXnjtgjDhR5OwMpjCJR3bM/OPt6U00kGzduwQPehhvlcjgdVsmPZmfgo7whTTLPX0KsjRYgutNhfWSlVviM4xJUM0HmkvsvzQjfUoBxYTjwleN4jwbf/st3pVjvsJ9eaoqkt0oBbqx6azBvqsojI9ldSGgnnt+o7cJv5o+3SvSuB8BaOGU1WOKcnQmr8r932qUUFU8FS5ha7yRgAy6FcmavwJdhqybmRNLNJD9jeUaamMFI1/gs42fMbjvzRKZhP1lWyaNrU4FxBcclxiEeizNHI58KhCG1qgWKQCYJcbUySEDrULfSnWEtvqA6in5m+rHOurEYp2i8qoso7nh2DlD/6Dg9dQCMZDNPS7VV11NKVcip+pAOgeJtRPfyIo1MwvWshFNpOe7apSZfyMrXRH8U8J0WTR7Zfz6bPnSd7SAkG38N0LkAnzysyIg90i8FhCnyC5+yCd5RAZhSP1CSA7kLfmXwDb+9Bcq+Io4o+G3ngXF6CLBR/8DrIVVOuWgOQ3OYibCVNXmup86faIPInoUHs8RmcDrqxD31bDEPPAILFA2fm5aWnbkOLOz38pYAmXoPikwfHDJ/DiyDXAStX+Zjc6nGzb5WHBfZOhXBWml2d+cUXHDKcbjX9u1e7PIyX5Yfk5MY4FYENGNsfIOyxt4xQFDJEyS2V7UpgIPauD719bJl8Gtv08EkkyP/s9NCIQaNdTa7CGQu5XeYV0yJVFMwS4pRwl9tO/Z3Mui5jUW6WLd9PJFr6Ak+ufZghNvKnW32zLt19aKYMZF9fEruoyPkeSPbFiqakiFgtIhvRuUx3N8q3gEmsO1b3zDwtSHE8vl1IdWooxEsigzIQA7H+QCSAa4iP0RMzg990t/wanXxx+phSfsMwVD4FFkaP6AUpDoWP3xtP7Hz9QyptL+uPHPw34YXLqQlUyJNSaw5TKAXWMzMtB/LNlMiukgNosOpmcbGhhqjHmBJoJC9baMlsxXgkQoucRXS5SjTRMT48IpiPHj8LdDdrqyZ3GTd7FOGgkk3UGDPcZuqNfwP96VbN5jZo/768DYBe4e+7/JJUasZGnJqUmdRq7uEKPXRq2PlhipQwhWDyX9B1lSNnyrcdBWNccWjXNcnxlkJdxmyN6btjP708m+rEI81ezDkd59P6Usf9ZUJ6owvPd/f1eaQ3tpndudd1rqJEqmtkiDxyVGFdlOUvzz5QI8laN9VUSzOY7eUjEpprfpbBsubIqcKqpeKLWvWiGiRqZdZE1Msp5cHVXqlm3wAI1TjfJDfxhYGbhFC2gsFEjP0+IDK1bIqQqDiC5rdehD6K9EnYcjCc61GgpmwFsZ20qYvEKJNLV9m4JKDtpyvlA2GvgrYZeS4364aOglDXazeedfk5gqSETOtZ6j+E8pYMg7km8DpwT2EGz3vl6knxaS1ZSCvMWaZh9EGxCPX4xtjCyOb1jPP66OFkEjmVpXXTQ",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find any specific information about training a YOLOv11 model in the available documentation. It's possible that YOLOv11 is not yet officially released or supported by Ultralytics.\n\nGenerally, to train an Ultralytics YOLO model (such as YOLOv8, which is the latest major release), you would typically use a command-line interface or Python code similar to this:\n\n**Using Python:**\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```python\nfrom ultralytics import YOLO\n\n# Load a model\nmodel = YOLO('yolov8n.pt')  # load a pretrained nano model\n\n# Train the model\nresults = model.train(data='coco128.yaml', epochs=100, imgsz=640)\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\n**Using CLI:**\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\nyolo train data=coco128.yaml model=yolov8n.pt epochs=100 imgsz=640\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nFor the most accurate and up-to-date information on supported YOLO versions and their training procedures, I recommend checking the official Ultralytics documentation directly.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 298,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 480,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 247,
+          "text_prompt_tokens": 298
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-02T12:38:09.233788+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "MHLeaO33D6mJxN8P2aGgsA8",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

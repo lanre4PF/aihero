@@ -1,0 +1,155 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i evaluate a yolov11 model ",
+          "timestamp": "2025-10-03T12:33:43.801839+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CsQBAdHtim+jY1gTA64G0Ac1e/DDCC5v7aq1zjhIygasaPH78+q0plLaHEQokO/PKe7Bd4y00zvcRRr6EgaQxKgQroWpthVh8bBKZdMtmyBF2eaHOVaiEX50QGxZGTzvQJmKXC29UR4vGmkaF9bIDt2/SH3hJFFHTyG10rYebWATbtNHPAkR2DavjwuZhtxlQGl3eZXy301Dsjv2Hh2Qz6ecsUuYzadeAzhgdjWA4E8NGnBFaZJ0j6p5Fo136R3WpQMTB3OQIw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "evaluate YOLOv11 model"
+          },
+          "tool_call_id": "pyd_ai_a69864b093104f1dadaa2eaa3c03d57e",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 249,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 59,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 41,
+          "text_prompt_tokens": 249
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T12:33:45.939123+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "qcLfaJ6TNb34kdUPwZTsyAI",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "docs/en/reference/models/yolo/model.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/sam/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/sam/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/sam/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.sam.model.SAM\n\n<br><br>",
+              "description": "Explore the SAM (Segment Anything Model) and SAM 2 (Segment Anything Model 2) interface for real-time image segmentation. Learn about promptable segmentation and zero-shot capabilities.",
+              "keywords": "Ultralytics, SAM, Segment Anything Model, SAM 2, Segment Anything Model 2, image segmentation, real-time segmentation, zero-shot performance, promptable segmentation, SA-1B dataset",
+              "filename": "docs/en/reference/models/sam/model.md"
+            },
+            {
+              "start": 1000,
+              "content": "esting is quite similar to model evaluation, but they are two distinct [steps in a computer vision project](./steps-of-a-cv-project.md). Model evaluation involves metrics and plots to assess the model's accuracy. On the other hand, model testing checks if the model's learned behavior is the same as expectations. In this guide, we'll explore strategies for testing your [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) models.\n\n## Model Testing Vs. Model Evaluation\n\nFirst, let's understand the difference between model evaluation and testing with an example.\n\nSuppose you have trained a computer vision model to recognize cats and dogs, and you want to deploy this model at a pet store to monitor the animals. During the model evaluation phase, you use a labeled dataset to calculate metrics like accuracy, [precision](https://www.ultralytics.com/glossary/precision), [recall](https://www.ultralytics.com/glossary/recall), and F1 score. For instance, the model might have an accuracy of 98% in distinguishing between cats and dogs in a given dataset.\n\nAfter evaluation, you test the model using images from a pet store to see how well it identifies cats and dogs in more varied and realistic conditions. You check if it can correctly label cats and dogs when they are moving, in different lighting conditions, or partially obscured by objects like toys or furniture. Model testing checks that the model behaves as expected outside the controlled evaluation environment.\n\n## Preparing for Model Testing\n\nComputer vision models learn from datasets by detecting patterns, making predictions, and evaluating their performance. These [datasets](./preprocessing_annotated_data.md) are usually divided into training and testing sets to simulate real-world conditions. [Training data](https://www.ultralytics.com/glossary/training-data) teaches the model while testing data verifies its accuracy.\n\nHere are two points to keep in mind before testing your model:\n\n- **Realistic Repr",
+              "comments": true,
+              "description": "Explore effective methods for testing computer vision models to make sure they are reliable, perform well, and are ready to be deployed.",
+              "keywords": "Overfitting and Underfitting in Machine Learning, Model Testing, Data Leakage Machine Learning, Testing a Model, Testing Machine Learning Models, How to Test AI Models",
+              "filename": "docs/en/guides/model-testing.md"
+            },
+            {
+              "start": 0,
+              "content": "# A Guide on Model Testing\n\n## Introduction\n\nAfter [training](./model-training-tips.md) and [evaluating](./model-evaluation-insights.md) your model, it's time to test it. Model testing involves assessing how well it performs in real-world scenarios. Testing considers factors like accuracy, reliability, fairness, and how easy it is to understand the model's decisions. The goal is to make sure the model performs as intended, delivers the expected results, and fits into the [overall objective of your application](./defining-project-goals.md) or project.\n\n<p align=\"center\">\n  <br>\n  <iframe loading=\"lazy\" width=\"720\" height=\"405\" src=\"https://www.youtube.com/embed/SyyCUvxw9BM\"\n    title=\"YouTube video player\" frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong> How to Test Machine Learning Models | Avoid Data Leakage in Computer Vision \ud83d\ude80\n</p>\n\nModel testing is quite similar to model evaluation, but they are two distinct [steps in a computer vision project](./steps-of-a-cv-project.md). Model evaluation involves metrics and plots to assess the model's accuracy. On the other hand, model testing checks if the model's learned behavior is the same as expectations. In this guide, we'll explore strategies for testing your [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) models.\n\n## Model Testing Vs. Model Evaluation\n\nFirst, let's understand the difference between model evaluation and testing with an example.\n\nSuppose you have trained a computer vision model to recognize cats and dogs, and you want to deploy this model at a pet store to monitor the animals. During the model evaluation phase, you use a labeled dataset to calculate metrics like accuracy, [precision](https://www.ultralytics.com/glossary/precision), [recall](https://www.ultralytics.com/glossary/recall), and F1 score. For instance, the model might have ",
+              "comments": true,
+              "description": "Explore effective methods for testing computer vision models to make sure they are reliable, perform well, and are ready to be deployed.",
+              "keywords": "Overfitting and Underfitting in Machine Learning, Model Testing, Data Leakage Machine Learning, Testing a Model, Testing Machine Learning Models, How to Test AI Models",
+              "filename": "docs/en/guides/model-testing.md"
+            },
+            {
+              "start": 4000,
+              "content": "s. These help you spot specific areas where the model might not be performing well in practical applications.\n\nNext, the testing results can be analyzed:\n\n- **Misclassified Images:** Identify and review images that the model misclassified to understand where it is going wrong.\n- **Error Analysis:** Perform a thorough error analysis to understand the types of errors (e.g., false positives vs. false negatives) and their potential causes.\n- **Bias and Fairness:** Check for any biases in the model's predictions. Ensure that the model performs equally well across different subsets of the data, especially if it includes sensitive attributes like race, gender, or age.\n\n## Testing Your YOLO11 Model\n\nTo test your YOLO11 model, you can use the validation mode. It's a straightforward way to understand the model's strengths and areas that need improvement. Also, you'll need to format your test dataset correctly for YOLO11. For more details on how to use the validation mode, check out the [Model Validation](../modes/val.md) docs page.\n\n## Using YOLO11 to Predict on Multiple Test Images\n\nIf you want to test your trained YOLO11 model on multiple images stored in a folder, you can easily do so in one go. Instead of using the validation mode, which is typically used to evaluate model performance on a validation set and provide detailed metrics, you might just want to see predictions on all images in your test set. For this, you can use the [prediction mode](../modes/predict.md).\n\n### Difference Between Validation and Prediction Modes\n\n- **[Validation Mode](../modes/val.md):** Used to evaluate the model's performance by comparing predictions against known labels (ground truth). It provides detailed metrics such as accuracy, precision, recall, and F1 score.\n- **[Prediction Mode](../modes/predict.md):** Used to run the model on new, unseen data to generate predictions. It does not provide detailed performance metrics but allows you to see how the model performs on real-world images.\n\n#",
+              "comments": true,
+              "description": "Explore effective methods for testing computer vision models to make sure they are reliable, perform well, and are ready to be deployed.",
+              "keywords": "Overfitting and Underfitting in Machine Learning, Model Testing, Data Leakage Machine Learning, Testing a Model, Testing Machine Learning Models, How to Test AI Models",
+              "filename": "docs/en/guides/model-testing.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_a69864b093104f1dadaa2eaa3c03d57e",
+          "metadata": null,
+          "timestamp": "2025-10-03T12:33:45.963064+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search does not return relevant results, let the user know and provide general guidance. Do not say \"please go through the documentation\"\u2014your responses already reflect the documentation.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CqsGAdHtim9ui5fTD3N6yK9PNiHpCok2WBvqWEp05zoa0BjkG2OA0os1WUB5lgLYvRYqeukSdKXNpotfdb1TF3hH7mkJzl1IybrHdEei0ZjO4bHQCxBfxlyH7FdNYTnqjBB1RWfVrD3WyXed4r+0Z8apEfleYOqIrv0k9TTUM/4RbK+KPNV8rIraLp2TEAouzw08KotImJ6rS1QyMe2GkB1St+CzyI95qZat7/YK/ouY8iWyMTyZzuFS8uX58iB418s058I1ur9elZvO0/bQQvu5su7zOXLA4SHewrqfX154LFUdgJmwFD4BWCDdk1w2Mr5KRbcpliMcAK7HVwCSiYve7XTWWGxlRhtvSv+OHJ4oHnaNLGhiiCwl0gCrEdNSxvO77euGJDw9P70oO9EdsY3gQRaTrEGDdj6ps4crm6UywfxCA/jOqBC8Hp3ZxQ7nBvAQ+UmLXvuqKVk2xDvffKecdWh4HLT0gT/LPH582Zfqhz505WwcaOSNqM2vt78HMoK5B8aTLx9/2RSbEp0mAshlCb/nIxCnqJRMm+qKl+wj34ffBueclEVDYT1wd6N98p3FD+KGKBqV+7Sm0b0IQf3nSu4Pf1m7Bk1pcduthDh2cpQ82AV50stOK7lVk5ZSBQKnDkbRlk3TivzyhUQeBOajR7cYbmMIgLtrD7IuDulbAH4iRZX0+2MNwnGwYlQa45ELh86ZX3bks0rElvCgfbVdSVklLkGJOE1yUNJPHh7o/5DwRKOIBvIvqoHtj0c/SFGTNA9oY668iWn8sY0jnyeIQLlW5prOs0+nS4KoDL/VGRi/hNawbOafP2hU7nPt5aBUSIBqojjq5G2vd6BxlOyVR6B5m8qu0UAbRCb+t2zptltkLEHjyBJ2E7tUTqeljZHlAHL2/LXt6xQ6rotI2/fN8553h6xA7rnoxZuMXF5u7ASovtP50Hx9c+ht/PAJUMIEfCKhLUxau8JYJuEiQTQrDkDRP5XxseIm7xB2/exdvCHiWBOdKgGdov5TK8m+TkdQmVjhnOsOcKjqU3ATw+E7yQMYaLzwGhdAnGRo24RUrbudKDUOEVbXaPWDBA==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "To evaluate your YOLO11 model, you should use the **validation mode**. This mode helps you understand the model's strengths and areas for improvement by comparing predictions against known labels (ground truth) and providing detailed metrics like accuracy, precision, recall, and F1 score.\n\nFor more detailed information on how to use the validation mode, please refer to the [Model Validation](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/val.md) documentation.\n\nIt's important to distinguish between **validation mode** and **prediction mode**:\n\n*   **Validation Mode**: Used for evaluating the model's performance on a validation set, providing detailed metrics.\n*   **Prediction Mode**: Used to run the model on new, unseen data to generate predictions, but it does not provide detailed performance metrics.\n\nYou can find more information about model testing and evaluation in the [Model Testing Guide](https://github.com/ultralytics/ultralytics/blob/main/docs/en/guides/model-testing.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2634,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 375,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 149,
+          "text_prompt_tokens": 2634
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T12:33:52.053813+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "r8LfaI7qOrPqkdUPz_eWgA4",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}
