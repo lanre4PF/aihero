@@ -1,0 +1,157 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "tell me about the yolo26 model",
+          "timestamp": "2025-10-04T13:21:45.050805+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb7fKMAzHFTaO0atJtExCxb7VCLM8LbOeSyldaAuzp1AKWAHR7YpvkwcTBuuxRetQ/wUx5ijMVeTE7OqUdnj9TMRO84s9SLlX6sE76TLdo6gYld3DZNcx3iSjRKvGQQcStd9OHyMwJYx/4Zon6BsbaPgkKDR5VDjp/5QKcwHR7Ypv/ApaVh2SBpNAcdPpKKJBOjrpzOCby/RRE01tn5PvWBn7imoKp+HQfuKUNj7TLP/EnPG/fZ6LJLZ/cijN7M4Fujxiof54rDR2ou4GKSZ45fgW/7l3LuNi022Tx/UYddvrxT1vMhTZlc/8dxbbvIc=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "yolo26 model"
+          },
+          "tool_call_id": "pyd_ai_71470a3cad614d8ca2bda139527ab131",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 250,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 56,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 37,
+          "text_prompt_tokens": 250
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:21:46.932900+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "ah_haLWyHpGzkdUP1YWsyQE",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Ultralytics YOLO26\n\n!!! note \"Preview Only \u26a0\ufe0f\"\n\n    \ud83d\udea7 YOLO26 models are still under development and not yet released. Performance numbers shown here are **previews only**.\n    Final downloads and releases will follow soon \u2014 stay updated via [YOLO Vision 2025](https://www.ultralytics.com/events/yolovision).\n\n## Overview\n\n[Ultralytics](https://www.ultralytics.com/) YOLO26 is the latest evolution in the YOLO series of real-time object detectors, engineered from the ground up for **edge and low-power devices**. It introduces a streamlined design that removes unnecessary complexity while integrating targeted innovations to deliver faster, lighter, and more accessible deployment.\n\nThe architecture of YOLO26 is guided by three core principles:\n\n- **Simplicity:** YOLO26 is a **native end-to-end model**, producing predictions directly without the need for non-maximum suppression (NMS). By eliminating this post-processing step, inference becomes faster, lighter, and easier to deploy in real-world systems. This breakthrough approach was first pioneered in [YOLOv10](../models/yolov10.md) by Ao Wang at Tsinghua University and has been further advanced in YOLO26.\n- **Deployment Efficiency:** The end-to-end design cuts out an entire stage of the pipeline, dramatically simplifying integration, reducing latency, and making deployment more robust across diverse environments.\n- **Training Innovation:** YOLO26 introduces the **MuSGD optimizer**, a hybrid of [SGD](https://docs.pytorch.org/docs/stable/generated/torch.optim.SGD.html) and [Muon](https://arxiv.org/abs/2502.16982) \u2014 inspired by Moonshot AI's [Kimi K2](https://kimi.moonshot.cn/) breakthroughs in LLM training. This optimizer brings enhanced stability and faster convergence, transferring optimization advances from language models into computer vision.\n\nTogether, these innovations deliver a model family that achieves higher accuracy on small objects, provides seamless deployment, and runs **up to 43% faster on CPUs** \u2014 making ",
+              "comments": true,
+              "description": "YOLO26 from Ultralytics delivers faster, simpler, end-to-end NMS-free object detection optimized for edge and low-power devices.",
+              "keywords": "YOLO26, Ultralytics YOLO, object detection, end-to-end NMS-free, simplified architecture, computer vision, AI, machine learning, edge AI, low power devices, quantization, real-time inference",
+              "filename": "yolo26.md"
+            },
+            {
+              "start": 1000,
+              "content": "rld systems. This breakthrough approach was first pioneered in [YOLOv10](../models/yolov10.md) by Ao Wang at Tsinghua University and has been further advanced in YOLO26.\n- **Deployment Efficiency:** The end-to-end design cuts out an entire stage of the pipeline, dramatically simplifying integration, reducing latency, and making deployment more robust across diverse environments.\n- **Training Innovation:** YOLO26 introduces the **MuSGD optimizer**, a hybrid of [SGD](https://docs.pytorch.org/docs/stable/generated/torch.optim.SGD.html) and [Muon](https://arxiv.org/abs/2502.16982) \u2014 inspired by Moonshot AI's [Kimi K2](https://kimi.moonshot.cn/) breakthroughs in LLM training. This optimizer brings enhanced stability and faster convergence, transferring optimization advances from language models into computer vision.\n\nTogether, these innovations deliver a model family that achieves higher accuracy on small objects, provides seamless deployment, and runs **up to 43% faster on CPUs** \u2014 making YOLO26 one of the most practical and deployable YOLO models to date for resource-constrained environments.\n\n![Ultralytics YOLO26 Comparison Plots](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolo-comparison-plot.png)\n\n## Key Features\n\n- **DFL Removal**  \n  The Distribution Focal Loss (DFL) module, while effective, often complicated export and limited hardware compatibility. YOLO26 removes DFL entirely, simplifying inference and broadening support for **edge and low-power devices**.\n\n- **End-to-End NMS-Free Inference**  \n  Unlike traditional detectors that rely on NMS as a separate post-processing step, YOLO26 is **natively end-to-end**. Predictions are generated directly, reducing latency and making integration into production systems faster, lighter, and more reliable.\n\n- **ProgLoss + STAL**  \n  Improved loss functions increase detection accuracy, with notable improvements in **small-object recognition**, a critical requirement for IoT, robotics, aerial imagery, and",
+              "comments": true,
+              "description": "YOLO26 from Ultralytics delivers faster, simpler, end-to-end NMS-free object detection optimized for edge and low-power devices.",
+              "keywords": "YOLO26, Ultralytics YOLO, object detection, end-to-end NMS-free, simplified architecture, computer vision, AI, machine learning, edge AI, low power devices, quantization, real-time inference",
+              "filename": "yolo26.md"
+            },
+            {
+              "start": 3000,
+              "content": " other edge applications.\n\n- **MuSGD Optimizer**  \n  A new hybrid optimizer that combines [SGD](https://docs.pytorch.org/docs/stable/generated/torch.optim.SGD.html) with [Muon](https://arxiv.org/abs/2502.16982). Inspired by Moonshot AI's [Kimi K2](https://kimi.moonshot.cn/), MuSGD introduces advanced optimization methods from LLM training into computer vision, enabling more stable training and faster convergence.\n\n- **Up to 43% Faster CPU Inference**  \n  Specifically optimized for edge computing, YOLO26 delivers significantly faster CPU inference, ensuring real-time performance on devices without GPUs.\n\n---\n\n## Supported Tasks and Modes\n\nYOLO26 is designed as a **multi-task model family**, extending YOLO's versatility across diverse computer vision challenges:\n\n| Model       | Task                                         | Inference | Validation | Training | Export |\n| ----------- | -------------------------------------------- | --------- | ---------- | -------- | ------ |\n| YOLO26      | [Detection](../tasks/detect.md)              | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLO26-seg  | [Instance Segmentation](../tasks/segment.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLO26-pose | [Pose/Keypoints](../tasks/pose.md)           | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLO26-obb  | [Oriented Detection](../tasks/obb.md)        | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLO26-cls  | [Classification](../tasks/classify.md)       | \u2705        | \u2705         | \u2705       | \u2705     |\n\nThis unified framework ensures YOLO26 is applicable across real-time detection, segmentation, classification, pose estimation, and oriented object detection \u2014 all with training, validation, inference, and export support.\n\n---\n\n## Performance Metrics\n\n!!! tip \"Performance Preview\"\n\n    The following benchmarks are **early previews**. Final numbers and downloadable weights will be released once training is complete.\n\n    === \"Detection (COCO)\"\n\n        Trained on [COCO](../datasets/detect",
+              "comments": true,
+              "description": "YOLO26 from Ultralytics delivers faster, simpler, end-to-end NMS-free object detection optimized for edge and low-power devices.",
+              "keywords": "YOLO26, Ultralytics YOLO, object detection, end-to-end NMS-free, simplified architecture, computer vision, AI, machine learning, edge AI, low power devices, quantization, real-time inference",
+              "filename": "yolo26.md"
+            },
+            {
+              "start": 2000,
+              "content": "YOLO26 one of the most practical and deployable YOLO models to date for resource-constrained environments.\n\n![Ultralytics YOLO26 Comparison Plots](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolo-comparison-plot.png)\n\n## Key Features\n\n- **DFL Removal**  \n  The Distribution Focal Loss (DFL) module, while effective, often complicated export and limited hardware compatibility. YOLO26 removes DFL entirely, simplifying inference and broadening support for **edge and low-power devices**.\n\n- **End-to-End NMS-Free Inference**  \n  Unlike traditional detectors that rely on NMS as a separate post-processing step, YOLO26 is **natively end-to-end**. Predictions are generated directly, reducing latency and making integration into production systems faster, lighter, and more reliable.\n\n- **ProgLoss + STAL**  \n  Improved loss functions increase detection accuracy, with notable improvements in **small-object recognition**, a critical requirement for IoT, robotics, aerial imagery, and other edge applications.\n\n- **MuSGD Optimizer**  \n  A new hybrid optimizer that combines [SGD](https://docs.pytorch.org/docs/stable/generated/torch.optim.SGD.html) with [Muon](https://arxiv.org/abs/2502.16982). Inspired by Moonshot AI's [Kimi K2](https://kimi.moonshot.cn/), MuSGD introduces advanced optimization methods from LLM training into computer vision, enabling more stable training and faster convergence.\n\n- **Up to 43% Faster CPU Inference**  \n  Specifically optimized for edge computing, YOLO26 delivers significantly faster CPU inference, ensuring real-time performance on devices without GPUs.\n\n---\n\n## Supported Tasks and Modes\n\nYOLO26 is designed as a **multi-task model family**, extending YOLO's versatility across diverse computer vision challenges:\n\n| Model       | Task                                         | Inference | Validation | Training | Export |\n| ----------- | -------------------------------------------- | --------- | ---------- | -------- | ------ |\n| YOLO26    ",
+              "comments": true,
+              "description": "YOLO26 from Ultralytics delivers faster, simpler, end-to-end NMS-free object detection optimized for edge and low-power devices.",
+              "keywords": "YOLO26, Ultralytics YOLO, object detection, end-to-end NMS-free, simplified architecture, computer vision, AI, machine learning, edge AI, low power devices, quantization, real-time inference",
+              "filename": "yolo26.md"
+            },
+            {
+              "start": 5000,
+              "content": "/coco.md) with 80 pre-trained classes.\n        See [Detection Docs](../tasks/detect.md) for usage once models are released.\n\n        | Model   | size<br><sup>(pixels) | mAP<sup>val<br>50-95(e2e) | mAP<sup>val<br>50-95 | Speed<br><sup>CPU ONNX<br>(ms)  | Speed<br><sup>T4 TensorRT10<br>(ms)  | params<br><sup>(M) | FLOPs<br><sup>(B) |\n        | -----   | --------------------- | --------------------      | -------------------- | ------------------------------- | ------------------------------------ | ------------------ | ----------------- |\n        | YOLO26n | 640                   | 39.8                      | 40.3                 | 38.90 \u00b1 0.7                     | 1.7 \u00b1 0.0                            | 2.4                | 5.4               |\n        | YOLO26s | 640                   | 47.2                      | 47.6                 | 87.16 \u00b1 0.9                     | 2.7 \u00b1 0.0                            | 9.5                | 20.7              |\n        | YOLO26m | 640                   | 51.5                      | 51.7                 | 220.0 \u00b1 1.4                     | 4.9 \u00b1 0.1                            | 20.4               | 68.2              |\n        | YOLO26l | 640                   | 53.0*                     | 53.4*                | 286.17 \u00b1 2.0*                   | 6.5 \u00b1 0.2*                           | 24.8               | 86.4              |\n        | YOLO26x | 640                   | -                         | -                    | -                               | -                                    | -                  | -                 |\n\n        *Metrics for YOLO26l and YOLO26x are in progress. Final benchmarks will be added here.\n\n    === \"Segmentation (COCO)\"\n\n        Performance metrics coming soon.\n\n    === \"Classification (ImageNet)\"\n\n        Performance metrics coming soon.\n\n    === \"Pose (COCO)\"\n\n        Performance metrics coming soon.\n\n    === \"OBB (DOTAv1)\"\n\n        Performance metrics coming soon.\n\n---\n\n## Citations and Acknowledg",
+              "comments": true,
+              "description": "YOLO26 from Ultralytics delivers faster, simpler, end-to-end NMS-free object detection optimized for edge and low-power devices.",
+              "keywords": "YOLO26, Ultralytics YOLO, object detection, end-to-end NMS-free, simplified architecture, computer vision, AI, machine learning, edge AI, low power devices, quantization, real-time inference",
+              "filename": "yolo26.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_71470a3cad614d8ca2bda139527ab131",
+          "metadata": null,
+          "timestamp": "2025-10-04T13:21:46.963854+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2Kb6NeMYRYjjwu4Hn/4EtCnkpAhIKR+jg4R8vGcscuFK9nrlsYHRj8Cm0B0e2Kb0zK0TJtVrsW3gqovWuiPD5UN0/7yjv18QA0G+xT/P7XOzLkppQegmiUlW+W3hMnxNVoo75CsafXhzR30Zx5p7BgdrrH10A+64oTQrQr+9jkWJI54q6EqAeb87uQ+tisdrnf//9Tcj8nCt4BAdHtim/3aD+d+KDKy2mIFy2uKJkc2B6SIVomOAfT3izYrjh7+YaTVYJoSO00J9sHY92Bl6PKO3V2r7+udlxDs+ZKqLnJu1ggmh/Jcaa4oosWDR99AOKzJhHGPNwjj79HRc7wCTw4RhaV0TPtG/4zbNFn1nd2YPg53qndzcIppGEl44d1k1EdvxohoyR0rCIRh6cvinyTL82iaZKBk7d8Uc5MuF2M65pTGekM2E12DxfhIfYsbv9gZYQQ+/PNYA0zqqY0YpcHgSmIy9GW0HFxYp+9Gji8JEZ/Marv1H5G",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "The Ultralytics YOLO26 model is the latest iteration in the YOLO series of real-time object detectors, specifically engineered for edge and low-power devices. It is currently in preview, with final releases and downloads to follow.\n\nKey features and design principles of YOLO26 include:\n\n*   **Simplicity:** YOLO26 is a native end-to-end model that produces predictions directly, eliminating the need for non-maximum suppression (NMS) post-processing. This design, inspired by YOLOv10, leads to faster, lighter, and easier deployment.\n*   **Deployment Efficiency:** The end-to-end design simplifies integration, reduces latency, and makes deployment more robust across various environments.\n*   **Training Innovation:** It introduces the **MuSGD optimizer**, a hybrid of SGD and Muon, inspired by Moonshot AI's Kimi K2. This optimizer enhances stability and accelerates convergence by transferring optimization advancements from language models to computer vision.\n*   **DFL Removal:** The Distribution Focal Loss (DFL) module has been removed to simplify inference and broaden hardware compatibility for edge and low-power devices.\n*   **ProgLoss + STAL:** Improved loss functions increase detection accuracy, particularly for small-object recognition.\n*   **Faster CPU Inference:** YOLO26 is optimized for edge computing, delivering up to 43% faster CPU inference, which ensures real-time performance on devices without GPUs.\n\nYOLO26 is designed as a multi-task model family, supporting various computer vision tasks, including:\n\n*   **Detection**\n*   **Instance Segmentation** (YOLO26-seg)\n*   **Pose/Keypoints** (YOLO26-pose)\n*   **Oriented Detection** (YOLO26-obb)\n*   **Classification** (YOLO26-cls)\n\nYou can find more details and performance previews (which are subject to change before the final release) in the official documentation: [Ultralytics YOLO26](https://github.com/ultralytics/ultralytics/blob/main/yolo26.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3463,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 505,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 58,
+          "text_prompt_tokens": 3463
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:21:49.641111+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "bB_haMDxG57HnsEP4KnjiAI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

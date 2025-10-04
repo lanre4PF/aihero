@@ -16,8 +16,8 @@ def init_agent():
         return "data-engineering" in doc["filename"]
 
     st.write("🔄 Indexing repo...")
-    index = ingest.index_data(REPO_OWNER, REPO_NAME)
-    agent = search_agent.init_agent(index, REPO_OWNER, REPO_NAME)
+    index,vindex = ingest.index_data(REPO_OWNER, REPO_NAME, vector=True)
+    agent = search_agent.init_agent(index,REPO_OWNER, REPO_NAME,vindex=vindex)
     return agent
 
 

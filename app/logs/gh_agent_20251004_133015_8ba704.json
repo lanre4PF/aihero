@@ -1,0 +1,153 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "hybrid_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i train a yolov11 model ",
+          "timestamp": "2025-10-04T13:30:09.316537+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb2mUjWCxXzmgPekdndxy8ewcBsxGy+zVOcq90bJMt94KWQHR7Ypvqxnsv/KxFtMiKMOzvnVX8jre/SdG1DD2IGI1gNeFI+UFQ5USM4R3lIE8+Xrq/S3lVsSGZDzOrMOM+MmhbsisFpQaIpmYPpbylr2aZhXvJEIAkYdjCrwBAdHtim+VsVR8yipxUxkfNjXzi64+IYvI+YyzrrL5E8hryHqpaM4VVh8V5M1EHX5YMKXLrWl0xWc3MdzDSeitBE9d+KaYCmrNEdOcP3NRe2d9ZG7AR1EhlCB7pUCn4Dc9smrAAbBR5cYuDTQ1ZLD16a48RestS3PBweD6PWFI8eF2cwXy7yGJ9LoWQbGfYISrpKszC8qqP9IPA9Su5lq5o0p98tATntVzMGoJAvjq0B0W/r8jAuDmwxqYU+c=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "hybrid_search",
+          "args": {
+            "query": "YOLOv11 train"
+          },
+          "tool_call_id": "pyd_ai_b4aa34d6262048e198c72479212048fd",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 255,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 82,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 62,
+          "text_prompt_tokens": 255
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:30:12.207177+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "YiHhaOniL_aZkdUPvPf70Ao",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "hybrid_search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/yoloe/train.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/yoloe/train.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainerFromScratch\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPEFreeTrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEVPTrainer\n\n<br><br>",
+              "description": "Learn about YOLOE enhanced visual prompting (EVP) predictors in Ultralytics, which enable object detection and segmentation models to use visual prompts during inference for improved performance.",
+              "keywords": "YOLOE, EVP, visual prompts, computer vision, object detection, segmentation, bounding boxes, masks, predictors, YOLOEVPDetectPredictor, YOLOEVPSegPredictor, Ultralytics, inference",
+              "filename": "train.md"
+            },
+            {
+              "start": 11000,
+              "content": "`SGD=1E-2`, `Adam=1E-3`). Adjusting this value is crucial for the optimization process, influencing how rapidly model weights are updated.                                                                                                                 |\n| `lrf`             | `float`                  | `0.01`   | Final learning rate as a fraction of the initial rate = (`lr0 * lrf`), used in conjunction with schedulers to adjust the learning rate over time.                                                                                                                                      |\n| `momentum`        | `float`                  | `0.937`  | Momentum factor for SGD or beta1 for [Adam optimizers](https://www.ultralytics.com/glossary/adam-optimizer), influencing the incorporation of past gradients in the current update.                                                                                                    |\n| `weight_decay`    | `float`                  | `0.0005` | L2 [regularization](https://www.ultralytics.com/glossary/regularization) term, penalizing large weights to prevent overfitting.                                                                                                                                                        |\n| `warmup_epochs`   | `float`                  | `3.0`    | Number of epochs for learning rate warmup, gradually increasing the learning rate from a low value to the initial learning rate to stabilize training early on.                                                                                                                        |\n| `warmup_momentum` | `float`                  | `0.8`    | Initial momentum for warmup phase, gradually adjusting to the set momentum over the warmup period.                                                                                                                                                                                     |\n| `warmup_bias_lr`  | `float`             ",
+              "filename": "train-args.md"
+            },
+            {
+              "start": 12000,
+              "content": " '' --cfg yolov5s.yaml`.\n\nPretrained weights are automatically downloaded from the [latest YOLOv5 release](https://github.com/ultralytics/yolov5/releases) if not found locally.\n\n```bash\n# Example: Train YOLOv5s on the COCO128 dataset for 3 epochs\npython train.py --img 640 --batch 16 --epochs 3 --data coco128.yaml --weights yolov5s.pt\n```\n\n!!! tip \"Optimize Training Speed\"\n\n    \ud83d\udca1 Employ `--cache ram` or `--cache disk` to cache dataset images in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) or local disk, respectively. This dramatically accelerates training, particularly when dataset I/O (Input/Output) operations are a bottleneck. Note that this requires substantial RAM or disk space.\n\n!!! tip \"Local Data Storage\"\n\n    \ud83d\udca1 Always train using datasets stored locally. Accessing data from network drives (like Google Drive) or remote storage can be significantly slower and impede training performance. Copying your dataset to a local SSD is often the best practice.\n\nAll training outputs, including weights and logs, are saved in the `runs/train/` directory. Each training session creates a new subdirectory (e.g., `runs/train/exp`, `runs/train/exp2`, etc.). For an interactive, hands-on experience, explore the training section in our official tutorial notebooks: <a href=\"https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"></a> <a href=\"https://www.kaggle.com/models/ultralytics/yolov5\"><img src=\"https://kaggle.com/static/images/open-in-kaggle.svg\" alt=\"Open In Kaggle\"></a>\n\n## 4. Visualize\n\nYOLOv5 seamlessly integrates with various tools for visualizing training progress, evaluating results, and monitoring performance in real-time.\n\n### Comet Logging and Visualization \ud83c\udf1f NEW\n\n[Comet](https://docs.ultralytics.com/integrations/comet/) is fully integrated for comprehensive experiment tracking. Visualize metrics live, save hyperparameters, manage data",
+              "comments": true,
+              "description": "Learn how to train YOLOv5 on your own custom datasets with easy-to-follow steps. Detailed guide on dataset preparation, model selection, and training process.",
+              "keywords": "YOLOv5, custom dataset, model training, object detection, machine learning, AI, YOLO model, PyTorch, dataset preparation, Ultralytics",
+              "filename": "train_custom_data.md"
+            },
+            {
+              "start": 17000,
+              "content": " YOLOv9c model from pretrained weights and train\nmodel = YOLO(\"yolov9c.pt\")\nresults = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n```\n\nFor CLI training, execute:\n\n```bash\nyolo train model=yolov9c.yaml data=coco8.yaml epochs=100 imgsz=640\n```\n\nLearn more about [usage examples](#usage-examples) for training and inference.\n\n### What are the advantages of using Ultralytics YOLOv9 for lightweight models?\n\nYOLOv9 is designed to mitigate information loss, which is particularly important for lightweight models often prone to losing significant information. By integrating Programmable Gradient Information (PGI) and reversible functions, YOLOv9 ensures essential data retention, enhancing the model's accuracy and efficiency. This makes it highly suitable for applications requiring compact models with high performance. For more details, explore the section on [YOLOv9's impact on lightweight models](#impact-on-lightweight-models).\n\n### What tasks and modes does YOLOv9 support?\n\nYOLOv9 supports various tasks including object detection and [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation). It is compatible with multiple operational modes such as inference, validation, training, and export. This versatility makes YOLOv9 adaptable to diverse real-time computer vision applications. Refer to the [supported tasks and modes](#supported-tasks-and-modes) section for more information.",
+              "comments": true,
+              "description": "Explore YOLOv9, a leap in real-time object detection, featuring innovations like PGI and GELAN, and achieving new benchmarks in efficiency and accuracy.",
+              "keywords": "YOLOv9, object detection, real-time, PGI, GELAN, deep learning, MS COCO, AI, neural networks, model efficiency, accuracy, Ultralytics",
+              "filename": "yolov9.md"
+            },
+            {
+              "start": 12000,
+              "content": "com/ultralytics/assets/releases/download/v8.3.0/yolov10b.pt\n        [5]: https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov10l.pt\n        [6]: https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov10x.pt\n\n## Usage Examples\n\nFor predicting new images with YOLOv10:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained YOLOv10n model\n        model = YOLO(\"yolov10n.pt\")\n\n        # Perform object detection on an image\n        results = model(\"image.jpg\")\n\n        # Display the results\n        results[0].show()\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Load a COCO-pretrained YOLOv10n model and run inference on the 'bus.jpg' image\n        yolo detect predict model=yolov10n.pt source=path/to/bus.jpg\n        ```\n\nFor training YOLOv10 on a custom dataset:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load YOLOv10n model from scratch\n        model = YOLO(\"yolov10n.yaml\")\n\n        # Train the model\n        model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Build a YOLOv10n model from scratch and train it on the COCO8 example dataset for 100 epochs\n        yolo train model=yolov10n.yaml data=coco8.yaml epochs=100 imgsz=640\n\n        # Build a YOLOv10n model from scratch and run inference on the 'bus.jpg' image\n        yolo predict model=yolov10n.yaml source=path/to/bus.jpg\n        ```\n\n## Supported Tasks and Modes\n\nThe YOLOv10 models series offers a range of models, each optimized for high-performance [Object Detection](../tasks/detect.md). These models cater to varying computational needs and accuracy requirements, making them versatile for a wide array of applications.\n\n| Model   | Filenames                                                             | Tasks                                  | Inference | Validation | Training | Export |\n| ------- | -----------------",
+              "comments": true,
+              "description": "Discover YOLOv10 for real-time object detection, eliminating NMS and boosting efficiency. Achieve top performance with a low computational cost.",
+              "keywords": "YOLOv10, real-time object detection, NMS-free, deep learning, Tsinghua University, Ultralytics, machine learning, neural networks, performance optimization",
+              "filename": "yolov10.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_b4aa34d6262048e198c72479212048fd",
+          "metadata": null,
+          "timestamp": "2025-10-04T13:30:12.705982+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb9r1B3Ufd3WK6Qy6C8cx7xzL9KPUJtj8wxzdZtphDLsKaAHR7YpvFERq5Wn3XX8Eq6SgPM7q0brVeODeEG8i1M6OzpERsWn8pIxTp/I851JzhO2saQbqH1NyZa0lyPDIeuqmckgeDsERg5zow6A4ln5AvWebE147LrUg6QpUA84t92chd7wPvK1sCvYBAdHtim8MAZoPSzqyH0AEa5DZxF7vxauBx4UtLyr1kbwr2Ww7fgK34jenXa2YOl5g0mbSw3q2nEmABZnG59bahbY7e/4GmSMhtoTHY0KhFJzw/Eqo5st3W+9Ipku7QlUDa5oY8NWyjyajlKC+Cuk3n/WItIGXHnKcqy7N17Dr7VeEWDxEcMbSJNJmfh+TjKoJWAtLigBdytmJRwpTXaTlHVj165eX6dkVrK+BGqoXtkTClppEbMSYdI1WkHI44uQxRS588NkfiLifCq36XNhemESq5HZtVu9xBI/3xPPHJgHMYkGWCzWL4OSjfxxg89/Ybz7h54qWCpICAdHtim8K3lYh35ghu3x65nOwJ38Cfdab+ULoiR8TxC+eQuanqThNh4opk2jvwkuKZhKo781avV0mDwFcgrGmxsaDvTsEoJn0rtPf6Jm6ho2XIwbEvLU0+nWnejSLQgrtTxCchm4IPpWy9ZM//Qn0tWFmUaQKKoNa18bX+6FQg7Z9Msmc5ZeEVvG+WIH1pyS7Et40tYDtzLVQPZwUkp7eiFPes7d+6DA1k/gL66jND3Ti7qT2gpKWHRAjD5cT2o6YsGAJpDmK6Kakm6TBykAHIiwXAJBzmkeRwrmZkClqQ7BVeIIAAczW3LPho2VG3Xm9lSHuVWb+pySea0fhubY6Kxq86gIMckLzwDgOQwyb6BlaMAozAdHtim9f3+YuB1EK902h9qO4u5hecQL3QGAJTRpP1Kp/Y9K+CSZsRcU5tVj4rD/PqllD",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find any specific information about training a **YOLOv11** model in the Ultralytics documentation. It's possible that YOLOv11 has not been released yet or is not covered in the current documentation.\n\nHowever, you can generally train a YOLO model within the Ultralytics framework using a similar approach to other YOLO versions like YOLOv9 or YOLOv10. Here's a general guide based on existing YOLO models:\n\nYou typically train a YOLO model using the `YOLO` class from the `ultralytics` library.\n\n**1. Python Example:**\n\nYou would first load a model (either from scratch using a `.yaml` configuration file or from pre-trained weights) and then call the `train()` method.\n\n```python\nfrom ultralytics import YOLO\n\n# Load a YOLO model from scratch (e.g., yolov10n.yaml for YOLOv10nano)\n# If YOLOv11 were available, it might look like: model = YOLO(\"yolov11n.yaml\")\nmodel = YOLO(\"yolov10n.yaml\") \n\n# Train the model on your custom dataset\n# Replace \"coco8.yaml\" with the path to your dataset configuration file\nresults = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640) \n```\nReference: [https://github.com/ultralytics/ultralytics/blob/main/docs/models/yolov10.md](https://github.com/ultralytics/ultralytics/blob/main/docs/models/yolov10.md)\n\n**2. Command Line Interface (CLI) Example:**\n\nYou can also train a model directly from the command line:\n\n```bash\n# Build a YOLO model from scratch and train it\n# Replace 'yolov10n.yaml' and 'coco8.yaml' with the appropriate files if YOLOv11 becomes available\nyolo train model=yolov10n.yaml data=coco8.yaml epochs=100 imgsz=640\n```\nReference: [https://github.com/ultralytics/ultralytics/blob/main/docs/models/yolov10.md](https://github.com/ultralytics/ultralytics/blob/main/docs/models/yolov10.md)\n\n**Key parameters for training include:**\n\n*   `model`: The model configuration file (e.g., `yolov10n.yaml`) or pre-trained weights (e.g., `yolov10n.pt`).\n*   `data`: The path to your dataset configuration file (e.g., `coco8.yaml`).\n*   `epochs`: The number of training epochs.\n*   `imgsz`: The input image size.\n\nIf you are looking for specific instructions for YOLOv11, I recommend checking the official Ultralytics YOLO GitHub repository or their documentation for the latest updates.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3043,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 776,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 133,
+          "text_prompt_tokens": 3043
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:30:15.114828+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "ZiHhaLXYDdXp7M8Pnrre0Ac",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

@@ -4,6 +4,11 @@ import requests
 import frontmatter
 import os
 from minsearch import Index
+import numpy as np
+from minsearch import VectorSearch
+from ultralytics_embeddings import generate_embeddings
+
+ultralytics_embeddings = np.loadtxt('ultralytics_embeddings.txt')
 
 def read_repo_data(repo_owner, repo_name):
     repo_identifier = f"{repo_owner}/{repo_name}"
@@ -84,8 +89,9 @@ def index_data(
     repo_owner,
     repo_name,
     chunk_size=2000,
-    chunk_step=1000,):
-    # Read all markdown documents from the repo
+    chunk_step=1000,
+    vector= False ):
+   # Read all markdown documents from the repo
     docs = read_repo_data(repo_owner, repo_name)
     
     # Chunk the documents using the specified size and step
@@ -100,5 +106,26 @@ def index_data(
     # Create and fit the index
     index = Index(text_fields=["chunk", "title", "description", "filename"], keyword_fields=[])
     index.fit(doc_chunks)
-    
-    return index
+
+    if vector:
+        repo_identifier = f"{repo_owner}/{repo_name}"
+        if repo_identifier == "ultralytics/ultralytics":
+            doc_embeddings = np.loadtxt('ultralytics_embeddings.txt')
+        else:
+            doc_embeddings = generate_embeddings(chunks=doc_chunks)
+
+        print(f"ultralytics_embeddings shape: {doc_embeddings.shape}")
+        vindex = VectorSearch()
+        vindex.fit(doc_embeddings, doc_chunks)  
+        return index, vindex
+    else:
+        return index
+
+if __name__ == "__main__":
+    REPO_OWNER = "ultralytics"
+    REPO_NAME = "ultralytics"
+
+
+    index, vindex = index_data(REPO_OWNER, REPO_NAME, vector=True)
+    print(index)
+    print("Indexing complete.")

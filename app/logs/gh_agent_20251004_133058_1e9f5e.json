@@ -1,0 +1,141 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "hybrid_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "did the document mention anything about yolov11",
+          "timestamp": "2025-10-04T13:30:55.241122+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2KbyegZWtu5X5/GZy2og7gTzmxEOeNyTQAONHEroYl7D0KZwHR7YpvNc+hAQ9ikDZSCZ+8bjdOumROSguEPqrt3RjIIM8y7MFv32mo7ai8xk7bLIBLWs6IG7JCOABZ9MGi2sxH1Q0ndzbTOcK8njZe1JjeXG+RY6eAFp+6IVU+QZVyvBQ3gu3prpQKrQEB0e2Kb4JfD8ivAm7RApb8MiYtjl0Jaik6FeNBd/Wz0vEk4ULVk5OjaBrMj3yH5r+hNVLka5/p00QMLtNJeiy7JuY66Dft2/CUr7f9o9ZHgU0VS8Grn+bMgMUSlBIedz+Wsb2F4kdRYcIS7UnG6q1hONHwkmpwz9wMYo/74EFCn7x0LOv0L+RRtTtn0qJWsKfpude+L5sd01SXUGE9QmV7KX03/jwlrEoeJiK0pA==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "hybrid_search",
+          "args": {
+            "query": "yolov11"
+          },
+          "tool_call_id": "pyd_ai_89a24cf37abb4c928a9104ea03075653",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 254,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 74,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 56,
+          "text_prompt_tokens": 254
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:30:56.970186+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "kCHhaKejE5CmnsEPwdfx6QE",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "hybrid_search",
+          "content": [
+            {
+              "start": 17000,
+              "content": " YOLOv9c model from pretrained weights and train\nmodel = YOLO(\"yolov9c.pt\")\nresults = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n```\n\nFor CLI training, execute:\n\n```bash\nyolo train model=yolov9c.yaml data=coco8.yaml epochs=100 imgsz=640\n```\n\nLearn more about [usage examples](#usage-examples) for training and inference.\n\n### What are the advantages of using Ultralytics YOLOv9 for lightweight models?\n\nYOLOv9 is designed to mitigate information loss, which is particularly important for lightweight models often prone to losing significant information. By integrating Programmable Gradient Information (PGI) and reversible functions, YOLOv9 ensures essential data retention, enhancing the model's accuracy and efficiency. This makes it highly suitable for applications requiring compact models with high performance. For more details, explore the section on [YOLOv9's impact on lightweight models](#impact-on-lightweight-models).\n\n### What tasks and modes does YOLOv9 support?\n\nYOLOv9 supports various tasks including object detection and [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation). It is compatible with multiple operational modes such as inference, validation, training, and export. This versatility makes YOLOv9 adaptable to diverse real-time computer vision applications. Refer to the [supported tasks and modes](#supported-tasks-and-modes) section for more information.",
+              "comments": true,
+              "description": "Explore YOLOv9, a leap in real-time object detection, featuring innovations like PGI and GELAN, and achieving new benchmarks in efficiency and accuracy.",
+              "keywords": "YOLOv9, object detection, real-time, PGI, GELAN, deep learning, MS COCO, AI, neural networks, model efficiency, accuracy, Ultralytics",
+              "filename": "yolov9.md"
+            },
+            {
+              "start": 21000,
+              "content": "ency. The architecture also includes a one-to-one head for inference, ensuring that each object gets a single best prediction. For a detailed explanation, see the [Consistent Dual Assignments for NMS-Free Training](#consistent-dual-assignments-for-nms-free-training) section.\n\n### Where can I find the export options for YOLOv10 models?\n\nYOLOv10 supports several export formats, including TorchScript, ONNX, OpenVINO, and TensorRT. However, not all export formats provided by Ultralytics are currently supported for YOLOv10 due to its new operations. For details on the supported formats and instructions on exporting, visit the [Exporting YOLOv10](#exporting-yolov10) section.\n\n### What are the performance benchmarks for YOLOv10 models?\n\nYOLOv10 outperforms previous YOLO versions and other state-of-the-art models in both accuracy and efficiency. For example, YOLOv10s is 1.8x faster than RT-DETR-R18 with a similar AP on the COCO dataset. YOLOv10b shows 46% less latency and 25% fewer parameters than YOLOv9-C with the same performance. Detailed benchmarks can be found in the [Comparisons](#comparisons) section.",
+              "comments": true,
+              "description": "Discover YOLOv10 for real-time object detection, eliminating NMS and boosting efficiency. Achieve top performance with a low computational cost.",
+              "keywords": "YOLOv10, real-time object detection, NMS-free, deep learning, Tsinghua University, Ultralytics, machine learning, neural networks, performance optimization",
+              "filename": "yolov10.md"
+            },
+            {
+              "start": 23000,
+              "content": "is it considered a breakthrough in real-time [object detection](https://www.ultralytics.com/glossary/object-detection)?\n\nYOLOv7 is a cutting-edge real-time object detection model that achieves unparalleled speed and accuracy. It surpasses other models, such as YOLOX, YOLOv5, and PPYOLOE, in both parameters usage and inference speed. YOLOv7's distinguishing features include its model re-parameterization and dynamic label assignment, which optimize its performance without increasing inference costs. For more technical details about its architecture and comparison metrics with other state-of-the-art object detectors, refer to the [YOLOv7 paper](https://arxiv.org/pdf/2207.02696).\n\n### How does YOLOv7 improve on previous YOLO models like YOLOv4 and YOLOv5?\n\nYOLOv7 introduces several innovations, including model re-parameterization and dynamic label assignment, which enhance the training process and improve inference accuracy. Compared to YOLOv5, YOLOv7 significantly boosts speed and accuracy. For instance, YOLOv7-X improves accuracy by 2.2% and reduces parameters by 22% compared to YOLOv5-X. Detailed comparisons can be found in the performance table [YOLOv7 comparison with SOTA object detectors](#comparison-of-sota-object-detectors).\n\n### Can I use YOLOv7 with Ultralytics tools and platforms?\n\nAs of now, Ultralytics only supports YOLOv7 ONNX and TensorRT inference. To run the ONNX and TensorRT exported version of YOLOv7 with Ultralytics, check the [Usage Examples](#usage-examples) section.\n\n### How do I train a custom YOLOv7 model using my dataset?\n\nTo install and train a custom YOLOv7 model, follow these steps:\n\n1. Clone the YOLOv7 repository:\n    ```bash\n    git clone https://github.com/WongKinYiu/yolov7\n    ```\n2. Navigate to the cloned directory and install dependencies:\n    ```bash\n    cd yolov7\n    pip install -r requirements.txt\n    ```\n3. Prepare your dataset and configure the model parameters according to the [usage instructions](https://github.com/WongKinYiu/yo",
+              "comments": true,
+              "description": "Discover YOLOv7, the breakthrough real-time object detector with top speed and accuracy. Learn about key features, usage, and performance metrics.",
+              "keywords": "YOLOv7, real-time object detection, Ultralytics, AI, computer vision, model training, object detector",
+              "filename": "yolov7.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_89a24cf37abb4c928a9104ea03075653",
+          "metadata": null,
+          "timestamp": "2025-10-04T13:30:57.107778+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2Kbzs0GLF28j3U2vRzQbabayTfjCmDeFsSz10JoC63JHkgZdo2PJl4Cl0B0e2KbxzWSqX+dtnsPiEVTkMe6kkDO4h4T7/Y7pWHKqdnhUO4rIaVpM0rHlFUGBQKeKNDFHJ1mc7o3zv4S+qWx6j7YAhOoRmB2DlQmlAahN0Aqaj3xpAK49TW6XYKqQEB0e2KbzlywIjQ4Znm9uF5RM2s1EJ1fHd1Rlo0aaNtk/JJGbHXMw7PjF78ACm5hlBHf5Oy7Ya/H/9lPusUdixqK4Lqy9t+aO8223yQHM0oABWHR1iPH/YMxv9Q7EV4bduRaix/MbXw1sclQg3TYUt0LpqZKb4/SIbpbBncUe3W13XgfAkni36W59tmWhHz0zCdDRBWKbp8qciUuiZIlWYFgxf9bRX0w4L1",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "The document does not mention anything about YOLOv11. The search results include information on YOLOv7, YOLOv9, and YOLOv10.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1790,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 88,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 56,
+          "text_prompt_tokens": 1790
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:30:58.897181+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "kiHhaO_BDIipkdUPmvmxsAM",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

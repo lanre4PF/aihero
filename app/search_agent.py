@@ -29,16 +29,37 @@ If the search doesn't return relevant results, let the user know and provide gen
 
 """.strip()
 
-def init_agent(index, repo_owner, repo_name):
+# def init_agent(index, repo_owner, repo_name):
+#     system_prompt = SYSTEM_PROMPT_TEMPLATE.format(repo_owner=repo_owner, repo_name=repo_name)
+
+#     search_tool = search_tools.SearchTool(index=index)
+
+#     agent = Agent(
+#         name="gh_agent",
+#         instructions=system_prompt,
+#         tools=[search_tool.search],
+#         model= google_model
+#     )
+
+#     return agent
+
+def init_agent(index,repo_owner, repo_name,vindex = None):
     system_prompt = SYSTEM_PROMPT_TEMPLATE.format(repo_owner=repo_owner, repo_name=repo_name)
-
-    search_tool = search_tools.SearchTool(index=index)
-
-    agent = Agent(
+    if vindex:
+        search_tool = search_tools.SearchTool(index,vindex)
+        agent = Agent(
         name="gh_agent",
         instructions=system_prompt,
-        tools=[search_tool.search],
+        tools=[search_tool.hybrid_search],
         model= google_model
-    )
-
-    return agent
+        )
+        return agent
+    else:
+        search_tool = search_tools.SearchTool(index,None)
+        agent = Agent(
+        name="gh_agent",
+        instructions=system_prompt,
+        tools=[search_tool.text_search],
+        model= google_model
+        )
+        return agent

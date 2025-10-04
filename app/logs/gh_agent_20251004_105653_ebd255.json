@@ -1,0 +1,116 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "yolo11",
+          "timestamp": "2025-10-04T10:56:50.381136+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb5+/PqrsAUPWw+w7BBrpsDfc/LDqjpaWBKAOnb96h+AKawHR7Ypv3hQbNPHTedRYRlXFIFEdkqVN9aH3VZ2J9ZRYKRvXHqBJTagh9iVv8wwSoYVGA1t+N8i2tnr2FwQziUb6zWFBYDHLmCVDyEJok5/HnYgl0EprwAplUWHt//B9CqLci4L1jQtmLHQFCugBAdHtim/Os1EUrw2XeRXFI7nmkb01sU6+KX3FA0k6wiHv0Ed5ik7cELOHLNK1/ENaq6+8qx9irKCUzqkbTm/mMnN180CsVLgjKaDyqBd2QD/3OBc6QF7OtmG09Y+y7NDm5jPAccdL7X/wzF2xTMGUhrHIcD5U4I+WPUmma+5L5gBRuuraPzIaiu3nHArZku2JlWT74NedtOx4c47DxYnbPw/ABQdAXRaWG6XWloIQwHk52K0b2ZnFGwMGNayRxRKnBeEtmTUHTCyMWeFn/95HFS32b/WLy8NtLf9x2PnRPyOyEv8IiAhj6ArrAQHR7YpvudFqraYyc+Y2qqjZS90j3Jkro6qiNeW+vCwXJ/PHZbyZ/EIBnon5xD4/XnrfluR/VtKYXWOMkUcTSlvUNszdLHERhmwOY9O84Uy+3v/Sswx0gldF/9ai6pmvQdYW+V2hKPyySt25G7Z+T/5DA+Kq7I/NivOfkxni32PI1qDA+oTaEAImC2ykyEKe/7aTG11gpqOanL8AvaJuTMWiQhjrwGvdEtslI1sY62Hayy1C7Gbwsl1simIllLVEQFV5Nv2mt3iCLcNxuzQgwwzLX+TUx8Czwl0aFVQob+0kxAcj0fPxLHRDrNUKsgEB0e2Kb+X8XSETeSrKZdXF9rXyKU7HlM8nNyBwN4kYlWiggnzMyLBkFhKHrFyc5l5CX2dh91WuhHfmDp22ox96kBoxKBITx2FA503qOHPIxelnvTwuI9ENiRGN5gPsZ41jbP0mIcviRR249vLacgtMCXtZ2di85luuYX4gJfqltgxfl0rUhDiIpgaCHTU6rbRWWDWKXfXjEXWO2mHYBUitU4/9T8wSXQmAzMIT+lGyBRFQ",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "YOLOv11"
+          },
+          "tool_call_id": "pyd_ai_9ed18fa813874f82915bb30c9389e7f2",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 243,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 166,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 149,
+          "text_prompt_tokens": 243
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T10:56:52.400771+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "c_3gaLWYDYXVxs0P94GwwA8",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_9ed18fa813874f82915bb30c9389e7f2",
+          "metadata": null,
+          "timestamp": "2025-10-04T10:56:52.408715+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2Kb/CsLTuGwThXNDnqUmivufXI7PbmMIpQ7ZGymDtQS6ybfsCtvoGBCl0B0e2KbzW3BgSX7OYJ/Gw+UC5NtO/0mIIFPjC9laYIHE4/z4Dqtg0Egx8/BabKapLq1NumlRFr4eIWstHYHKgDBxv1/196EZsB5KY3DMcuL+JsrMljQQFOqZB2NaAK+wEB0e2KbxOPEQ6f9xhwqo19lHRa50Vb7ts7vy02As94SEXgVr9uUvcM9In5BGj1RLQA0s7Gkm6AQLcVnzk3ZTELBUWdAwuqn0jmwZ6upt2x+6fH1m6VeLLVEnbnIewDD8aQEgHZqRsgTghO9/l9XcWDSk1EmqQ2rsP6CJazsWUFD39QkZ520FWUvUPC8dXhPaDwJ0US+k1oMWwMw+9928XK67smn8RuZrQrN7C6hTklG9VDCHIwiujLQh+zug1fP3PbFs1q/5i4xaKoHIVc6/VSgQlvmZQfVDMC8P5URST0hFoSALzXsvqdwweO9irFteQEpmASWHtZkqK3aA==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find any information about \"YOLOv11\" in the Ultralytics YOLO documentation. The latest official versions are typically YOLOv8 and earlier.\n\nPerhaps you meant a different version, or could you provide more context about what you're looking for regarding \"YOLOv11\"? I can help you with information on other YOLO versions, such as YOLOv8, if you'd like.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 421,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 149,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 62,
+          "text_prompt_tokens": 421
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T10:56:53.986503+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "dP3gaLbDMNq2xN8P36nJqAc",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

@@ -1,0 +1,116 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "yolov11",
+          "timestamp": "2025-10-04T10:57:01.326326+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2KbxOEiLAv8FsczUUisvY1Qm5uTu3ZNvmao+1352KzdrcKXQHR7YpvYAMdbecDRAQ7cFV80xEsft4lDiMMZmskIDRzN7mYjrkVGGpm4KCGYctk3/k43Lpbzcwp3ftZWYMNwO+pmjKkngFwoROh4kr5hr5IKv31cw6uSTG8MU2A+QpfAdHtim/KO40o0yV0Xx72jQ/T7xcljkM6dCtrVU8nfHtsiv4OYLlVtIxEPnvKJy1YmvHt5cYkueWVPlfCfxHvNtB5UCWaS9Ruc0CglBqgsYEtTY4TJ9xBkBhRHVsCQSM=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "yolov11"
+          },
+          "tool_call_id": "pyd_ai_4a7f8067fb2042e3bc39a3c473bdc23c",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 243,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 48,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 32,
+          "text_prompt_tokens": 243
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T10:57:03.059731+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "fv3gaI7JJ9GaxN8P9o2FoQ8",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [],
+          "tool_call_id": "pyd_ai_4a7f8067fb2042e3bc39a3c473bdc23c",
+          "metadata": null,
+          "timestamp": "2025-10-04T10:57:03.086624+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2KbxwdlCVPxLh/pe6E19G6L9AI7iqL1IWYCGy8vwcgk55dTk2iRCDDCm0B0e2Kb/L+mRAS0o3OA2z/PI0dlhr7qIAzgAY/7RIKFc51fvbICCW0F4nZAn9jtG0CKUbpkz6ZR05/tAj/eRHO3XsxMvtLIacxHCB3E+RepDn8XMwJ9qA1bkG66cQ9TNDi2153BuMxdkncp8WXCqcCAdHtim/B3slvekPVEPk9FxBEwOJFQY2/JWOVTeLdabeTsy1f1X/AMzK9C8tSKuCHoilV9tye+mquRU07kkZMaWd7b3DwIKJethBfpcdhVL5lwa3R5xsG0W7OEc2qO+7GntaRO7Mk1g4fF6V5FY4i4nbAKjMgIlvrBKYGimQ6NUIf4JorW8s405nj4z/s0/pYDYLi2BXkgCVMBc3t0r7sB1IuWD4snyR+Zp83QozhSiU6DYNP533zdZRmeHWqWrl70drxKzFFz4elbHZpEKLg6z7AxJNQPomwUbSe4i2O1W15ioR7sqqHPZgpy2FFx4A8Osd912zOOsT5a4XJ2x2ZGLUZuklz5sDzqAg48G2tWOMXKPraxViDR+JYD8PKYaPMAndV86vsmgqSAQHR7Ypv4GvwSdQb/PUd1tkJCW6LZPtyarwl0YM39stjJf6deagA4okGAzPeD122lM/9OOnh3XSjPzTLpVORhfLIymYnjY3m/qvl0O+1KmazUxdiNGp2OW5FVdY9oUCkxJTmjIUoBqZaBGFIXwZlXQpyvj0+s/V8tFq1mRX40OGNOOx+b+msVmjUA4mkCBn5obyW",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find any information about \"YOLOv11\" in the Ultralytics YOLO documentation. It's possible that YOLOv11 has not been released or is not yet documented. The latest official versions usually include YOLOv8 and other preceding versions.\n\nIf you are looking for information on the latest YOLO models, I can help you with topics related to YOLOv8 or earlier versions if you have specific questions.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 303,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 193,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 103,
+          "text_prompt_tokens": 303
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T10:57:04.547711+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "f_3gaKPJIbDWvdIPu531qAc",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

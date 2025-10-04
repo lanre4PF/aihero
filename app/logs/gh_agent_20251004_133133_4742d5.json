@@ -1,0 +1,152 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "hybrid_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i train an object detection model ",
+          "timestamp": "2025-10-04T13:31:26.617238+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb+6Pq7BQQPq2Bp0G45q3FrtcsXOjVXhStmgMhP4oLvwKhAEB0e2Kb1pdWqI45gNCIw2CdstaqbwapFBtuWU9un0z18k50okT+COtzfyOjCc4R8Nt3srKRV4gXtDpN8NrP3N1+t+0mDnsZuv8dBticcFc4WGpQLXbLxEigufSK355RZ2ZtOgUCo7z9ev8TqJeZrsq2tbmnPdP/4wkIavzim6X1/y83vMKiwIB0e2KbyeqrYJ6xYxLVB/4yf7K+TZPws5vOXhqkQ21aPLh9DRPHbg2BWe+O+QdHu2B3CeG9OyL9voqMGVs3eyjugud2KlNpmySQzsio+cj1mna3r+sJ/puGwP6UFinV2kOjrBNLaHuNwgrKEhqgJyofz3VLrZYQU6liVdC0iF+oTzXFcnGnFUryhxQidsHYclC4/OBDbLk1rfvHfw4Zqhi4Q8/rdARvGWbVg6m3rZu3Z0CGY0K7kVooUbs3ItxgORQvwHp3/Sh6nDaQKdk6BA4q3umdPPvET0OzbozVOfIj2QdUYUTYfWTPKTpZas2I3BrMPZhdWa1EE/695bwZGe2w3rE+KhszvudVP4=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "hybrid_search",
+          "args": {
+            "query": "train object detection model"
+          },
+          "tool_call_id": "pyd_ai_7efbe4a6196642bab1fc30b2af1ba686",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 253,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 87,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 69,
+          "text_prompt_tokens": 253
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:31:28.489198+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "ryHhaI2PNKb-nsEPoOzhmA4",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "hybrid_search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/yoloe/train.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/yoloe/train.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainerFromScratch\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPEFreeTrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEVPTrainer\n\n<br><br>",
+              "description": "Learn about YOLOE enhanced visual prompting (EVP) predictors in Ultralytics, which enable object detection and segmentation models to use visual prompts during inference for improved performance.",
+              "keywords": "YOLOE, EVP, visual prompts, computer vision, object detection, segmentation, bounding boxes, masks, predictors, YOLOEVPDetectPredictor, YOLOEVPSegPredictor, Ultralytics, inference",
+              "filename": "train.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "model.md"
+            },
+            {
+              "start": 16000,
+              "content": "                         |\n| `dropout`         | `float`                  | `0.0`    | Dropout rate for regularization in classification tasks, preventing overfitting by randomly omitting units during training.                                                                                                                                                            |\n| `val`             | `bool`                   | `True`   | Enables validation during training, allowing for periodic evaluation of model performance on a separate dataset.                                                                                                                                                                       |\n| `plots`           | `bool`                   | `False`  | Generates and saves plots of training and validation metrics, as well as prediction examples, providing visual insights into model performance and learning progression.                                                                                                               |\n| `compile`         | `bool` or `str`          | `False`  | Enables PyTorch 2.x `torch.compile` graph compilation with `backend='inductor'`. Accepts `True` \u2192 `\"default\"`, `False` \u2192 disables, or a string mode such as `\"default\"`, `\"reduce-overhead\"`, `\"max-autotune-no-cudagraphs\"`. Falls back to eager with a warning if unsupported.       |",
+              "filename": "train-args.md"
+            },
+            {
+              "start": 14000,
+              "content": "ttention and resources on recognizing the defined objects.\n\nThis approach provides a powerful means of customizing state-of-the-art [object detection](../tasks/detect.md) models for specific tasks, making advanced AI more accessible and applicable to a broader range of practical applications.\n\n## Reproduce official results from scratch(Experimental)\n\n### Prepare datasets\n\n- Train data\n\n| Dataset                                                           | Type                                                        | Samples | Boxes | Annotation Files                                                                                                                           |\n| ----------------------------------------------------------------- | ----------------------------------------------------------- | ------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------ |\n| [Objects365v1](https://opendatalab.com/OpenDataLab/Objects365_v1) | Detection                                                   | 609k    | 9621k | [objects365_train.json](https://opendatalab.com/OpenDataLab/Objects365_v1)                                                                 |\n| [GQA](https://cs.stanford.edu/people/dorarad/gqa/about.html)      | [Grounding](https://www.ultralytics.com/glossary/grounding) | 621k    | 3681k | [final_mixed_train_no_coco.json](https://huggingface.co/GLIPModel/GLIP/blob/main/mdetr_annotations/final_mixed_train_no_coco.json)         |\n| [Flickr30k](https://shannon.cs.illinois.edu/DenotationGraph/)     | Grounding                                                   | 149k    | 641k  | [final_flickr_separateGT_train.json](https://huggingface.co/GLIPModel/GLIP/blob/main/mdetr_annotations/final_flickr_separateGT_train.json) |\n\n- Val data\n\n| Dataset                                                                                                 | Type      | Annotation Files       ",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "yolo-world.md"
+            },
+            {
+              "start": 0,
+              "content": "# Object Detection\n\n<img width=\"1024\" src=\"https://github.com/ultralytics/docs/releases/download/0/object-detection-examples.avif\" alt=\"Object detection examples\">\n\n[Object detection](https://www.ultralytics.com/glossary/object-detection) is a task that involves identifying the location and class of objects in an image or video stream.\n\nThe output of an object detector is a set of bounding boxes that enclose the objects in the image, along with class labels and confidence scores for each box. Object detection is a good choice when you need to identify objects of interest in a scene, but don't need to know exactly where the object is or its exact shape.\n\n<p align=\"center\">\n  <br>\n  <iframe loading=\"lazy\" width=\"720\" height=\"405\" src=\"https://www.youtube.com/embed/5ku7npMrW40?si=6HQO1dDXunV8gekh\"\n    title=\"YouTube video player\" frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong> Object Detection with Pre-trained Ultralytics YOLO Model.\n</p>\n\n!!! tip\n\n    YOLO11 Detect models are the default YOLO11 models, i.e. `yolo11n.pt` and are pretrained on [COCO](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml).\n\n## [Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models/11)\n\nYOLO11 pretrained Detect models are shown here. Detect, Segment and Pose models are pretrained on the [COCO](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml) dataset, while Classify models are pretrained on the [ImageNet](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/ImageNet.yaml) dataset.\n\n[Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models) download automatically from the latest Ultralytics [release](https://github.com/ultralytics/assets/releases) on first use.\n\n{% include \"macros/yolo-det-perf",
+              "comments": true,
+              "description": "Learn about object detection with YOLO11. Explore pretrained models, training, validation, prediction, and export details for efficient object recognition.",
+              "keywords": "object detection, YOLO11, pretrained models, training, validation, prediction, export, machine learning, computer vision",
+              "filename": "detect.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_7efbe4a6196642bab1fc30b2af1ba686",
+          "metadata": null,
+          "timestamp": "2025-10-04T13:31:28.601861+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb8o5bYzLkjCLT92+X5m+1ARDJ3FuxVgJLd9+AUgm+E4KjQEB0e2Kb86ZvPgF6X+mcfoyjTmZZELHuRF3PTt3NYjcdzEBOoIqqbXovVGRU6rIEZXtDeDxrcHqDP7R5/Zo6JvfYMgE4/fJNqsnrQIBLBGrrZ699Oc0gzp/21jGIC00yO2GQ6MffFsyJe+30rcEUltPbx3F5hN/MtKq++jRx+uE/RDD7po8hvsbBRvqmEQKjwIB0e2Kb2Y9lJHZe3KQCBVvbKTpWhuXxtZgnFUqJDKYDREIyWPFNm7+V/YNFA6NAShbZfrWbWpEp9t1Mlp0n5/5zzdSgJwJ1SiP6cJCw75OaEixQamsVHKb7lffzOtWiq5ZrtpMmj9mI1ZTRUSQUXgbOeesZQGkWLcrRP5G/5KOidXt0tl3ruau6TJcwABKHOmIHC/B7S8Gn7ArX7oGI/uGrHSLirtvD9Qn1LrTtymRVyolcAEgRNAnKEf0BfwkTrsPcF0bjaIW+l3cSEdUERelYQAQgqlPCMnokJf5rs4PRgxaveQuNZuJ7Js/IYK1OB5+UhQ58j8Sjb2mHd/9Yk3DM8/uLw09RJ5+w5wKv92OCuUBAdHtim/Cv52/yRy1rxY8Lc8/unOBSAOFaDRGAM4tuBwG0gmAVoJb6AaLnirhY9xehxeQ8kJkKDJGkkIISbya2xWPE0GyPBJMI6cq1TKhvdCXu2oWkNkIGgH54T+4q9wie9kzeKLInuWqc4ExzFLwdpiDCTeAuND4cLil0JdQWkv+CGL3egOTZcUn7oLSKtUofvkzO6MBjZ4Ch/g4rEJHScLq0rYO/BkTtK8JgnnpvMTYSHhueLyGNxtDHhEYpCuzcqqnHw3yoW7ZgckrdLbcwTqJ5sN/c7OIFT0hK9MHNL3B6pQkXwroAQHR7YpvWOqT/SBbRP9AjO7Akc49P7yIwKsymljND4AlE63oQPJrnDZnaxbsVtphDQpD8hf1V58FlU2WZCyk6qrf+cC2SpWLjqSPU66Qo2dp0kwVY5di7gICJTe1MDOy3mQEMmjUMBE8CtAoxY9bYZ33JAvvOmzvdLG5DPIg+9kUrXpuCoKBU/DH+D4fhmd9DfS0+DXzzzf1u2FxIWBPrezuStMspp+sbEhiertPbKs5lB0ZhQvYZAcOJn0D4zdDWd6orTa1LeRwRjKeKld1PsFWDFXzYz0pIqozFi2M9ona3FXA4KctqLAK+AEB0e2Kb2OngoHcd1Wtq+L8HiwM5sVspatgqGDzNoUpawTgIzYHS1SrR+eAw6nw9m78s/KE22ciERbVIJAGCD+lPEVJHK+sVCXYpkiKF3+HA/jKNisMWsBOza2u7ItncU/+S+CdsjlIg/CvBtWRHd2Uzxmf6wgEv6ZR/l2h04cIW7WrPH//l+wErs2goE58XUjjtkk3/itd4BFqDTyH4JtpuBxNc6pJmPPEACgINQHfgi9SbT/mZOIdQrCUXeMw1nAiaCrAmew0/JLBWNXJVfRIbaV2lXc9FBJXHWVOV/56KSflWLIRQUTkxJQztWM0kVOS+dGFhwyn0QqPAgHR7Ypvo4xTQGwJgoxA0vZyvWvMdtKqorH/+Kj0f1B0aBGciHmCqi4k29NBFkstl2aSJ+WaI25NruSv7mutE2N86t+VebUsYoB6dwrcmpVZY7CxbVy7rSOehhArdzFW3gvEg7DPxXpZl0OjONRh4j1Bdz0ovM/Sjr3X0RLSINKfyekPGRqK6mrXvhlMGaZBd3MpuGeZTH5J0hok3jtZht99Z4wvm/qFImxxSHaGxEPTzHAqVn3J17QDRUWJtw1KA6Kfg+g78CZE6lqkOgvXMo1CuLVtevyI3vwqMMlOqb8MF65Ww099cMaPQ/UWinTRfTu2t1cA1OwtUjb7s/tzw9/yidlxgRFMydBJOWJ6dqcKlwEB0e2Kb801xEOEhYYc9Eu53RDB8x5VLS3eKt3kuu1Iwk2wwkcUdkPyx1fMxONCLPDq7WcirWmMzp5QSel64keGLeBbbrcbcdeojpZJdc/S4ahq2paz7ZZzHeTbV1xqsUF2D7ABqVET3FqxWj1RQtbE7fVaHrO2QR0QNjFKGRKyHO1Y9Wl7uecJWjch7QWAsIieqlL2ixp5",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "To train an object detection model with Ultralytics YOLO, you generally follow these steps:\n\n1.  **Choose a Model:** Select a pre-trained YOLO model (e.g., `yolov8n.pt` for a nano-sized YOLOv8 model). These models are often pre-trained on large datasets like COCO.\n2.  **Prepare Your Data:** Organize your dataset with images and corresponding annotation files (e.g., in YOLO format, which consists of `txt` files with class, x\\_center, y\\_center, width, height for each object).\n3.  **Initiate Training:** Use the `train` method of the YOLO model, specifying your data configuration file (e.g., `coco128.yaml`), number of epochs, image size, and other training parameters.\n\nHere's an example of how you might train a model using Python:\n\n```python\nfrom ultralytics import YOLO\n\n# Load a pre-trained YOLO model\nmodel = YOLO('yolov8n.pt')\n\n# Train the model\nresults = model.train(data='coco128.yaml', epochs=100, imgsz=640)\n```\n\nThe `data` argument points to a YAML file that describes your dataset, including the paths to your training and validation images and their corresponding labels, as well as the class names. The `epochs` argument specifies the number of training iterations, and `imgsz` defines the input image size.\n\nFor more details on object detection with YOLO, you can refer to the [Object Detection](https://github.com/ultralytics/ultralytics/blob/main/docs/tasks/detect.md) documentation.\nArguments for training, such as `dropout`, `val`, `plots`, and `compile`, are described in the [Training Arguments](https://github.com/ultralytics/ultralytics/blob/main/docs/reference/args.md) reference.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2683,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 707,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 291,
+          "text_prompt_tokens": 2683
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:31:33.917044+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "syHhaMm_EM_Z7M8PhJ7kWA",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

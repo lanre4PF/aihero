@@ -1,0 +1,144 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how to train yolo v11 model",
+          "timestamp": "2025-10-04T13:18:50.502565+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kbzt21nHjj12UASc6PmHn8JqR3QIN83h+xnJCzIvT65wKXAHR7YpvzlWTXA+b3pSZ+/IyDvPQsVMY7o4u9pFDEta5pXWfoEBi0weH4AoyDm3Hu7M6v92X8dNoLabQE91HzEuy/MrbI58/pXOBTPpe5JHqzyb9miEL3ZS/o1EyCo4BAdHtim/hRgGgugGBzkefvlUbkgQ/SzhwrO2t14XI3ZxfVuXzBk/DsJOBHv37pFLdPBO6SmjxAhZB5trL867BfpZSnwL/WJ9dl8EaVq1bPHyeqQ/82hqpCJbsBIss5tX35cX0khEtBEAxadgSNpdFBKglX/1EuNGbv6u7+on1P8HtCj/zTEnYEEQ2iJBVhA==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "train YOLOv11"
+          },
+          "tool_call_id": "pyd_ai_5c1987c2afaf45c8ba6388c22e26532d",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 250,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 64,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 45,
+          "text_prompt_tokens": 250
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:18:52.184879+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "ux7haMqqIIP9nsEPmaOk2Qo",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/yoloe/train.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/yoloe/train.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainerFromScratch\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPEFreeTrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEVPTrainer\n\n<br><br>",
+              "description": "Learn about YOLOE enhanced visual prompting (EVP) predictors in Ultralytics, which enable object detection and segmentation models to use visual prompts during inference for improved performance.",
+              "keywords": "YOLOE, EVP, visual prompts, computer vision, object detection, segmentation, bounding boxes, masks, predictors, YOLOEVPDetectPredictor, YOLOEVPSegPredictor, Ultralytics, inference",
+              "filename": "train.md"
+            },
+            {
+              "start": 11000,
+              "content": "`SGD=1E-2`, `Adam=1E-3`). Adjusting this value is crucial for the optimization process, influencing how rapidly model weights are updated.                                                                                                                 |\n| `lrf`             | `float`                  | `0.01`   | Final learning rate as a fraction of the initial rate = (`lr0 * lrf`), used in conjunction with schedulers to adjust the learning rate over time.                                                                                                                                      |\n| `momentum`        | `float`                  | `0.937`  | Momentum factor for SGD or beta1 for [Adam optimizers](https://www.ultralytics.com/glossary/adam-optimizer), influencing the incorporation of past gradients in the current update.                                                                                                    |\n| `weight_decay`    | `float`                  | `0.0005` | L2 [regularization](https://www.ultralytics.com/glossary/regularization) term, penalizing large weights to prevent overfitting.                                                                                                                                                        |\n| `warmup_epochs`   | `float`                  | `3.0`    | Number of epochs for learning rate warmup, gradually increasing the learning rate from a low value to the initial learning rate to stabilize training early on.                                                                                                                        |\n| `warmup_momentum` | `float`                  | `0.8`    | Initial momentum for warmup phase, gradually adjusting to the set momentum over the warmup period.                                                                                                                                                                                     |\n| `warmup_bias_lr`  | `float`             ",
+              "filename": "train-args.md"
+            },
+            {
+              "start": 6000,
+              "content": "ights. Enhances training efficiency and model performance.                                                                              |\n| `optimizer`       | `str`                    | `'auto'` | Choice of optimizer for training. Options include `SGD`, `Adam`, `AdamW`, `NAdam`, `RAdam`, `RMSProp` etc., or `auto` for automatic selection based on model configuration. Affects convergence speed and stability.                                                                   |\n| `seed`            | `int`                    | `0`      | Sets the random seed for training, ensuring reproducibility of results across runs with the same configurations.                                                                                                                                                                       |\n| `deterministic`   | `bool`                   | `True`   | Forces deterministic algorithm use, ensuring reproducibility but may affect performance and speed due to the restriction on non-deterministic algorithms.                                                                                                                              |\n| `single_cls`      | `bool`                   | `False`  | Treats all classes in multi-class datasets as a single class during training. Useful for binary classification tasks or when focusing on object presence rather than classification.                                                                                                   |\n| `classes`         | `list[int]`              | `None`   | Specifies a list of class IDs to train on. Useful for filtering out and focusing only on certain classes during training.                                                                                                                                                              |\n| `rect`            | `bool`                   | `False`  | Enables minimum padding strategy\u2014images in a batch are minimally padded to reach a common size, w",
+              "filename": "train-args.md"
+            },
+            {
+              "start": 4000,
+              "content": "                                                                                          |\n| `device`          | `int` or `str` or `list` | `None`   | Specifies the computational device(s) for training: a single GPU (`device=0`), multiple GPUs (`device=[0,1]`), CPU (`device=cpu`), MPS for Apple silicon (`device=mps`), or auto-selection of most idle GPU (`device=-1`) or multiple idle GPUs (`device=[-1,-1]`)                     |\n| `workers`         | `int`                    | `8`      | Number of worker threads for data loading (per `RANK` if Multi-GPU training). Influences the speed of data preprocessing and feeding into the model, especially useful in multi-GPU setups.                                                                                            |\n| `project`         | `str`                    | `None`   | Name of the project directory where training outputs are saved. Allows for organized storage of different experiments.                                                                                                                                                                 |\n| `name`            | `str`                    | `None`   | Name of the training run. Used for creating a subdirectory within the project folder, where training logs and outputs are stored.                                                                                                                                                      |\n| `exist_ok`        | `bool`                   | `False`  | If True, allows overwriting of an existing project/name directory. Useful for iterative experimentation without needing to manually clear previous outputs.                                                                                                                            |\n| `pretrained`      | `bool` or `str`          | `True`   | Determines whether to start training from a pretrained model. Can be a boolean value or a string path to a specific model from which to load we",
+              "filename": "train-args.md"
+            },
+            {
+              "start": 8000,
+              "content": "ith the longest side equal to `imgsz`. Can improve efficiency and speed but may affect model accuracy.                                                                                |\n| `multi_scale`     | `bool`                   | `False`  | Enables multi-scale training by increasing/decreasing `imgsz` by up to a factor of `0.5` during training. Trains the model to be more accurate with multiple `imgsz` during inference.                                                                                                 |\n| `cos_lr`          | `bool`                   | `False`  | Utilizes a cosine [learning rate](https://www.ultralytics.com/glossary/learning-rate) scheduler, adjusting the learning rate following a cosine curve over epochs. Helps in managing learning rate for better convergence.                                                             |\n| `close_mosaic`    | `int`                    | `10`     | Disables mosaic [data augmentation](https://www.ultralytics.com/glossary/data-augmentation) in the last N epochs to stabilize training before completion. Setting to 0 disables this feature.                                                                                          |\n| `resume`          | `bool`                   | `False`  | Resumes training from the last saved checkpoint. Automatically loads model weights, optimizer state, and epoch count, continuing training seamlessly.                                                                                                                                  |\n| `amp`             | `bool`                   | `True`   | Enables Automatic [Mixed Precision](https://www.ultralytics.com/glossary/mixed-precision) (AMP) training, reducing memory usage and possibly speeding up training with minimal impact on accuracy.                                                                                     |\n| `fraction`        | `float`                  | `1.0`    | Specifies the fraction of the dataset to use for tr",
+              "filename": "train-args.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_5c1987c2afaf45c8ba6388c22e26532d",
+          "metadata": null,
+          "timestamp": "2025-10-04T13:18:52.220078+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "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",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find specific documentation on training a YOLOv11 model within the Ultralytics documentation. It's possible that YOLOv11 is a very recent development, a community-driven project, or a conceptual version that hasn't been fully integrated or distinctly documented as such within the Ultralytics framework yet.\n\nThe search results show information related to \"YOLOE\" and its various trainers (e.g., `YOLOETrainer`, `YOLOEPETrainer`) in the file [`ultralytics/models/yolo/yoloe/train.py`](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py). This suggests that \"YOLOE\" might be a related or enhanced version of YOLO.\n\nGenerally, training YOLO models involves similar steps and parameters, which are broadly covered in the documentation. If you are looking for general guidance on training a YOLO model, you would typically:\n\n1.  **Prepare your dataset:** Annotate your images with bounding boxes or segmentation masks for the objects you want to detect.\n2.  **Configure your model:** Choose a pre-trained YOLO model or define a custom model architecture.\n3.  **Set training parameters:** This includes parameters like learning rate, batch size, number of epochs, optimizer, and data augmentation settings. Many of these general training arguments are listed in [train-args.md](https://github.com/ultralytics/ultralytics/blob/main/train-args.md).\n4.  **Initiate training:** Run the training script, pointing it to your dataset and configuration.\n\nIf you have more information about where you encountered \"YOLOv11\" or if you are looking for general YOLO training instructions, please let me know, and I can try to provide more targeted assistance.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2279,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 780,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 382,
+          "text_prompt_tokens": 2279
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:18:56.383021+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "vR7haJjdA6fgnsEPosSLmQ4",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

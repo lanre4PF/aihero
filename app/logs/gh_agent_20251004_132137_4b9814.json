@@ -1,0 +1,157 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "text_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "what is yolo ",
+          "timestamp": "2025-10-04T13:21:31.239488+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb5pxgxaK0EQrf783zZvtuQ/BDLk0RQZTsiyJ66kaw4MKZwHR7YpvOwBQ48ao3CPysfyI9PfEF10Tx23rlP3+NNXu43vKif3DngtB8GwsvJZpPVWSo4D1BPdBtPB00fDw0m1Cf6BgaVbFZgqG/cjbGKG2+mOJHtH4DT5V1r1Bbm0EDfp848lkozoK3wEB0e2Kb9+qPrMkmlRYZIZGJXKNzWolIh9f4RYeK++/Et3gZvD31BI7CyFGHHSIXJ6MtMco8/2bYotDMGLs2zdwEvJb7QTrFenAMCmDRODuUQLOksr+ieJ5kIe0+nfLMonE8mC4WzH5ajxkAw5e1MRNYCQAHyWafseKtC/PpGP+O1Rgv3ir6V+3NlkbEq41zPcdy/gX5TfmNuelR4ABESbQM/LIUEiSOA4Ov1WlliKjBAcYMHejcTMISMCAIUS2P2LY/5nQuzYg5WzYDwiM7e+6ZEcrS8UE5r+aJIonQc8Z",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "text_search",
+          "args": {
+            "query": "what is YOLO"
+          },
+          "tool_call_id": "pyd_ai_4f3cd9cdf4b343ccb29029008d959bcc",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 246,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 86,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 69,
+          "text_prompt_tokens": 246
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:21:33.441774+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "XB_haOCpMMipkdUPuf2B0Ao",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "text_search",
+          "content": [
+            {
+              "start": 21000,
+              "content": "on API or CLI commands. Here's how to start training using Python:\n\n```python\nfrom ultralytics import YOLOWorld\n\n# Load a pretrained YOLOv8s-worldv2 model\nmodel = YOLOWorld(\"yolov8s-worldv2.pt\")\n\n# Train the model on the COCO8 dataset for 100 epochs\nresults = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n```\n\nOr using CLI:\n\n```bash\nyolo train model=yolov8s-worldv2.yaml data=coco8.yaml epochs=100 imgsz=640\n```\n\n### What are the available pre-trained YOLO-World models and their supported tasks?\n\nUltralytics offers multiple pre-trained YOLO-World models supporting various tasks and operating modes:\n\n| Model Type      | Pre-trained Weights                                                                                     | Tasks Supported                        | Inference | Validation | Training | Export |\n| --------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------- | --------- | ---------- | -------- | ------ |\n| YOLOv8s-world   | [yolov8s-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8s-worldv2 | [yolov8s-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLOv8m-world   | [yolov8m-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8m-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8m-worldv2 | [yolov8m-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8m-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLOv8l-world   | [yolov8l-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8l-world.pt)     | [Objec",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "yolo-world.md"
+            },
+            {
+              "start": 22000,
+              "content": " | ---------- | -------- | ------ |\n| YOLOv8s-world   | [yolov8s-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8s-worldv2 | [yolov8s-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLOv8m-world   | [yolov8m-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8m-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8m-worldv2 | [yolov8m-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8m-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLOv8l-world   | [yolov8l-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8l-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8l-worldv2 | [yolov8l-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8l-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLOv8x-world   | [yolov8x-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8x-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8x-worldv2 | [yolov8x-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8x-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n\n### How do I reproduce the official results of YOLO-World from scratch?\n\nTo reproduce the official results from scratch, you need to prepare the datasets and launch the training using the provided code. The training procedure involves creating a data dictionary and running the `train` method with a",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "yolo-world.md"
+            },
+            {
+              "start": 14000,
+              "content": "ttention and resources on recognizing the defined objects.\n\nThis approach provides a powerful means of customizing state-of-the-art [object detection](../tasks/detect.md) models for specific tasks, making advanced AI more accessible and applicable to a broader range of practical applications.\n\n## Reproduce official results from scratch(Experimental)\n\n### Prepare datasets\n\n- Train data\n\n| Dataset                                                           | Type                                                        | Samples | Boxes | Annotation Files                                                                                                                           |\n| ----------------------------------------------------------------- | ----------------------------------------------------------- | ------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------ |\n| [Objects365v1](https://opendatalab.com/OpenDataLab/Objects365_v1) | Detection                                                   | 609k    | 9621k | [objects365_train.json](https://opendatalab.com/OpenDataLab/Objects365_v1)                                                                 |\n| [GQA](https://cs.stanford.edu/people/dorarad/gqa/about.html)      | [Grounding](https://www.ultralytics.com/glossary/grounding) | 621k    | 3681k | [final_mixed_train_no_coco.json](https://huggingface.co/GLIPModel/GLIP/blob/main/mdetr_annotations/final_mixed_train_no_coco.json)         |\n| [Flickr30k](https://shannon.cs.illinois.edu/DenotationGraph/)     | Grounding                                                   | 149k    | 641k  | [final_flickr_separateGT_train.json](https://huggingface.co/GLIPModel/GLIP/blob/main/mdetr_annotations/final_flickr_separateGT_train.json) |\n\n- Val data\n\n| Dataset                                                                                                 | Type      | Annotation Files       ",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "yolo-world.md"
+            },
+            {
+              "start": 13000,
+              "content": "rove detection performance and efficiency for your specific application scenarios.\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load your custom model\n        model = YOLO(\"custom_yolov8s.pt\")\n\n        # Run inference to detect your custom classes\n        results = model.predict(\"path/to/image.jpg\")\n\n        # Show results\n        results[0].show()\n        ```\n\n### Benefits of Saving with Custom Vocabulary\n\n- **Efficiency**: Streamlines the detection process by focusing on relevant objects, reducing computational overhead and speeding up inference.\n- **Flexibility**: Allows for easy adaptation of the model to new or niche detection tasks without the need for extensive retraining or data collection.\n- **Simplicity**: Simplifies deployment by eliminating the need to repeatedly specify custom classes at runtime, making the model directly usable with its embedded vocabulary.\n- **Performance**: Enhances detection accuracy for specified classes by focusing the model's attention and resources on recognizing the defined objects.\n\nThis approach provides a powerful means of customizing state-of-the-art [object detection](../tasks/detect.md) models for specific tasks, making advanced AI more accessible and applicable to a broader range of practical applications.\n\n## Reproduce official results from scratch(Experimental)\n\n### Prepare datasets\n\n- Train data\n\n| Dataset                                                           | Type                                                        | Samples | Boxes | Annotation Files                                                                                                                           |\n| ----------------------------------------------------------------- | ----------------------------------------------------------- | ------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------ |\n| [Objects365v1](https://open",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "yolo-world.md"
+            },
+            {
+              "start": 12000,
+              "content": "lized for your specific use case. This process embeds your custom class definitions directly into the model file, making the model ready to use with your specified classes without further adjustments. Follow these steps to save and load your custom YOLOv8 model:\n\n!!! example\n\n    === \"Persisting Models with Custom Vocabulary\"\n\n        First load a YOLO-World model, set custom classes for it and save it:\n\n        ```python\n        from ultralytics import YOLO\n\n        # Initialize a YOLO-World model\n        model = YOLO(\"yolov8s-world.pt\")  # or select yolov8m/l-world.pt\n\n        # Define custom classes\n        model.set_classes([\"person\", \"bus\"])\n\n        # Save the model with the defined offline vocabulary\n        model.save(\"custom_yolov8s.pt\")\n        ```\n\n        After saving, the custom_yolov8s.pt model behaves like any other pre-trained YOLOv8 model but with a key difference: it is now optimized to detect only the classes you have defined. This customization can significantly improve detection performance and efficiency for your specific application scenarios.\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load your custom model\n        model = YOLO(\"custom_yolov8s.pt\")\n\n        # Run inference to detect your custom classes\n        results = model.predict(\"path/to/image.jpg\")\n\n        # Show results\n        results[0].show()\n        ```\n\n### Benefits of Saving with Custom Vocabulary\n\n- **Efficiency**: Streamlines the detection process by focusing on relevant objects, reducing computational overhead and speeding up inference.\n- **Flexibility**: Allows for easy adaptation of the model to new or niche detection tasks without the need for extensive retraining or data collection.\n- **Simplicity**: Simplifies deployment by eliminating the need to repeatedly specify custom classes at runtime, making the model directly usable with its embedded vocabulary.\n- **Performance**: Enhances detection accuracy for specified classes by focusing the model's a",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "yolo-world.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_4f3cd9cdf4b343ccb29029008d959bcc",
+          "metadata": null,
+          "timestamp": "2025-10-04T13:21:33.470978+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2KbyzlZg+EujJWpyjQ7EMM/j2seU2Xv6W0DHcy19Su5OVBIEYFWKImClYB0e2Kbzt9RG+EZrdUxZ4eOACTTN055VY9IUWyvZMGqjUjKmnBKHlQjHLvBzc/I/7bl6M95b4Tr6aEwst6+0ODDstMRzRzwPjXEEA6/bGSB2FjSrfq+wqaAgHR7Ypv5sxkv/WzhP2QfVXHN2IkJ/BsaL1rLT46Q4KIQD4uLADEdVE03W639Izi5WkMCzWPGw+IboT+dkXOA245XkEUomwOfKMNUL3GMQ4+dy5rRHc2oCBKsVA/MAa1zV8IK5LBfLM3sw9yXTtDFSTcQbGyh49Exa+a2ESgrSiCgQw/WeD2zMkfz1nnBB5mj+V1gPLBd1E7gY4CEHoOBCFa49nJah7KvZeHM4j2/otlErdmJ7REXe0u51awbt4XvEZUpWvg1+MVs5KlQKMiHGqkZnk0ac4xIk/VlBoJTM1/QeUq5AsF+G3NqzEcCw825O6hNmW5iBq6ZE8UC7mS1UvRHjpZkPXhOhATiEz0MeiJrdaPeaq3huvOsgqEAgHR7YpvKKc8yGP61FDPkc2ch+aZRtoPWrPhu7mIdnj7J1JbAVzu2pn+N3kdhPRbfnaZyH0E8SxlKFbjmMVu//MB1WGuJervP77TUtgCk8dsXjrAKwUPcP6WaaMp4HvxVa7NSIMwPLgAznBdAtUMYMY1RXrogoLjp6qDGjhwnwyOEBn5O+fjx0yE4Dkh6xoJ1IxSOP1MzIj7bDfmONnnvrcGoKQBHntCyWu3VKURSkEFg17cpWl7N0KhvWJpNMXDAyOc4qLRHGiS81FonFWENdbcgHz9Mqvc1dwj1Nvhs18GEqjsHsw7XOYNH0AaPQYmYuGT4Bwo2pcLgsrSlUw37ozbNcPqCu8BAdHtim+a7txVPzcKZvVrms1ablwufWVKIgQBTeEQqJ4dWh+USUv4XxHSUpZFyTsYWRe7mv1ps7p80TMLNCVgadTTXO2GfY1mnbP3YeUqlZCzx+DO1gl83mQrEefBwz2ZjY/Qr9ZTb+crryG/AZaNoWIPX7oYSH4gVcZe76Jg9AJ8GMSV8TpATFRbxbTPioeV6SdqFyyPqv4E/XzaDIXSCUUwD9GHCvWaqp/bzuvfpgueOi6zWPW9Cf2JWWby8X/ppRMRGj+HOxaK30oU48RkKKB9Nu7yMeLFn8VJhSVpUbZo0kDSbL+cFPLLBBFHvqsKUQHR7YpvsUSuxBc9ox6C+BPwxgbsqCKxYrGig490+Ok15wjy/5PJmMxj9tCI+zyl78X2yAKDWekK2JRWWDV1DZ1wOaX0H4f5sC2mVLs/bMUNEw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "YOLO (You Only Look Once) is a popular real-time object detection system. Ultralytics offers advanced versions like YOLOv8 and YOLO-World, which are known for their efficient, real-time, and open-vocabulary object detection capabilities. These models are designed to achieve high performance with minimal computation, making AI more accessible for a wide range of applications.\n\nFor more details, you can refer to the [YOLO-World Model documentation](https://github.com/ultralytics/ultralytics/blob/main/yolo-world.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3541,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 298,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 180,
+          "text_prompt_tokens": 3541
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:21:37.042832+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "Xx_haOw7zvyewQ-4pvSgDg",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}
