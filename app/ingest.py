@@ -8,7 +8,7 @@ import numpy as np
 from minsearch import VectorSearch
 from ultralytics_embeddings import generate_embeddings
 
-ultralytics_embeddings = np.loadtxt('ultralytics_embeddings.txt')
+ultralytics_embeddings = np.loadtxt("ultralyticembeddings")
 
 def read_repo_data(repo_owner, repo_name):
     repo_identifier = f"{repo_owner}/{repo_name}"
@@ -121,11 +121,11 @@ def index_data(
     else:
         return index
 
-if __name__ == "__main__":
-    REPO_OWNER = "ultralytics"
-    REPO_NAME = "ultralytics"
+# if __name__ == "__main__":
+#     REPO_OWNER = "ultralytics"
+#     REPO_NAME = "ultralytics"
 
 
-    index, vindex = index_data(REPO_OWNER, REPO_NAME, vector=True)
-    print(index)
-    print("Indexing complete.")
+#     index, vindex = index_data(REPO_OWNER, REPO_NAME, vector=True)
+#     print(index)
+#     print("Indexing complete.")
