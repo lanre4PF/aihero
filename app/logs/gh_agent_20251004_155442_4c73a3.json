@@ -1,0 +1,157 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.\n\nUse the search tool to find relevant information from the repository files before answering questions.\n\nFiles are stored in a flat folder structure, where:\n- Each saved file is prefixed with the repository name and a hyphen.\n- Original folder separators (/) from the repo were replaced with hyphens (-).\n\nFor example:\n- Original path: docs/tutorials/intro.md\n- Saved as: ultralytics-docs-tutorials-intro.md\n\nWhen citing sources:\n- Always include the saved filename.\n- Convert the saved filename back to the GitHub path by:\n  1. Removing the repository prefix (e.g., \"ultralytics-\").\n  2. Replacing hyphens (-) with slashes (/).\n- Use the GitHub link format:\n  [LINK TITLE](https://github.com/ultralytics/ultralytics/blob/main/CONVERTED_PATH)\n\nExample:\nSaved file: ultralytics-docs-tutorials-intro.md  \nCitation: [Introduction Guide](https://github.com/ultralytics/ultralytics/blob/main/docs/tutorials/intro.md)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "hybrid_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i train a yolo v11 model",
+          "timestamp": "2025-10-04T15:54:36.853447+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.\n\nUse the search tool to find relevant information from the repository files before answering questions.\n\nFiles are stored in a flat folder structure, where:\n- Each saved file is prefixed with the repository name and a hyphen.\n- Original folder separators (/) from the repo were replaced with hyphens (-).\n\nFor example:\n- Original path: docs/tutorials/intro.md\n- Saved as: ultralytics-docs-tutorials-intro.md\n\nWhen citing sources:\n- Always include the saved filename.\n- Convert the saved filename back to the GitHub path by:\n  1. Removing the repository prefix (e.g., \"ultralytics-\").\n  2. Replacing hyphens (-) with slashes (/).\n- Use the GitHub link format:\n  [LINK TITLE](https://github.com/ultralytics/ultralytics/blob/main/CONVERTED_PATH)\n\nExample:\nSaved file: ultralytics-docs-tutorials-intro.md  \nCitation: [Introduction Guide](https://github.com/ultralytics/ultralytics/blob/main/docs/tutorials/intro.md)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiMB0e2KbzMaBQC/ZPzB2AWy+xE9THIq9B4lcfWdYzz5WFk/OQpZAdHtim9sf0rpoliSnrooor0C11ve24T0vdUYz3ZJdVeC2N3y6UwnMZGYKXP4A9eTSZQghb2bZCALMParnGyY94JBDGrrE49ZMcddb9wZrlaiJV3BOFY6gGEKiwIB0e2Kby9QJ4XChmxLDntoUxnH5szGcwycCvwtFc2lZfSuSkFEUbNW+M/Fa+ao01VR1Cr8r2AhPARkq0PsUKBNPAZsHbM83+rkmbC/fOZsnBVurY4ONy4Qi99LH39c8PUBTzkFC/yrjp6C9KBPOQpAgjQt5oBx/VDISVJ7hy/BsR6aa9UrFyXaErPML3ZwRjaQjL94EG7MFThr8ubeCYxQmarkkbYskmEep8yi4fszBy6yu1EXthpZ8YFWUsd7qzYNvTQY2Le66ozCttNIF6+ytY2paRt0DvknEe10XRW3GyTnqZZrJn9W/68kFqXD+i3QZDBoTYVj7J6dK4h+CGwljRYZqVHzPczIitwK0QEB0e2Kb2nVLAqVwwB8OGsocwKdDNV7ySxmCTVY/Bqc+BYWZ4EuU0Xo/Mt5z5EqG+0cp16u83DbjZir6rKDpzr2IfiNXLSZncGfr0rC5tlZeTMKd8qBicn8DDCvmm9WqlMjEfSZAMPPxuPfr89UUmRlzR6IJb/RQZRoMdiKLlWM9FWCT1lEgrALcfOYUNxt4Di25jyrzHDO1zycJc8KYfVbOyBFW1XuRiKZyWGrIMxaY3v+SgG9iksh4EG1olnlLt5+1aojknfKsa3Tk1KcpWYGWw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "hybrid_search",
+          "args": {
+            "query": "train YOLOv11 model"
+          },
+          "tool_call_id": "pyd_ai_6d2ad611299f4b0f8caea5a43a655091",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 383,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 140,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 120,
+          "text_prompt_tokens": 383
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T15:54:39.500137+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "P0PhaOQrs7WewQ-Y9LepDg",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "hybrid_search",
+          "content": [
+            {
+              "start": 8000,
+              "content": "# load a pretrained model (recommended for training)\n\n        # Train the model with MPS\n        results = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640, device=\"mps\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Start training from a pretrained *.pt model using MPS\n        yolo detect train data=coco8.yaml model=yolo11n.pt epochs=100 imgsz=640 device=mps\n        ```\n\nWhile leveraging the computational power of the Apple silicon chips, this enables more efficient processing of the training tasks. For more detailed guidance and advanced configuration options, please refer to the [PyTorch MPS documentation](https://docs.pytorch.org/docs/stable/notes/mps.html).\n\n### Resuming Interrupted Trainings\n\nResuming training from a previously saved state is a crucial feature when working with deep learning models. This can come in handy in various scenarios, like when the training process has been unexpectedly interrupted, or when you wish to continue training a model with new data or for more epochs.\n\nWhen training is resumed, Ultralytics YOLO loads the weights from the last saved model and also restores the optimizer state, [learning rate](https://www.ultralytics.com/glossary/learning-rate) scheduler, and the epoch number. This allows you to continue the training process seamlessly from where it was left off.\n\nYou can easily resume training in Ultralytics YOLO by setting the `resume` argument to `True` when calling the `train` method, and specifying the path to the `.pt` file containing the partially trained model weights.\n\nBelow is an example of how to resume an interrupted training using Python and via the command line:\n\n!!! example \"Resume Training Example\"\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"path/to/last.pt\")  # load a partially trained model\n\n        # Resume training\n        results = model.train(resume=True)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Resume an ",
+              "comments": true,
+              "description": "Learn how to efficiently train object detection models using YOLO11 with comprehensive instructions on settings, augmentation, and hardware utilization.",
+              "keywords": "Ultralytics, YOLO11, model training, deep learning, object detection, GPU training, dataset augmentation, hyperparameter tuning, model performance, apple silicon training",
+              "filename": "ultralytics-docs-en-modes-train.md"
+            },
+            {
+              "start": 17000,
+              "content": " YOLOv9c model from pretrained weights and train\nmodel = YOLO(\"yolov9c.pt\")\nresults = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n```\n\nFor CLI training, execute:\n\n```bash\nyolo train model=yolov9c.yaml data=coco8.yaml epochs=100 imgsz=640\n```\n\nLearn more about [usage examples](#usage-examples) for training and inference.\n\n### What are the advantages of using Ultralytics YOLOv9 for lightweight models?\n\nYOLOv9 is designed to mitigate information loss, which is particularly important for lightweight models often prone to losing significant information. By integrating Programmable Gradient Information (PGI) and reversible functions, YOLOv9 ensures essential data retention, enhancing the model's accuracy and efficiency. This makes it highly suitable for applications requiring compact models with high performance. For more details, explore the section on [YOLOv9's impact on lightweight models](#impact-on-lightweight-models).\n\n### What tasks and modes does YOLOv9 support?\n\nYOLOv9 supports various tasks including object detection and [instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation). It is compatible with multiple operational modes such as inference, validation, training, and export. This versatility makes YOLOv9 adaptable to diverse real-time computer vision applications. Refer to the [supported tasks and modes](#supported-tasks-and-modes) section for more information.",
+              "comments": true,
+              "description": "Explore YOLOv9, a leap in real-time object detection, featuring innovations like PGI and GELAN, and achieving new benchmarks in efficiency and accuracy.",
+              "keywords": "YOLOv9, object detection, real-time, PGI, GELAN, deep learning, MS COCO, AI, neural networks, model efficiency, accuracy, Ultralytics",
+              "filename": "ultralytics-docs-en-models-yolov9.md"
+            },
+            {
+              "start": 12000,
+              "content": "com/ultralytics/assets/releases/download/v8.3.0/yolov10b.pt\n        [5]: https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov10l.pt\n        [6]: https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov10x.pt\n\n## Usage Examples\n\nFor predicting new images with YOLOv10:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained YOLOv10n model\n        model = YOLO(\"yolov10n.pt\")\n\n        # Perform object detection on an image\n        results = model(\"image.jpg\")\n\n        # Display the results\n        results[0].show()\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Load a COCO-pretrained YOLOv10n model and run inference on the 'bus.jpg' image\n        yolo detect predict model=yolov10n.pt source=path/to/bus.jpg\n        ```\n\nFor training YOLOv10 on a custom dataset:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load YOLOv10n model from scratch\n        model = YOLO(\"yolov10n.yaml\")\n\n        # Train the model\n        model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Build a YOLOv10n model from scratch and train it on the COCO8 example dataset for 100 epochs\n        yolo train model=yolov10n.yaml data=coco8.yaml epochs=100 imgsz=640\n\n        # Build a YOLOv10n model from scratch and run inference on the 'bus.jpg' image\n        yolo predict model=yolov10n.yaml source=path/to/bus.jpg\n        ```\n\n## Supported Tasks and Modes\n\nThe YOLOv10 models series offers a range of models, each optimized for high-performance [Object Detection](../tasks/detect.md). These models cater to varying computational needs and accuracy requirements, making them versatile for a wide array of applications.\n\n| Model   | Filenames                                                             | Tasks                                  | Inference | Validation | Training | Export |\n| ------- | -----------------",
+              "comments": true,
+              "description": "Discover YOLOv10 for real-time object detection, eliminating NMS and boosting efficiency. Achieve top performance with a low computational cost.",
+              "keywords": "YOLOv10, real-time object detection, NMS-free, deep learning, Tsinghua University, Ultralytics, machine learning, neural networks, performance optimization",
+              "filename": "ultralytics-docs-en-models-yolov10.md"
+            },
+            {
+              "start": 18000,
+              "content": "               | 13.23                                 | 69.5                 | 676.7             |\n\n## YOLOv8 Usage Examples\n\nThis example provides simple YOLOv8 training and inference examples. For full documentation on these and other [modes](../modes/index.md) see the [Predict](../modes/predict.md), [Train](../modes/train.md), [Val](../modes/val.md) and [Export](../modes/export.md) docs pages.\n\nNote the below example is for YOLOv8 [Detect](../tasks/detect.md) models for object detection. For additional supported tasks see the [Segment](../tasks/segment.md), [Classify](../tasks/classify.md), [OBB](../tasks/obb.md) docs and [Pose](../tasks/pose.md) docs.\n\n!!! example\n\n    === \"Python\"\n\n        [PyTorch](https://www.ultralytics.com/glossary/pytorch) pretrained `*.pt` models as well as configuration `*.yaml` files can be passed to the `YOLO()` class to create a model instance in python:\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a COCO-pretrained YOLOv8n model\n        model = YOLO(\"yolov8n.pt\")\n\n        # Display model information (optional)\n        model.info()\n\n        # Train the model on the COCO8 example dataset for 100 epochs\n        results = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n\n        # Run inference with the YOLOv8n model on the 'bus.jpg' image\n        results = model(\"path/to/bus.jpg\")\n        ```\n\n    === \"CLI\"\n\n        CLI commands are available to directly run the models:\n\n        ```bash\n        # Load a COCO-pretrained YOLOv8n model and train it on the COCO8 example dataset for 100 epochs\n        yolo train model=yolov8n.pt data=coco8.yaml epochs=100 imgsz=640\n\n        # Load a COCO-pretrained YOLOv8n model and run inference on the 'bus.jpg' image\n        yolo predict model=yolov8n.pt source=path/to/bus.jpg\n        ```\n\n## Citations and Acknowledgements\n\n!!! tip \"Ultralytics YOLOv8 Publication\"\n\n    Ultralytics has not published a formal research paper for YOLOv8 due to the rapidly evolving nature of the",
+              "comments": true,
+              "description": "Discover Ultralytics YOLOv8, an advancement in real-time object detection, optimizing performance with an array of pre-trained models for diverse tasks.",
+              "keywords": "YOLOv8, real-time object detection, YOLO series, Ultralytics, computer vision, advanced object detection, AI, machine learning, deep learning",
+              "filename": "ultralytics-docs-en-models-yolov8.md"
+            },
+            {
+              "start": 3000,
+              "content": "ME [table](https://github.com/ultralytics/yolov5#pretrained-checkpoints) for a full comparison of all models.\n\n<p align=\"center\"><img width=\"700\" alt=\"YOLOv5 Models\" src=\"https://github.com/ultralytics/docs/releases/download/0/yolov5-model-comparison.avif\"></p>\n\n- **Start from Pretrained weights.** Recommended for small to medium-sized datasets (i.e. [VOC](https://github.com/ultralytics/yolov5/blob/master/data/VOC.yaml), [VisDrone](https://github.com/ultralytics/yolov5/blob/master/data/VisDrone.yaml), [GlobalWheat](https://github.com/ultralytics/yolov5/blob/master/data/GlobalWheat2020.yaml)). Pass the name of the model to the `--weights` argument. Models download automatically from the [latest YOLOv5 release](https://github.com/ultralytics/yolov5/releases).\n\n    ```bash\n    python train.py --data custom.yaml --weights yolov5s.pt\n    python train.py --data custom.yaml --weights yolov5m.pt\n    python train.py --data custom.yaml --weights yolov5l.pt\n    python train.py --data custom.yaml --weights yolov5x.pt\n    python train.py --data custom.yaml --weights custom_pretrained.pt\n    ```\n\n- **Start from Scratch.** Recommended for large datasets (i.e. [COCO](https://github.com/ultralytics/yolov5/blob/master/data/coco.yaml), [Objects365](https://github.com/ultralytics/yolov5/blob/master/data/Objects365.yaml), [OIv6](https://storage.googleapis.com/openimages/web/index.html)). Pass the model architecture YAML you are interested in, along with an empty `--weights ''` argument:\n\n    ```bash\n    python train.py --data custom.yaml --weights '' --cfg yolov5s.yaml\n    python train.py --data custom.yaml --weights '' --cfg yolov5m.yaml\n    python train.py --data custom.yaml --weights '' --cfg yolov5l.yaml\n    python train.py --data custom.yaml --weights '' --cfg yolov5x.yaml\n    ```\n\n## Training Settings\n\nBefore modifying anything, **first train with default settings to establish a performance baseline**. A full list of train.py settings can be found in the [train.py](https://github.",
+              "comments": true,
+              "description": "Discover how to achieve optimal mAP and training results using YOLOv5. Learn essential dataset, model selection, and training settings best practices.",
+              "keywords": "YOLOv5 training, mAP, dataset best practices, model selection, training settings, YOLOv5 guide, YOLOv5 tutorial, machine learning",
+              "filename": "ultralytics-docs-en-yolov5-tutorials-tips_for_best_training_results.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_6d2ad611299f4b0f8caea5a43a655091",
+          "metadata": null,
+          "timestamp": "2025-10-04T15:54:40.052878+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.\n\nUse the search tool to find relevant information from the repository files before answering questions.\n\nFiles are stored in a flat folder structure, where:\n- Each saved file is prefixed with the repository name and a hyphen.\n- Original folder separators (/) from the repo were replaced with hyphens (-).\n\nFor example:\n- Original path: docs/tutorials/intro.md\n- Saved as: ultralytics-docs-tutorials-intro.md\n\nWhen citing sources:\n- Always include the saved filename.\n- Convert the saved filename back to the GitHub path by:\n  1. Removing the repository prefix (e.g., \"ultralytics-\").\n  2. Replacing hyphens (-) with slashes (/).\n- Use the GitHub link format:\n  [LINK TITLE](https://github.com/ultralytics/ultralytics/blob/main/CONVERTED_PATH)\n\nExample:\nSaved file: ultralytics-docs-tutorials-intro.md  \nCitation: [Introduction Guide](https://github.com/ultralytics/ultralytics/blob/main/docs/tutorials/intro.md)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kby3u5z09reNyszjN8YKywwKRoMdgKjD5lpy02t0LoYgKagHR7Ypv8EEqhh7ye9L2IX74PWuzn6E6puo7lIIFFh6vlj8x1NfOlxXh04OWaUeNPCoP74OUZ4vSqV11/ediY5VczS+gPfi4JknPgUVqJDnidQaXG9JrYb3g829IawueDi6MOti2a2Xu/N0K7wEB0e2Kb62wtjjktxyBYzakTcSxjmAaE2fyl4baknCapNbOYcdOAUP1m/Jq4DEpOiImEDkgfE96hGPM4MSzwX4bjzdXuTlLXd4Td3o+PZEp9Q8Kpff9p+qoAgpQC2TuFclygbhGqxBtu7+wA9fl6n+qsQC4wM9o5tA1hZcPwrHH13b8zMvDyvBV+ernn2NKWE7cMfJZZgdhzAeeuuqhBAfUkwbLtuicFc9RKijVc0qDj7jKFEG2VZwpr/uZFrXL3CfD7An2sTAje4+C7R2W92xFBoGpiUl8C56eeO7LsaSmG7CKyZyvdEOi0+Ph/mMktQqRAgHR7YpvQ1StBI/dW1OYqJ1d9PhaDDYXTC47RRYuDIDkdJEhVCUdQsOF+cK+L7+iDGj1isph6hkkYJWk2/8xuQ5WClCm2yhU+EQYno8fl1hR5/s48pKOZtG2bAeRYxI7BAh5HzRoFJDSmTEWRrhB6A8U/B3NDaVX/D2R46tvY8wwyYvfiEw+tMP9DKPS3PIcUVz+X3KtZ/U8RLQzty4LzcUF3sCx3ZQko5elzMQi66vsfMdvC4NuINxiy0j7Ep0OrR8QD26BCLHTVtQnfTNORg/QjRq4NmuikLIf5VI6hOX/COwcXwcJG6BAkyaGGUrBDaEHQ7HdoSruqoVQiAc1JzGrC3ivrZ0IrK03fBTnsOX4Awo9AdHtim+dqg7n9K1s4wMmq07iepzgKut6hVWmp9ZEJGpZstI9E4flIyft2z39sKjMBjche6yS/9u86popDA==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "You can train a YOLOv11 model using either Python or the command-line interface (CLI).\n\nHere are examples for both methods:\n\n### Python\nTo train a YOLOv11 model with Python, you first need to load a pretrained model and then call the `train` method.\n\n```python\nfrom ultralytics import YOLO\n\n# Load a pretrained model (recommended for training)\nmodel = YOLO(\"yolo11n.pt\") # Example for YOLOv11 nano model\n\n# Train the model\nresults = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n```\n\n### CLI\nFor command-line training, you can execute a `yolo detect train` command, specifying your model and data.\n\n```bash\n# Start training from a pretrained *.pt model\nyolo detect train data=coco8.yaml model=yolo11n.pt epochs=100 imgsz=640\n```\n\n### Resuming Interrupted Trainings\n\nIf a training process is interrupted, you can resume it by setting the `resume` argument to `True` and specifying the path to your partially trained `.pt` file.\n\n**Python:**\n```python\nfrom ultralytics import YOLO\n\n# Load a partially trained model\nmodel = YOLO(\"path/to/last.pt\")\n\n# Resume training\nresults = model.train(resume=True)\n```\n\n**CLI:**\n```bash\n# Resume an interrupted training\nyolo train model=path/to/last.pt resume=True\n```\n\nFor more detailed guidance and advanced configuration options, you can refer to the [Ultralytics Train Mode Documentation](https://github.com/ultralytics/ultralytics/blob/main/ultralytics-docs-en-modes-train.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3826,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 507,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 125,
+          "text_prompt_tokens": 3826
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T15:54:42.977315+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "QUPhaMKIEJCmnsEPwdfx6QE",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

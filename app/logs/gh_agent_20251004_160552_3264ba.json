@@ -1,0 +1,250 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.\n\nUse the search tool to find relevant information from the repository files before answering.\n\nFiles are stored in a flat folder where each saved filename:\n- Is prefixed with the repository name and a hyphen (e.g., \"ultralytics-\").\n- Replaces original folder separators (/) with hyphens (-).\n\nTo build a GitHub link from a saved filename, follow these steps exactly:\n1. If the saved filename begins with \"ultralytics-\", remove that exact leading prefix.\n2. Extract and keep the file extension (\".md\" or \".mdx\").\n3. Remove the extension to get the base name, then split the base on hyphens (-) into tokens.\n4. Reconstruct the repo path by joining those tokens with slashes (/) and append the original extension.\n5. Format the citation as:\n   [LINK TITLE](https://github.com/ultralytics/ultralytics/blob/main/<reconstructed-path>)\n\nExample:\nSaved file: ultralytics-docs-en-modes-train.md\n1. remove prefix -> docs-en-modes-train.md\n2. extension -> .md\n3. base -> docs-en-modes-train -> tokens: [\"docs\",\"en\",\"modes\",\"train\"]\n4. reconstructed path -> docs/en/modes/train.md\nCitation -> [Title](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/train.md)\n\nAlways include references by citing the filename of the source material you used.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "hybrid_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i evaluate a yolo model",
+          "timestamp": "2025-10-04T16:05:44.403937+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.\n\nUse the search tool to find relevant information from the repository files before answering.\n\nFiles are stored in a flat folder where each saved filename:\n- Is prefixed with the repository name and a hyphen (e.g., \"ultralytics-\").\n- Replaces original folder separators (/) with hyphens (-).\n\nTo build a GitHub link from a saved filename, follow these steps exactly:\n1. If the saved filename begins with \"ultralytics-\", remove that exact leading prefix.\n2. Extract and keep the file extension (\".md\" or \".mdx\").\n3. Remove the extension to get the base name, then split the base on hyphens (-) into tokens.\n4. Reconstruct the repo path by joining those tokens with slashes (/) and append the original extension.\n5. Format the citation as:\n   [LINK TITLE](https://github.com/ultralytics/ultralytics/blob/main/<reconstructed-path>)\n\nExample:\nSaved file: ultralytics-docs-en-modes-train.md\n1. remove prefix -> docs-en-modes-train.md\n2. extension -> .md\n3. base -> docs-en-modes-train -> tokens: [\"docs\",\"en\",\"modes\",\"train\"]\n4. reconstructed path -> docs/en/modes/train.md\nCitation -> [Title](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/train.md)\n\nAlways include references by citing the filename of the source material you used.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CikB0e2Kb5FB+ZQ/YvfI6WcASj1NqFjGe0dr5plviQdctVcEjvonb848DApjAdHtim8/xl2nuRv9S5wrT1l3XMLCfYXMLrLuAhnI6c70GQ1uSUiHzBEZgaBmjVcIAFP+f7lb0JcCJtzBYSv/bECqSl1j0BLaktfH5mw+lJyhrH5vDf4/M3447bpzToU67kbKCswBAdHtim9Si4SQegaF25+QFecnSwCQuUGT2GUSbTQtLQMpq429DgcEieiXksElYQYBg7jblbNfxDsE8XlG4FtrUxpnhw08xCFPHHEjtSWWx++WyYpGcZ+8RKrHt26hZEtk0h4n6ScqztL2R37nwNi5hXYUrPNgVW7fgeqeqy9P64fx1+++JP/kii1uS7Wz5YLtt/cmxZeAXNvACG70QOyH8akJnGSD/X/orgPkCTAClZE0Jq+SxkISQRT/OQlQFzCDJqATiuyiBmpkIzsR",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "hybrid_search",
+          "args": {
+            "query": "evaluate YOLO model"
+          },
+          "tool_call_id": "pyd_ai_e0e017f6f2ed4aa0a39ee94b005be261",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 451,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 70,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 53,
+          "text_prompt_tokens": 451
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T16:05:46.203031+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "2UXhaMulOr3i7M8P-42uwAI",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "hybrid_search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "ultralytics-docs-en-reference-models-yolo-model.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/world/train_world.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train_world.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train_world.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/world/train_world.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.world.train_world.WorldTrainerFromScratch\n\n<br><br>",
+              "description": "Explore the WorldTrainerFromScratch in YOLO for open-set datasets. Learn how to build, train, and evaluate models efficiently.",
+              "keywords": "YOLO, WorldTrainer, open-set datasets, training, evaluation, build dataset, YOLO World, machine learning",
+              "filename": "ultralytics-docs-en-reference-models-yolo-world-train_world.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/nas/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/nas/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/nas/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/nas/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.nas.model.NAS\n\n<br><br>",
+              "description": "Explore the YOLO-NAS model interface and learn how to utilize pre-trained YOLO-NAS models for object detection with Ultralytics.",
+              "keywords": "Ultralytics, YOLO, YOLO-NAS, object detection, pre-trained models, machine learning, deep learning, NAS model",
+              "filename": "ultralytics-docs-en-reference-models-nas-model.md"
+            },
+            {
+              "start": 20000,
+              "content": ", \"bus\"])\n\n# Execute prediction on an image\nresults = model.predict(\"path/to/image.jpg\")\n\n# Show results\nresults[0].show()\n```\n\n### Why should I choose YOLO-World over traditional Open-Vocabulary detection models?\n\nYOLO-World provides several advantages over traditional Open-Vocabulary detection models:\n\n- **Real-Time Performance:** It leverages the computational speed of CNNs to offer quick, efficient detection.\n- **Efficiency and Low Resource Requirement:** YOLO-World maintains high performance while significantly reducing computational and resource demands.\n- **Customizable Prompts:** The model supports dynamic prompt setting, allowing users to specify custom detection classes without retraining.\n- **Benchmark Excellence:** It outperforms other open-vocabulary detectors like MDETR and GLIP in both speed and efficiency on standard benchmarks.\n\n### How do I train a YOLO-World model on my dataset?\n\nTraining a YOLO-World model on your dataset is straightforward through the provided Python API or CLI commands. Here's how to start training using Python:\n\n```python\nfrom ultralytics import YOLOWorld\n\n# Load a pretrained YOLOv8s-worldv2 model\nmodel = YOLOWorld(\"yolov8s-worldv2.pt\")\n\n# Train the model on the COCO8 dataset for 100 epochs\nresults = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n```\n\nOr using CLI:\n\n```bash\nyolo train model=yolov8s-worldv2.yaml data=coco8.yaml epochs=100 imgsz=640\n```\n\n### What are the available pre-trained YOLO-World models and their supported tasks?\n\nUltralytics offers multiple pre-trained YOLO-World models supporting various tasks and operating modes:\n\n| Model Type      | Pre-trained Weights                                                                                     | Tasks Supported                        | Inference | Validation | Training | Export |\n| --------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------- | ---------",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-docs-en-models-yolo-world.md"
+            },
+            {
+              "start": 13000,
+              "content": "tep 5: Train the YOLO11 model\n\nRun the following command-line code to fine tune a pretrained default YOLO11 model.\n\n!!! example \"Train the YOLO11 model\"\n\n    === \"CLI\"\n\n        ```bash\n        !yolo task=detect mode=train data={work_dir}/trash_ICRA19/config.yaml model=yolo11n.pt epochs=2 batch=32 lr0=.04 plots=True\n        ```\n\nHere's a closer look at the parameters in the model training command:\n\n- **task**: It specifies the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) task for which you are using the specified YOLO model and data set.\n- **mode**: Denotes the purpose for which you are loading the specified model and data. Since we are training a model, it is set to \"train.\" Later, when we test our model's performance, we will set it to \"predict.\"\n- **epochs**: This delimits the number of times YOLO11 will pass through our entire data set.\n- **batch**: The numerical value stipulates the training [batch sizes](https://www.ultralytics.com/glossary/batch-size). Batches are the number of images a model processes before it updates its parameters.\n- **lr0**: Specifies the model's initial [learning rate](https://www.ultralytics.com/glossary/learning-rate).\n- **plots**: Directs YOLO to generate and save plots of our model's training and evaluation metrics.\n\nFor a detailed understanding of the model training process and best practices, refer to the [YOLO11 Model Training guide](../modes/train.md). This guide will help you get the most out of your experiments and ensure you're using YOLO11 effectively.\n\n### Step 6: Test the Model\n\nWe can now run inference to test the performance of our fine-tuned model:\n\n!!! example \"Test the YOLO11 model\"\n\n    === \"CLI\"\n\n        ```bash\n        !yolo task=detect mode=predict source={work_dir}/trash_ICRA19/dataset/test/images model={work_dir}/runs/detect/train/weights/best.pt conf=0.5 iou=.5 save=True save_txt=True\n        ```\n\nThis brief script generates predicted labels for each image in our test set, as well a",
+              "comments": true,
+              "description": "Dive into our detailed integration guide on using IBM Watson to train a YOLO11 model. Uncover key features and step-by-step instructions on model training.",
+              "keywords": "IBM Watsonx, IBM Watsonx AI, What is Watson?, IBM Watson Integration, IBM Watson Features, YOLO11, Ultralytics, Model Training, GPU, TPU, cloud computing",
+              "filename": "ultralytics-docs-en-integrations-ibm-watsonx.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_e0e017f6f2ed4aa0a39ee94b005be261",
+          "metadata": null,
+          "timestamp": "2025-10-04T16:05:46.343091+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.\n\nUse the search tool to find relevant information from the repository files before answering.\n\nFiles are stored in a flat folder where each saved filename:\n- Is prefixed with the repository name and a hyphen (e.g., \"ultralytics-\").\n- Replaces original folder separators (/) with hyphens (-).\n\nTo build a GitHub link from a saved filename, follow these steps exactly:\n1. If the saved filename begins with \"ultralytics-\", remove that exact leading prefix.\n2. Extract and keep the file extension (\".md\" or \".mdx\").\n3. Remove the extension to get the base name, then split the base on hyphens (-) into tokens.\n4. Reconstruct the repo path by joining those tokens with slashes (/) and append the original extension.\n5. Format the citation as:\n   [LINK TITLE](https://github.com/ultralytics/ultralytics/blob/main/<reconstructed-path>)\n\nExample:\nSaved file: ultralytics-docs-en-modes-train.md\n1. remove prefix -> docs-en-modes-train.md\n2. extension -> .md\n3. base -> docs-en-modes-train -> tokens: [\"docs\",\"en\",\"modes\",\"train\"]\n4. reconstructed path -> docs/en/modes/train.md\nCitation -> [Title](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/train.md)\n\nAlways include references by citing the filename of the source material you used.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2Kb9CzX1F/n5rUuqDYigXto5yez4K00HtXlnSuvWY53yW/l5iiYFWoCokBAdHtim9X8KXeGmFPvNdpb0D7FNp0YX1mt6N9YSmkZEDgW8f+xWZ5/k01liR5jAHbBz9/h4CqKyM+vm/RVAtFOtIjeGxfo/Sde7uSbeJ/sfWK7dn4BINlWc7CSR5mefbkr365mDd6bVfc6BfW/S+4VdlSC2eHa7ihiF4dzfhIgAiN3siDLjTo99IK2QEB0e2Kb8mm7ms96QpZqPswFQOq4WHDbiCAXPoJ2ailagTd9dPei9Svrtfm0ZDHSbgzUJdoj0n/KESd1Vny/o+PrR9P7yaIlbGpWj4JKDRzaZh2g1dFJ2LyQjEu08skoO6CWqKK7JhEsoSUA/QlEgiPWDFT4wglNKkmjCiKBVSJRb9/10Oi289PQ137v5ygOS8U2q4Uufe9vGi0gmWYOSlTC5sHKtErDarDPHFEh3jxb7FsKGUPclZM50OZ1GARmh3fDaOig3R4Zc9VIGdRtQ//u+H8ng7BBAzdCvwBAdHtim/Cer2/oGWMgIpe1df08wycB9NSxF6M2vh3AZQzFrgZAv1j8VxS0wmx84ldxqh+3VdnsEnrkBrTauIHZlPjrhfK/R7ZeMfDy/K2ptfKDp/BUS2TKnSW0IJLhrr/ww5h5nnwzriDDVooUh3HY8lOdM/RdyIccv4AJyMpgviiqHrdjC1CN7tPzoC3w1ZCkBQO4UoxQvny20SUq9Vm/jJe5YTkCHl7fbvC+NY60ZaPnUzVsnqPl5kBWGXTG462Hjdfg2aIOwNFVVm9ajpeONGBCR9oHK62N1mQQcyCiUPgBvTNrzpw4mRE3igyNFhlSO6Bv8Kp/mwUzudqCo8CAdHtim9HxSoEoU2k1Qb0bin4+SUAnqx2IbraJSthLyD9RhnkVpS/kFMuAJ7FKaYfu3WsNK1oPr/VY0a557rZbFbrEmFqKLTOj8i+8drJMBecEP7BSvELoqBFtYGsggxpdgUwN6rQU7j3TO8SKMVJ8y7a60ue81ef+VTepjCtBLO2MImmQsSl9ZXeKGobES3yexY9FyM0fVvYJ6MumBuzyuTyAEA3hVj26MyS3qEVpvyJjw21LiaIgS1tMtUPGk4W8ZhoxRp4YzFoWinGtfVdqQi3qX8SH4bamE/I7UPkWkfeHmXMzwh2H3dCqY8R5RLfEAK+3ueiAr3me+LvoaBj4Y5PoStPkH+i5eZ2DuzCtQrnAQHR7Ypvxh1tHAG4tj67ZkEhIQtEKoa2vWxqbOHltM5cXH54/l8Oon9EpZ/2hCqUzAXoSldE4QI3L/BIPkastDA4gU9WAGN75nUPVg8hAelq0Z0QGpKxabmzsey6TdEvNfbmM2NjAXqdiNOHq5uZnxNL/eXSWMY9C9ehp+a5fre3QpZLM6E06XSI/qfYdS7tIMWZVTtX9xvUi1mmtMmq/tkHXzkqA6qEXdsvFNlzeVZrV+IwKLS7EO5cvHwEI+IN5YUBhc6a9An/DJB12jtK3eAbl0hSNfohNUDxW+pcOcBgn8t4deRIAw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "hybrid_search",
+          "args": {
+            "query": "YOLO model validate"
+          },
+          "tool_call_id": "pyd_ai_fcff5d6f1ea7495cacea7caa24ca9d31",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2786,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 237,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 219,
+          "text_prompt_tokens": 2786
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T16:05:49.361791+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "20XhaLLSFIzjnsEPmLKemAM",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "hybrid_search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "ultralytics-docs-en-reference-models-yolo-model.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/nas/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/nas/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/nas/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/nas/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.nas.model.NAS\n\n<br><br>",
+              "description": "Explore the YOLO-NAS model interface and learn how to utilize pre-trained YOLO-NAS models for object detection with Ultralytics.",
+              "keywords": "Ultralytics, YOLO, YOLO-NAS, object detection, pre-trained models, machine learning, deep learning, NAS model",
+              "filename": "ultralytics-docs-en-reference-models-nas-model.md"
+            },
+            {
+              "start": 4000,
+              "content": "rt |\n| --------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------- | --------- | ---------- | -------- | ------ |\n| YOLOv8s-world   | [yolov8s-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8s-worldv2 | [yolov8s-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLOv8m-world   | [yolov8m-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8m-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8m-worldv2 | [yolov8m-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8m-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLOv8l-world   | [yolov8l-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8l-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8l-worldv2 | [yolov8l-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8l-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n| YOLOv8x-world   | [yolov8x-world.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8x-world.pt)     | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u274c     |\n| YOLOv8x-worldv2 | [yolov8x-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8x-worldv2.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u2705       | \u2705     |\n\n## Zero-shot Transfer on COCO Dataset\n\n!!! tip \"Performance\"\n\n    === \"Detection (COCO)\"\n\n        | Model Type      | ",
+              "comments": true,
+              "description": "Explore the YOLO-World Model for efficient, real-time open-vocabulary object detection using Ultralytics YOLOv8 advancements. Achieve top performance with minimal computation.",
+              "keywords": "YOLO-World, Ultralytics, open-vocabulary detection, YOLOv8, real-time object detection, machine learning, computer vision, AI, deep learning, model training",
+              "filename": "ultralytics-docs-en-models-yolo-world.md"
+            },
+            {
+              "start": 9000,
+              "content": "LO](#why-validate-with-ultralytics-yolo) section.\n\n### Can I validate my YOLO11 model using a custom dataset?\n\nYes, you can validate your YOLO11 model using a [custom dataset](https://docs.ultralytics.com/datasets/). Specify the `data` argument with the path to your dataset configuration file. This file should include paths to the [validation data](https://www.ultralytics.com/glossary/validation-data), class names, and other relevant details.\n\nExample in Python:\n\n```python\nfrom ultralytics import YOLO\n\n# Load a model\nmodel = YOLO(\"yolo11n.pt\")\n\n# Validate with a custom dataset\nmetrics = model.val(data=\"path/to/your/custom_dataset.yaml\")\nprint(metrics.box.map)  # map50-95\n```\n\nExample using CLI:\n\n```bash\nyolo val model=yolo11n.pt data=path/to/your/custom_dataset.yaml\n```\n\nFor more customizable options during validation, see the [Example Validation with Arguments](#example-validation-with-arguments) section.\n\n### How do I save validation results to a JSON file in YOLO11?\n\nTo save the validation results to a JSON file, you can set the `save_json` argument to `True` when running validation. This can be done in both the Python API and CLI.\n\nExample in Python:\n\n```python\nfrom ultralytics import YOLO\n\n# Load a model\nmodel = YOLO(\"yolo11n.pt\")\n\n# Save validation results to JSON\nmetrics = model.val(save_json=True)\n```\n\nExample using CLI:\n\n```bash\nyolo val model=yolo11n.pt save_json=True\n```\n\nThis functionality is particularly useful for further analysis or integration with other tools. Check the [Arguments for YOLO Model Validation](#arguments-for-yolo-model-validation) for more details.",
+              "comments": true,
+              "description": "Learn how to validate your YOLO11 model with precise metrics, easy-to-use tools, and custom settings for optimal performance.",
+              "keywords": "Ultralytics, YOLO11, model validation, machine learning, object detection, mAP metrics, Python API, CLI",
+              "filename": "ultralytics-docs-en-modes-val.md"
+            },
+            {
+              "start": 13000,
+              "content": "/dataset.yaml\", epochs=10)\n```\n\nFor more details on training and hyperlinks to example usage, visit our [Train Mode](../modes/train.md) page.\n\n### How do I export YOLO models for deployment?\n\nExporting YOLO models in a format suitable for deployment is straightforward with the `export` function. For example, you can export a model to ONNX format:\n\n```python\nfrom ultralytics import YOLO\n\n# Load the YOLO model\nmodel = YOLO(\"yolo11n.pt\")\n\n# Export the model to ONNX format\nmodel.export(format=\"onnx\")\n```\n\nFor various export options, refer to the [Export Mode](../modes/export.md) documentation.\n\n### Can I validate my YOLO model on different datasets?\n\nYes, validating YOLO models on different datasets is possible. After training, you can use the validation mode to evaluate the performance:\n\n```python\nfrom ultralytics import YOLO\n\n# Load a YOLO model\nmodel = YOLO(\"yolo11n.yaml\")\n\n# Train the model\nmodel.train(data=\"coco8.yaml\", epochs=5)\n\n# Validate the model on a different dataset\nmodel.val(data=\"path/to/separate/data.yaml\")\n```\n\nCheck the [Val Mode](../modes/val.md) page for detailed examples and usage.",
+              "comments": true,
+              "description": "Learn to integrate Ultralytics YOLO in Python for object detection, segmentation, and classification. Load and train models, and make predictions easily with our comprehensive guide.",
+              "keywords": "YOLO, Python, object detection, segmentation, classification, machine learning, AI, pretrained models, train models, make predictions",
+              "filename": "ultralytics-docs-en-usage-python.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_fcff5d6f1ea7495cacea7caa24ca9d31",
+          "metadata": null,
+          "timestamp": "2025-10-04T16:05:49.451547+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.\n\nUse the search tool to find relevant information from the repository files before answering.\n\nFiles are stored in a flat folder where each saved filename:\n- Is prefixed with the repository name and a hyphen (e.g., \"ultralytics-\").\n- Replaces original folder separators (/) with hyphens (-).\n\nTo build a GitHub link from a saved filename, follow these steps exactly:\n1. If the saved filename begins with \"ultralytics-\", remove that exact leading prefix.\n2. Extract and keep the file extension (\".md\" or \".mdx\").\n3. Remove the extension to get the base name, then split the base on hyphens (-) into tokens.\n4. Reconstruct the repo path by joining those tokens with slashes (/) and append the original extension.\n5. Format the citation as:\n   [LINK TITLE](https://github.com/ultralytics/ultralytics/blob/main/<reconstructed-path>)\n\nExample:\nSaved file: ultralytics-docs-en-modes-train.md\n1. remove prefix -> docs-en-modes-train.md\n2. extension -> .md\n3. base -> docs-en-modes-train -> tokens: [\"docs\",\"en\",\"modes\",\"train\"]\n4. reconstructed path -> docs/en/modes/train.md\nCitation -> [Title](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/train.md)\n\nAlways include references by citing the filename of the source material you used.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb/MYLuHu6KI1uzBDo6jbl31W5X3fdxBpA6hhTUMZ2IYKfgHR7Ypv6Twn/jMsC80Ec3e+yQNi3QTHh4JioSu07hJmEFI60XR+gLpprnWSasaXTGh3Vsu75IIJcYnklGil4UbY6eXMWb/g5T15gvG++bXwK1KmIAqywzemScraU+TcOEu6rPefRFpQrTnYPHM1uQ6LPwo4QbJadfCk/ZEG3ArXAQHR7YpvQEfHBz1CwMOQovD5lMFv1AAfWav1PmUFkinkgVo2nQt0Wawmlm/i1V6w+LJ+ZtnPd5BxwTSqaW0PvNeh/8rLQkFLSFqVR7BCN+lR8treM53RqJr9uMWMNeLvTZRNjXP9UvD7d1CxQhCK7+xN6hw/udYiM+lWjRl4cPc0LCgHH+/8zZc2UaBgrn1NyZwqdOqB1zw6hEwwSiux1ZFvkCTA4eba44B3s7h8GN3ASxMdvt5iFZJdtZPgYJDsUEkaPmFHJ69w8GSgEfRKfjOu3dKcQVniCtwBAdHtim9YGKZMQqLQfobhBMmjpimyH+YSEYl5gsbH40cy29qOvncsAbbPEAvIvv9eYMkR4U4hGyZiYtbL/NXTWmZJGp0m+eqshixJ9sEfAGJPX3CHiPCELegYcUTFdVzHuED0jCoblPmDjXlEvb3PW68r68uHizbB5QnrfySuIRBbJtlF0ivFcVpcViBVvYr2S9Leg+8UHYnoQSmueSxNk/kEK/xD5eIypa5UZty/wntHbmUt3n9iCctojDaj+wwEWn99A9aN63ylJZtzkkL0sosxf3HQjEUJ6kEAnQpBAdHtim8DklrZE3cHZqiGVg0puDGI5Id+sPaK5/qBTp+BF0gga752qEmg9C7XWiFYpeGpnAwjnYS82viuAKHsekA=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "You can evaluate a YOLO model using the `val` mode in Ultralytics, either through the Python API or the command-line interface (CLI). This mode allows you to validate your model with precise metrics and custom settings.\n\n**Using the Python API:**\n\n1.  **Load your model:**\n    ```python\n    from ultralytics import YOLO\n\n    # Load a model\n    model = YOLO(\"yolo11n.pt\")\n    ```\n\n2.  **Validate your model:**\n    You can validate with a custom dataset by specifying the `data` argument with the path to your dataset configuration file.\n    ```python\n    # Validate with a custom dataset\n    metrics = model.val(data=\"path/to/your/custom_dataset.yaml\")\n    print(metrics.box.map)  # This will print the map50-95 metric\n    ```\n\n3.  **Save validation results to a JSON file:**\n    Set the `save_json` argument to `True`.\n    ```python\n    # Save validation results to JSON\n    metrics = model.val(save_json=True)\n    ```\n\n**Using the CLI:**\n\n1.  **Validate with a custom dataset:**\n    ```bash\n    yolo val model=yolo11n.pt data=path/to/your/custom_dataset.yaml\n    ```\n\n2.  **Save validation results to a JSON file:**\n    ```bash\n    yolo val model=yolo11n.pt save_json=True\n    ```\n\nFor more detailed information, you can refer to the following documentation:\n*   [ultralytics-docs-en-modes-val.md](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/val.md)\n*   [ultralytics-docs-en-usage-python.md](https://github.com/ultralytics/ultralytics/blob/main/docs/en/usage/python.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 5529,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 2842,
+        "output_tokens": 549,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "cached_content_tokens": 2842,
+          "thoughts_tokens": 127,
+          "text_prompt_tokens": 5529,
+          "text_cache_tokens": 2842
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T16:05:52.128453+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "3kXhaMC8Nr34kdUPx5TsyAI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

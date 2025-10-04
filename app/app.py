@@ -22,9 +22,9 @@ def init_agent():
 agent = init_agent()
 
 # --- Streamlit UI ---
-st.set_page_config(page_title="AI FAQ Assistant", page_icon="🤖", layout="centered")
-st.title("🤖 AI FAQ Assistant")
-st.caption("Ask me anything about the DataTalksClub/faq repository")
+st.set_page_config(page_title="AI Assistant", page_icon="🤖", layout="centered")
+st.title("🤖 AI Ultralytics Assistant")
+st.caption("Ask me anything from the ultralytics repository")
 
 # Initialize chat history
 if "messages" not in st.session_state:
