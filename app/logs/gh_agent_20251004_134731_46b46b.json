@@ -1,0 +1,155 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "hybrid_search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "How to train a yolov11 model to recognize cats vs dogs",
+          "timestamp": "2025-10-04T13:47:24.503694+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb5D3q2EbMPfEp2GK9o9RU7WypwNc335pYPfHGDUD0dQKZQHR7Ypv38SxWmG98YaiXzVpadNwIxWeNQBuV1SKdlf7kMZSLnmkCWH5qwl+if7s4SICPsVkeOGugaAgcdAuQpiha2RD+XTi7htxpMDBgpwmGEJJwauaqtmCxiXFilHfXs1dRC0rCuwBAdHtim8es9pRNYsFwEgAxqCS+YA8RGbPKIUd66sJSZdCQefHSvGZFIAr0TdNxUeCdrUPpBSX0spVj/ll1Yj7fAmSlNW7EHDybT1RN+QhASAWXgsZFUNazTra0rt39xKFBp/CAS1IBeuL7217dTkoom80Vm39036f5O8+IomYqRFIkR3Pgux4dV+5gyMHrOBC8L+D3hGvz3u45A2VKJjMzBND5gAJrMxf8hefp1aIvDGtjGbCQ7TBJUJ4Q5HZtqTyxUP9R5kGr8/wcRejH0MCQIOSyw/EorRWFAB/R7vHUX+osZfF39exHfah+4g=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "hybrid_search",
+          "args": {
+            "query": "how to train a yolov11 model for custom object detection"
+          },
+          "tool_call_id": "pyd_ai_ded678787cfa47c38b9280372e8cf9ad",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 258,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 96,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 69,
+          "text_prompt_tokens": 258
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:47:26.403593+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "bSXhaInEMa-JkdUP1MG7-Q0",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "hybrid_search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/yoloe/train.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/yoloe/train.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainerFromScratch\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPEFreeTrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEVPTrainer\n\n<br><br>",
+              "description": "Learn about YOLOE enhanced visual prompting (EVP) predictors in Ultralytics, which enable object detection and segmentation models to use visual prompts during inference for improved performance.",
+              "keywords": "YOLOE, EVP, visual prompts, computer vision, object detection, segmentation, bounding boxes, masks, predictors, YOLOEVPDetectPredictor, YOLOEVPSegPredictor, Ultralytics, inference",
+              "filename": "train.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "model.md"
+            },
+            {
+              "start": 3000,
+              "content": "()\n\n            if not success:\n                print(\"Video frame is empty or processing is complete.\")\n                break\n\n            results = blurrer(im0)\n\n            # print(results\")  # access the output\n\n            video_writer.write(results.plot_im)  # write the processed frame.\n\n        cap.release()\n        video_writer.release()\n        cv2.destroyAllWindows()  # destroy all opened windows\n        ```\n\n### `ObjectBlurrer` Arguments\n\nHere's a table with the `ObjectBlurrer` arguments:\n\n{% from \"macros/solutions-args.md\" import param_table %}\n{{ param_table([\"model\", \"line_width\", \"blur_ratio\"]) }}\n\nThe `ObjectBlurrer` solution also supports a range of `track` arguments:\n\n{% from \"macros/track-args.md\" import param_table %}\n{{ param_table([\"tracker\", \"conf\", \"iou\", \"classes\", \"verbose\", \"device\"]) }}\n\nMoreover, the following visualization arguments can be used:\n\n{% from \"macros/visualization-args.md\" import param_table %}\n{{ param_table([\"show\", \"line_width\", \"show_conf\", \"show_labels\"]) }}\n\n## Real-World Applications\n\n### Privacy Protection in Surveillance\n\n[Security cameras](https://www.ultralytics.com/blog/the-cutting-edge-world-of-ai-security-cameras) and surveillance systems can use YOLO11 to automatically blur faces, license plates, or other identifying information while still capturing important activity. This helps maintain security while respecting privacy rights in public spaces.\n\n### Healthcare Data Anonymization\n\nIn [medical imaging](https://www.ultralytics.com/blog/ai-and-radiology-a-new-era-of-precision-and-efficiency), patient information often appears in scans or photos. YOLO11 can detect and blur this information to comply with regulations like HIPAA when sharing medical data for research or educational purposes.\n\n### Document Redaction\n\nWhen sharing documents that contain sensitive information, YOLO11 can automatically detect and blur specific elements like signatures, account numbers, or personal details, streamlining the redaction p",
+              "comments": true,
+              "description": "Learn how to use Ultralytics YOLO11 for real-time object blurring to enhance privacy and focus in your images and videos.",
+              "keywords": "YOLO11, object blurring, real-time processing, privacy protection, image manipulation, video editing, Ultralytics",
+              "filename": "object-blurring.md"
+            },
+            {
+              "start": 12000,
+              "content": "com/ultralytics/assets/releases/download/v8.3.0/yolov10b.pt\n        [5]: https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov10l.pt\n        [6]: https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov10x.pt\n\n## Usage Examples\n\nFor predicting new images with YOLOv10:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained YOLOv10n model\n        model = YOLO(\"yolov10n.pt\")\n\n        # Perform object detection on an image\n        results = model(\"image.jpg\")\n\n        # Display the results\n        results[0].show()\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Load a COCO-pretrained YOLOv10n model and run inference on the 'bus.jpg' image\n        yolo detect predict model=yolov10n.pt source=path/to/bus.jpg\n        ```\n\nFor training YOLOv10 on a custom dataset:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load YOLOv10n model from scratch\n        model = YOLO(\"yolov10n.yaml\")\n\n        # Train the model\n        model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Build a YOLOv10n model from scratch and train it on the COCO8 example dataset for 100 epochs\n        yolo train model=yolov10n.yaml data=coco8.yaml epochs=100 imgsz=640\n\n        # Build a YOLOv10n model from scratch and run inference on the 'bus.jpg' image\n        yolo predict model=yolov10n.yaml source=path/to/bus.jpg\n        ```\n\n## Supported Tasks and Modes\n\nThe YOLOv10 models series offers a range of models, each optimized for high-performance [Object Detection](../tasks/detect.md). These models cater to varying computational needs and accuracy requirements, making them versatile for a wide array of applications.\n\n| Model   | Filenames                                                             | Tasks                                  | Inference | Validation | Training | Export |\n| ------- | -----------------",
+              "comments": true,
+              "description": "Discover YOLOv10 for real-time object detection, eliminating NMS and boosting efficiency. Achieve top performance with a low computational cost.",
+              "keywords": "YOLOv10, real-time object detection, NMS-free, deep learning, Tsinghua University, Ultralytics, machine learning, neural networks, performance optimization",
+              "filename": "yolov10.md"
+            },
+            {
+              "start": 6000,
+              "content": " utilizing three different scales (13x13, 26x26, and 52x52) for detections. YOLOv3-Ultralytics is Ultralytics' adaptation of YOLOv3 that adds support for more pre-trained models and facilitates easier model customization. YOLOv3u is an upgraded variant of YOLOv3-Ultralytics, integrating the anchor-free, objectness-free split head from YOLOv8, improving detection robustness and accuracy for various object sizes. For more details on the variants, refer to the [YOLOv3 series](https://github.com/ultralytics/yolov3).\n\n### How can I train a YOLOv3 model using Ultralytics?\n\nTraining a YOLOv3 model with Ultralytics is straightforward. You can train the model using either Python or CLI:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a COCO-pretrained YOLOv3u model\n        model = YOLO(\"yolov3u.pt\")\n\n        # Train the model on the COCO8 example dataset for 100 epochs\n        results = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Load a COCO-pretrained YOLOv3u model and train it on the COCO8 example dataset for 100 epochs\n        yolo train model=yolov3u.pt data=coco8.yaml epochs=100 imgsz=640\n        ```\n\nFor more comprehensive training options and guidelines, visit our [Train mode documentation](../modes/train.md).\n\n### What makes YOLOv3u more accurate for object detection tasks?\n\nYOLOv3u improves upon YOLOv3 and YOLOv3-Ultralytics by incorporating the anchor-free, objectness-free split head used in YOLOv8 models. This upgrade eliminates the need for pre-defined anchor boxes and objectness scores, enhancing its capability to detect objects of varying sizes and shapes more precisely. This makes YOLOv3u a better choice for complex and diverse object detection tasks. For more information, refer to the [Key Features](#key-features) section.\n\n### How can I use YOLOv3 models for inference?\n\nYou can perform inference using YOLOv3 models by either Python scripts o",
+              "comments": true,
+              "description": "Discover YOLOv3 and its variants YOLOv3-Ultralytics and YOLOv3u. Learn about their features, implementations, and support for object detection tasks.",
+              "keywords": "YOLOv3, YOLOv3-Ultralytics, YOLOv3u, object detection, Ultralytics, computer vision, AI models, deep learning",
+              "filename": "yolov3.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_ded678787cfa47c38b9280372e8cf9ad",
+          "metadata": null,
+          "timestamp": "2025-10-04T13:47:26.915746+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "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",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find specific documentation for training a **YOLOv11** model to recognize cats vs. dogs within the Ultralytics documentation. The search results show mentions of YOLOv11 in the context of object blurring, but not for general custom object detection training.\n\nHowever, the process for training other YOLO models (like YOLOv8, YOLOv10, or YOLOv3) on a custom dataset is generally similar. Here's a general outline of how you would train a YOLO model for custom object detection, which you can adapt for other available YOLO versions if YOLOv11 specific training instructions become available:\n\n1.  **Prepare your dataset:** You'll need a dataset of images containing cats and dogs, with bounding box annotations for each object. The annotations typically follow the YOLO format (a `.txt` file for each image, specifying class index, bounding box center x, center y, width, and height, all normalized).\n\n2.  **Create a dataset configuration file (YAML):** This file tells YOLO where your images and labels are located, and defines the class names. It usually looks something like this:\n\n    ```yaml\n    # dataset.yaml\n    train: /path/to/your/dataset/images/train\n    val: /path/to/your/dataset/images/val\n\n    nc: 2  # number of classes (cats, dogs)\n    names: ['cat', 'dog']\n    ```\n\n3.  **Choose a YOLO model:** You would typically start with a pre-trained model (e.g., `yolov8n.pt` or `yolov10n.pt`) or a model definition file (`yolov8n.yaml` or `yolov10n.yaml`) if training from scratch.\n\n4.  **Train the model:** You can train the model using either Python or the CLI.\n\n    **Python Example (using YOLOv10 as an example from documentation):**\n    ```python\n    from ultralytics import YOLO\n\n    # Load a YOLOv10n model from scratch (or use a pre-trained .pt file)\n    model = YOLO(\"yolov10n.yaml\") # or model = YOLO(\"yolov10n.pt\") if you want to fine-tune a pre-trained model\n\n    # Train the model\n    # Replace \"coco8.yaml\" with your custom dataset.yaml file\n    results = model.train(data=\"your_dataset.yaml\", epochs=100, imgsz=640)\n    ```\n    This example is based on the [YOLOv10 documentation](https://github.com/ultralytics/ultralytics/blob/main/docs/models/yolov10.md).\n\n    **CLI Example (using YOLOv10 as an example from documentation):**\n    ```bash\n    yolo train model=yolov10n.yaml data=your_dataset.yaml epochs=100 imgsz=640\n    ```\n    This example is also based on the [YOLOv10 documentation](https://github.com/ultralytics/ultralytics/blob/main/docs/models/yolov10.md).\n\nPlease refer to the documentation for other YOLO versions for specific training instructions and examples:\n*   [YOLOv10 Documentation](https://github.com/ultralytics/ultralytics/blob/main/docs/models/yolov10.md)\n*   [YOLOv3 Documentation](https://github.com/ultralytics/ultralytics/blob/main/docs/models/yolov3.md)\n*   [YOLO General Model Documentation](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py)\n\nIf YOLOv11 becomes officially supported for custom training, similar instructions would likely be provided in the Ultralytics documentation.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3208,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 1336,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 497,
+          "text_prompt_tokens": 3208
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-04T13:47:31.829459+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "byXhaNnIM8-bkdUPlaXokQs",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

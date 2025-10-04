@@ -5,7 +5,6 @@ import ingest
 import search_agent
 import logs
 
-
 # --- Initialization ---
 @st.cache_resource
 def init_agent():
@@ -16,10 +15,9 @@ def init_agent():
         return "data-engineering" in doc["filename"]
 
     st.write("🔄 Indexing repo...")
-    index,vindex = ingest.index_data(REPO_OWNER, REPO_NAME, vector=True)
-    agent = search_agent.init_agent(index,REPO_OWNER, REPO_NAME,vindex=vindex)
+    index, vindex = ingest.index_data(REPO_OWNER, REPO_NAME, vector=True)
+    agent = search_agent.init_agent(index, REPO_OWNER, REPO_NAME, vindex=vindex)
     return agent
-
 
 agent = init_agent()
 
@@ -37,23 +35,24 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-
 # --- Streaming helper ---
 def stream_response(prompt: str):
     async def agen():
-        async with agent.run_stream(user_prompt=prompt) as result:
-            last_len = 0
-            full_text = ""
-            async for chunk in result.stream_output(debounce_by=0.01):
-                # stream only the delta
-                new_text = chunk[last_len:]
-                last_len = len(chunk)
-                full_text = chunk
-                if new_text:
-                    yield new_text
-            # log once complete
-            logs.log_interaction_to_file(agent, result.new_messages())
-            st.session_state._last_response = full_text
+        try:
+            async with agent.run_stream(user_prompt=prompt) as result:
+                last_len = 0
+                full_text = ""
+                async for chunk in result.stream_output(debounce_by=0.01):
+                    new_text = chunk[last_len:]
+                    last_len = len(chunk)
+                    full_text = chunk
+                    if new_text:
+                        yield new_text
+                # log once complete
+                logs.log_interaction_to_file(agent, result.new_messages())
+                st.session_state._last_response = full_text
+        except Exception as e:
+            yield f"⚠️ Error during response generation: {e}"
 
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
@@ -65,19 +64,35 @@ def stream_response(prompt: str):
             yield piece
     except StopAsyncIteration:
         return
-
+    except Exception as e:
+        yield f"⚠️ Unexpected error: {e}"
 
 # --- Chat input ---
-if prompt := st.chat_input("Ask your question..."):
-    # User message
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
+prompt = st.chat_input("Ask your question...")
 
-    # Assistant message (streamed)
-    with st.chat_message("assistant"):
-        response_text = st.write_stream(stream_response(prompt))
+# Error handling for user input
+MAX_INPUT_LENGTH = 1000  # adjust as needed
 
-    # Save full response to history
-    final_text = getattr(st.session_state, "_last_response", response_text)
-    st.session_state.messages.append({"role": "assistant", "content": final_text})
+if prompt is not None:
+    prompt = prompt.strip()
+    if not prompt:
+        st.warning("⚠️ Please enter a question before submitting.")
+    elif len(prompt) > MAX_INPUT_LENGTH:
+        st.warning(f"⚠️ Your question is too long (max {MAX_INPUT_LENGTH} characters).")
+    else:
+        # User message
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+
+        # Assistant message (streamed)
+        with st.chat_message("assistant"):
+            try:
+                response_text = st.write_stream(stream_response(prompt))
+            except Exception as e:
+                response_text = f"⚠️ Error: {e}"
+                st.error(response_text)
+
+        # Save full response to history
+        final_text = getattr(st.session_state, "_last_response", response_text)
+        st.session_state.messages.append({"role": "assistant", "content": final_text})
