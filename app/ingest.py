@@ -2,37 +2,54 @@ import io
 import zipfile
 import requests
 import frontmatter
-
+import os
 from minsearch import Index
 
-
 def read_repo_data(repo_owner, repo_name):
-    url = f'https://codeload.github.com/{repo_owner}/{repo_name}/zip/refs/heads/main'
-    resp = requests.get(url)
-
+    repo_identifier = f"{repo_owner}/{repo_name}"
     repository_data = []
+    
+    # Check if repo is ultralytics/ultralytics and use local folder
+    if repo_identifier == "ultralytics/ultralytics":
+        ultralytics_folder = os.path.join(os.path.dirname(__file__), "ultralytics_files")
+        print(f"Reading local files from: {ultralytics_folder}")
+        
+        if not os.path.exists(ultralytics_folder):
+            raise FileNotFoundError(f"Ultralytics folder not found at: {ultralytics_folder}")
+        
+        for filename in os.listdir(ultralytics_folder):
+            if filename.lower().endswith(('.md', '.mdx')):
+                file_path = os.path.join(ultralytics_folder, filename)
+                with open(file_path, 'rb') as f_in:
+                    content = f_in.read()
+                    post = frontmatter.loads(content)
+                    data = post.to_dict()
+                    data['filename'] = filename
+                    repository_data.append(data)
+    else:
+        print(f"Downloading repository: {repo_identifier}")
+        url = f'https://codeload.github.com/{repo_owner}/{repo_name}/zip/refs/heads/main'
+        resp = requests.get(url)
+        zf = zipfile.ZipFile(io.BytesIO(resp.content))
 
-    zf = zipfile.ZipFile(io.BytesIO(resp.content))
+        for file_info in zf.infolist():
+            filename = file_info.filename.lower()
 
-    for file_info in zf.infolist():
-        filename = file_info.filename.lower()
+            if not (filename.endswith('.md') or filename.endswith('.mdx')):
+                continue
 
-        if not (filename.endswith('.md') or filename.endswith('.mdx')):
-            continue
+            with zf.open(file_info) as f_in:
+                content = f_in.read()
+                post = frontmatter.loads(content)
+                data = post.to_dict()
 
-        with zf.open(file_info) as f_in:
-            content = f_in.read()
-            post = frontmatter.loads(content)
-            data = post.to_dict()
+                _, filename_repo = file_info.filename.split('/', maxsplit=1)
+                data['filename'] = filename_repo
+                repository_data.append(data)
 
-            _, filename_repo = file_info.filename.split('/', maxsplit=1)
-            data['filename'] = filename_repo
-            repository_data.append(data)
-
-    zf.close()
+        zf.close()
 
     return repository_data
-
 
 def sliding_window(seq, size, step):
     if size <= 0 or step <= 0:

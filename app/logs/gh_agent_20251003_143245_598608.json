@@ -1,0 +1,316 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "Available Models, Supported Tasks, and Operating Modes",
+          "timestamp": "2025-10-03T14:32:08.304843+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CpoEAdHtim9BugwCp9YLLy7/rt9ENf0Zne6kMYhKPgG5mUnzzB2t47wuBZs6cfzLSgxrpOQBpodTbikyYt+i8i4oWxa/JQgcqd/0MYuFBQQXMYgzaEseLmdttR8606ZdpsI96/m0a167g3WgsJNVpgdJUKmP0E5iJPUm4WgNzpiRVWvfgXe7Msj+uYSCOIvECmq7jNHZ19XXf6cN/T26pxBq7wmRxIgBqep5BZSzhQTqsGt31sHzQ/BChaNM05CS7YffoRzmoMSazZLYi49i1W77t508Iojss1d59zfv+r27xz2D4VhVczzBVnzVd+ocbuMDHYQ1Xlm3oSziNVn/CXBVv4lPjDTpO02YffqUX4tix0FkAVBX7B3IBK5/8zJ7ulbYTjPwALvaSVzIfl3Hh8H1iOREsfB+Kmj3SfiuE5sACqU9GtfaLeDW2Z1KjWgH3EsyshLlf7M36Hm0r/6Foh3AHRqhLXY920ajr1/zPXkr40kD0pOHEJ0xy40nZ5GyYvqRPUV9Flkkwz+i7mLqEWYWZTQ1vZYuoN/pS67bLkhzsXnKHMtQR1ID82wPqK03hk8U23/TMOv5mQOCw+4oDVYOJzIChXI7RSN3pv14cRqx8AqBdsdzmi2mUFPdl51ei740kJqWUXVFgrZ7dRzsHq4f3e6L3ndzP+mpHbhmAiOeqJcxJDxzpYrCFbQnTA72hvgu3dx7dx6vMDbUrQ==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "YOLO models tasks modes"
+          },
+          "tool_call_id": "pyd_ai_65acb452ddb944809ba7657b84937cd4",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 248,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 121,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 104,
+          "text_prompt_tokens": 248
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T14:32:16.612747+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "bt7faIjyGKeUkdUPzcWboAU",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 6000,
+              "content": "``bash\n        # Train a YOLO model from the command line\n        yolo train data=path/to/dataset.yaml epochs=100 imgsz=640\n        ```\n\nFor more detailed instructions, you can refer to the [Ultralytics Train Guide](../modes/train.md).\n\n### What metrics does Ultralytics YOLO11 use to validate the model's performance?\n\nUltralytics YOLO11 uses various metrics during the validation process to assess model performance. These include:\n\n- **mAP (mean Average Precision)**: This evaluates the accuracy of object detection.\n- **IOU (Intersection over Union)**: Measures the overlap between predicted and ground truth bounding boxes.\n- **[Precision](https://www.ultralytics.com/glossary/precision) and [Recall](https://www.ultralytics.com/glossary/recall)**: Precision measures the ratio of true positive detections to the total detected positives, while recall measures the ratio of true positive detections to the total actual positives.\n\nYou can run the following command to start the validation:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained or custom YOLO model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Run validation on your dataset\n        model.val(data=\"path/to/validation.yaml\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Validate a YOLO model from the command line\n        yolo val data=path/to/validation.yaml\n        ```\n\nRefer to the [Validation Guide](../modes/val.md) for further details.\n\n### How can I export my YOLO11 model for deployment?\n\nUltralytics YOLO11 offers export functionality to convert your trained model into various deployment formats such as ONNX, TensorRT, CoreML, and more. Use the following example to export your model:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load your trained YOLO model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Export the model to ONNX format (you can specify other formats as needed)\n        mode",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            },
+            {
+              "start": 7000,
+              "content": "example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained or custom YOLO model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Run validation on your dataset\n        model.val(data=\"path/to/validation.yaml\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Validate a YOLO model from the command line\n        yolo val data=path/to/validation.yaml\n        ```\n\nRefer to the [Validation Guide](../modes/val.md) for further details.\n\n### How can I export my YOLO11 model for deployment?\n\nUltralytics YOLO11 offers export functionality to convert your trained model into various deployment formats such as ONNX, TensorRT, CoreML, and more. Use the following example to export your model:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load your trained YOLO model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Export the model to ONNX format (you can specify other formats as needed)\n        model.export(format=\"onnx\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Export a YOLO model to ONNX format from the command line\n        yolo export model=yolo11n.pt format=onnx\n        ```\n\nDetailed steps for each export format can be found in the [Export Guide](../modes/export.md).\n\n### What is the purpose of the benchmark mode in Ultralytics YOLO11?\n\nBenchmark mode in Ultralytics YOLO11 is used to analyze the speed and [accuracy](https://www.ultralytics.com/glossary/accuracy) of various export formats such as ONNX, TensorRT, and OpenVINO. It provides metrics like model size, `mAP50-95` for object detection, and inference time across different hardware setups, helping you choose the most suitable format for your deployment needs.\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics.utils.benchmarks import benchmark\n\n        # Run benchmark on GPU (device 0)\n        # You can adjust parameters like model, dataset, image size, and precision as needed\n       ",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            },
+            {
+              "start": 4000,
+              "content": "amples](export.md){ .md-button }\n\n## [Track](track.md)\n\nTrack mode extends YOLO11's object detection capabilities to track objects across video frames or live streams. This mode is particularly valuable for applications requiring persistent object identification, such as [surveillance systems](https://www.ultralytics.com/blog/shattering-the-surveillance-status-quo-with-vision-ai) or [self-driving cars](https://www.ultralytics.com/solutions/ai-in-automotive). Track mode implements sophisticated algorithms like ByteTrack to maintain object identity across frames, even when objects temporarily disappear from view.\n\n[Track Examples](track.md){ .md-button }\n\n## [Benchmark](benchmark.md)\n\nBenchmark mode profiles the speed and accuracy of various export formats for YOLO11. This mode provides comprehensive metrics on model size, accuracy (mAP50-95 for detection tasks or accuracy_top5 for classification), and inference time across different formats like ONNX, [OpenVINO](https://docs.ultralytics.com/integrations/openvino/), and TensorRT. Benchmarking helps you select the optimal export format based on your specific requirements for speed and accuracy in your deployment environment.\n\n[Benchmark Examples](benchmark.md){ .md-button }\n\n## FAQ\n\n### How do I train a custom [object detection](https://www.ultralytics.com/glossary/object-detection) model with Ultralytics YOLO11?\n\nTraining a custom object detection model with Ultralytics YOLO11 involves using the train mode. You need a dataset formatted in YOLO format, containing images and corresponding annotation files. Use the following command to start the training process:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained YOLO model (you can choose n, s, m, l, or x versions)\n        model = YOLO(\"yolo11n.pt\")\n\n        # Start training on your custom dataset\n        model.train(data=\"path/to/dataset.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        `",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            },
+            {
+              "start": 5000,
+              "content": ".com/integrations/openvino/), and TensorRT. Benchmarking helps you select the optimal export format based on your specific requirements for speed and accuracy in your deployment environment.\n\n[Benchmark Examples](benchmark.md){ .md-button }\n\n## FAQ\n\n### How do I train a custom [object detection](https://www.ultralytics.com/glossary/object-detection) model with Ultralytics YOLO11?\n\nTraining a custom object detection model with Ultralytics YOLO11 involves using the train mode. You need a dataset formatted in YOLO format, containing images and corresponding annotation files. Use the following command to start the training process:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained YOLO model (you can choose n, s, m, l, or x versions)\n        model = YOLO(\"yolo11n.pt\")\n\n        # Start training on your custom dataset\n        model.train(data=\"path/to/dataset.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Train a YOLO model from the command line\n        yolo train data=path/to/dataset.yaml epochs=100 imgsz=640\n        ```\n\nFor more detailed instructions, you can refer to the [Ultralytics Train Guide](../modes/train.md).\n\n### What metrics does Ultralytics YOLO11 use to validate the model's performance?\n\nUltralytics YOLO11 uses various metrics during the validation process to assess model performance. These include:\n\n- **mAP (mean Average Precision)**: This evaluates the accuracy of object detection.\n- **IOU (Intersection over Union)**: Measures the overlap between predicted and ground truth bounding boxes.\n- **[Precision](https://www.ultralytics.com/glossary/precision) and [Recall](https://www.ultralytics.com/glossary/recall)**: Precision measures the ratio of true positive detections to the total detected positives, while recall measures the ratio of true positive detections to the total actual positives.\n\nYou can run the following command to start the validation:\n\n!!! ",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            },
+            {
+              "start": 3000,
+              "content": "ness.\n\n[Val Examples](val.md){ .md-button }\n\n## [Predict](predict.md)\n\nPredict mode is used for making predictions using a trained YOLO11 model on new images or videos. In this mode, the model is loaded from a checkpoint file, and the user can provide images or videos to perform inference. The model identifies and localizes objects in the input media, making it ready for real-world applications. Predict mode is the gateway to applying your trained model to solve practical problems.\n\n[Predict Examples](predict.md){ .md-button }\n\n## [Export](export.md)\n\nExport mode is used for converting a YOLO11 model to formats suitable for deployment across different platforms and devices. This mode transforms your PyTorch model into optimized formats like ONNX, TensorRT, or CoreML, enabling deployment in production environments. Exporting is essential for integrating your model with various software applications or hardware devices, often resulting in significant performance improvements.\n\n[Export Examples](export.md){ .md-button }\n\n## [Track](track.md)\n\nTrack mode extends YOLO11's object detection capabilities to track objects across video frames or live streams. This mode is particularly valuable for applications requiring persistent object identification, such as [surveillance systems](https://www.ultralytics.com/blog/shattering-the-surveillance-status-quo-with-vision-ai) or [self-driving cars](https://www.ultralytics.com/solutions/ai-in-automotive). Track mode implements sophisticated algorithms like ByteTrack to maintain object identity across frames, even when objects temporarily disappear from view.\n\n[Track Examples](track.md){ .md-button }\n\n## [Benchmark](benchmark.md)\n\nBenchmark mode profiles the speed and accuracy of various export formats for YOLO11. This mode provides comprehensive metrics on model size, accuracy (mAP50-95 for detection tasks or accuracy_top5 for classification), and inference time across different formats like ONNX, [OpenVINO](https://docs.ultralytics",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_65acb452ddb944809ba7657b84937cd4",
+          "metadata": null,
+          "timestamp": "2025-10-03T14:32:16.655575+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CqYKAdHtim/4maXFIf1wWtqm9lMDWSV3ir2nrxeRsgpaX7Vd1t3cgU2+1/qy0ujoJIwez5QH0olZHjmxZMBW53+mLEvipXmJBkYiINACgMK1I5jdRhWnP6VLFXAAicgAVXCbGWJ6kofb/i/vgrv9VVLZR0HaL6LmSxhyuvQRLzoxP8SStyFy/hl/jyENj4NutsaPpKpi8lFuRwUYFqfT49PRjvwZKA2D61q0K8Xwk1m2PDJSbxCj8ZAo+n6Dr1WD6ddozARjbhXCPxQLN79vLC0wGdoatXY6kcpOEboNDVdSVrizcHGDq52GIRG4yVl2w0CflMr9pCQRhFok3QDdcHkZY6QXvSAPGQ0KAQsI0Vyj+YAeo/xTiMhdBe8dKP+vEFCjUi/pn2We9sjml+fHtqQKTXJvM4kl1ru004oXJ0PfQKzPxProJHhZdl9FQQurv3HuRMKwDXFfeGDlnpdDch+dkmnWRAsF5lvG6TdSQECEe3TXHuytVwhgWZkusuq4QLjAckCi3yQ4P/qkICkbXDfoBgWVthGk2YqlloMHv82iTeUP2HgCbn8FU904Uicg9Ht6N9/pYTjmhFZkT62TfgaWTAOedhJGZWNiv2YSxmTRrzapdKy8FfcUpkVbiyx7HRDukFG+IIVNsNExIwUi4ZUi/OR17XL3BRde1PPGCE6PBhieXH1KQ4WyJgrVkI2MKYeoZoNNLK2t1mJrm4br7lp+SDIRaxuQwW5259nui2zE+EYbnFpzwsA0NxvxFQw8k81PXFeolNq1YSgLwa1MCaOiWxgjvGJSFG9CSu3hssS9VmX638v7wokSVs+KnBoV3VdY/JzC2eLBDAPPnfpC4QNpAokAKBQxFOkxJYoYmYlV/I8tDN+pGVJGp3ygDxN4ph0ypuptKMc34uL720bJcT/+ID2LjNcNNZnKqAKhRCWDLdNVEI6B4Aj+P1J2KVUQ+6c569Njzky6yxLh8IQvSIM7Vksnfbvrc3DhL4qGNggYL5szaaAhsokxQnIp8up8vgOcF+b5+XMWwmNfflu8KJEHRy9EZbSt4CURXFBEIy8Tebp3deINbwS3v7Sy37l+hEzKduRkMphiVYtNPHitCk3P0m3NVNfu2R98yA7daQhjGYgqRXKcounn09NKt7KyEPWVuIPiMNApqP4N4ZOUkccLzMljI34OWtsKhna8bHSQR3SXfIpbkeEG8ZSY1HxKkn3BSPm6cAAFmrQGw+LhRgmYGU10Bay1h9N5MwU6WA0dXaiTurcqERyzmpDxlIT4WUWVj/vfD05NALmoBgr8cyO6bSw38fCZk7vel4WoIMT2P5gTEaP0aiXIbeKgYbXJ+OGZxtcfWbjmb81Gu0SegkjfXOkXD8nLUAfnyCddXAJzHGIJ1uGnKsfnNPJQSHw1WjgCF8Rzl7Asze1njGl16OA6cc1rjCfAjEU5FzwF4xiruDZ/zog3RhvQAk+/+/tMcPFfwt19WuMCJMbtFXVx775CGjozz0iA9RgGFy/bgdm04QKRupb/1szDSBRJUM4xy6HSPVGNKlAcg8WmlJrFij2PV8E+bhYxR4S33WEk5GcboO8fEiDfHX9l610sR9vRnJ4KXXyFREf3cDoxep2okPMHgkLYToSENU8gAaFLGtodUP8G3ib08Of81gQL1PqXIvVF9e6uvMasz6+TOPUZeNh4LmsyCpcwQ8J8vKVmJIwq8N6uHsHEcuCbDsc1+p+Y8uemKzH4/u6KtRH6ExRFhzAKWOICxH1DKQ==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "YOLO models"
+          },
+          "tool_call_id": "pyd_ai_29ad5af3e7844c3fa41ca66010ca3761",
+          "part_kind": "tool-call"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "YOLO supported tasks"
+          },
+          "tool_call_id": "pyd_ai_c6461bc2cebc47f6b6b20d27432aadd3",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3401,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 336,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 305,
+          "text_prompt_tokens": 3401
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T14:32:37.158694+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "dN7faO72K_GkkdUP_YOVqQ4",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "docs/en/reference/models/yolo/model.md"
+            },
+            {
+              "start": 5000,
+              "content": "to cater to different computational and performance needs:\n\n- **YOLO-NAS-s**: Optimized for environments where computational resources are limited but efficiency is key.\n- **YOLO-NAS-m**: Offers a balanced approach, suitable for general-purpose [object detection](https://www.ultralytics.com/glossary/object-detection) with higher accuracy.\n- **YOLO-NAS-l**: Tailored for scenarios requiring the highest accuracy, where computational resources are less of a constraint.\n\nBelow is a detailed overview of each model, including links to their pre-trained weights, the tasks they support, and their compatibility with different operating modes.\n\n| Model Type | Pre-trained Weights                                                                           | Tasks Supported                        | Inference | Validation | Training | Export |\n| ---------- | --------------------------------------------------------------------------------------------- | -------------------------------------- | --------- | ---------- | -------- | ------ |\n| YOLO-NAS-s | [yolo_nas_s.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo_nas_s.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u274c       | \u2705     |\n| YOLO-NAS-m | [yolo_nas_m.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo_nas_m.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u274c       | \u2705     |\n| YOLO-NAS-l | [yolo_nas_l.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo_nas_l.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u274c       | \u2705     |\n\n## Citations and Acknowledgements\n\nIf you employ YOLO-NAS in your research or development work, please cite SuperGradients:\n\n!!! quote \"\"\n\n    === \"BibTeX\"\n\n        ```bibtex\n        @misc{supergradients,\n              doi = {10.5281/ZENODO.7789328},\n              url = {https://zenodo.org/records/7789328},\n              author = {Aharon,  Shay and {Louis-Dupont} and {Ofri Masad} a",
+              "comments": true,
+              "description": "Discover YOLO-NAS by Deci AI - a state-of-the-art object detection model with quantization support. Explore features, pretrained models, and implementation examples.",
+              "keywords": "YOLO-NAS, Deci AI, object detection, deep learning, Neural Architecture Search, Ultralytics, Python API, YOLO model, SuperGradients, pretrained models, quantization, AutoNAC",
+              "filename": "docs/en/models/yolo-nas.md"
+            },
+            {
+              "start": 6000,
+              "content": " | ---------- | -------- | ------ |\n| YOLO-NAS-s | [yolo_nas_s.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo_nas_s.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u274c       | \u2705     |\n| YOLO-NAS-m | [yolo_nas_m.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo_nas_m.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u274c       | \u2705     |\n| YOLO-NAS-l | [yolo_nas_l.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo_nas_l.pt) | [Object Detection](../tasks/detect.md) | \u2705        | \u2705         | \u274c       | \u2705     |\n\n## Citations and Acknowledgements\n\nIf you employ YOLO-NAS in your research or development work, please cite SuperGradients:\n\n!!! quote \"\"\n\n    === \"BibTeX\"\n\n        ```bibtex\n        @misc{supergradients,\n              doi = {10.5281/ZENODO.7789328},\n              url = {https://zenodo.org/records/7789328},\n              author = {Aharon,  Shay and {Louis-Dupont} and {Ofri Masad} and Yurkova,  Kate and {Lotem Fridman} and {Lkdci} and Khvedchenya,  Eugene and Rubin,  Ran and Bagrov,  Natan and Tymchenko,  Borys and Keren,  Tomer and Zhilko,  Alexander and {Eran-Deci}},\n              title = {Super-Gradients},\n              publisher = {GitHub},\n              journal = {GitHub repository},\n              year = {2021},\n        }\n        ```\n\nWe express our gratitude to Deci AI's [SuperGradients](https://github.com/Deci-AI/super-gradients/) team for their efforts in creating and maintaining this valuable resource for the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) community. We believe YOLO-NAS, with its innovative architecture and superior object detection capabilities, will become a critical tool for developers and researchers alike.\n\n## FAQ\n\n### What is YOLO-NAS and how does it improve over previous YOLO models?\n\nYOLO-NAS, developed by Deci AI, is a state-of-the-art object detection model leveraging advanced Neural Architecture Sear",
+              "comments": true,
+              "description": "Discover YOLO-NAS by Deci AI - a state-of-the-art object detection model with quantization support. Explore features, pretrained models, and implementation examples.",
+              "keywords": "YOLO-NAS, Deci AI, object detection, deep learning, Neural Architecture Search, Ultralytics, Python API, YOLO model, SuperGradients, pretrained models, quantization, AutoNAC",
+              "filename": "docs/en/models/yolo-nas.md"
+            },
+            {
+              "start": 7000,
+              "content": "nd Yurkova,  Kate and {Lotem Fridman} and {Lkdci} and Khvedchenya,  Eugene and Rubin,  Ran and Bagrov,  Natan and Tymchenko,  Borys and Keren,  Tomer and Zhilko,  Alexander and {Eran-Deci}},\n              title = {Super-Gradients},\n              publisher = {GitHub},\n              journal = {GitHub repository},\n              year = {2021},\n        }\n        ```\n\nWe express our gratitude to Deci AI's [SuperGradients](https://github.com/Deci-AI/super-gradients/) team for their efforts in creating and maintaining this valuable resource for the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) community. We believe YOLO-NAS, with its innovative architecture and superior object detection capabilities, will become a critical tool for developers and researchers alike.\n\n## FAQ\n\n### What is YOLO-NAS and how does it improve over previous YOLO models?\n\nYOLO-NAS, developed by Deci AI, is a state-of-the-art object detection model leveraging advanced Neural Architecture Search (NAS) technology. It addresses the limitations of previous YOLO models by introducing features like quantization-friendly basic blocks and sophisticated training schemes. This results in significant improvements in performance, particularly in environments with limited computational resources. YOLO-NAS also supports quantization, maintaining high accuracy even when converted to its INT8 version, enhancing its suitability for production environments. For more details, see the [Overview](#overview) section.\n\n### How can I integrate YOLO-NAS models into my Python application?\n\nYou can easily integrate YOLO-NAS models into your Python application using the `ultralytics` package. Here's a simple example of how to load a pre-trained YOLO-NAS model and perform inference:\n\n```python\nfrom ultralytics import NAS\n\n# Load a COCO-pretrained YOLO-NAS-s model\nmodel = NAS(\"yolo_nas_s.pt\")\n\n# Validate the model on the COCO8 example dataset\nresults = model.val(data=\"coco8.yaml\")\n\n# Run inference with",
+              "comments": true,
+              "description": "Discover YOLO-NAS by Deci AI - a state-of-the-art object detection model with quantization support. Explore features, pretrained models, and implementation examples.",
+              "keywords": "YOLO-NAS, Deci AI, object detection, deep learning, Neural Architecture Search, Ultralytics, Python API, YOLO model, SuperGradients, pretrained models, quantization, AutoNAC",
+              "filename": "docs/en/models/yolo-nas.md"
+            },
+            {
+              "start": 8000,
+              "content": "ch (NAS) technology. It addresses the limitations of previous YOLO models by introducing features like quantization-friendly basic blocks and sophisticated training schemes. This results in significant improvements in performance, particularly in environments with limited computational resources. YOLO-NAS also supports quantization, maintaining high accuracy even when converted to its INT8 version, enhancing its suitability for production environments. For more details, see the [Overview](#overview) section.\n\n### How can I integrate YOLO-NAS models into my Python application?\n\nYou can easily integrate YOLO-NAS models into your Python application using the `ultralytics` package. Here's a simple example of how to load a pre-trained YOLO-NAS model and perform inference:\n\n```python\nfrom ultralytics import NAS\n\n# Load a COCO-pretrained YOLO-NAS-s model\nmodel = NAS(\"yolo_nas_s.pt\")\n\n# Validate the model on the COCO8 example dataset\nresults = model.val(data=\"coco8.yaml\")\n\n# Run inference with the YOLO-NAS-s model on the 'bus.jpg' image\nresults = model(\"path/to/bus.jpg\")\n```\n\nFor more information, refer to the [Inference and Validation Examples](#inference-and-validation-examples).\n\n### What are the key features of YOLO-NAS and why should I consider using it?\n\nYOLO-NAS introduces several key features that make it a superior choice for object detection tasks:\n\n- **Quantization-Friendly Basic Block:** Enhanced architecture that improves model performance with minimal [precision](https://www.ultralytics.com/glossary/precision) drop post quantization.\n- **Sophisticated Training and Quantization:** Employs advanced training schemes and post-training quantization techniques.\n- **AutoNAC Optimization and Pre-training:** Utilizes AutoNAC optimization and is pre-trained on prominent datasets like COCO, Objects365, and Roboflow 100.\n\nThese features contribute to its high accuracy, efficient performance, and suitability for deployment in production environments. Learn more in the [Key",
+              "comments": true,
+              "description": "Discover YOLO-NAS by Deci AI - a state-of-the-art object detection model with quantization support. Explore features, pretrained models, and implementation examples.",
+              "keywords": "YOLO-NAS, Deci AI, object detection, deep learning, Neural Architecture Search, Ultralytics, Python API, YOLO model, SuperGradients, pretrained models, quantization, AutoNAC",
+              "filename": "docs/en/models/yolo-nas.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_29ad5af3e7844c3fa41ca66010ca3761",
+          "metadata": null,
+          "timestamp": "2025-10-03T14:32:37.238078+00:00",
+          "part_kind": "tool-return"
+        },
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 3000,
+              "content": "aged over COCO val images using an [Amazon EC2 P4d](https://aws.amazon.com/ec2/instance-types/p4/) instance. <br>Reproduce by `yolo val pose data=coco-pose.yaml batch=1 device=0|cpu`\n\n## Train\n\nTrain a YOLO11-pose model on the COCO8-pose dataset. The [COCO8-pose dataset](https://docs.ultralytics.com/datasets/pose/coco8-pose/) is a small sample dataset that's perfect for testing and debugging your pose estimation models.\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"yolo11n-pose.yaml\")  # build a new model from YAML\n        model = YOLO(\"yolo11n-pose.pt\")  # load a pretrained model (recommended for training)\n        model = YOLO(\"yolo11n-pose.yaml\").load(\"yolo11n-pose.pt\")  # build from YAML and transfer weights\n\n        # Train the model\n        results = model.train(data=\"coco8-pose.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Build a new model from YAML and start training from scratch\n        yolo pose train data=coco8-pose.yaml model=yolo11n-pose.yaml epochs=100 imgsz=640\n\n        # Start training from a pretrained *.pt model\n        yolo pose train data=coco8-pose.yaml model=yolo11n-pose.pt epochs=100 imgsz=640\n\n        # Build a new model from YAML, transfer pretrained weights to it and start training\n        yolo pose train data=coco8-pose.yaml model=yolo11n-pose.yaml pretrained=yolo11n-pose.pt epochs=100 imgsz=640\n        ```\n\n### Dataset format\n\nYOLO pose dataset format can be found in detail in the [Dataset Guide](../datasets/pose/index.md). To convert your existing dataset from other formats (like [COCO](https://docs.ultralytics.com/datasets/pose/coco/) etc.) to YOLO format, please use the [JSON2YOLO](https://github.com/ultralytics/JSON2YOLO) tool by Ultralytics.\n\nFor custom pose estimation tasks, you can also explore specialized datasets like [Tiger-Pose](https://docs.ultralytics.com/datasets/pose/tiger-pose/) for animal pose estim",
+              "comments": true,
+              "description": "Discover how to use YOLO11 for pose estimation tasks. Learn about model training, validation, prediction, and exporting in various formats.",
+              "keywords": "pose estimation, YOLO11, Ultralytics, keypoints, model training, image recognition, deep learning, human pose detection, computer vision, real-time tracking",
+              "model_name": "yolo11n-pose",
+              "filename": "docs/en/tasks/pose.md"
+            },
+            {
+              "start": 0,
+              "content": "# Pose Estimation\n\n<img width=\"1024\" src=\"https://github.com/ultralytics/docs/releases/download/0/pose-estimation-examples.avif\" alt=\"Pose estimation examples\">\n\nPose estimation is a task that involves identifying the location of specific points in an image, usually referred to as keypoints. The keypoints can represent various parts of the object such as joints, landmarks, or other distinctive features. The locations of the keypoints are usually represented as a set of 2D `[x, y]` or 3D `[x, y, visible]` coordinates.\n\nThe output of a pose estimation model is a set of points that represent the keypoints on an object in the image, usually along with the confidence scores for each point. Pose estimation is a good choice when you need to identify specific parts of an object in a scene, and their location in relation to each other.\n\n<p align=\"center\">\n  <br>\n  <iframe loading=\"lazy\" width=\"720\" height=\"405\" src=\"https://www.youtube.com/embed/AAkfToU3nAc\"\n    title=\"YouTube video player\" frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong> Ultralytics YOLO11 Pose Estimation Tutorial | Real-Time Object Tracking and Human Pose Detection\n</p>\n\n!!! tip\n\n    YOLO11 _pose_ models use the `-pose` suffix, i.e. `yolo11n-pose.pt`. These models are trained on the [COCO keypoints](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco-pose.yaml) dataset and are suitable for a variety of pose estimation tasks.\n\n    In the default YOLO11 pose model, there are 17 keypoints, each representing a different part of the human body. Here is the mapping of each index to its respective body joint:\n\n    0. Nose\n    1. Left Eye\n    2. Right Eye\n    3. Left Ear\n    4. Right Ear\n    5. Left Shoulder\n    6. Right Shoulder\n    7. Left Elbow\n    8. Right Elbow\n    9. Left Wrist\n    10. Right Wrist\n    11. Left Hip\n    12. Right Hip\n   ",
+              "comments": true,
+              "description": "Discover how to use YOLO11 for pose estimation tasks. Learn about model training, validation, prediction, and exporting in various formats.",
+              "keywords": "pose estimation, YOLO11, Ultralytics, keypoints, model training, image recognition, deep learning, human pose detection, computer vision, real-time tracking",
+              "model_name": "yolo11n-pose",
+              "filename": "docs/en/tasks/pose.md"
+            },
+            {
+              "start": 2000,
+              "content": " 13. Left Knee\n    14. Right Knee\n    15. Left Ankle\n    16. Right Ankle\n\n## [Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models/11)\n\nUltralytics YOLO11 pretrained Pose models are shown here. Detect, Segment and Pose models are pretrained on the [COCO](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml) dataset, while Classify models are pretrained on the [ImageNet](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/ImageNet.yaml) dataset.\n\n[Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models) download automatically from the latest Ultralytics [release](https://github.com/ultralytics/assets/releases) on first use.\n\n{% include \"macros/yolo-pose-perf.md\" %}\n\n- **mAP<sup>val</sup>** values are for single-model single-scale on [COCO Keypoints val2017](https://cocodataset.org/) dataset. <br>Reproduce by `yolo val pose data=coco-pose.yaml device=0`\n- **Speed** averaged over COCO val images using an [Amazon EC2 P4d](https://aws.amazon.com/ec2/instance-types/p4/) instance. <br>Reproduce by `yolo val pose data=coco-pose.yaml batch=1 device=0|cpu`\n\n## Train\n\nTrain a YOLO11-pose model on the COCO8-pose dataset. The [COCO8-pose dataset](https://docs.ultralytics.com/datasets/pose/coco8-pose/) is a small sample dataset that's perfect for testing and debugging your pose estimation models.\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"yolo11n-pose.yaml\")  # build a new model from YAML\n        model = YOLO(\"yolo11n-pose.pt\")  # load a pretrained model (recommended for training)\n        model = YOLO(\"yolo11n-pose.yaml\").load(\"yolo11n-pose.pt\")  # build from YAML and transfer weights\n\n        # Train the model\n        results = model.train(data=\"coco8-pose.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Build a new model from YAML and st",
+              "comments": true,
+              "description": "Discover how to use YOLO11 for pose estimation tasks. Learn about model training, validation, prediction, and exporting in various formats.",
+              "keywords": "pose estimation, YOLO11, Ultralytics, keypoints, model training, image recognition, deep learning, human pose detection, computer vision, real-time tracking",
+              "model_name": "yolo11n-pose",
+              "filename": "docs/en/tasks/pose.md"
+            },
+            {
+              "start": 1000,
+              "content": "meborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n  </iframe>\n  <br>\n  <strong>Watch:</strong> Ultralytics YOLO11 Pose Estimation Tutorial | Real-Time Object Tracking and Human Pose Detection\n</p>\n\n!!! tip\n\n    YOLO11 _pose_ models use the `-pose` suffix, i.e. `yolo11n-pose.pt`. These models are trained on the [COCO keypoints](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco-pose.yaml) dataset and are suitable for a variety of pose estimation tasks.\n\n    In the default YOLO11 pose model, there are 17 keypoints, each representing a different part of the human body. Here is the mapping of each index to its respective body joint:\n\n    0. Nose\n    1. Left Eye\n    2. Right Eye\n    3. Left Ear\n    4. Right Ear\n    5. Left Shoulder\n    6. Right Shoulder\n    7. Left Elbow\n    8. Right Elbow\n    9. Left Wrist\n    10. Right Wrist\n    11. Left Hip\n    12. Right Hip\n    13. Left Knee\n    14. Right Knee\n    15. Left Ankle\n    16. Right Ankle\n\n## [Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models/11)\n\nUltralytics YOLO11 pretrained Pose models are shown here. Detect, Segment and Pose models are pretrained on the [COCO](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml) dataset, while Classify models are pretrained on the [ImageNet](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/ImageNet.yaml) dataset.\n\n[Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models) download automatically from the latest Ultralytics [release](https://github.com/ultralytics/assets/releases) on first use.\n\n{% include \"macros/yolo-pose-perf.md\" %}\n\n- **mAP<sup>val</sup>** values are for single-model single-scale on [COCO Keypoints val2017](https://cocodataset.org/) dataset. <br>Reproduce by `yolo val pose data=coco-pose.yaml device=0`\n- **Speed** aver",
+              "comments": true,
+              "description": "Discover how to use YOLO11 for pose estimation tasks. Learn about model training, validation, prediction, and exporting in various formats.",
+              "keywords": "pose estimation, YOLO11, Ultralytics, keypoints, model training, image recognition, deep learning, human pose detection, computer vision, real-time tracking",
+              "model_name": "yolo11n-pose",
+              "filename": "docs/en/tasks/pose.md"
+            },
+            {
+              "start": 8000,
+              "content": "\")  # load a custom trained model\n\n        # Export the model\n        model.export(format=\"onnx\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        yolo export model=yolo11n-pose.pt format=onnx # export official model\n        yolo export model=path/to/best.pt format=onnx # export custom trained model\n        ```\n\nAvailable YOLO11-pose export formats are in the table below. You can export to any format using the `format` argument, i.e. `format='onnx'` or `format='engine'`. You can predict or validate directly on exported models, i.e. `yolo predict model=yolo11n-pose.onnx`. Usage examples are shown for your model after export completes.\n\n{% include \"macros/export-table.md\" %}\n\nSee full `export` details in the [Export](../modes/export.md) page.\n\n## FAQ\n\n### What is Pose Estimation with Ultralytics YOLO11 and how does it work?\n\nPose estimation with Ultralytics YOLO11 involves identifying specific points, known as keypoints, in an image. These keypoints typically represent joints or other important features of the object. The output includes the `[x, y]` coordinates and confidence scores for each point. YOLO11-pose models are specifically designed for this task and use the `-pose` suffix, such as `yolo11n-pose.pt`. These models are pre-trained on datasets like [COCO keypoints](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco-pose.yaml) and can be used for various pose estimation tasks. For more information, visit the [Pose Estimation Page](#pose-estimation).\n\n### How can I train a YOLO11-pose model on a custom dataset?\n\nTraining a YOLO11-pose model on a custom dataset involves loading a model, either a new model defined by a YAML file or a pre-trained model. You can then start the training process using your specified dataset and parameters.\n\n```python\nfrom ultralytics import YOLO\n\n# Load a model\nmodel = YOLO(\"yolo11n-pose.yaml\")  # build a new model from YAML\nmodel = YOLO(\"yolo11n-pose.pt\")  # load a pretrained model (recommended for ",
+              "comments": true,
+              "description": "Discover how to use YOLO11 for pose estimation tasks. Learn about model training, validation, prediction, and exporting in various formats.",
+              "keywords": "pose estimation, YOLO11, Ultralytics, keypoints, model training, image recognition, deep learning, human pose detection, computer vision, real-time tracking",
+              "model_name": "yolo11n-pose",
+              "filename": "docs/en/tasks/pose.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_c6461bc2cebc47f6b6b20d27432aadd3",
+          "metadata": null,
+          "timestamp": "2025-10-03T14:32:37.239099+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CokLAdHtim/Cejk5AQsN+DmUyoBVMjy7N3ytuZKkAO/JqBCyL3l6oNJi3wTso92ruNflowb/KZryRBkr7iqfHxX+k7PFsiXzxX2wCZPkIJSdNtn8utkJ442DG/cxQJKdpAWzcRCmYTSmHM5AcPZQhRkuJIwD0mYzB47LPMzI8tRy7F7+QfIghU8tbSIr3qWexWq6/57+PTxuZQFypBVjMOR5ZYDCFJrfGSqtH2lMPx6pIiXBRrGoO6opgUFX3N7kUtq3wywvuHgAKbmC9CtDw7uERdrEubCZK7ovrYTgaqXqil35qeHlwXxyOJoyCkKkOGpcfnEKA6detlJXPaBrLsUrQAEqeMcZGHedmnub/P7uHoEqRl+M1x3Ih0hHcb0p73IDD3lulkxRrQgMBsjpqfaTyAv3lbBtHWRwz2sDgG5fDf9AUuKOyg1YtC38v2rU0nmjaEgdLansKRlfIwvgHi2c3X2GwEzeY+PL40fJS0w9Y887yzwDuD/1D6pVqxSvwAtkUAHlDmtkaFJwYlZwAUt6qXd6BhXErYr/oUYV+8C1b0mAyA7Y4066XdZ0H7pTiiXmVOWWmlNZ9M78Mkhfns6ZbNPvGKT/M88n8JrsjbrUIiFiv6ifO3jhuQYxdZ5wBQD2RGI1Lsu2Dji+oMxWV5PgPKXmU/DEevnn4QcY7/DFZM8FfqdnbcYwSD9erlVfeaynmarmdnfgQyszSl80ErhxKN+8WMW5pBsjRr/e+uBQ/3jrK0vyPkG17UvnCRs88U2uDy2eT8VlGaEjuNYVwr8kcIN2szgHDQWN/4mkfj6yejs30Gbyj3IFfrrlIalY9R8FYHyVi+biN0T3U5CxaPRW+jKjBzCBFwBNl0lgPvLaaWwPVxxBWQ4vm5romAQxqQf4xzRAIrKRwO6A6qeWhrBOwIOEwJCMwdXHOdXt9lPBOONQU4PB77F7PHzUecqij+FC8jNaArvgIe/Lxr2NrhXCw1gUCR+zquX5LZIM9isrt28uAtgrLvygKGNoM7Z86BJBxVcLihmiI8FqAfKLXyfvv5R4qVxywhh0WagS9J+twOjUSY2NdRuzd7G5LdOXASPPwtEyxvjWq8ATlDlDVBxQItYQp51DWBMuxFRfA68O35K+XRCj02dUUldnlS8/YbdSkQvDlIEO7F0q3+obw8iPykERSiGFblpQKeyYghZCHqKKffsQ/1WpYASHR8+sn9WWHxmT0AkSJfjruJTrLIJQa1NYUn3EnGQBkbU3ljST3PoJC7VY1aeZN8XP5/PQPW6WJe2AHkXaKbrxZajyytpuvswkdPAnJRtQDYc2xWWUh/aVNdgdAVUnpWLTWHj1Vj8/WD1gG+jXAr8uYcOZdNl4axiXETdd7jtEIfYVS4UOyJObcU6FuLH6VObAWI1tlw3t2DL8phUi+gknp9IBTrVzv2OREyGtMYVDDmzcVy3R40ZJlrIWhukOzix5JHejpoGBfZG8yGBL1MVyif70UZ7txyRSYAAp61fU64r1R3nBKQfJpPv5KkZbHFgBnggTdm93QVQYpUbMpy2JcYqDrypIe03C4muoKfVPBVUkZCNzbG7fLjhylTQtrwpJjyNZXaZKuHXnimj/rygFDPDHcyoLWkKPjwYXD0tdjV978eZlslKjVyTjE93/P+XK04YHgdFmtOeIH4y5JoWIX5sRKcH8InqEL+ulRNpUWW1J4Wp7pFqVhLWLJfg47U65UrdK8JcDqMWXEqt4/8hHB0TB97MGcGlewaFdKLHDZRfMLuQrVMjeSWRQ2SlMdqYm6Cs/pZ6WQHLtowEuIXYe4SaDQfBCpU+SygXZNiAcbAx27Vm/YYLvnYEb4La53Blf/AqdKp+EaxmRHmvMh2NXKEEonm49qo4mNhq+i+7E5w==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Ultralytics YOLO supports a variety of models, tasks, and operating modes to cater to different computer vision needs.\n\n### Available Models\n\nUltralytics offers several YOLO model architectures, including:\n\n*   **YOLOv11** series: These models come in various sizes (nano, small, medium, large, and extra-large, denoted by `n`, `s`, `m`, `l`, or `x` suffixes, e.g., `yolo11n.pt`). These models are versatile and used for different tasks.\n    *   **YOLOv11-pose** models (`yolo11n-pose.pt`, etc.) are specifically designed for pose estimation.\n*   **YOLO-NAS** series: Developed by Deci AI, these models (`yolo_nas_s.pt`, `yolo_nas_m.pt`, `yolo_nas_l.pt`) offer a balanced approach for object detection, optimized for various computational resources.\n*   Other architectures like `YOLOWorld` and `YOLOE` are also part of the Ultralytics framework.\n\nReferences:\n*   [YOLO-NAS Models](https://github.com/ultralytics/ultralytics/blob/main/docs/en/models/yolo-nas.md)\n*   [YOLO Models Reference](https://github.com/ultralytics/ultralytics/blob/main/docs/en/reference/models/yolo/model.md)\n*   [Pose Estimation Models](https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/pose.md)\n*   [Ultralytics YOLO Modes](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/index.md)\n\n### Supported Tasks\n\nUltralytics YOLO models support a range of computer vision tasks:\n\n*   **Object Detection**: Identifying and localizing objects within an image or video.\n*   **Pose Estimation**: Locating specific keypoints on objects, commonly used for human pose detection.\n*   **Segmentation**: Creating pixel-level masks for detected objects.\n*   **Classification**: Categorizing images into predefined classes.\n\nReferences:\n*   [YOLO-NAS Supported Tasks](https://github.com/ultralytics/ultralytics/blob/main/docs/en/models/yolo-nas.md)\n*   [Pose Estimation Task](https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/pose.md)\n\n### Operating Modes\n\nUltralytics YOLO models can operate in several modes:\n\n*   **Train**: For training a model on a custom or predefined dataset.\n*   **Val (Validate)**: For validating the performance of a trained model on a validation set, assessing metrics like mAP, IOU, Precision, and Recall.\n*   **Predict**: For making inferences using a trained model on new images or videos.\n*   **Export**: For converting a trained model into various deployment formats (e.g., ONNX, TensorRT, CoreML).\n*   **Track**: Extends object detection to track objects across video frames or live streams.\n*   **Benchmark**: For profiling the speed and accuracy of different export formats across various hardware setups.\n\nReference:\n*   [Ultralytics YOLO Modes](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/index.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 10094,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 2832,
+        "output_tokens": 1118,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "cached_content_tokens": 2832,
+          "thoughts_tokens": 354,
+          "text_prompt_tokens": 10094,
+          "text_cache_tokens": 2832
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T14:32:45.774680+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "jd7faNXBMr6VkdUPgr3q2A8",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

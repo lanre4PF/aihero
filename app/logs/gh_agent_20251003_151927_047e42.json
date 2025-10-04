@@ -1,0 +1,151 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CrMCAdHtim/j0gHZH+ppKaYYuYeWoscJ9kVk4VspYiiUkuY/bgF6RPhhjtF6MC10Db98jt553SmieyHx0RHS7uEXJhOzgyv2vL5dEPKmbdDj8r4H8ovDNeLogFx/rfm85rqUZZZjVTJ6C/c03OpQXFC7SrKeQEqM+LCj5dX35I6d8oCbjwS9NI3+bngug+/JePpwNuaEdegbQwWBt65ceR4+hnpIIfM6efjB8S7fcwugKhJpQuFFnu/DCkv0V6UK4ITBj9stGSaGUmtwXBnA6srjorwRzR9Qr6273HW6bK/MqNRQNTt6H2uzcepfZm9wNQHPlEAk7ZTSVNStmBvIOobS/JeqtvmC1uAj1pcfHl+rOB9orljn3Pvax6OGjXHpoMUXVU0FHPTh1xt2Tvgs0wih9bLc4g==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "different modes available in YOLO"
+          },
+          "tool_call_id": "pyd_ai_251c6e18d4b643929c5112cf14e777b9",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 239,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 76,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 59,
+          "text_prompt_tokens": 239
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T15:19:19.025707+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "d-nfaJmsCZ-TxN8PgJRy",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 7000,
+              "content": "example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained or custom YOLO model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Run validation on your dataset\n        model.val(data=\"path/to/validation.yaml\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Validate a YOLO model from the command line\n        yolo val data=path/to/validation.yaml\n        ```\n\nRefer to the [Validation Guide](../modes/val.md) for further details.\n\n### How can I export my YOLO11 model for deployment?\n\nUltralytics YOLO11 offers export functionality to convert your trained model into various deployment formats such as ONNX, TensorRT, CoreML, and more. Use the following example to export your model:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load your trained YOLO model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Export the model to ONNX format (you can specify other formats as needed)\n        model.export(format=\"onnx\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Export a YOLO model to ONNX format from the command line\n        yolo export model=yolo11n.pt format=onnx\n        ```\n\nDetailed steps for each export format can be found in the [Export Guide](../modes/export.md).\n\n### What is the purpose of the benchmark mode in Ultralytics YOLO11?\n\nBenchmark mode in Ultralytics YOLO11 is used to analyze the speed and [accuracy](https://www.ultralytics.com/glossary/accuracy) of various export formats such as ONNX, TensorRT, and OpenVINO. It provides metrics like model size, `mAP50-95` for object detection, and inference time across different hardware setups, helping you choose the most suitable format for your deployment needs.\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics.utils.benchmarks import benchmark\n\n        # Run benchmark on GPU (device 0)\n        # You can adjust parameters like model, dataset, image size, and precision as needed\n       ",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            },
+            {
+              "start": 9000,
+              "content": " benchmark(model=\"yolo11n.pt\", data=\"coco8.yaml\", imgsz=640, half=False, device=0)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Benchmark a YOLO model from the command line\n        # Adjust parameters as needed for your specific use case\n        yolo benchmark model=yolo11n.pt data='coco8.yaml' imgsz=640 half=False device=0\n        ```\n\nFor more details, refer to the [Benchmark Guide](../modes/benchmark.md).\n\n### How can I perform real-time object tracking using Ultralytics YOLO11?\n\nReal-time object tracking can be achieved using the track mode in Ultralytics YOLO11. This mode extends object detection capabilities to track objects across video frames or live feeds. Use the following example to enable tracking:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained YOLO model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Start tracking objects in a video\n        # You can also use live video streams or webcam input\n        model.track(source=\"path/to/video.mp4\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Perform object tracking on a video from the command line\n        # You can specify different sources like webcam (0) or RTSP streams\n        yolo track source=path/to/video.mp4\n        ```\n\nFor in-depth instructions, visit the [Track Guide](../modes/track.md).",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            },
+            {
+              "start": 8000,
+              "content": "l.export(format=\"onnx\")\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Export a YOLO model to ONNX format from the command line\n        yolo export model=yolo11n.pt format=onnx\n        ```\n\nDetailed steps for each export format can be found in the [Export Guide](../modes/export.md).\n\n### What is the purpose of the benchmark mode in Ultralytics YOLO11?\n\nBenchmark mode in Ultralytics YOLO11 is used to analyze the speed and [accuracy](https://www.ultralytics.com/glossary/accuracy) of various export formats such as ONNX, TensorRT, and OpenVINO. It provides metrics like model size, `mAP50-95` for object detection, and inference time across different hardware setups, helping you choose the most suitable format for your deployment needs.\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics.utils.benchmarks import benchmark\n\n        # Run benchmark on GPU (device 0)\n        # You can adjust parameters like model, dataset, image size, and precision as needed\n        benchmark(model=\"yolo11n.pt\", data=\"coco8.yaml\", imgsz=640, half=False, device=0)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Benchmark a YOLO model from the command line\n        # Adjust parameters as needed for your specific use case\n        yolo benchmark model=yolo11n.pt data='coco8.yaml' imgsz=640 half=False device=0\n        ```\n\nFor more details, refer to the [Benchmark Guide](../modes/benchmark.md).\n\n### How can I perform real-time object tracking using Ultralytics YOLO11?\n\nReal-time object tracking can be achieved using the track mode in Ultralytics YOLO11. This mode extends object detection capabilities to track objects across video frames or live feeds. Use the following example to enable tracking:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained YOLO model\n        model = YOLO(\"yolo11n.pt\")\n\n        # Start tracking objects in a video\n        # You can also use live video streams or webcam input\n ",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            },
+            {
+              "start": 2000,
+              "content": "e is used for training a YOLO11 model on a custom dataset. In this mode, the model is trained using the specified dataset and hyperparameters. The training process involves optimizing the model's parameters so that it can accurately predict the classes and locations of objects in an image. Training is essential for creating models that can recognize specific objects relevant to your application.\n\n[Train Examples](train.md){ .md-button }\n\n## [Val](val.md)\n\nVal mode is used for validating a YOLO11 model after it has been trained. In this mode, the model is evaluated on a validation set to measure its accuracy and generalization performance. Validation helps identify potential issues like [overfitting](https://www.ultralytics.com/glossary/overfitting) and provides metrics such as [mean Average Precision](https://www.ultralytics.com/glossary/mean-average-precision-map) (mAP) to quantify model performance. This mode is crucial for tuning hyperparameters and improving overall model effectiveness.\n\n[Val Examples](val.md){ .md-button }\n\n## [Predict](predict.md)\n\nPredict mode is used for making predictions using a trained YOLO11 model on new images or videos. In this mode, the model is loaded from a checkpoint file, and the user can provide images or videos to perform inference. The model identifies and localizes objects in the input media, making it ready for real-world applications. Predict mode is the gateway to applying your trained model to solve practical problems.\n\n[Predict Examples](predict.md){ .md-button }\n\n## [Export](export.md)\n\nExport mode is used for converting a YOLO11 model to formats suitable for deployment across different platforms and devices. This mode transforms your PyTorch model into optimized formats like ONNX, TensorRT, or CoreML, enabling deployment in production environments. Exporting is essential for integrating your model with various software applications or hardware devices, often resulting in significant performance improvements.\n\n[Export Ex",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            },
+            {
+              "start": 5000,
+              "content": ".com/integrations/openvino/), and TensorRT. Benchmarking helps you select the optimal export format based on your specific requirements for speed and accuracy in your deployment environment.\n\n[Benchmark Examples](benchmark.md){ .md-button }\n\n## FAQ\n\n### How do I train a custom [object detection](https://www.ultralytics.com/glossary/object-detection) model with Ultralytics YOLO11?\n\nTraining a custom object detection model with Ultralytics YOLO11 involves using the train mode. You need a dataset formatted in YOLO format, containing images and corresponding annotation files. Use the following command to start the training process:\n\n!!! example\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a pre-trained YOLO model (you can choose n, s, m, l, or x versions)\n        model = YOLO(\"yolo11n.pt\")\n\n        # Start training on your custom dataset\n        model.train(data=\"path/to/dataset.yaml\", epochs=100, imgsz=640)\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Train a YOLO model from the command line\n        yolo train data=path/to/dataset.yaml epochs=100 imgsz=640\n        ```\n\nFor more detailed instructions, you can refer to the [Ultralytics Train Guide](../modes/train.md).\n\n### What metrics does Ultralytics YOLO11 use to validate the model's performance?\n\nUltralytics YOLO11 uses various metrics during the validation process to assess model performance. These include:\n\n- **mAP (mean Average Precision)**: This evaluates the accuracy of object detection.\n- **IOU (Intersection over Union)**: Measures the overlap between predicted and ground truth bounding boxes.\n- **[Precision](https://www.ultralytics.com/glossary/precision) and [Recall](https://www.ultralytics.com/glossary/recall)**: Precision measures the ratio of true positive detections to the total detected positives, while recall measures the ratio of true positive detections to the total actual positives.\n\nYou can run the following command to start the validation:\n\n!!! ",
+              "comments": true,
+              "description": "Discover the diverse modes of Ultralytics YOLO11, including training, validation, prediction, export, tracking, and benchmarking. Maximize model performance and efficiency.",
+              "keywords": "Ultralytics, YOLO11, machine learning, model training, validation, prediction, export, tracking, benchmarking, object detection",
+              "filename": "docs/en/modes/index.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_251c6e18d4b643929c5112cf14e777b9",
+          "metadata": null,
+          "timestamp": "2025-10-03T15:19:19.050845+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CtkCAdHtim8X819eI2QAeaj/7BVcvx8lEiRjOuU+wMN9ux4t1TYbGM0xnk7YTJNJYiJhO3Fhn24h93zOky1+Niw3lyMqeY9EQNz8ysfPRc1ew3LMSjEkTpRq6dw/Q/0mS4WLWpzTbaUItO3k0jIH0Id2tk+rgGZmKAhbMeBAQTc70tZio56Z4NR9uABU4T2o+YAkyHAFft4eiZ3PTAE3hGFzEQkYijnEnDgAJD7SUJz+xgrsBMi6JDg930UYqmhCz1yB1hLNE1ttF5w2B3vfQ13aehJxQiTdQqzXVnOgHl/KRmzgsCS1I+oRHhzEMCJyTKHvZWWAs0/Ppfu71E3RhSBVmMLryP8j4Tvi8BclMwLnUPa+1Se70w+mn/PjUnTY8Md9Fb4e7ajH+SkjzuX3DnGsHEp62W+zBuNndK/Nf7Nv69zd6d1FMlVrblPLyMvNx7M8F/vfojmKsVqq",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Ultralytics YOLO11 offers several distinct modes for various tasks related to object detection and model management:\n\n*   **Train Mode**: This mode is used for training a YOLO11 model on a custom dataset. It involves optimizing the model's parameters to accurately predict object classes and locations. Training is crucial for creating models tailored to specific applications.\n    *   Reference: [Ultralytics Docs - Modes](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/index.md)\n\n*   **Val Mode**: After training, the Val mode is used to validate the model's performance. It evaluates the model on a validation set to measure its accuracy and generalization, providing metrics like mean Average Precision (mAP) to quantify performance and help identify issues like overfitting.\n    *   Reference: [Ultralytics Docs - Modes](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/index.md)\n\n*   **Predict Mode**: This mode allows you to make predictions using a trained YOLO11 model on new images or videos. The model performs inference to identify and localize objects in the input media, making it ready for real-world applications.\n    *   Reference: [Ultralytics Docs - Modes](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/index.md)\n\n*   **Export Mode**: The Export mode is used to convert a YOLO11 model into various formats suitable for deployment across different platforms and devices, such as ONNX, TensorRT, or CoreML. This process optimizes the model for production environments and can lead to significant performance improvements.\n    *   Reference: [Ultralytics Docs - Modes](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/index.md)\n\n*   **Benchmark Mode**: This mode analyzes the speed and accuracy of various export formats (e.g., ONNX, TensorRT, OpenVINO). It provides metrics like model size, mAP50-95 for object detection, and inference time across different hardware setups, aiding in the selection of the most suitable format for deployment.\n    *   Reference: [Ultralytics Docs - Modes](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/index.md)\n\n*   **Track Mode**: The Track mode enables real-time object tracking, extending object detection capabilities to follow objects across video frames or live feeds.\n    *   Reference: [Ultralytics Docs - Modes](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/index.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3274,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 657,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 65,
+          "text_prompt_tokens": 3274
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T15:19:27.050967+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "funfaMS0KufZxN8P3PnlmAM",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

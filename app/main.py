@@ -4,7 +4,6 @@ import logs
 
 import asyncio
 
-
 REPO_OWNER = "ultralytics"
 REPO_NAME = "ultralytics"
 

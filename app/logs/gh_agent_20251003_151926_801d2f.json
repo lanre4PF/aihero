@@ -1,0 +1,136 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CuwBAdHtim/SJnp41vcxZlO13Qil9DJbSsVGTfCteLEwYMxc3pNhAoK8jSmRAZmmPQBjHQpDVserm8UuVnE4UYnbqQpy+DUpM3NdpEEyd8li5C3KWvj2DlTwyl3yDqlHfyf9jUaFJqxE9LTNEKsG34n45jL/jwKZnHiv2ho0EesJE4D+QGifMtZ+z2ClpOgxinO7RLu/DugsZVQUAgpPeAJo5H6nUJPk/IMWtZvAAGFA/HoUkNKZQ668GPivdwFQdTIXwCc+Zn2WuzhU1PXWvjzvx7T9+ex+1tdv3kUaz4/hNrEKbaVeaLcBhgthxiw=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "What is Ultralytics YOLO"
+          },
+          "tool_call_id": "pyd_ai_12f6db5e7d974723b983d9287df4d6a2",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 239,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 64,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 46,
+          "text_prompt_tokens": 239
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T15:19:19.968848+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "eOnfaMjNCbixxN8PubSHoQc",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 13000,
+              "content": " a for loop\ntracker_threads = []\nfor video_file, model_name in zip(SOURCES, MODEL_NAMES):\n    thread = threading.Thread(target=run_tracker_in_thread, args=(model_name, video_file), daemon=True)\n    tracker_threads.append(thread)\n    thread.start()\n\n# Wait for all tracker threads to finish\nfor thread in tracker_threads:\n    thread.join()\n\n# Clean up and close windows\ncv2.destroyAllWindows()\n```\n\nThis setup can be easily scaled to handle more video streams by creating additional threads following the same pattern. Explore more applications in our [blog post on object tracking](https://www.ultralytics.com/blog/object-detection-and-tracking-with-ultralytics-yolov8).\n\n## \ud83e\udd1d Contribute New Trackers\n\nAre you experienced in multi-object tracking and have implemented or adapted an algorithm with Ultralytics YOLO? We encourage you to contribute to our Trackers section in [ultralytics/cfg/trackers](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers)! Your contributions can help expand the tracking solutions available within the Ultralytics [ecosystem](https://docs.ultralytics.com/).\n\nTo contribute, please review our [Contributing Guide](https://docs.ultralytics.com/help/contributing/) for instructions on submitting a [Pull Request (PR)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) \ud83d\udee0\ufe0f. We look forward to your contributions!\n\nLet's work together to enhance the tracking capabilities of Ultralytics YOLO and provide more powerful tools for the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) and [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) community \ud83d\ude4f!",
+              "filename": "ultralytics/trackers/README.md"
+            },
+            {
+              "start": 4000,
+              "content": "path/to/best.pt\")  # Load a custom trained model\n\n# Perform tracking with the model\nresults = model.track(source=\"https://youtu.be/LNwODJXcvt4\", show=True)  # Tracking with default tracker\n# results = model.track(source=\"https://youtu.be/LNwODJXcvt4\", show=True, tracker=\"bytetrack.yaml\")  # Tracking with ByteTrack tracker\n```\n\n```bash\n# CLI\n# Perform tracking with various models using the command line interface\nyolo track model=yolo11n.pt source=\"https://youtu.be/LNwODJXcvt4\" # Official Detect model\n# yolo track model=yolo11n-seg.pt source=\"https://youtu.be/LNwODJXcvt4\"  # Official Segment model\n# yolo track model=yolo11n-pose.pt source=\"https://youtu.be/LNwODJXcvt4\" # Official Pose model\n# yolo track model=path/to/best.pt source=\"https://youtu.be/LNwODJXcvt4\" # Custom trained model\n\n# Track using ByteTrack tracker\n# yolo track model=path/to/best.pt tracker=\"bytetrack.yaml\"\n```\n\nAs shown above, tracking is available for all [Detect](https://docs.ultralytics.com/tasks/detect/), [Segment](https://docs.ultralytics.com/tasks/segment/), and [Pose](https://docs.ultralytics.com/tasks/pose/) models when run on videos or streaming sources.\n\n## \ud83d\udd27 Configuration\n\n### Tracking Arguments\n\nTracking configuration shares properties with the Predict mode, such as `conf` (confidence threshold), `iou` ([Intersection over Union](https://www.ultralytics.com/glossary/intersection-over-union-iou) threshold), and `show` (display results). For additional configurations, refer to the [Predict mode documentation](https://docs.ultralytics.com/modes/predict/).\n\n```python\n# Python\nfrom ultralytics import YOLO\n\n# Configure the tracking parameters and run the tracker\nmodel = YOLO(\"yolo11n.pt\")\nresults = model.track(source=\"https://youtu.be/LNwODJXcvt4\", conf=0.3, iou=0.5, show=True)\n```\n\n```bash\n# CLI\n# Configure tracking parameters and run the tracker using the command line interface\nyolo track model=yolo11n.pt source=\"https://youtu.be/LNwODJXcvt4\" conf=0.3 iou=0.5 show\n```\n\n### Tracker Selection\n",
+              "filename": "ultralytics/trackers/README.md"
+            },
+            {
+              "start": 12000,
+              "content": " respectively.\n\nSetting `daemon=True` in `threading.Thread` ensures threads exit when the main program finishes. Threads are started with `start()` and the main thread waits for their completion using `join()`.\n\nFinally, `cv2.destroyAllWindows()` closes all OpenCV windows after the threads finish.\n\n```python\n# Python\nimport threading\n\nimport cv2\n\nfrom ultralytics import YOLO\n\n# Define model names and video sources\nMODEL_NAMES = [\"yolo11n.pt\", \"yolo11n-seg.pt\"]\nSOURCES = [\"path/to/video.mp4\", \"0\"]  # local video, 0 for webcam\n\n\ndef run_tracker_in_thread(model_name, filename):\n    \"\"\"\n    Run YOLO tracker in its own thread for concurrent processing.\n\n    Args:\n        model_name (str): The YOLO11 model object.\n        filename (str): The path to the video file or the identifier for the webcam/external camera source.\n    \"\"\"\n    model = YOLO(model_name)\n    results = model.track(filename, save=True, stream=True)\n    for r in results:\n        pass\n\n\n# Create and start tracker threads using a for loop\ntracker_threads = []\nfor video_file, model_name in zip(SOURCES, MODEL_NAMES):\n    thread = threading.Thread(target=run_tracker_in_thread, args=(model_name, video_file), daemon=True)\n    tracker_threads.append(thread)\n    thread.start()\n\n# Wait for all tracker threads to finish\nfor thread in tracker_threads:\n    thread.join()\n\n# Clean up and close windows\ncv2.destroyAllWindows()\n```\n\nThis setup can be easily scaled to handle more video streams by creating additional threads following the same pattern. Explore more applications in our [blog post on object tracking](https://www.ultralytics.com/blog/object-detection-and-tracking-with-ultralytics-yolov8).\n\n## \ud83e\udd1d Contribute New Trackers\n\nAre you experienced in multi-object tracking and have implemented or adapted an algorithm with Ultralytics YOLO? We encourage you to contribute to our Trackers section in [ultralytics/cfg/trackers](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers)! Your contributions c",
+              "filename": "ultralytics/trackers/README.md"
+            },
+            {
+              "start": 5000,
+              "content": "](https://docs.ultralytics.com/tasks/segment/), and [Pose](https://docs.ultralytics.com/tasks/pose/) models when run on videos or streaming sources.\n\n## \ud83d\udd27 Configuration\n\n### Tracking Arguments\n\nTracking configuration shares properties with the Predict mode, such as `conf` (confidence threshold), `iou` ([Intersection over Union](https://www.ultralytics.com/glossary/intersection-over-union-iou) threshold), and `show` (display results). For additional configurations, refer to the [Predict mode documentation](https://docs.ultralytics.com/modes/predict/).\n\n```python\n# Python\nfrom ultralytics import YOLO\n\n# Configure the tracking parameters and run the tracker\nmodel = YOLO(\"yolo11n.pt\")\nresults = model.track(source=\"https://youtu.be/LNwODJXcvt4\", conf=0.3, iou=0.5, show=True)\n```\n\n```bash\n# CLI\n# Configure tracking parameters and run the tracker using the command line interface\nyolo track model=yolo11n.pt source=\"https://youtu.be/LNwODJXcvt4\" conf=0.3 iou=0.5 show\n```\n\n### Tracker Selection\n\nUltralytics allows you to use a modified tracker configuration file. Create a copy of a tracker config file (e.g., `custom_tracker.yaml`) from [ultralytics/cfg/trackers](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers) and adjust any configurations (except `tracker_type`) according to your needs.\n\n```python\n# Python\nfrom ultralytics import YOLO\n\n# Load the model and run the tracker with a custom configuration file\nmodel = YOLO(\"yolo11n.pt\")\nresults = model.track(source=\"https://youtu.be/LNwODJXcvt4\", tracker=\"custom_tracker.yaml\")\n```\n\n```bash\n# CLI\n# Load the model and run the tracker with a custom configuration file using the command line interface\nyolo track model=yolo11n.pt source=\"https://youtu.be/LNwODJXcvt4\" tracker='custom_tracker.yaml'\n```\n\nFor a comprehensive list of tracking arguments, consult the [Tracking Configuration files](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/trackers) in the repository.\n\n## \ud83d\udc0d Python Example",
+              "filename": "ultralytics/trackers/README.md"
+            },
+            {
+              "start": 7000,
+              "content": "s\n\n### Persisting Tracks Loop\n\nThis Python script uses [OpenCV (`cv2`)](https://opencv.org/) and Ultralytics YOLO11 to perform object tracking on video frames. Ensure you have installed the necessary packages (`opencv-python` and `ultralytics`). The [`persist=True`](https://docs.ultralytics.com/modes/predict/#tracking) argument indicates that the current frame is the next in a sequence, allowing the tracker to maintain track continuity from the previous frame.\n\n```python\n# Python\nimport cv2\n\nfrom ultralytics import YOLO\n\n# Load the YOLO11 model\nmodel = YOLO(\"yolo11n.pt\")\n\n# Open the video file\nvideo_path = \"path/to/video.mp4\"\ncap = cv2.VideoCapture(video_path)\n\n# Loop through the video frames\nwhile cap.isOpened():\n    # Read a frame from the video\n    success, frame = cap.read()\n\n    if success:\n        # Run YOLO11 tracking on the frame, persisting tracks between frames\n        results = model.track(frame, persist=True)\n\n        # Visualize the results on the frame\n        annotated_frame = results[0].plot()\n\n        # Display the annotated frame\n        cv2.imshow(\"YOLO11 Tracking\", annotated_frame)\n\n        # Break the loop if 'q' is pressed\n        if cv2.waitKey(1) & 0xFF == ord(\"q\"):\n            break\n    else:\n        # Break the loop if the end of the video is reached\n        break\n\n# Release the video capture object and close the display window\ncap.release()\ncv2.destroyAllWindows()\n```\n\nNote the use of `model.track(frame)` instead of `model(frame)`, which specifically enables object tracking. This script processes each video frame, visualizes the tracking results, and displays them. Press 'q' to exit the loop.\n\n### Plotting Tracks Over Time\n\nVisualizing object tracks across consecutive frames offers valuable insights into movement patterns within a video. Ultralytics YOLO11 makes plotting these tracks efficient.\n\nThe following example demonstrates how to use YOLO11's tracking capabilities to plot the movement of detected objects. The script opens a video, r",
+              "filename": "ultralytics/trackers/README.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_12f6db5e7d974723b983d9287df4d6a2",
+          "metadata": null,
+          "timestamp": "2025-10-03T15:19:19.990753+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Cp4IAdHtim881jpZtwySMpyr77JavNvKN0umhC3u50F9hffKd+i89Tq+o/jad9tXmQemf2ytOXb4IHhUP4Y0MfQ9M1rhxvWx1sphzX/bl+Fktk/qDBBogMIIKG5c4+nn5won71wvr6a1OMs6D1v7eVX3I7AQeDO6FyvOyz0Lyz/0ZRL0+P0szAkcO4n9EPVZXRCVTJToXgiY0B3/rQCqfVxWs6orT+p7TqxU+A/BwZesnUjv3tmZYOYvaKNmXxAaV7WqfRSQegPeyusvI1JS096WLuxnnNCVXYms8H0KmNO/FdUzC/ksV7uB1bXE/l+P0gsrKRWmLKmaqv/LCsx5ZLkIr1Dzo1vQcrPgwyY0adcs3DUUXBVo/hmMv1FQaftHqUbS0tZ0+x/GzOWF+1TYCyCGAzJ1uL1Cp1hw5QXdwBLT3zlDqUeJb40K/xFSNnMoTZgs6qx9SMQM8fXCcIytxdao1u00dy03pv45rlNcoV5JRQTI8Ga/hddZYrI0DOMQn6+ZoLyTmcN6g1dNTfQ9qY0j7qOAVXjJRVgfOuFfVNEyHmlQnepE0jeavQcRLkUuZE2FGTYkC3yMo8oa4SD4bnSJUNChQ4TnY/2iCREYT+6/lnfQO4Z69CAnM/KSWhBpol+21WJe1Ppm7Wb+W76bQHsaNDgD3Dyh+1e0dWLYgbULU0PIBEXpo0OKHgLaBVa8HyklPXcrcVfDtVb2B1XWqthNe35zwGzHfa6K3BGR65UBA+Nku2ex7hgT2T83bKNV1IzU5j8PJbtvqcpxfVaUSNIkgmVe8hXzUOD38A6pjw3yrDZEJlpCn2ggAZs/VJyuxzfz7ShMYGoM8JN3UFpkoXS78O3jFR6PUnMv6Sd+URESzZ/JY2efocA4jYj/rh6qjP+HgPwPnPAu79dgnLHiBK5aDfzYSCX2RmJ2ip7DqGgK+3M2I52RN1cVHnYX4zqxHF4pzB3XBuFqHfeQqRGbJFHVAKEaSoIyiTrNe2Z3K2Lvs0p/kHzMx4kJoitravtL5EBVZBxFJzfYTzw3wNM3fUEskw066XZQyt6QFJ6enQnr5ZFk9h20TMi4H9lHqhRAVaVeaQx54bQpb3WSZLu3eIsrGLUj22i67lrCd6KIuhWCOI6ANGPu8EiI7LsNC8vKaN+KKZ1qtujezPQGGTFMjC4yoR2VvU5KNySKfXFMqyzLHcz0CjibGP0fAijGe09NaJayVNMHCn1mDpDXUZgx3LDrqY+ofFILKdwTmcqOeMnXNxos7jU1HGpCjf8OJyGJIOD3TQA0xoHlvBEXEn1ljbudReig2O3n/kvp8oLoGkzG61jL2/2kUGT8Xmc0joitWhUPFhOWQkh/URxj2QAjM5dZSzNxX0DAwPIvR4lBU+nkqct+meUYUtcnaHDYo27Rtg==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Based on the provided documentation, a direct definition of \"Ultralytics YOLO\" is not explicitly available. However, from the context of the search results, Ultralytics YOLO refers to a framework or models (like YOLOv8, YOLO11, etc.) developed by Ultralytics for various computer vision tasks.\n\nSpecifically, the documentation snippets indicate that Ultralytics YOLO models can be used for:\n*   **Object Tracking:** This involves following detected objects across video frames. Tracking is available for [Detect](https://docs.ultralytics.com/tasks/detect/), [Segment](https://docs.ultralytics.com/tasks/segment/), and [Pose](https://docs.ultralytics.com/tasks/pose/) models when applied to videos or streaming sources.\n*   **Configuration:** It allows for the configuration of tracking parameters such as confidence thresholds (`conf`), [Intersection over Union (IoU)](https://www.ultralytics.com/glossary/intersection-over-union-iou) thresholds (`iou`), and displaying results (`show`).\n*   **Customization:** Users can select and configure different trackers using YAML configuration files.\n\nThe documentation focuses on the practical application and configuration of these YOLO models, particularly in the context of object tracking.\n\nReference:\n*   [ultralytics/trackers/README.md](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/trackers/README.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3258,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 518,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 206,
+          "text_prompt_tokens": 3258
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T15:19:26.583186+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "funfaMWXGZ3Yxs0P9sfp8QI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

@@ -1,0 +1,156 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how does yolo work ",
+          "timestamp": "2025-10-03T13:19:43.733481+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CsMCAdHtim8csoQRqtPNvKfrLm/pgxTBto/0q2u3t2s9ti2HymQLuwArpKwEcEFrj9Kc3fzF86i2vbE59Ws6DakAUBrExBk41oXcqLjb/CsGXgN9cqPheFvBsZmjkMZ67rPuD4dF6YVxGdub7M6TEIA6qulvqS4nHm5g4WOF8OjhJxx6myKKPe2QsxOJI3ZoAqopHVMIe+wEIdcN+90eJOvwmNGpwNbatloXPdNop/xbZhlc8bQP+SqrBCvy6meSVehU/01b0zK97HvO9N/87LItOQPhDFk+MHjm3HIarehXClCNTF0f6PiwNfBj28jEMDyTG74xAbr1eusqpnJqLrsTiNji5fcJy0xAhebfP/aGyuKgwxy1k2H7+1tXup/+oMVQ/7D79ezQx0Uzf2fPqEbjFKjW4sJI4BEXqBMLXzTTM/PKxs0=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "how does YOLO work"
+          },
+          "tool_call_id": "pyd_ai_bc314aa27518476193a41fdebc477cd2",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 245,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 82,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 66,
+          "text_prompt_tokens": 245
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T13:19:47.691221+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "c83faMzeKt-TvdIPnZDymQQ",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "docs/en/reference/models/yolo/model.md"
+            },
+            {
+              "start": 55000,
+              "content": "mplicate the training process. Also, make sure the augmentations you apply reflect the same data distribution your model will encounter in production.\n\n### When starting a training, a see a `albumentations: Blur[...]` reference. Does that mean Ultralytics YOLO runs additional augmentation like blurring?\n\nIf the `albumentations` package is installed, Ultralytics automatically applies a set of extra image augmentations using it. These augmentations are handled internally and require no additional configuration.\n\nYou can find the full list of applied transformations in our [technical documentation](https://docs.ultralytics.com/reference/data/augment/#ultralytics.data.augment.Albumentations), as well as in our [Albumentations integration guide](https://docs.ultralytics.com/integrations/albumentations/). Note that only the augmentations with a probability `p` greater than `0` are active. These are purposefully applied at low frequencies to mimic real-world visual artifacts, such as blur or grayscale effects.\n\n### When starting a training, I don't see any reference to albumentations. Why?\n\nCheck if the `albumentations` package is installed. If not, you can install it by running `pip install albumentations`. Once installed, the package should be automatically detected and used by Ultralytics.\n\n### How do I customize my augmentations?\n\nYou can customize augmentations by creating a custom dataset class and trainer. For example, you can replace the default Ultralytics classification augmentations with PyTorch's [torchvision.transforms.Resize](https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Resize.html) or other transforms. See the [custom training example](../tasks/classify.md#train) in the classification documentation for implementation details.",
+              "comments": true,
+              "description": "Learn about essential data augmentation techniques in Ultralytics YOLO. Explore various transformations, their impacts, and how to implement them effectively for improved model performance.",
+              "keywords": "YOLO data augmentation, computer vision, deep learning, image transformations, model training, Ultralytics YOLO, HSV adjustments, geometric transformations, mosaic augmentation",
+              "filename": "docs/en/guides/yolo-data-augmentation.md"
+            },
+            {
+              "start": 30000,
+              "content": "entations. Vertical flipping helps the model recognize objects regardless of their top-down positioning.\n- **Ultralytics' implementation**: [RandomFlip](https://docs.ultralytics.com/reference/data/augment/#ultralytics.data.augment.RandomFlip)\n\n|                                                            **`flipud` off**                                                             |                                                                 **`flipud` on**                                                                 |\n| :-------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |\n| <img src=\"https://github.com/ultralytics/docs/releases/download/0/augmentation_identity.avif\" alt=\"augmentation_identity\" width=\"38%\"/> | <img src=\"https://github.com/ultralytics/docs/releases/download/0/augmentation_flip_vertical_1.avif\" alt=\"flipud_on_augmentation\" width=\"38%\"/> |\n\n### Flip Left-Right (`fliplr`)\n\n- **Range**: `0.0` - `1.0`\n- **Default**: `{{ fliplr }}`\n- **Usage**: Performs a horizontal flip by mirroring the image along the x-axis. This transformation swaps the left and right sides while maintaining spatial consistency, which helps the model generalize to objects appearing in mirrored orientations. The `fliplr` hyperparameter defines the probability of applying the transformation, with a value of `fliplr=1.0` ensuring that all images are flipped and a value of `fliplr=0.0` disabling the transformation entirely. For example, with `fliplr=0.5`, each image has a 50% chance of being flipped left to right.\n- **Purpose**: Horizontal flipping is widely used in object detection, pose estimation, and facial recognition to improve robustness against left-right variations. For example, in autonomous driving, vehicles and pedestrians can appear on either si",
+              "comments": true,
+              "description": "Learn about essential data augmentation techniques in Ultralytics YOLO. Explore various transformations, their impacts, and how to implement them effectively for improved model performance.",
+              "keywords": "YOLO data augmentation, computer vision, deep learning, image transformations, model training, Ultralytics YOLO, HSV adjustments, geometric transformations, mosaic augmentation",
+              "filename": "docs/en/guides/yolo-data-augmentation.md"
+            },
+            {
+              "start": 29000,
+              "content": "pective_0.0005.avif\" alt=\"perspective_0.0005_augmentation\"/> | <img src=\"https://github.com/ultralytics/docs/releases/download/0/augmentation_geometric_perspective_0.001.avif\" alt=\"perspective_0.001_augmentation\"/> |\n\n### Flip Up-Down (`flipud`)\n\n- **Range**: `0.0` - `1.0`\n- **Default**: `{{ flipud }}`\n- **Usage**: Performs a vertical flip by inverting the image along the y-axis. This transformation mirrors the entire image upside-down but preserves all spatial relationships between objects. The flipud hyperparameter defines the probability of applying the transformation, with a value of `flipud=1.0` ensuring that all images are flipped and a value of `flipud=0.0` disabling the transformation entirely. For example, with `flipud=0.5`, each image has a 50% chance of being flipped upside-down.\n- **Purpose**: Useful for scenarios where objects can appear upside down. For example, in robotic vision systems, objects on conveyor belts or robotic arms may be picked up and placed in various orientations. Vertical flipping helps the model recognize objects regardless of their top-down positioning.\n- **Ultralytics' implementation**: [RandomFlip](https://docs.ultralytics.com/reference/data/augment/#ultralytics.data.augment.RandomFlip)\n\n|                                                            **`flipud` off**                                                             |                                                                 **`flipud` on**                                                                 |\n| :-------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |\n| <img src=\"https://github.com/ultralytics/docs/releases/download/0/augmentation_identity.avif\" alt=\"augmentation_identity\" width=\"38%\"/> | <img src=\"https://github.com/ultralytics/doc",
+              "comments": true,
+              "description": "Learn about essential data augmentation techniques in Ultralytics YOLO. Explore various transformations, their impacts, and how to implement them effectively for improved model performance.",
+              "keywords": "YOLO data augmentation, computer vision, deep learning, image transformations, model training, Ultralytics YOLO, HSV adjustments, geometric transformations, mosaic augmentation",
+              "filename": "docs/en/guides/yolo-data-augmentation.md"
+            },
+            {
+              "start": 32000,
+              "content": "de of the road, and horizontal flipping helps the model recognize them equally well in both orientations.\n- **Ultralytics' implementation**: [RandomFlip](https://docs.ultralytics.com/reference/data/augment/#ultralytics.data.augment.RandomFlip)\n\n|                                                            **`fliplr` off**                                                             |                                                                  **`fliplr` on**                                                                  |\n| :-------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: |\n| <img src=\"https://github.com/ultralytics/docs/releases/download/0/augmentation_identity.avif\" alt=\"augmentation_identity\" width=\"38%\"/> | <img src=\"https://github.com/ultralytics/docs/releases/download/0/augmentation_flip_horizontal_1.avif\" alt=\"fliplr_on_augmentation\" width=\"38%\"/> |\n\n### BGR Channel Swap (`bgr`)\n\n- **Range**: `0.0` - `1.0`\n- **Default**: `{{ bgr }}`\n- **Usage**: Swaps the color channels of an image from RGB to BGR, altering the order in which colors are represented. The `bgr` hyperparameter defines the probability of applying the transformation, with `bgr=1.0` ensuring all images undergo the channel swap and `bgr=0.0` disabling it. For example, with `bgr=0.5`, each image has a 50% chance of being converted from RGB to BGR.\n- **Purpose**: Increases robustness to different color channel orderings. For example, when training models that must work across various camera systems and imaging libraries where RGB and BGR formats may be inconsistently used, or when deploying models to environments where the input color format might differ from the training data.\n- **Ultralytics' implementation**: [Format](https://docs.ultralytics.com/reference/data/a",
+              "comments": true,
+              "description": "Learn about essential data augmentation techniques in Ultralytics YOLO. Explore various transformations, their impacts, and how to implement them effectively for improved model performance.",
+              "keywords": "YOLO data augmentation, computer vision, deep learning, image transformations, model training, Ultralytics YOLO, HSV adjustments, geometric transformations, mosaic augmentation",
+              "filename": "docs/en/guides/yolo-data-augmentation.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_bc314aa27518476193a41fdebc477cd2",
+          "metadata": null,
+          "timestamp": "2025-10-03T13:19:47.740089+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CvgFAdHtim/llJQvbq6HUjYfBaWhZ1ef++FgebP6cJjxbYPFJU1Qll6b89XDyV9tOxxi63s+ZARvIJuB96cCZfg5x6jOm3NLF4dKeP89RNXbgUDzt41jDFZ3DUlJXwinfVeGjQbML45Y1KIkqkW744F+9RhOb+eCYhpUWhVpZGLKoAUFuJZ4mWtaef62SHCRrvP9RSKoBEBreLdKj62cOhd1aRJedIwsgdrnJ085P+YowxMBoWR4gueYxhjuQjHTjC5G5mfK1YB8kXTdxsFq+4FyZ8OseOL/pcEcFSvAlCEwOJAGhDRlSCjjLqMn+U6WOn8vueDyvlGAkf8MdSIIzWp42ggDiLFX4l8l2SFDNEIcC/d2wvWCZndJ6/FwOUiN8GxEfZG3OK+eyxR/Ci5OYrsqRRbbZQuRS5WbfdWrnZhk9yV7HoAotrIATpR+yRvA6sFF/pCs58djfpgb6sAW754aiWl/A08gH/n8/K/HfvvgbPwBaD9yHoU96MrIt16IDEqtKfBQ2in/cGvdh5l/Rhw0LKzm3Q8FsbRx0vqMp6gOsH0bUpPxOj3qwDhWLjDMEbqZmOWDYAGXDwxQT4GSKTV9NGNBeCRk3tJJaqbjwHoAmB56TaIfNE6g76QHATYspoJO5y61c9EvZQfnSHf+Uw+ikDnHmaHynENYj6iyPlnygOAZAr+DmXajTW0E/tuyfbY1XJ12e7LkYB0GI3M/G3/fs0VdUhiN2JtTyU4pmcNXeF/232GDOK6a09xImd6CQ8llmhpq0KbO3ueSGgu2LINyNE43g+v8CmS4Yy8v2s2MAw6wPO3xqBN8aU4HDKXzRZg2/eC0tIEenxlReICNHQLVDsYCYJWSGqTgIUxj1k2f+JPU7gNs6h/JLXXhICIwI6nrwaYxtVl+0z0sMqXvFnD5vaKia9Ol9a4ds1Igc4mh6bTxBDc+i1FjXm3PCKMdZ5TUP/PZqf/CViksJ985GWiMCjiNpChImdDx0/SylAMEQSlAywrMwuVByQ==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "I couldn't find a direct explanation of \"how YOLO works\" in the Ultralytics documentation.\n\nHowever, I can provide a general overview of how YOLO (You Only Look Once) works. YOLO is a popular real-time object detection system that frames object detection as a single regression problem, directly predicting bounding box coordinates and class probabilities from full images in one pass.\n\nHere's a simplified explanation of its core principles:\n\n1.  **Divide Image into a Grid:** The input image is divided into an S x S grid.\n2.  **Predict Bounding Boxes and Class Probabilities:** Each grid cell is responsible for predicting a fixed number of bounding boxes (e.g., 2 or 3). For each bounding box, it predicts:\n    *   **Coordinates:** The (x, y) center, width, and height of the bounding box relative to the grid cell and the image.\n    *   **Objectness Score:** The probability that a bounding box contains an object.\n    *   **Class Probabilities:** The probabilities of the object belonging to different classes (e.g., \"person,\" \"car,\" \"dog\").\n3.  **Non-Maximum Suppression (NMS):** After the predictions are made, many overlapping bounding boxes might detect the same object. NMS is applied to filter out redundant boxes, keeping only the most confident and accurate ones.\n\nThis \"single look\" approach makes YOLO very fast compared to traditional two-stage detectors, which first propose regions of interest and then classify them.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2758,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 470,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 151,
+          "text_prompt_tokens": 2758
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T13:19:54.337558+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "ec3faJKGA7TWvdIPjvW4qAY",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

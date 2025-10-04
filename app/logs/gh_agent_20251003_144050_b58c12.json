@@ -1,0 +1,173 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i train a yolo model ",
+          "timestamp": "2025-10-03T14:40:43.849770+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CuYBAdHtim8D85vbCGHdv9xMDy6l+HLAiJV3UHqmBUVANTgTnA3EDvZQ/axoFWzEcyLgfn4fj3HZ4o76ke4/znn5KwtE0FqbVI89u9q0U4AiZX3yurl1FkqtI1nUrfBFmi+oy1L9sBg+2MeF9eigH/K7kGGRQQf9Bw9Rh73qEIK9vxmOYSE3fWskG8umqZ+Nk4l/o+A/XuJM1sp6tz2OFqvNnZEFKz93F5COeLWL3z6Chy75FTfisz4/6EfzsVdC8WjjQgIzQKX4WiYJDFcufr2sorxAOsDG2ZQRnlFWFP+RQ08Yx4AFEcg=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "train YOLO model"
+          },
+          "tool_call_id": "pyd_ai_072e4af3c21949c68fd7b4fd8724868b",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 248,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 57,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 42,
+          "text_prompt_tokens": 248
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T14:40:46.631006+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "buDfaMehJZ-VnsEPpb6ksAE",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/world/train.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/world/train.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/world/train.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.world.train.WorldTrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.world.train.on_pretrain_routine_end\n\n<br><br>",
+              "description": "Learn how to train a World Model with Ultralytics YOLO using advanced techniques and customizable options for optimal performance.",
+              "keywords": "Ultralytics, YOLO, World Model, training, deep learning, computer vision, AI, machine learning, tutorial",
+              "filename": "docs/en/reference/models/yolo/world/train.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/classify/train.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/classify/train.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/classify/train.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/classify/train.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.classify.train.ClassificationTrainer\n\n<br><br>",
+              "description": "Explore the train.py module in Ultralytics YOLO for efficient classification model training. Learn more with examples and detailed code documentation.",
+              "keywords": "YOLO, Ultralytics, classification, training, machine learning, deep learning, PyTorch, train.py",
+              "filename": "docs/en/reference/models/yolo/classify/train.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "docs/en/reference/models/yolo/model.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/segment/train.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/segment/train.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/segment/train.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/segment/train.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.segment.train.SegmentationTrainer\n\n<br><br>",
+              "description": "Learn how to train YOLO models for segmentation tasks with Ultralytics. Explore the SegmentationTrainer class and its functionalities.",
+              "keywords": "YOLO, segmentation, train, Ultralytics, SegmentationTrainer, Python, machine learning, deep learning, tutorials",
+              "filename": "docs/en/reference/models/yolo/segment/train.md"
+            },
+            {
+              "start": 4000,
+              "content": "el=yolo11n.pt epochs=100 imgsz=640\n\n        # Build a new model from YAML, transfer pretrained weights to it and start training\n        yolo detect train data=coco8.yaml model=yolo11n.yaml pretrained=yolo11n.pt epochs=100 imgsz=640\n        ```\n\n### Multi-GPU Training\n\nMulti-GPU training allows for more efficient utilization of available hardware resources by distributing the training load across multiple GPUs. This feature is available through both the Python API and the command-line interface. To enable multi-GPU training, specify the GPU device IDs you wish to use.\n\n!!! example \"Multi-GPU Training Example\"\n\n    To train with 2 GPUs, CUDA devices 0 and 1 use the following commands. Expand to additional GPUs as required.\n\n    === \"Python\"\n\n        ```python\n        from ultralytics import YOLO\n\n        # Load a model\n        model = YOLO(\"yolo11n.pt\")  # load a pretrained model (recommended for training)\n\n        # Train the model with 2 GPUs\n        results = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640, device=[0, 1])\n\n        # Train the model with the two most idle GPUs\n        results = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640, device=[-1, -1])\n        ```\n\n    === \"CLI\"\n\n        ```bash\n        # Start training from a pretrained *.pt model using GPUs 0 and 1\n        yolo detect train data=coco8.yaml model=yolo11n.pt epochs=100 imgsz=640 device=0,1\n\n        # Use the two most idle GPUs\n        yolo detect train data=coco8.yaml model=yolo11n.pt epochs=100 imgsz=640 device=-1,-1\n        ```\n\n### Idle GPU Training\n\nIdle GPU Training enables automatic selection of the least utilized GPUs in multi-GPU systems, optimizing resource usage without manual GPU selection. This feature identifies available GPUs based on utilization metrics and VRAM availability.\n\n!!! example \"Idle GPU Training Example\"\n\n    To automatically select and use the most idle GPU(s) for training, use the `-1` device parameter. This is particularly useful in shared computing env",
+              "comments": true,
+              "description": "Learn how to efficiently train object detection models using YOLO11 with comprehensive instructions on settings, augmentation, and hardware utilization.",
+              "keywords": "Ultralytics, YOLO11, model training, deep learning, object detection, GPU training, dataset augmentation, hyperparameter tuning, model performance, apple silicon training",
+              "filename": "docs/en/modes/train.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_072e4af3c21949c68fd7b4fd8724868b",
+          "metadata": null,
+          "timestamp": "2025-10-03T14:40:46.665754+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CswDAdHtim85s5RB+RN4PHDFHHkyz7JBlcyr4hTIWd/Gkw4K8ZMnYzGfUkdE7i7rHMZKkLt2eWwNdEan2awV+uLMgZSgQlwGQfJG7OvwyyBc2KmOleqLLEg81/LmlLDrwhYOyh1VoHqqWun4VwyXOZgbmN3D2xKeh7xTGyCqJIcOMr2Y0PINcajCs2zcsBgscQ3wqepFdP/embGnHL0ZTr+V6FpgNM1zQ7lZ9wGVzgnuLu9VuXd0Z3tJVqx9SyYjKD8JmjpD9Sxtw9djh97ONzJtl6UJxWYU0+LFDGp77kTVAJ5qzCQEMLE1R8aYmCPDyHVbxF3U6FSw6XW3ZY1+cOj98PCWPwZkZ9JHDQ7eODNU8NIuhci5MZ0ar28i2xOGC23VaO6KsqyTu/Ir/N3INOgk/vx7ZHT0RtfrRvkM3JHOJ1tzRkVZezMkdW2gc7fuyk9NS6EqiDZ0beY3gBYj7cxk/BXUJCv9uUtfMDEps7RWjHrWh/7Dfe6AEayTSybwY60MqmKHp6q0OR9oAeT0qsjSYMOFHbpkcO1YINLYKG0WNMf5AEWSQ9ua9SPrT3oaOOOy+KcVfJCGfrBQaF3Zm2lkzf7uwyn2nlGRDE4j3g==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "You can train a YOLO model using either the Python API or the command-line interface (CLI).\n\n**Using the Python API:**\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```python\nfrom ultralytics import YOLO\n\n# Load a model\nmodel = YOLO(\"yolo11n.pt\")  # load a pretrained model (recommended for training)\n\n# Train the model\nresults = model.train(data=\"coco8.yaml\", epochs=100, imgsz=640)\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\n**Using the Command-Line Interface (CLI):**\n\n",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "```bash\nyolo detect train data=coco8.yaml model=yolo11n.pt epochs=100 imgsz=640\n```",
+          "id": null,
+          "part_kind": "text"
+        },
+        {
+          "content": "\n\nIn these examples:\n*   `yolo11n.pt` refers to a pretrained YOLOv11 nano model.\n*   `coco8.yaml` is a dataset configuration file.\n*   `epochs=100` sets the number of training epochs to 100.\n*   `imgsz=640` sets the input image size to 640 pixels.\n\nYou can find more detailed information and advanced training options in the [Ultralytics YOLO Train Mode documentation](https://github.com/ultralytics/ultralytics/blob/main/docs/en/modes/train.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2240,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 371,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 83,
+          "text_prompt_tokens": 2240
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T14:40:50.835479+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "cuDfaMGmOoP9nsEPmaOk2Qo",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

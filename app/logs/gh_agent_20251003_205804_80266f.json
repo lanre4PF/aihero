@@ -1,0 +1,146 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i train a yolo model ",
+          "timestamp": "2025-10-03T20:57:59.445739+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kbzd0qoBJX+MY7tk399QzaSrij2T6d4nReM4x8tzWrBEKcgHR7Ypvobvh7J2BImqC/sTPNuNKH+d8xJ6AATCcDskOnlwtCBwkIemT4V6pd37JWgwPYFzKtGZOCQZdU7HPlLDCd0WPkWFpDLxStE5lFs8bno/r8VvllwQVj6nkcmN6MQ0WBnex83TLdJ/BQpvRh/q9FgqgAQHR7YpvLrMveFlZAJYytMlP3sj71+caF7XG5Sy6Wja3+IVttBQG+qkyyXburIGGyVlltCun9F6NXU94Lc/eq/+UkS8DF3TQm0U4o7r3vPZUh5Qu2+wig8m1/Scc7eIxSgvMP4jbYh3GUlNK8UHQqriv/knZG2tRotb504dKs+LxYV2jJM4RfvBahj0/Jb+IpJxpSVea+Wjbiu209vsnPZ0=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "train YOLO model"
+          },
+          "tool_call_id": "pyd_ai_030b6b8d84bd411f98a2b862f17b2631",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 248,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 61,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 46,
+          "text_prompt_tokens": 248
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T20:58:01.433640+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "2DjgaJfiINq2xN8P36nJqAc",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/model.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/model.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.model.YOLO\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOWorld\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.model.YOLOE\n\n<br><br>",
+              "description": "Explore the ultralytics.models.yolo.model module for YOLO object detection. Learn initialization, model mapping, and more.",
+              "keywords": "YOLO, object detection, Ultralytics, YOLO model, machine learning, Python, model initialization",
+              "filename": "model.md"
+            },
+            {
+              "start": 0,
+              "content": "# Reference for `ultralytics/models/yolo/yoloe/train.py`\n\n!!! note\n\n    This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/models/yolo/yoloe/train.py) \ud83d\udee0\ufe0f. Thank you \ud83d\ude4f!\n\n<br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPETrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOETrainerFromScratch\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEPEFreeTrainer\n\n<br><br><hr><br>\n\n## ::: ultralytics.models.yolo.yoloe.train.YOLOEVPTrainer\n\n<br><br>",
+              "description": "Learn about YOLOE enhanced visual prompting (EVP) predictors in Ultralytics, which enable object detection and segmentation models to use visual prompts during inference for improved performance.",
+              "keywords": "YOLOE, EVP, visual prompts, computer vision, object detection, segmentation, bounding boxes, masks, predictors, YOLOEVPDetectPredictor, YOLOEVPSegPredictor, Ultralytics, inference",
+              "filename": "train.md"
+            },
+            {
+              "start": 16000,
+              "content": "                         |\n| `dropout`         | `float`                  | `0.0`    | Dropout rate for regularization in classification tasks, preventing overfitting by randomly omitting units during training.                                                                                                                                                            |\n| `val`             | `bool`                   | `True`   | Enables validation during training, allowing for periodic evaluation of model performance on a separate dataset.                                                                                                                                                                       |\n| `plots`           | `bool`                   | `False`  | Generates and saves plots of training and validation metrics, as well as prediction examples, providing visual insights into model performance and learning progression.                                                                                                               |\n| `compile`         | `bool` or `str`          | `False`  | Enables PyTorch 2.x `torch.compile` graph compilation with `backend='inductor'`. Accepts `True` \u2192 `\"default\"`, `False` \u2192 disables, or a string mode such as `\"default\"`, `\"reduce-overhead\"`, `\"max-autotune-no-cudagraphs\"`. Falls back to eager with a warning if unsupported.       |",
+              "filename": "train-args.md"
+            },
+            {
+              "start": 1000,
+              "content": "                     |\n| `data`            | `str`                    | `None`   | Path to the dataset configuration file (e.g., `coco8.yaml`). This file contains dataset-specific parameters, including paths to training and [validation data](https://www.ultralytics.com/glossary/validation-data), class names, and number of classes.                              |\n| `epochs`          | `int`                    | `100`    | Total number of training epochs. Each [epoch](https://www.ultralytics.com/glossary/epoch) represents a full pass over the entire dataset. Adjusting this value can affect training duration and model performance.                                                                     |\n| `time`            | `float`                  | `None`   | Maximum training time in hours. If set, this overrides the `epochs` argument, allowing training to automatically stop after the specified duration. Useful for time-constrained training scenarios.                                                                                    |\n| `patience`        | `int`                    | `100`    | Number of epochs to wait without improvement in validation metrics before early stopping the training. Helps prevent [overfitting](https://www.ultralytics.com/glossary/overfitting) by stopping training when performance plateaus.                                                   |\n| `batch`           | `int` or `float`         | `16`     | [Batch size](https://www.ultralytics.com/glossary/batch-size), with three modes: set as an integer (e.g., `batch=16`), auto mode for 60% GPU memory utilization (`batch=-1`), or auto mode with specified utilization fraction (`batch=0.70`).                                         |\n| `imgsz`           | `int`                    | `640`    | Target image size for training. Images are resized to squares with sides equal to the specified value (if `rect=False`), preserving aspect ratio for YOLO models but not RTDETR. Affects model [accuracy](https://ww",
+              "filename": "train-args.md"
+            },
+            {
+              "start": 0,
+              "content": "| Argument          | Type                     | Default  | Description                                                                                                                                                                                                                                                                            |\n| ----------------- | ------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `model`           | `str`                    | `None`   | Specifies the model file for training. Accepts a path to either a `.pt` pretrained model or a `.yaml` configuration file. Essential for defining the model structure or initializing weights.                                                                                          |\n| `data`            | `str`                    | `None`   | Path to the dataset configuration file (e.g., `coco8.yaml`). This file contains dataset-specific parameters, including paths to training and [validation data](https://www.ultralytics.com/glossary/validation-data), class names, and number of classes.                              |\n| `epochs`          | `int`                    | `100`    | Total number of training epochs. Each [epoch](https://www.ultralytics.com/glossary/epoch) represents a full pass over the entire dataset. Adjusting this value can affect training duration and model performance.                                                                     |\n| `time`            | `float`                  | `None`   | Maximum training time in hours. If set, this overrides the `epochs` argument, allowing training to automatically stop after the specified duration. Useful for time-constrained training scenarios.                                        ",
+              "filename": "train-args.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_030b6b8d84bd411f98a2b862f17b2631",
+          "metadata": null,
+          "timestamp": "2025-10-03T20:58:01.471575+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2Kb+gVdDlCjChdozFsrvrovxFmccap4EQeM94HK3pcMsOnu7TF52BmCm4B0e2Kb/W9RRJ5ys38G0MRnzFkGvWUl5bVZEK9U8SBSLdkaE0XD003YlCOHuA1y5ULqn6bz8VOnNq0uislkv7YqdL7sTyFNz4tqQjbD23Qz0Yy94OBNieIghOE8usbnvBkrQe0UXtV1Qt0VmdkHgr1AQHR7YpvbXYBx7wDX9q6YTwDTZNMF203AHpxAGXrGGK4nUGBUFqIjMwGZ9TuLQB8FDq7+XzQ9n7aSRnthd4cDP+2AG+Mg4aPYkpB4OF1m5YGIR8deisv+jbXaqpIVlYI6L6b8bsfANMwOUXONa2kKpYoO5wOPxLBQDPrBX2EI+PO4K+u7cHLV8NuRW7BfNY2uS/hixz/m+NzJ+ilbjJYTCojVudnZivxMIBm02Pdz+Yn+RWyLGEm4WIM0MTp03DEAaAmsW+nYg4X41WOXtNJje32A5ST+mzRgMl8e5t1CgF+AepwQZfxUT/IlprTkCfrCVUf7R5XCoMCAdHtim9ZqmFPWeTedjzxgN8fCBidK5SauzSagfkvzKpTV5vACgjW2wpQX4ajKiuZ8f47axvge2xYmE0j7bsCTwQgjSJVTUjGbSXDPPQjmPs+sEFkSDg8UbJFO1t4lCiE8Wq3ahGcWi0Ms0CIpaPuoK0KIkzWDhL9d3Le4RI5kSTo0Z0i5FvHGwFMcShwaj162T9KPUf1euPV7fU03smsDhPejIz80zIEOdpIDbK+ZAErclIjdFp0lzYo4JkunDgRQTGfCwrci6ubofK1MFlpyxbU63tSp8NsbrStX7OLuxJy8/EjppUPFPizitz6SIm2aFudvSwcgbV8TMTmAzi9cZFiOwrZAQHR7YpvuKuN8b4MKJXl/mCV1Bk9/07dxyObyUPhQAXyoClkDI1GOT9s46P5fVvuxgkhEr1chhoTe0hjdV4E1Z4iNcu+KbV5QF6nPbiRTCsrQSB6Bgqj61IM3wD8wTHqulWR6jFOtQvma/QFFWo3kJiySZrREZ8suJH8m3lk8UIJDl9RvkRUKOQAiCXsL2C5IgAPdShdGB5wjY/WOOkTkMZwg/dObFG75Y6axfJwah1RFp8JV0Wcpp4Or0x8lfIkfeizvNz3foXMTHnIoCNjzvgYphHtP9ODebUK0QEB0e2KbyT7jcxYkOy+AfRKNBMn8hNDkowDmL5n4IGBG/IXsh1gSiI7fQWYaknMRJOJp2+SiQ5eH7vxbJUGry3D1gx6F7BtrbXf95dmbwFUp7h/GU5SZG+QnMerurFpdVFdInSkSOKf/desre0CIF1f5WyxxDbLpqlbPdyC09TL1935utPuX4Tje5unR6g2HBcpaxk+Fez2KDbmL/WRNsPfIgt2dghrwtVmk0n8pEIUnNfu/2DrpxOwE6aKMbNWSITryaAVIgrwvdszmo227Hqlww==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Training a YOLO model with Ultralytics involves specifying various parameters that control the training process, dataset, and model architecture. Here's a breakdown of the key arguments you'll typically use:\n\n*   **`model`**: This argument specifies the model file for training. You can provide a path to a pre-trained `.pt` model or a `.yaml` configuration file to define the model structure.\n*   **`data`**: This is the path to your dataset configuration file (e.g., `coco8.yaml`). This file contains essential dataset-specific parameters, including paths to your training and validation data, class names, and the total number of classes.\n*   **`epochs`**: This integer value determines the total number of training epochs. Each epoch represents a complete pass over the entire dataset. Adjusting this value influences the training duration and the model's performance.\n*   **`time`**: You can set a maximum training time in hours. If specified, this will override the `epochs` argument, allowing training to halt automatically after the defined duration, which is useful for time-constrained training.\n*   **`patience`**: This integer sets the number of epochs to wait without improvement in validation metrics before early stopping the training. This helps prevent overfitting by stopping training when performance plateaus.\n*   **`batch`**: This controls the batch size during training. You can set it as an integer (e.g., `batch=16`), use auto mode for 60% GPU memory utilization (`batch=-1`), or specify an auto mode with a particular utilization fraction (e.g., `batch=0.70`).\n*   **`imgsz`**: This integer defines the target image size for training. Images are resized to squares with sides equal to this value (if `rect=False`), preserving the aspect ratio for YOLO models but not for RTDETR. This parameter impacts model accuracy.\n*   **`val`**: Setting this boolean to `True` enables validation during training, allowing for periodic evaluation of model performance on a separate dataset.\n*   **`plots`**: Setting this to `True` generates and saves plots of training and validation metrics, along with prediction examples. These plots provide visual insights into model performance and learning progression.\n*   **`dropout`**: This float value represents the dropout rate for regularization in classification tasks. It helps prevent overfitting by randomly omitting units during training.\n*   **`compile`**: This argument enables PyTorch 2.x `torch.compile` graph compilation. You can set it to `True` (defaults to `\"default\"`), `False` (disables), or a string mode like `\"default\"`, `\"reduce-overhead\"`, or `\"max-autotune-no-cudagraphs\"`. If unsupported, it falls back to eager mode with a warning.\n\nFor a comprehensive list of training arguments and their descriptions, refer to the [Train Arguments](https://github.com/ultralytics/ultralytics/blob/main/train-args.md) documentation.\n\nYou can find more details on the YOLO model implementation in the [model.md](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/model.md) file and specific trainers like `YOLOETrainer` in [train.md](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/models/yolo/yoloe/train.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2198,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 951,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 208,
+          "text_prompt_tokens": 2198
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T20:58:04.848588+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "2TjgaOXmNLKXvdIP3-nw6AE",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

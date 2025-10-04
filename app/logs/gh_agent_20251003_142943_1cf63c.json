@@ -1,0 +1,61 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "Chunking successful: 3382 chunks created from 409 documents.\nC:\\Users\\ADMIN\\Desktop\\aihero\\app\\app.py:31: DeprecationWarning: There is no current event loop\n  loop = asyncio.get_event_loop()",
+          "timestamp": "2025-10-03T14:29:39.046824+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful AI assistant tasked with answering questions based on the Ultralytics YOLO documentation\n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.  \nWhen citing the reference, replace \"ultralytics-main\" by the full path to the GitHub repository: \"https://github.com/ultralytics/ultralytics/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "Co8DAdHtim+16GfETWRANk2p97mnmy3GIBHW51QvHpFA1yfM1V0yBrhVt8d67S73Ef5LlNzdFptUkeMIgrwf8ECbOddPee9/VMdgdXBmS5QOW8n/mKcBJBYE68JAIYO9Cb7AaRP6lQPSlVcYedY0yCH2S/Q6LVb+fOGW+DVI0W22BkKL8BWvVOhGkZWZ5GiKCSiZ89OwXBed/ecdJT7akV533pS2NWPm/hfYOA0YDkzm16abadOfXTgxTnaz3lYJexTSdxJivKMHwkeWC4reujDbk2UUU1woaPqO4SJ1dkKZSwcTwUlspchyWeWQCPTmAyJ1vPmaVsKt/WhnYyWdSZPEn5YeXoB9absNtSWRXau5CMsfe1KRIygMkeWnQGKJo/2QuHqGul3PmmeYLEEx0YyobKokKTCLsWqRwFNEBdkLyuWyyWd/J0ni/zBqldVwLYpjjQ6/1J9SXD4v101jtqU2hm7uBhlTujZScq0CKLRci0S7PIbDvgycc2PtBWXLtEmzPHen05CMKXkYXp9viwcv",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "These appear to be log messages from a process, not a question for me to answer.\n- The first line \"Chunking successful: 3382 chunks created from 409 documents.\" indicates that a document chunking process completed successfully.\n- The second line \"C:\\Users\\ADMIN\\Desktop\\aihero\\app\\app.py:31: DeprecationWarning: There is no current event loop\" is a Python DeprecationWarning, suggesting that `asyncio.get_event_loop()` is being used in a context where an event loop might not be readily available, and a different method might be preferred in newer Python versions (e.g., `asyncio.new_event_loop()` or handling the event loop more explicitly).\n\nIf you have a question related to Ultralytics YOLO, please let me know!",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 300,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 254,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 78,
+          "text_prompt_tokens": 300
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-03T14:29:43.250063+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "193faO7xFeijvdIP_Z_B0Q8",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}
