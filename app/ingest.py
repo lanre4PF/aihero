@@ -8,16 +8,7 @@ import numpy as np
 from minsearch import VectorSearch
 from ultralytics_embeddings import generate_embeddings
 
-BASE_DIR = os.path.dirname(__file__)
-file_path = os.path.join(BASE_DIR, "ultralyticembeddings.txt")
-
-# Check if file exists before loading
-if not os.path.exists(file_path):
-    raise FileNotFoundError(f"Embedding file not found at: {file_path}. Please ensure the file exists.")
-ultralytics_embeddings = np.loadtxt(file_path)
-
-
-ultralytics_embeddings = np.loadtxt(file_path)
+ultralytics_embeddings = np.loadtxt("/mount/src/aihero/app/ultralyticembeddings.txt")
 
 def read_repo_data(repo_owner, repo_name):
     repo_identifier = f"{repo_owner}/{repo_name}"
