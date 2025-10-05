@@ -6,7 +6,7 @@ import ingest
 import search_agent
 import logs
 
-api_key = st.write(st.secrets["API_KEY"])
+api_key = st.write(st.secrets.secrets.API_KEY)
 google_model = search_agent.initialize_search_agent(api_key)
 
 
