@@ -5,10 +5,10 @@ from pydantic_ai.models.google import GoogleModel
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-api_key = os.getenv('API_KEY')
-if api_key is None:
-    raise ValueError("API_KEY environment variable not set")
+# load_dotenv()
+# api_key = os.getenv('API_KEY')
+# if api_key is None:
+#     raise ValueError("API_KEY environment variable not set")
  
 provider = GoogleProvider(api_key=api_key)
 google_model = GoogleModel("gemini-2.5-flash", provider=provider)

@@ -5,6 +5,8 @@ import ingest
 import search_agent
 import logs
 
+api_key = st.write(st.secrets["API_KEY"])
+
 # --- Initialization ---
 @st.cache_resource
 def init_agent():
