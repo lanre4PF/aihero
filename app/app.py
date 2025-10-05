@@ -2,10 +2,12 @@ import streamlit as st
 import asyncio
 
 import ingest
+
+api_key = st.write(st.secrets["API_KEY"])
 import search_agent
 import logs
 
-api_key = st.write(st.secrets["API_KEY"])
+
 
 # --- Initialization ---
 @st.cache_resource
