@@ -8,7 +8,10 @@ import numpy as np
 from minsearch import VectorSearch
 from ultralytics_embeddings import generate_embeddings
 
-ultralytics_embeddings = np.loadtxt("ultralyticembeddings.txt")
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # repo root
+file_path = os.path.join(BASE_DIR, "ultralyticembeddings.txt")
+
+ultralytics_embeddings = np.loadtxt(file_path)
 
 def read_repo_data(repo_owner, repo_name):
     repo_identifier = f"{repo_owner}/{repo_name}"
