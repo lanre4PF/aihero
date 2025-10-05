@@ -10,8 +10,12 @@ import os
 # if api_key is None:
 #     raise ValueError("API_KEY environment variable not set")
  
-provider = GoogleProvider(api_key=api_key)
-google_model = GoogleModel("gemini-2.5-flash", provider=provider)
+def initialize_search_agent(api_key):
+    if api_key is None:
+        raise ValueError("API_KEY must be provided")
+    provider = GoogleProvider(api_key=api_key)
+    google_model = GoogleModel("gemini-2.5-flash", provider=provider)
+    return google_model
 
 
 SYSTEM_PROMPT_TEMPLATE = """
@@ -44,7 +48,7 @@ Always include references by citing the filename of the source material you used
 """
 
 
-def init_agent(index,repo_owner, repo_name,vindex = None):
+def init_agent(index,repo_owner, repo_name,model,vindex = None):
     system_prompt = SYSTEM_PROMPT_TEMPLATE.format(repo_owner=repo_owner, repo_name=repo_name)
     if vindex:
         search_tool = search_tools.SearchTool(index,vindex)
@@ -52,7 +56,7 @@ def init_agent(index,repo_owner, repo_name,vindex = None):
         name="gh_agent",
         instructions=system_prompt,
         tools=[search_tool.hybrid_search],
-        model= google_model
+        model= model
         )
         return agent
     else:

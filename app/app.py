@@ -3,10 +3,11 @@ import asyncio
 
 import ingest
 
-api_key = st.write(st.secrets["API_KEY"])
 import search_agent
 import logs
 
+api_key = st.write(st.secrets["API_KEY"])
+google_model = search_agent.initialize_search_agent(api_key)
 
 
 # --- Initialization ---
@@ -20,7 +21,7 @@ def init_agent():
 
     st.write("🔄 Indexing repo...")
     index, vindex = ingest.index_data(REPO_OWNER, REPO_NAME, vector=True)
-    agent = search_agent.init_agent(index, REPO_OWNER, REPO_NAME, vindex=vindex)
+    agent = search_agent.init_agent(index, REPO_OWNER, REPO_NAME,google_model, vindex=vindex)
     return agent
 
 agent = init_agent()
